@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UUtils;
@@ -9,6 +10,9 @@ namespace Grid
         [SerializeField] private List<GridUnit> gridUnits;
         [SerializeField] private TilemapInfo tilemapInfo;
         private GridUnit[,] _grid;
+        
+        [Header("Visuals")]
+        [SerializeField] private List<GridWalkingVisual> visuals;
 
         protected override void Awake()
         {
@@ -34,6 +38,19 @@ namespace Grid
             });
         }
 
+        public GridUnit GetGridPosition(Transform targetTransform)
+        {
+            var dimensions = tilemapInfo.GetDimensions();
+            var bounds = tilemapInfo.GetTileMapBounds();
+            var cellWidth = bounds.size.x / dimensions.x;
+            var cellHeight = bounds.size.y / dimensions.y;
+            var localOffset = targetTransform.position - bounds.min;
+            var gridX = Mathf.FloorToInt(localOffset.x / cellWidth);
+            var gridY = Mathf.FloorToInt(localOffset.y / cellHeight);
+            CheckGridPosition(new Vector2Int(gridX, gridY), out var gridUnit);
+            return gridUnit;
+        }
+        
         private static Vector2Int GetUnitPosition(GridUnit unit, Vector2Int dimensions, Bounds tileBounds)
         {
             var cellWidth = tileBounds.size.x / dimensions.x;
@@ -64,6 +81,16 @@ namespace Grid
 
             unit = _grid[position.x, position.y];
             return true;
+        }
+
+        public Sprite GetSpriteForType(GridUnitType type)
+        {
+            return type switch
+            {
+                GridUnitType.Moveable => visuals.Find(unit => unit.type == GridUnitType.Moveable).sprite,
+                GridUnitType.Blocked => visuals.Find(unit => unit.type == GridUnitType.Blocked).sprite,
+                _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
+            };
         }
     }
 }
