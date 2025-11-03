@@ -141,7 +141,7 @@ namespace Core
 
         public bool MoveTo(GridUnit gridUnit)
         {
-            if (_walkableUnits.Contains(gridUnit))
+            if (gridUnit.Type() != GridUnitType.Blocked && _walkableUnits.Contains(gridUnit))
             {
                 
                 _selectedActor.MoveTo(gridUnit, () => { _stateMachine.ChangeStateTo(CursorState.ShowingOptions); },
@@ -149,7 +149,7 @@ namespace Core
                 return true;
             }
 
-            DebugUtils.DebugLogMsg($"{name} cannot move to {gridUnit.name}. Not in the Walkable List.",
+            DebugUtils.DebugLogMsg($"{name} cannot move to {gridUnit.name}. Not in the Walkable List or it is Blocked.",
                 DebugUtils.DebugType.Error);
             return false;
         }
