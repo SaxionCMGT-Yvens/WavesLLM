@@ -114,7 +114,7 @@ namespace Core
                     {
                         var data = navalShip.ShipData;
                         ResetWalkableUnits();
-                        _walkableUnits = GridManager.GetSingleton().GetGridUnitsInRadius(index, data.movementRadius);
+                        _walkableUnits = GridManager.GetSingleton().GetGridUnitsInRadiusManhattan(index, data.movementRadius);
                         _walkableUnits.ForEach(unit => { unit.DisplayWalkingVisuals(); });
                     }
 
@@ -143,7 +143,6 @@ namespace Core
         {
             if (gridUnit.Type() != GridUnitType.Blocked && _walkableUnits.Contains(gridUnit))
             {
-                
                 _selectedActor.MoveTo(gridUnit, () => { _stateMachine.ChangeStateTo(CursorState.ShowingOptions); },
                     true, 1.0f);
                 return true;

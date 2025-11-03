@@ -9,7 +9,7 @@ namespace Actors.Editor
         public override void OnInspectorGUI()
         {
             var myTarget = (NavalShip)target;
-            var grid = myTarget.CurrentGridUnit;
+            var grid = myTarget.GetUnit();
             GUILayout.Label($"Index [{(grid == null ? -1 : grid.Index().ToString())}]", EditorStyles.boldLabel);
             base.OnInspectorGUI();
         }
