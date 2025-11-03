@@ -12,12 +12,14 @@ namespace Core
 {
     public class CursorController : MonoBehaviour
     {
-        [Header("Data")]
-        [SerializeField, ReadOnly] private Vector2Int index;
+        [Header("Data")] [SerializeField, ReadOnly]
+        private Vector2Int index;
+
         [SerializeField] private Vector2Int initialIndex;
-        
-        [Header("References")]
-        [SerializeField] private Animator cursorAnimator;
+
+        [Header("References")] [SerializeField]
+        private Animator cursorAnimator;
+
         [SerializeField] private PlayerNavalShipOptionsPanel navalShipOptionsPanel;
 
         private CursorStateMachine _stateMachine;
@@ -27,7 +29,6 @@ namespace Core
         private bool _active = true;
 
         private static readonly int Select = Animator.StringToHash("Select");
-        
         
         private void Awake()
         {
@@ -47,6 +48,7 @@ namespace Core
             PlayerController.GetSingleton().onMoveAction -= Move;
             PlayerController.GetSingleton().onInteract -= Interact;
         }
+
         #endregion
 
         private void Start()
@@ -98,6 +100,10 @@ namespace Core
         {
             cursorAnimator.SetBool(Select, true);
             _selectedActor = navalActor;
+        }
+
+        public void ShowOptionsForSelectedActor()
+        {
             //Show the options; for now, just show the valid positions
             //Grid Manager show the valid positions for this naval actor
             var type = _selectedActor.NavalType;
@@ -107,9 +113,11 @@ namespace Core
                     if (_selectedActor is NavalShip navalShip)
                     {
                         var data = navalShip.ShipData;
+                        ResetWalkableUnits();
                         _walkableUnits = GridManager.GetSingleton().GetGridUnitsInRadius(index, data.movementRadius);
                         _walkableUnits.ForEach(unit => { unit.DisplayWalkingVisuals(); });
                     }
+
                     navalShipOptionsPanel.gameObject.SetActive(true);
                     break;
                 case NavalActorType.Enemy:
@@ -125,22 +133,52 @@ namespace Core
             }
         }
 
+        public void CommandToMoveSelectedActor()
+        {
+            cursorAnimator.SetBool(Select, false);
+            _stateMachine.ChangeStateTo(CursorState.Moving);
+        }
+
+        public bool MoveTo(GridUnit gridUnit)
+        {
+            if (_walkableUnits.Contains(gridUnit))
+            {
+                
+                _selectedActor.MoveTo(gridUnit, () => { _stateMachine.ChangeStateTo(CursorState.ShowingOptions); },
+                    true, 1.0f);
+                return true;
+            }
+
+            DebugUtils.DebugLogMsg($"{name} cannot move to {gridUnit.name}. Not in the Walkable List.",
+                DebugUtils.DebugType.Error);
+            return false;
+        }
+
         public void CancelSelectedActor()
         {
             if (_selectedActor == null) return;
             _selectedActor = null;
+            cursorAnimator.SetBool(Select, false);
+            _stateMachine.ChangeStateTo(CursorState.Roaming);
+        }
+
+        public void HideOptionsPanel()
+        {
+            navalShipOptionsPanel.gameObject.SetActive(false);
+        }
+
+        public void ResetWalkableUnits()
+        {
+            if (_walkableUnits == null) return;
             _walkableUnits.ForEach(unit => { unit.HideWalkingVisuals(); });
             _walkableUnits = null;
-            navalShipOptionsPanel.gameObject.SetActive(false);
-            cursorAnimator.SetBool(Select, false);
-            _stateMachine.ResetToRoaming();
         }
 
         public void ToggleActive(bool toggle)
         {
             _active = toggle;
         }
-        
+
         public bool IsActive() => _active;
         public CursorState GetState() => _stateMachine?.CurrentState ?? CursorState.Roaming;
     }

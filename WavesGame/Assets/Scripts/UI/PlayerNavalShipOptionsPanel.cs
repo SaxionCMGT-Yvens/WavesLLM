@@ -45,6 +45,9 @@ namespace UI
 
         public void Move()
         {
+            if (!gameObject.activeInHierarchy) return;
+            if (_introAnimation) return;
+            cursorController.CommandToMoveSelectedActor();
         }
 
         public void Attack()

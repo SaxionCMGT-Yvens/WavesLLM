@@ -40,6 +40,7 @@ namespace Grid
         public void AddActor(GridActor actor)
         {
             _actors.Add(actor);
+            actor.SetUnit(this);
             if (currentType == GridUnitType.Moveable && actor.BlockGridUnit)
             {
                 UpdateType(GridUnitType.Blocked);
@@ -49,6 +50,7 @@ namespace Grid
         public void RemoveActor(GridActor actor)
         {
             _actors.Remove(actor);
+            actor.SetUnit(null);
             if (_actors.Count == 0)
             {
                 UpdateType(originalType);

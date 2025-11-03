@@ -10,6 +10,8 @@ namespace Core
         Roaming,
         SelectGridUnit,
         ShowingOptions,
+        Moving,
+        OnTheMove,
         Targeting
     }
 
@@ -39,17 +41,20 @@ namespace Core
                     break;
                 case CursorState.Targeting:
                     break;
+                case CursorState.Moving:
+                    if (_cursorController.MoveTo(unit))
+                    {
+                        ChangeStateTo(CursorState.OnTheMove);    
+                    }
+                    break;
+                case CursorState.OnTheMove:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        public void ResetToRoaming()
-        {
-            ChangeStateTo(CursorState.Roaming);
-        }
-
-        private void ChangeStateTo(CursorState newState)
+        public void ChangeStateTo(CursorState newState)
         {
             DebugUtils.DebugLogMsg($"Change state from {_currentState} to {newState}.", DebugUtils.DebugType.System);
             switch (_currentState)
@@ -60,8 +65,14 @@ namespace Core
                 case CursorState.SelectGridUnit:
                     break;
                 case CursorState.ShowingOptions:
+                    _cursorController.HideOptionsPanel();
                     break;
                 case CursorState.Targeting:
+                    break;
+                case CursorState.Moving:
+                    _cursorController.ToggleActive(false);
+                    break;
+                case CursorState.OnTheMove:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -74,6 +85,7 @@ namespace Core
             {
                 case CursorState.Roaming:
                     _cursorController.ToggleActive(true);
+                    _cursorController.ResetWalkableUnits();
                     break;
                 case CursorState.SelectGridUnit:
                     DebugUtils.DebugLogMsg($"Selecting grid unit {_currentGridUnit} | Contains {_currentGridUnit.ActorsCount()} actors.", DebugUtils.DebugType.Verbose);
@@ -82,7 +94,7 @@ namespace Core
                         var getTopActor = _currentGridUnit.GetActor();
                         if (getTopActor is NavalActor navalActor)
                         {
-                            DebugUtils.DebugLogMsg($"Got top actor as a Naval Actor {navalActor.name} {navalActor}.", DebugUtils.DebugType.Verbose);
+                            DebugUtils.DebugLogMsg($"Top actor is a Naval Actor {navalActor.name} {navalActor}.", DebugUtils.DebugType.Verbose);
                             _cursorController.SetSelectedActor(navalActor);
                             // ReSharper disable once TailRecursiveCall
                             ChangeStateTo(CursorState.ShowingOptions);
@@ -102,8 +114,14 @@ namespace Core
 
                     break;
                 case CursorState.ShowingOptions:
+                    _cursorController.ShowOptionsForSelectedActor();
                     break;
                 case CursorState.Targeting:
+                    break;
+                case CursorState.Moving:
+                    _cursorController.ToggleActive(true);
+                    break;
+                case CursorState.OnTheMove:
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
