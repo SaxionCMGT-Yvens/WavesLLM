@@ -235,78 +235,81 @@ namespace Grid
             return pathFromTo;
         }
 
-        public List<GridUnit> GetManhattanPathFromToRecursive(Vector2Int from, Vector2Int to, int maxSteps, bool checkBlocked = false)
+        public List<GridUnit> GetManhattanPathFromToRecursive(Vector2Int from, Vector2Int to, int maxSteps,
+            bool checkBlocked = false)
         {
             var pathFromTo = new List<GridUnit>();
             var visited = new HashSet<Vector2Int>();
-            var success = FindPathRecursive(from, to, checkBlocked, pathFromTo, visited, maxSteps);
-    
+            var success = FindPathRecursive(from, maxSteps);
+
             if (success)
             {
                 return pathFromTo;
             }
+
             DebugUtils.DebugLogMsg($"Could not find path from {from} to {to}.", DebugUtils.DebugType.Error);
             return new List<GridUnit>();
-            
-            bool FindPathRecursive(Vector2Int current, Vector2Int target, bool checkBlockedUnit, 
-                List<GridUnit> path, HashSet<Vector2Int> visitedHash, int remainingSteps)
+
+            bool FindPathRecursive(Vector2Int current, int remainingSteps)
             {
                 // Add current position to path
                 var currentUnit = _grid[current.x, current.y];
-                path.Add(currentUnit);
-                visitedHash.Add(current);
-                DebugUtils.DebugLogMsg($"FPR Current step [{currentUnit.Index()}] [Path Size: {path.Count}, Hash Size: {visitedHash.Count}] [Steps: {remainingSteps}].", DebugUtils.DebugType.Temporary);
-    
+                pathFromTo.Add(currentUnit);
+                visited.Add(current);
+                DebugUtils.DebugLogMsg(
+                    $"FPR Current step [{currentUnit.Index()}] [Path Size: {pathFromTo.Count}, Hash Size: {visited.Count}] [Steps: {remainingSteps}].",
+                    DebugUtils.DebugType.Temporary);
+
                 // Check if we reached target
-                if (current == target)
+                if (current == to)
                 {
                     return true;
                 }
-    
+
                 // Check if we have steps remaining
                 if (remainingSteps < 0)
                 {
-                    path.RemoveAt(path.Count - 1); // Backtrack
+                    pathFromTo.RemoveAt(pathFromTo.Count - 1); // Backtrack
                     return false;
                 }
-    
+
                 // Try both X and Y directions
-                Vector2Int[] moves = {
-                    new(current.x != target.x ? (target.x > current.x ? 1 : -1) : 0, 0), // X move
-                    new(0, current.y != target.y ? (target.y > current.y ? 1 : -1) : 0)  // Y move
+                Vector2Int[] moves =
+                {
+                    new(current.x != to.x ? (to.x > current.x ? 1 : -1) : 0, 0), // X move
+                    new(0, current.y != to.y ? (to.y > current.y ? 1 : -1) : 0) // Y move
                 };
 
                 // Try both moves in a smart order (prioritize the direction with larger difference)
-                var xFirst = Mathf.Abs(target.x - current.x) > Mathf.Abs(target.y - current.y);
-                if (TryMove(current, xFirst ? moves[0] : moves[1], target, checkBlockedUnit, path, visitedHash, remainingSteps))
+                var xFirst = Mathf.Abs(to.x - current.x) > Mathf.Abs(to.y - current.y);
+                if (TryMove(current, xFirst ? moves[0] : moves[1], remainingSteps))
                     return true;
-                if (TryMove(current, xFirst ? moves[1] : moves[0], target, checkBlockedUnit, path, visitedHash, remainingSteps))
+                if (TryMove(current, xFirst ? moves[1] : moves[0], remainingSteps))
                     return true;
 
                 // If no moves work, backtrack
-                path.RemoveAt(path.Count - 1);
+                pathFromTo.RemoveAt(pathFromTo.Count - 1);
                 return false;
             }
-            
-            bool TryMove(Vector2Int current, Vector2Int move, Vector2Int target, bool checkBlockedUnit,
-                List<GridUnit> path, HashSet<Vector2Int> visitedHash, int remainingSteps)
+
+            bool TryMove(Vector2Int current, Vector2Int move, int remainingSteps)
             {
                 if (move == Vector2Int.zero) return false;
-    
+
                 var next = current + move;
                 // Check if move is valid
-                if (!GetValidGridPosition(next, out var validPosition) || 
-                    visitedHash.Contains(validPosition) ||
-                    (checkBlockedUnit && _grid[validPosition.x, validPosition.y].Type() == GridUnitType.Blocked))
+                if (!GetValidGridPosition(next, out var validPosition) ||
+                    visited.Contains(validPosition) ||
+                    (checkBlocked && _grid[validPosition.x, validPosition.y].Type() == GridUnitType.Blocked))
                 {
                     return false;
                 }
-    
+
                 // Recursively try this path
-                return FindPathRecursive(validPosition, target, checkBlockedUnit, path, visitedHash, remainingSteps - 1);
+                return FindPathRecursive(validPosition, remainingSteps - 1);
             }
         }
-        
+
         public Sprite GetSpriteForType(GridUnitType type)
         {
             return type switch
