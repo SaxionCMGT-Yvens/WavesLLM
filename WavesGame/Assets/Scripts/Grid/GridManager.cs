@@ -153,13 +153,183 @@ namespace Grid
             }
         }
 
-        public List<GridUnit> GetGridUnitsInRadius(Vector2Int position, int radius)
+        public List<GridUnit> GetGridUnitsForMoveType(GridMoveType moveType, Vector2Int position, int distance,
+            int deadZone = 0)
+        {
+            var units = new List<GridUnit>();
+            switch (moveType)
+            {
+                case GridMoveType.Cross:
+                    GridMoveUp();
+                    GridMoveDown();
+                    GridMoveLeft();
+                    GridMoveRight();
+                    break;
+                case GridMoveType.Area:
+                    units.AddRange(GetGridUnitsInRadius(position, distance, deadZone));
+                    break;
+                case GridMoveType.Diagonal:
+                    GridUnitsInDiagonal();
+                    break;
+                case GridMoveType.Up:
+                    GridMoveUp();
+                    break;
+                case GridMoveType.Down:
+                    GridMoveDown();
+                    break;
+                case GridMoveType.Left:
+                    GridMoveLeft();
+                    break;
+                case GridMoveType.Right:
+                    GridMoveRight();
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(moveType), moveType, null);
+            }
+
+            return units;
+
+            void GridUnitsInDiagonal()
+            {
+                DiagonalMove(1, 1);
+                DiagonalMove(-1, 1);
+                DiagonalMove(-1, -1);
+                DiagonalMove(1, -1);
+                return;
+
+                void DiagonalMove(int signX, int signY)
+                {
+                    var to = new Vector2Int(position.x + signX * distance, position.y + signY * distance);
+                    GetValidGridPosition(to, out var validTo);
+                    var steps = Mathf.Abs(validTo.x - position.x);
+                    while (steps > 0)
+                    {
+                        units.Add(_grid[validTo.x, validTo.y]);
+                        --steps;
+                        validTo.x -= signX;
+                        validTo.y -= signY;
+                    }
+                }
+            }
+
+            List<GridUnit> GridUnitsInLine(Vector2Int from, Vector2Int to, int validDistance)
+            {
+                var result = new List<GridUnit>();
+                if (validDistance <= 0) return result;
+                var numberOfUnits = validDistance - deadZone;
+                if (numberOfUnits <= 0) return result;
+
+                //Start from the back to skip the deadZone
+                var current = to;
+                while (numberOfUnits > 0)
+                {
+                    result.Add(_grid[current.x, current.y]);
+                    --numberOfUnits;
+                    if (current.x != from.x)
+                    {
+                        current.x += (from.x < current.x) ? -1 : 1;
+                    }
+                    else
+                    {
+                        current.y += (from.y < current.y) ? -1 : 1;
+                    }
+                }
+
+                return result;
+            }
+
+            void GridMoveUp()
+            {
+                var upPosition = new Vector2Int(position.x, position.y + distance);
+                GetValidGridPosition(upPosition, out var validUpPosition);
+                var validDistance = Mathf.Abs(validUpPosition.y - position.y);
+                units.AddRange(GridUnitsInLine(position, validUpPosition, validDistance));
+            }
+
+            void GridMoveDown()
+            {
+                var downPosition = new Vector2Int(position.x, position.y - distance);
+                GetValidGridPosition(downPosition, out var validDownPosition);
+                var validDistance = Mathf.Abs(position.y - validDownPosition.y);
+                units.AddRange(GridUnitsInLine(position, validDownPosition, validDistance));
+            }
+
+            void GridMoveLeft()
+            {
+                var leftPosition = new Vector2Int(position.x - distance, position.y);
+                GetValidGridPosition(leftPosition, out var validLeftPosition);
+                var validDistance = Mathf.Abs(position.x - validLeftPosition.x);
+                units.AddRange(GridUnitsInLine(position, validLeftPosition, validDistance));
+            }
+
+            void GridMoveRight()
+            {
+                var rightPosition = new Vector2Int(position.x + distance, position.y);
+                GetValidGridPosition(rightPosition, out var validRightPosition);
+                var validDistance = Mathf.Abs(validRightPosition.x - position.x);
+                units.AddRange(GridUnitsInLine(position, validRightPosition, validDistance));
+            }
+        }
+
+        public List<GridUnit> GetBresenhamLine(Vector2Int from, Vector2Int to)
+        {
+            var line = new List<GridUnit>();
+
+            var x0 = from.x;
+            var y0 = from.y;
+            var x1 = to.x;
+            var y1 = to.y;
+
+            var steep = Mathf.Abs(y1 - y0) > Mathf.Abs(x1 - x0);
+            if (steep)
+            {
+                Swap(ref x0, ref y0);
+                Swap(ref x1, ref y1);
+            }
+
+            if (x0 > x1)
+            {
+                Swap(ref x0, ref x1);
+                Swap(ref y0, ref y1);
+            }
+
+            var dx = x1 - x0;
+            var dy = Mathf.Abs(y1 - y0);
+            var error = dx / 2;
+            var yStep = (y0 < y1) ? 1 : -1;
+            var y = y0;
+
+            for (var x = x0; x <= x1; x++)
+            {
+                var point = steep ? new Vector2Int(y, x) : new Vector2Int(x, y);
+                if (GetValidGridPosition(point, out var validPosition))
+                {
+                    line.Add(_grid[validPosition.x, validPosition.y]);
+                }
+
+                error -= dy;
+                if (error >= 0) continue;
+                y += yStep;
+                error += dx;
+            }
+
+            return line;
+
+            void Swap(ref int a, ref int b)
+            {
+                (a, b) = (b, a);
+            }
+        }
+
+        public List<GridUnit> GetGridUnitsInRadius(Vector2Int position, int radius, int deadZone = 0)
         {
             var inRadius = new List<GridUnit>();
             GetValidGridPosition(position, out var validPosition);
             var worldPosition = _grid[validPosition.x, validPosition.y].transform.position;
             DebugUtils.DebugArea(worldPosition, radius);
             DebugUtils.DebugCircle(worldPosition, Color.white, radius);
+            DebugUtils.DebugCircle(worldPosition, Color.red, deadZone);
+
             for (var i = validPosition.x - radius; i <= validPosition.x + radius; i++)
             {
                 for (var j = validPosition.y - radius; j <= validPosition.y + radius; j++)
@@ -170,7 +340,7 @@ namespace Grid
                     var dx = i - validPosition.x;
                     var dy = j - validPosition.y;
                     var distance = Mathf.Sqrt(dx * dx + dy * dy);
-                    if (distance <= radius)
+                    if (distance <= radius && distance > deadZone)
                     {
                         inRadius.Add(_grid[i, j]);
                     }

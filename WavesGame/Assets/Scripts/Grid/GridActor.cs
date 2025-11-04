@@ -7,8 +7,21 @@ namespace Grid
 {
     public class GridActor : MonoBehaviour
     {
-        [SerializeField, ReadOnly] private GridUnit currentUnit;
+        [Header("Data")] [SerializeField] private int maxHealth;
+
+        [Header("References")] [SerializeField, ReadOnly]
+        private GridUnit currentUnit;
+
         [SerializeField] private bool blockGridUnit;
+
+        protected virtual void Start()
+        {
+            SetUnit(GridManager.GetSingleton().GetGridPosition(transform));
+            //Adjust position to match the grid precisely
+            var gridUnit = GetUnit();
+            transform.position = gridUnit.transform.position;
+            gridUnit.AddActor(this);
+        }
 
         public virtual void MoveTo(GridUnit unit, Action onFinishMoving, bool animate = false, float time = 0.5f)
         {
@@ -16,10 +29,7 @@ namespace Grid
 
             if (animate)
             {
-                transform.DOMove(unit.transform.position, time).OnComplete(() =>
-                {
-                    onFinishMoving?.Invoke();
-                });
+                transform.DOMove(unit.transform.position, time).OnComplete(() => { onFinishMoving?.Invoke(); });
             }
             else
             {
@@ -34,6 +44,7 @@ namespace Grid
             {
                 currentUnit.RemoveActor(this);
             }
+
             //Adding the actor to the unit also updates the actor's current unit
             unit.AddActor(this);
         }

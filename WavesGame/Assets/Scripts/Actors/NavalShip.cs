@@ -10,15 +10,6 @@ namespace Actors
     {
         [SerializeField] private NavalShipSo shipData;
 
-        private void Start()
-        {
-            SetUnit(GridManager.GetSingleton().GetGridPosition(transform));
-            //Adjust position to match the grid precisely
-            var gridUnit = GetUnit();
-            transform.position = gridUnit.transform.position;
-            gridUnit.AddActor(this);
-        }
-
         public override void MoveTo(GridUnit unit, Action onFinishMoving, bool animate = false, float time = 0.5f)
         {
             if (animate)
