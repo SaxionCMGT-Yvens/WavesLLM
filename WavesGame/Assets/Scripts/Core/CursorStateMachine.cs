@@ -41,13 +41,17 @@ namespace Core
                 case CursorState.Targeting:
                     if (_cursorController.TargetSelectedGridUnit(unit))
                     {
+                        var index = _currentGridUnit.Index();
+                        DebugUtils.DebugLogMsg($"Going back to position {index}.", DebugUtils.DebugType.Temporary);
+                        _cursorController.MoveToIndex(index);
                         ChangeStateTo(CursorState.Roaming);
                     }
                     break;
                 case CursorState.Moving:
                     if (_cursorController.MoveSelectedActorTo(unit))
                     {
-                        ChangeStateTo(CursorState.OnTheMove);    
+                        _currentGridUnit = unit;
+                        ChangeStateTo(CursorState.OnTheMove);
                     }
                     break;
                 case CursorState.OnTheMove:

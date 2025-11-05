@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UUtils.Editor;
@@ -8,13 +7,19 @@ namespace Core.Editor
     [CustomEditor(typeof(CursorController))]
     public class CursorControllerEditor : UnityEditor.Editor
     {
-        private static readonly Dictionary<CursorState, Color> StateColors = new()
+        private static Color GetStateColor(CursorState state)
         {
-            [CursorState.Roaming] = Color.black,
-            [CursorState.SelectGridUnit] = Color.green,
-            [CursorState.ShowingOptions] = new Color(0.2f, 0.4f, 1f),
-            [CursorState.Targeting] = Color.red
-        };
+            return state switch
+            {
+                CursorState.Roaming => Color.black,
+                CursorState.SelectGridUnit => Color.green,
+                CursorState.ShowingOptions => Color.blue,
+                CursorState.Moving => Color.blueViolet,
+                CursorState.OnTheMove => Color.aquamarine,
+                CursorState.Targeting => Color.red,
+                _ => Color.white
+            };
+        }
 
         public override void OnInspectorGUI()
         {
@@ -24,7 +29,7 @@ namespace Core.Editor
             {
                 normal =
                 {
-                    textColor = StateColors[currentState]
+                    textColor = GetStateColor(currentState)
                 }
             };
             GUILayout.Label($"Current State: {currentState.ToString()}", coloredStyle);

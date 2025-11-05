@@ -33,7 +33,6 @@ namespace Actors
             DebugUtils.DebugLogMsg($"Naval {name} being destroyed in {totalTime}.", DebugUtils.DebugType.Temporary);
             currentUnit.RemoveActor(this);
             yield return new WaitForSeconds(totalTime);
-            yield return new WaitUntil(() => destroyParticles == null || destroyParticles.isStopped);
             DebugUtils.DebugLogMsg($"Timer is up for {name}!", DebugUtils.DebugType.Temporary);
             Destroy(gameObject);
         }

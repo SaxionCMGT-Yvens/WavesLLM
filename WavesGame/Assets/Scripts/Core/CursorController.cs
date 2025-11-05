@@ -77,7 +77,7 @@ namespace Core
             MoveToIndex(newIndex);
         }
 
-        private void MoveToIndex(Vector2Int newIndex)
+        public void MoveToIndex(Vector2Int newIndex)
         {
             if (_movingAnimation) return;
             if (newIndex.x == index.x && newIndex.y == index.y) return;
