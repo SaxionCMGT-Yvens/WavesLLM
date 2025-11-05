@@ -9,15 +9,13 @@ namespace Grid
     public class GridActor : MonoBehaviour
     {
         [Header("Data")] [SerializeField] private int maxHealth;
+        [SerializeField, ReadOnly] private int currentHealth;
 
         [Header("References")] [SerializeField, ReadOnly]
         protected GridUnit currentUnit;
 
         [SerializeField] private SpriteRenderer targetRenderer;
-
         [SerializeField] private bool blockGridUnit;
-
-        private int _currentHealth;
 
         protected virtual void Start()
         {
@@ -26,13 +24,13 @@ namespace Grid
             var gridUnit = GetUnit();
             transform.position = gridUnit.transform.position;
             gridUnit.AddActor(this);
-            _currentHealth = maxHealth;
+            currentHealth = maxHealth;
         }
 
         public virtual void TakeDamage(int damage)
         {
-            _currentHealth -= Mathf.Clamp(_currentHealth - damage, 0, maxHealth);
-            if (_currentHealth <= 0)
+            currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
+            if (currentHealth <= 0)
             {
                 DestroyActor();
             }
@@ -40,7 +38,6 @@ namespace Grid
 
         protected virtual void DestroyActor()
         {
-            //TODO
             DebugUtils.DebugLogMsg($"Destroying actor {name}.", DebugUtils.DebugType.System);
             currentUnit.RemoveActor(this);
             Destroy(gameObject);
@@ -85,5 +82,7 @@ namespace Grid
         public bool BlockGridUnit => blockGridUnit;
         public GridUnit GetUnit() => currentUnit;
         public void SetUnit(GridUnit unit) => currentUnit = unit;
+        public int GetMaxHealth() => maxHealth;
+        public int GetCurrentHealth() => currentHealth;
     }
 }

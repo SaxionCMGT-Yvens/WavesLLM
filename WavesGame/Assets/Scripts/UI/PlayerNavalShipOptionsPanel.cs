@@ -69,8 +69,7 @@ namespace UI
         private bool CheckValidState()
         {
             if (!gameObject.activeInHierarchy) return false;
-            if (_introAnimation) return false;
-            return true;
+            return !_introAnimation;
         }
     }
 }
