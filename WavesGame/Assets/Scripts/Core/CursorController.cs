@@ -162,6 +162,26 @@ namespace Core
 
         public bool TargetSelectedGridUnit(GridUnit gridUnit)
         {
+            var targetActor = gridUnit.GetActor();
+            if (targetActor == null)
+            {
+                DebugUtils.DebugLogMsg($"Grid unit {gridUnit.Index()} has no valid target actor.", DebugUtils.DebugType.Error);
+                return false;
+            }
+            if (_selectedActor == null)
+            {
+                DebugUtils.DebugLogMsg($"Selected actor {index} is not valid (null).", DebugUtils.DebugType.Error);
+                return false;
+            }
+            if (_selectedActor is not NavalShip navalShip)
+            {
+                DebugUtils.DebugLogMsg($"Targeting selected actor is not a Naval Ship {_selectedActor.name}.", DebugUtils.DebugType.Error);
+                return false;
+            }
+            
+            // var damage = navalShip.NavalCannon.
+            
+            
             return false;
         }
         

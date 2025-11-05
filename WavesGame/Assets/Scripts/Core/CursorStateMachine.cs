@@ -39,7 +39,6 @@ namespace Core
                 case CursorState.ShowingOptions:
                     break;
                 case CursorState.Targeting:
-                    //TODO when the ship fires at a target position
                     if (_cursorController.TargetSelectedGridUnit(unit))
                     {
                         ChangeStateTo(CursorState.Roaming);
