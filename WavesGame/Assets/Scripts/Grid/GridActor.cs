@@ -2,6 +2,7 @@ using System;
 using DG.Tweening;
 using NaughtyAttributes;
 using UnityEngine;
+using UUtils;
 
 namespace Grid
 {
@@ -10,11 +11,13 @@ namespace Grid
         [Header("Data")] [SerializeField] private int maxHealth;
 
         [Header("References")] [SerializeField, ReadOnly]
-        private GridUnit currentUnit;
+        protected GridUnit currentUnit;
 
         [SerializeField] private SpriteRenderer targetRenderer;
 
         [SerializeField] private bool blockGridUnit;
+
+        private int _currentHealth;
 
         protected virtual void Start()
         {
@@ -23,6 +26,24 @@ namespace Grid
             var gridUnit = GetUnit();
             transform.position = gridUnit.transform.position;
             gridUnit.AddActor(this);
+            _currentHealth = maxHealth;
+        }
+
+        public virtual void TakeDamage(int damage)
+        {
+            _currentHealth -= Mathf.Clamp(_currentHealth - damage, 0, maxHealth);
+            if (_currentHealth <= 0)
+            {
+                DestroyActor();
+            }
+        }
+
+        protected virtual void DestroyActor()
+        {
+            //TODO
+            DebugUtils.DebugLogMsg($"Destroying actor {name}.", DebugUtils.DebugType.System);
+            currentUnit.RemoveActor(this);
+            Destroy(gameObject);
         }
 
         public virtual void MoveTo(GridUnit unit, Action onFinishMoving, bool animate = false, float time = 0.5f)
@@ -60,7 +81,7 @@ namespace Grid
         {
             targetRenderer.gameObject.SetActive(false);
         }
-        
+
         public bool BlockGridUnit => blockGridUnit;
         public GridUnit GetUnit() => currentUnit;
         public void SetUnit(GridUnit unit) => currentUnit = unit;

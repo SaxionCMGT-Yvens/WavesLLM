@@ -160,6 +160,20 @@ namespace Core
             _stateMachine.ChangeStateTo(CursorState.Targeting);
         }
 
+        public void HidAttackArea()
+        {
+            cursorAnimator.SetBool(Select, false);
+            _walkableUnits.ForEach(unit =>
+            {
+                unit.HideVisuals();
+                var unitActor = unit.GetActor();
+                if (unitActor == null) return;
+                unitActor.HideTarget();
+            });
+            
+            ResetWalkableUnits();
+        }
+
         public bool TargetSelectedGridUnit(GridUnit gridUnit)
         {
             var targetActor = gridUnit.GetActor();
@@ -173,16 +187,17 @@ namespace Core
                 DebugUtils.DebugLogMsg($"Selected actor {index} is not valid (null).", DebugUtils.DebugType.Error);
                 return false;
             }
-            if (_selectedActor is not NavalShip navalShip)
+            if (_selectedActor is not NavalShip selectedNavalShip)
             {
                 DebugUtils.DebugLogMsg($"Targeting selected actor is not a Naval Ship {_selectedActor.name}.", DebugUtils.DebugType.Error);
                 return false;
             }
-            
-            // var damage = navalShip.NavalCannon.
-            
-            
-            return false;
+
+            var damage = selectedNavalShip.NavalCannon.GetCannonSo.damage;
+            targetActor.TakeDamage(damage);
+            // Camera shake and other effects
+            HidAttackArea();
+            return true;
         }
         
         public bool MoveSelectedActorTo(GridUnit gridUnit)
@@ -215,7 +230,7 @@ namespace Core
         public void ResetWalkableUnits()
         {
             if (_walkableUnits == null) return;
-            _walkableUnits.ForEach(unit => { unit.HideWalkingVisuals(); });
+            _walkableUnits.ForEach(unit => { unit.HideVisuals(); });
             _walkableUnits = null;
         }
 

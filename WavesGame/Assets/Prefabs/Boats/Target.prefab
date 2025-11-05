@@ -168,7 +168,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1261158079
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 868371405, guid: d760b04eb1fe245c5b6351ceec5025dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -235,6 +235,7 @@ Transform:
   m_Children:
   - {fileID: 6298798559485449230}
   - {fileID: 286423293395657509}
+  - {fileID: 1601768931801035406}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1553922647230076348
@@ -249,8 +250,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f6704d0dd4245dba1df34ae88315205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.NavalTarget
-  maxHealth: 0
+  maxHealth: 5
   currentUnit: {fileID: 0}
   targetRenderer: {fileID: 7051062661897131671}
   blockGridUnit: 1
+  damageParticles: {fileID: 841198641422027885}
   navalType: 2
+--- !u!1001 &4444319291222323201
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 812498209139822831}
+    m_Modifications:
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380704931792566954, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_Name
+      value: ExplosionParticle
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380704931792566954, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+--- !u!198 &841198641422027885 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3891652601979649132, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+  m_PrefabInstance: {fileID: 4444319291222323201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1601768931801035406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
+  m_PrefabInstance: {fileID: 4444319291222323201}
+  m_PrefabAsset: {fileID: 0}

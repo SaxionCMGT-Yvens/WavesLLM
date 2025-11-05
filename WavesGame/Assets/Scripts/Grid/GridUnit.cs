@@ -38,7 +38,7 @@ namespace Grid
             spriteRenderer.sprite = GridManager.GetSingleton().GetSpriteForType(GridUnitType.Moveable);
         }
 
-        public void HideWalkingVisuals()
+        public void HideVisuals()
         {
             spriteRenderer.gameObject.SetActive(false);
         }

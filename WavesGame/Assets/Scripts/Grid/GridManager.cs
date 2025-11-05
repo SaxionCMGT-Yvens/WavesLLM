@@ -322,7 +322,7 @@ namespace Grid
             }
         }
 
-        public List<GridUnit> GetGridUnitsInRadius(Vector2Int position, int radius, int deadZone = 0)
+        private List<GridUnit> GetGridUnitsInRadius(Vector2Int position, int radius, int deadZone = 0)
         {
             var inRadius = new List<GridUnit>();
             GetValidGridPosition(position, out var validPosition);
