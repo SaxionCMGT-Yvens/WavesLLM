@@ -237,6 +237,7 @@ Transform:
   - {fileID: 8574182613018250587}
   - {fileID: 3389130789178797124}
   - {fileID: 3509000403946617759}
+  - {fileID: 7325885963193541713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8660910831640428757
@@ -252,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.NavalShip
   maxHealth: 5
+  currentHealth: 0
   currentUnit: {fileID: 0}
   targetRenderer: {fileID: 6804080615908462149}
   blockGridUnit: 1
@@ -343,4 +345,70 @@ ParticleSystem:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3141195329047167631, guid: 052f3e1c3f45f4664abc731fc2ed358d, type: 3}
   m_PrefabInstance: {fileID: 1956178266633648400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2941495981177737321
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1683268027249446823}
+    m_Modifications:
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6008641563553264187, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_Name
+      value: HealthBarUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8900933477411286583, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+--- !u!4 &7325885963193541713 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5582367296463926328, guid: 08b7ee5a32cd640bda6da1dd9de76b68, type: 3}
+  m_PrefabInstance: {fileID: 2941495981177737321}
   m_PrefabAsset: {fileID: 0}

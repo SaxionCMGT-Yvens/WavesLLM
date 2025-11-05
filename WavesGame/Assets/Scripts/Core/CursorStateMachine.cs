@@ -34,9 +34,8 @@ namespace Core
                     _currentGridUnit = unit;
                     ChangeStateTo(CursorState.SelectGridUnit);
                     break;
-                case CursorState.SelectGridUnit:
-                    break;
-                case CursorState.ShowingOptions:
+                case CursorState.SelectGridUnit: //Nothing to do
+                case CursorState.ShowingOptions: //Nothing to do
                     break;
                 case CursorState.Targeting:
                     if (_cursorController.TargetSelectedGridUnit(unit))
