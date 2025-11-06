@@ -190,6 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5582367296463926328}
   - component: {fileID: 8900933477411286583}
+  - component: {fileID: 7889137014918674683}
   m_Layer: 0
   m_Name: HealthBarUI
   m_TagString: Untagged
@@ -272,3 +273,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7889137014918674683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6008641563553264187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667c7278452f042969e87cdeee58915b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.FillBar
+  fillBar: {fileID: 7206740234084185473}
+  fillBarMaterial: {fileID: 0}
+  materialProperty: _FillFactor

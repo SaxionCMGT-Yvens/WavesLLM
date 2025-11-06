@@ -18,10 +18,10 @@ namespace UI
             fillBarMaterial = fillBar.material;
         }
 
-        public void SetFillFactor(float factor)
+        public void SetFillFactor(float factor, float speedFactor)
         {
             _animateMaterial?.Kill();
-            _animateMaterial = AnimateMaterialProperty.AnimateProperty(fillBarMaterial, materialProperty, factor, 0.2f);
+            _animateMaterial = AnimateMaterialProperty.AnimateProperty(fillBarMaterial, materialProperty, factor, 1.0f * speedFactor);
         }
     }
 }
