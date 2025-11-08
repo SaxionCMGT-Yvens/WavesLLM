@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Core;
 using DG.Tweening;
 using DG.Tweening.Core;
@@ -14,6 +15,7 @@ namespace UI
         [SerializeField] private CursorController cursorController;
         [SerializeField] private RectTransform selfRectTransform;
         [SerializeField] private Button initialButton;
+        [SerializeField] private List<Button> turnButtons;
 
         private TweenerCore<Vector3, Vector3, VectorOptions> _showUpTween;
         private bool _introAnimation;
@@ -24,6 +26,12 @@ namespace UI
             AssessUtils.CheckRequirement(ref selfRectTransform, this);
         }
 
+        public void ShowOptions(bool currentActor)
+        {
+            turnButtons.ForEach(b => b.interactable = currentActor);
+            gameObject.SetActive(true);
+        }
+        
         private void OnEnable()
         {
             selfRectTransform.localScale = Vector3.zero;
@@ -64,6 +72,12 @@ namespace UI
         {
             if (!CheckValidState()) return;
             cursorController.CancelSelectedActor();
+        }
+
+        public void EndTurn()
+        {
+            if (!CheckValidState()) return;
+            LevelController.GetSingleton().EndTurnForCurrentActor();
         }
 
         private bool CheckValidState()

@@ -1,4 +1,5 @@
 using System.Collections;
+using Core;
 using Grid;
 using UI;
 using UnityEngine;
@@ -16,6 +17,12 @@ namespace Actors
         private void Awake()
         {
             AssessUtils.CheckRequirement(ref healthBar, this);
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            LevelController.GetSingleton().AddLevelActor(this);
         }
 
         public override void TakeDamage(int damage)

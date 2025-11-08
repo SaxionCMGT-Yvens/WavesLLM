@@ -1,4 +1,6 @@
+using NaughtyAttributes;
 using UnityEngine;
+using UUtils;
 
 namespace Actors
 {
@@ -7,5 +9,15 @@ namespace Actors
     {
         public int movementRadius;
         public int movementStepsPerTurn;
+        [ShowAssetPreview] public Sprite shipSprite;
+        [Header("Stats")] public NavalActorStats stats;
+        public string initiativeDie;
+
+        public int RollInitiative()
+        {
+            return stats.Speed + DiceHelper.RollDiceFromString(initiativeDie);
+        }
+        
+        //TODO add a validation for the initiativeDie
     }
 }

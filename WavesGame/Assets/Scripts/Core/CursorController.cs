@@ -10,7 +10,7 @@ using UUtils;
 
 namespace Core
 {
-    public class CursorController : MonoBehaviour
+    public class CursorController : WeakSingleton<CursorController>
     {
         [Header("Data")] [SerializeField, ReadOnly]
         private Vector2Int index;
@@ -30,8 +30,9 @@ namespace Core
 
         private static readonly int Select = Animator.StringToHash("Select");
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             AssessUtils.CheckRequirement(ref cursorAnimator, this);
         }
 
@@ -110,18 +111,16 @@ namespace Core
             switch (type)
             {
                 case NavalActorType.Player:
-                    if (_selectedActor is NavalShip navalShip)
-                    {
-                        var data = navalShip.ShipData;
-                        ResetWalkableUnits();
-                        _walkableUnits = GridManager.GetSingleton()
-                            .GetGridUnitsInRadiusManhattan(index, data.movementRadius);
-                        _walkableUnits.ForEach(unit => { unit.DisplayWalkingVisuals(); });
-                    }
-
-                    navalShipOptionsPanel.gameObject.SetActive(true);
+                {
+                    ShowWalkablePathForUnit();
+                    //TODO
+                    var isCurrentTurnPlayer = LevelController.GetSingleton().IsCurrentActor(_selectedActor);
+                    navalShipOptionsPanel.ShowOptions(isCurrentTurnPlayer); 
+                }
                     break;
                 case NavalActorType.Enemy:
+                    ShowWalkablePathForUnit();
+                    navalShipOptionsPanel.ShowOptions(false); 
                     break;
                 case NavalActorType.Collectable:
                     break;
@@ -131,6 +130,18 @@ namespace Core
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
+            }
+
+            return;
+
+            void ShowWalkablePathForUnit()
+            {
+                if (_selectedActor is not NavalShip navalShip) return;
+                var data = navalShip.ShipData;
+                ResetWalkableUnits();
+                _walkableUnits = GridManager.GetSingleton()
+                    .GetGridUnitsInRadiusManhattan(index, data.movementRadius);
+                _walkableUnits.ForEach(unit => { unit.DisplayWalkingVisuals(); });
             }
         }
 
