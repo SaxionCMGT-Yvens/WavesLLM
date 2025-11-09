@@ -28,13 +28,15 @@ namespace Actors
 
         public override void TakeDamage(int damage)
         {
+            //TODO replace MaxValue with some more controlled value
+            damage = Mathf.Clamp(damage, 0, int.MaxValue);
             if (damage > 0)
             {
                 base.TakeDamage(damage);
                 var ratio = GetHealthRatio();
                 healthBar.SetFillFactor(ratio, 1 - ratio);
                 damageParticles.gameObject.SetActive(true);
-                damageParticles.Play();    
+                damageParticles.Play();
             }
             else
             {
@@ -50,16 +52,23 @@ namespace Actors
 
         private IEnumerator DestroyCoroutine()
         {
+            //Give one extra frame to wait for the damage particles to play before executing the death particles.
+            yield return new WaitForEndOfFrame();
+            DebugUtils.DebugLogMsg(
+                $"Destroy {name} is waiting for particles to destroy itself... [{!damageParticles.gameObject.activeInHierarchy}, {damageParticles.isStopped}]",
+                DebugUtils.DebugType.Verbose);
+            yield return new WaitUntil(() =>
+                !damageParticles.gameObject.activeInHierarchy && damageParticles.isStopped);
             var particles = Instantiate(destroyParticles, transform.position, Quaternion.identity);
             particles.Play();
             var totalTime = particles.main.duration;
-            DebugUtils.DebugLogMsg($"Naval {name} being destroyed in {totalTime}.", DebugUtils.DebugType.Temporary);
+            DebugUtils.DebugLogMsg($"Naval {name} being destroyed in {totalTime}.", DebugUtils.DebugType.Verbose);
             currentUnit.RemoveActor(this);
             yield return new WaitForSeconds(totalTime);
-            DebugUtils.DebugLogMsg($"Timer is up for {name}!", DebugUtils.DebugType.Temporary);
+            DebugUtils.DebugLogMsg($"Destroy {name} game object!", DebugUtils.DebugType.Verbose);
             Destroy(gameObject);
         }
-        
+
         public NavalActorType NavalType => navalType;
     }
 }

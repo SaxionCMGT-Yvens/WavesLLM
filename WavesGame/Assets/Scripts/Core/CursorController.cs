@@ -115,12 +115,12 @@ namespace Core
                     ShowWalkablePathForUnit();
                     //TODO
                     var isCurrentTurnPlayer = LevelController.GetSingleton().IsCurrentActor(_selectedActor);
-                    navalShipOptionsPanel.ShowOptions(isCurrentTurnPlayer); 
+                    navalShipOptionsPanel.ShowOptions(isCurrentTurnPlayer);
                 }
                     break;
                 case NavalActorType.Enemy:
                     ShowWalkablePathForUnit();
-                    navalShipOptionsPanel.ShowOptions(false); 
+                    navalShipOptionsPanel.ShowOptions(false);
                     break;
                 case NavalActorType.Collectable:
                     break;
@@ -180,7 +180,7 @@ namespace Core
                 if (unitActor == null) return;
                 unitActor.HideTarget();
             });
-            
+
             ResetWalkableUnits();
         }
 
@@ -189,17 +189,21 @@ namespace Core
             var targetActor = gridUnit.GetActor();
             if (targetActor == null)
             {
-                DebugUtils.DebugLogMsg($"Grid unit {gridUnit.Index()} has no valid target actor.", DebugUtils.DebugType.Error);
+                DebugUtils.DebugLogMsg($"Grid unit {gridUnit.Index()} has no valid target actor.",
+                    DebugUtils.DebugType.Error);
                 return false;
             }
+
             if (_selectedActor == null)
             {
                 DebugUtils.DebugLogMsg($"Selected actor {index} is not valid (null).", DebugUtils.DebugType.Error);
                 return false;
             }
+
             if (_selectedActor is not NavalShip selectedNavalShip)
             {
-                DebugUtils.DebugLogMsg($"Targeting selected actor is not a Naval Ship {_selectedActor.name}.", DebugUtils.DebugType.Error);
+                DebugUtils.DebugLogMsg($"Targeting selected actor is not a Naval Ship {_selectedActor.name}.",
+                    DebugUtils.DebugType.Error);
                 return false;
             }
 
@@ -209,9 +213,24 @@ namespace Core
             HideAttackArea();
             return true;
         }
-        
+
+        /// <summary>
+        /// Move to the given GridUnit.
+        /// Checks if the movement is valid by either checking if the movement is towards the GridUnit the Actor is already at,
+        /// and also check if the given GridUnit is not Blocked and belongs to the walkable list.
+        /// </summary>
+        /// <param name="gridUnit"></param>
+        /// <returns>True if the movement is done. False if there is no movement (moving to the current grid unit) or the
+        /// movement is invalid (blocked or outside the walkable list).</returns>
         public bool MoveSelectedActorTo(GridUnit gridUnit)
         {
+            if (gridUnit.Equals(_selectedActor.GetUnit()))
+            {
+                DebugUtils.DebugLogMsg($"{name} moving to its own position. No movement done.",
+                    DebugUtils.DebugType.Verbose);
+                return false;
+            }
+
             if (gridUnit.Type() != GridUnitType.Blocked && _walkableUnits.Contains(gridUnit))
             {
                 _selectedActor.MoveTo(gridUnit, () => { _stateMachine.ChangeStateTo(CursorState.ShowingOptions); },

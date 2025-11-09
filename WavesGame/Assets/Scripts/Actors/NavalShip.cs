@@ -30,7 +30,6 @@ namespace Actors
         public override void TakeDamage(int damage)
         {
             var damageTaken = damage - shipData.stats.sturdiness;
-            damageTaken = Mathf.Clamp(damageTaken, 0, int.MaxValue); //TODO replace int.MaxValue with some more controlled value
             DebugUtils.DebugLogMsg($"{name} attacked with {damage}. Sturdiness is {shipData.stats.sturdiness}. Damage taken was {damageTaken}.", DebugUtils.DebugType.Temporary);
             base.TakeDamage(damageTaken);
         }
