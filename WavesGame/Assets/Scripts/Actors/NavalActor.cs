@@ -48,6 +48,12 @@ namespace Actors
         protected override void DestroyActor()
         {
             StartCoroutine(DestroyCoroutine());
+            NotifyLevelController();
+        }
+
+        protected virtual void NotifyLevelController()
+        {
+            LevelController.GetSingleton().NotifyDestroyedActor(this);
         }
 
         private IEnumerator DestroyCoroutine()

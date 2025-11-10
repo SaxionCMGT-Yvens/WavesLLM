@@ -1,5 +1,6 @@
 using System;
 using Actors.Cannon;
+using Core;
 using DG.Tweening;
 using Grid;
 using UnityEngine;
@@ -20,6 +21,11 @@ namespace Actors
             //Reset turn variables
             _actions = shipData.stats.spirit.Two;
             _stepsAvailable = shipData.stats.speed.Two;
+        }
+
+        public void EndTurn()
+        {
+            _actions = 0;
         }
         
         public void RollInitiative()
@@ -71,11 +77,17 @@ namespace Actors
                 onFinishMoving?.Invoke();
             }
         }
+        
+        protected override void NotifyLevelController()
+        {
+            LevelController.GetSingleton().NotifyDestroyedActor(this);
+        }
 
         public NavalShipSo ShipData => shipData;
         public BaseCannon NavalCannon => navalCannon;
         public int RemainingSteps => _stepsAvailable;
         public int Initiative { get; private set; }
+        public int ActionsLeft => _actions;
 
         public int CompareTo(NavalShip other)
         {

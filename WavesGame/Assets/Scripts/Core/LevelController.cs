@@ -41,21 +41,56 @@ namespace Core
             levelActionableActor.ForEach(AddLevelActorToTurnBar);
             
             //Start level
-            foreach (var turnUI in actorTurnUIs)
+            //TODO check! ships being destroyed during the iteration.
+
+            var enumerator = levelActionableActor.GetEnumerator();
+            var continueLevel = true;
+            while (continueLevel)
             {
-                _endTurn = false;
-                turnUI.ToggleAvailability(true);
-                //TODO allow actor to act
-                _currentActor = turnUI.NavalShip;
-                if (_currentActor is NavalShip navalShip)
+                //There are no actors left. Finish the level cycle.
+                if (actorTurnUIs.Count == 0)
                 {
-                    navalShip.StartTurn();
+                    continueLevel = false;
+                    continue;
                 }
-                yield return new WaitUntil(() => _endTurn);
-                turnUI.ToggleAvailability(false);
+                
+                if (enumerator.MoveNext())
+                {
+                    _currentActor = enumerator.Current;
+                    _endTurn = false;
+                    if (_currentActor is NavalShip navalShip)
+                    {
+                        var turnUI = GetActorTurnUI(navalShip);
+                        turnUI.ToggleAvailability(true);
+                        navalShip.StartTurn();
+                        yield return new WaitUntil(() => _endTurn);
+                        //Check if the naval ship was not destroyed during its own turn.
+                        if (navalShip == null) continue;
+                        navalShip.EndTurn();    
+                        //TODO check if this is necessary of it maybe this has been destroyed already
+                        turnUI.ToggleAvailability(false);
+                    }
+                    else
+                    {
+                        yield return new WaitUntil(() => _endTurn);    
+                    }
+                    
+                }
+                else
+                {
+                    enumerator.Dispose();
+                    //If there are no more enumerators ahead, then start from the beginning.
+                    enumerator = levelActionableActor.GetEnumerator();
+                }
             }
+            enumerator.Dispose();
+            
+            //TODO Level ended
         }
 
+        /// <summary>
+        /// Allows the LevelController to continue.
+        /// </summary>
         public void EndTurnForCurrentActor()
         {
             _endTurn = true;
@@ -94,6 +129,34 @@ namespace Core
         public bool IsCurrentActor(NavalActor navalActor)
         {
             return _currentActor.Equals(navalActor);
+        }
+
+        public void NotifyDestroyedActor(NavalActor navalActor)
+        {
+            //TODO logic for a generic actor being destroyed
+            DebugUtils.DebugLogMsg($"Naval Actor {navalActor.name} notified Level Controller of its destruction.", DebugUtils.DebugType.Verbose);
+        }
+
+        public void NotifyDestroyedActor(NavalShip navalShip)
+        {
+            if (_currentActor.Equals(navalShip))
+            {
+                //TODO current turn is for the actor being destroyed
+                EndTurnForCurrentActor();
+            }
+            else
+            {
+                levelActionableActor.Remove(navalShip);
+                var actorTurnUI = actorTurnUIs.Find(ac => ac.NavalShip.Equals(navalShip));
+                if (actorTurnUIs == null) return;
+                actorTurnUIs.Remove(actorTurnUI);
+                Destroy(actorTurnUI.gameObject);
+            }
+        }
+
+        private ActorTurnUI GetActorTurnUI(NavalShip navalShip)
+        {
+            return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
         }
 
         // public List<NavalActor>.Enumerator GetLevelActors() => levelNavalActors.GetEnumerator();
