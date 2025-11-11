@@ -15,6 +15,7 @@ namespace UI
         [SerializeField] private CursorController cursorController;
         [SerializeField] private RectTransform selfRectTransform;
         [SerializeField] private Button initialButton;
+        [SerializeField] private Button attackButton;
         [SerializeField] private List<Button> turnButtons;
         [SerializeField] private InfoPanelUI infoPanelUI;
 
@@ -32,6 +33,10 @@ namespace UI
         {
             turnButtons.ForEach(button => button.interactable = currentActor);
             gameObject.SetActive(true);
+            if (!currentActor)
+            {
+                attackButton.interactable = cursorController.SelectedActorCanAttack();
+            }
         }
         
         private void OnEnable()

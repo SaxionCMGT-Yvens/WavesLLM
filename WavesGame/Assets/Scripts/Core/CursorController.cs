@@ -150,6 +150,12 @@ namespace Core
             _stateMachine.ChangeStateTo(CursorState.Moving);
         }
 
+        public bool SelectedActorCanAttack()
+        {
+            if (_selectedActor is not NavalShip navalShip) return false;
+            return navalShip.ActionsLeft > 0;
+        }
+
         public void CommandToDisplayAttackArea()
         {
             cursorAnimator.SetBool(Select, false);
@@ -208,6 +214,7 @@ namespace Core
             }
 
             var damage = selectedNavalShip.ShipData.stats.strength.Two + selectedNavalShip.NavalCannon.CalculateDamage();
+            // selectedNavalShip.
             targetActor.TakeDamage(damage);
             // Camera shake and other effects
             HideAttackArea();
