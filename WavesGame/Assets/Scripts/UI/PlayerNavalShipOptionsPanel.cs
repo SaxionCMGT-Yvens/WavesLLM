@@ -33,7 +33,7 @@ namespace UI
         {
             turnButtons.ForEach(button => button.interactable = currentActor);
             gameObject.SetActive(true);
-            if (!currentActor)
+            if (currentActor)
             {
                 attackButton.interactable = cursorController.SelectedActorCanAttack();
             }

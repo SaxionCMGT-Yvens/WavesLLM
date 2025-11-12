@@ -152,8 +152,7 @@ namespace Core
 
         public bool SelectedActorCanAttack()
         {
-            if (_selectedActor is not NavalShip navalShip) return false;
-            return navalShip.ActionsLeft > 0;
+            return _selectedActor is NavalShip navalShip && navalShip.CanAct();
         }
 
         public void CommandToDisplayAttackArea()
@@ -213,10 +212,16 @@ namespace Core
                 return false;
             }
 
-            var damage = selectedNavalShip.ShipData.stats.strength.Two + selectedNavalShip.NavalCannon.CalculateDamage();
-            // selectedNavalShip.
-            targetActor.TakeDamage(damage);
-            // Camera shake and other effects
+            if (selectedNavalShip.TryToAct())
+            {
+                var damage = selectedNavalShip.CalculateDamage();
+                targetActor.TakeDamage(damage);    
+            }
+            else
+            {
+                DebugUtils.DebugLogMsg($"Selected actor {selectedNavalShip.name} has no actions left.",
+                    DebugUtils.DebugType.Error);
+            }
             HideAttackArea();
             return true;
         }

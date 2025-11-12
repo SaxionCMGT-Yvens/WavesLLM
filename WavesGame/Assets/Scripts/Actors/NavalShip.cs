@@ -33,6 +33,23 @@ namespace Actors
             Initiative = shipData.RollInitiative();
         }
 
+        public bool TryToAct()
+        {
+            var canAct = CanAct();
+            if (CanAct()) --_actions;
+            return canAct;
+        }
+
+        public bool CanAct()
+        {
+            return _actions > 0;
+        }
+
+        public int CalculateDamage()
+        {
+            return ShipData.stats.strength.Two + NavalCannon.CalculateDamage();
+        }
+
         public override void TakeDamage(int damage)
         {
             var damageTaken = damage - shipData.stats.sturdiness.Two;
