@@ -182,7 +182,5 @@ namespace Core
         {
             return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
         }
-
-        // public List<NavalActor>.Enumerator GetLevelActors() => levelNavalActors.GetEnumerator();
     }
 }

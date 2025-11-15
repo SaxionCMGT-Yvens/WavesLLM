@@ -78,18 +78,28 @@ namespace Core
             MoveToIndex(newIndex);
         }
 
-        public void MoveToIndex(Vector2Int newIndex)
+        public void MoveToIndex(Vector2Int newIndex, bool animate = true)
         {
             if (_movingAnimation) return;
             if (newIndex.x == index.x && newIndex.y == index.y) return;
             var validPosition = GridManager.GetSingleton().CheckGridPosition(newIndex, out var gridUnit);
             if (!validPosition) InvalidPosition();
             _movingAnimation = true;
-            transform.DOMove(gridUnit.transform.position, 0.1f).OnComplete(() =>
+            if (animate)
             {
+                transform.DOMove(gridUnit.transform.position, 0.1f).OnComplete(() =>
+                {
+                    _movingAnimation = false;
+                    index = gridUnit.Index();
+                });    
+            }
+            else
+            {
+                transform.position = gridUnit.transform.position;
                 _movingAnimation = false;
                 index = gridUnit.Index();
-            });
+            }
+            
         }
 
         private void InvalidPosition()
@@ -243,26 +253,34 @@ namespace Core
         /// already at, and also check if the given GridUnit is not Blocked and belongs to the walkable list.
         /// </summary>
         /// <param name="gridUnit"></param>
+        /// <param name="onFinish"></param>
         /// <returns>True if the movement is done. False if there is no movement (moving to the current grid unit) or
         /// the movement is invalid (blocked or outside the walkable list).</returns>
-        public bool MoveSelectedActorTo(GridUnit gridUnit)
+        public bool MoveSelectedActorTo(GridUnit gridUnit, Action<GridUnit> onFinish)
         {
             if (gridUnit.Equals(_selectedActor.GetUnit()))
             {
                 DebugUtils.DebugLogMsg($"{name} moving to its own position. No movement done.",
                     DebugUtils.DebugType.Verbose);
+                onFinish?.Invoke(null);
                 return false;
             }
 
             if (gridUnit.Type() != GridUnitType.Blocked && _walkableUnits.Contains(gridUnit))
             {
-                _selectedActor.MoveTo(gridUnit, () => { _stateMachine.ChangeStateTo(CursorState.ShowingOptions); },
+                _selectedActor.MoveTo(gridUnit, finalState =>
+                    {
+                        onFinish?.Invoke(finalState);
+                        //Only change the state after completing the move and proceeding with the finalState calculation.
+                        _stateMachine.ChangeStateTo(CursorState.ShowingOptions);
+                    },
                     true, 0.15f);
                 return true;
             }
 
             DebugUtils.DebugLogMsg($"{name} cannot move to {gridUnit.name}. Not in the Walkable List or it is Blocked.",
                 DebugUtils.DebugType.Error);
+            onFinish?.Invoke(null);
             return false;
         }
 

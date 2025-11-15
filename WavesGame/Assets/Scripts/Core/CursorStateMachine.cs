@@ -41,15 +41,24 @@ namespace Core
                     if (_cursorController.TargetSelectedGridUnit(unit))
                     {
                         var index = _currentGridUnit.Index();
-                        DebugUtils.DebugLogMsg($"Going to position {index}.", DebugUtils.DebugType.Temporary);
+                        DebugUtils.DebugLogMsg($"Going to position {index}.", DebugUtils.DebugType.Verbose);
                         _cursorController.MoveToIndex(index);
                         ChangeStateTo(CursorState.Roaming);
                     }
                     break;
                 case CursorState.Moving:
-                    if (_cursorController.MoveSelectedActorTo(unit))
+                    //TODO change this because it is acting synchronously
+                    var move = _cursorController.MoveSelectedActorTo(unit, (final) =>
                     {
-                        _currentGridUnit = unit;
+                        DebugUtils.DebugLogMsg($"Going to final position {final} {(final != null ? final.Index() : "[Invalid]")}.", DebugUtils.DebugType.Verbose);
+                        _currentGridUnit = final == null ? unit : final;
+                        var index = _currentGridUnit.Index();
+                        //TODO check this - _cursor index is not updating properly
+                        DebugUtils.DebugLogMsg($"Move to the index: {index}.", DebugUtils.DebugType.Verbose);
+                        _cursorController.MoveToIndex(index, false);
+                    });
+                    if (move)
+                    {
                         ChangeStateTo(CursorState.OnTheMove);
                     }
                     break;
@@ -109,9 +118,11 @@ namespace Core
                                 DebugUtils.DebugType.Verbose);
                             _cursorController.SetSelectedActor(navalActor);
                             // ReSharper disable once TailRecursiveCall
+                            actorEnumerator.Dispose();
                             ChangeStateTo(CursorState.ShowingOptions);
                             return;
                         }
+                        actorEnumerator.Dispose();
                         NoValidActorFound();
                     }
                     else

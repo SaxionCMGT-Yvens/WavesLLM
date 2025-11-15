@@ -1,4 +1,7 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Actors.Cannon;
 using Core;
 using DG.Tweening;
@@ -57,7 +60,7 @@ namespace Actors
             base.TakeDamage(damageTaken);
         }
         
-        public override void MoveTo(GridUnit unit, Action onFinishMoving, bool animate = false, float time = 0.5f)
+        public override void MoveTo(GridUnit unit, Action<GridUnit> onFinishMoving, bool animate = false, float time = 0.5f)
         {
             if (animate)
             {
@@ -69,30 +72,77 @@ namespace Actors
                 
                 if (steps.Count <= 0)
                 {
-                    onFinishMoving?.Invoke();
+                    onFinishMoving?.Invoke(unit);
                     return;
                 }
-
-                var movementSequence = DOTween.Sequence();
-                steps.ForEach(step =>
-                {
-                    DebugUtils.DebugLogMsg($"Path [{step.Index()}]", DebugUtils.DebugType.Temporary);
-                    movementSequence.Append(transform.DOMove(step.transform.position, time));
-                });
-                movementSequence.OnComplete(() =>
-                {
-                    //Moves to the final step in the sequence.
-                    UpdateUnitOnMovement(steps[^1]);
-                    onFinishMoving?.Invoke();
-                });
-                movementSequence.Play();
+                StartCoroutine(MovementStepsCoroutine(steps, onFinishMoving, time));
             }
             else
             {
                 transform.position = unit.transform.position;
-                UpdateUnitOnMovement(unit);
-                onFinishMoving?.Invoke();
+                UpdateGridUnitOnMovement(unit);
+                onFinishMoving?.Invoke(unit);
             }
+        }
+
+
+        private IEnumerator MovementStepsCoroutine(List<GridUnit> steps, Action<GridUnit> onFinishMoving, float time)
+        {
+            var stepsEnumerator = steps.GetEnumerator();
+            var continueSteps = true;
+            var nextStep = false;
+            var cumulativeDamage = 0;
+            var finalStep = steps[^1];
+            while (continueSteps && stepsEnumerator.MoveNext())
+            {
+                var current = stepsEnumerator.Current;
+                if (current == null) continue;
+                nextStep = false;
+                transform.DOMove(current.transform.position, time).OnComplete(() =>
+                {
+                    nextStep = true;
+                });
+                yield return new WaitUntil(() => nextStep);
+                UpdateGridUnitOnMovement(current);
+                finalStep = current;
+                
+                if (!current.HasValidActors()) continue;
+                var stepEffects = current.GetHasStepEffectActors();
+                if (stepEffects.Count <= 0) continue;
+                DebugUtils.DebugLogMsg($"{name} has stepped on something!", DebugUtils.DebugType.Verbose);
+                foreach (var effect in stepEffects.Select(stepActor => stepActor.StepEffect(this)))
+                {
+                    if (effect.causeDamage)
+                    {
+                        cumulativeDamage += effect.damage;
+                    }
+
+                    if (effect.canContinueMovement) continue;
+                    DebugUtils.DebugLogMsg($"{name} hit by an effect.", DebugUtils.DebugType.Verbose);
+                    
+                    var resist = shipData.ResistWave();
+                    if (resist) continue;
+                    var moveToUnit = effect.moveTo;
+                    nextStep = false;
+                    
+                    //TODO for now, it does not check for the case of multiple waves moving the ship
+                    transform.DOMove(moveToUnit.transform.position, time).OnComplete(() =>
+                    {
+                        DebugUtils.DebugLogMsg($"{name} being pushed by the waves to {moveToUnit.Index()}!", DebugUtils.DebugType.Verbose);
+                        UpdateGridUnitOnMovement(moveToUnit);
+                        finalStep = moveToUnit;
+                        continueSteps = false;
+                        nextStep = true;
+                        //Being pushed back, but it seems to keep on marking the wrong piece in the map
+                    });
+                    yield return new WaitUntil(() => nextStep);
+                }
+            }
+            
+            TakeDamage(cumulativeDamage);
+            stepsEnumerator.Dispose();
+            DebugUtils.DebugLogMsg($"{name} has final step at {finalStep.Index()}!", DebugUtils.DebugType.Verbose);
+            onFinishMoving?.Invoke(finalStep);
         }
         
         protected override void NotifyLevelController()

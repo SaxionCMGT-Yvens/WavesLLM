@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -82,12 +83,27 @@ namespace Grid
 
         public GridActor GetActor()
         {
-            //TODO investigate the disposal of the enumerator
             var enumerator = _actors.GetEnumerator();
             enumerator.MoveNext();
             var current = enumerator.Current;
             enumerator.Dispose();
             return current;
+        }
+
+        public List<GridActor> GetHasStepEffectActors()
+        {
+            var actorsWithStepEffect = new List<GridActor>();
+            var enumerator = _actors.GetEnumerator();
+            while (enumerator.MoveNext())
+            {
+                var enumeratorCurrent = enumerator.Current;
+                if (enumeratorCurrent != null && enumeratorCurrent.HasStepEffect)
+                {
+                    actorsWithStepEffect.Add(enumeratorCurrent);
+                }
+            }
+            enumerator.Dispose();
+            return actorsWithStepEffect;
         }
 
         public void DamageActors(int damage)
@@ -103,6 +119,7 @@ namespace Grid
         public Vector2Int Index() => index;
         public bool HasValidActors() => _actors != null;
         public int ActorsCount() => _actors.Count;
+        [MustDisposeResource]
         public HashSet<GridActor>.Enumerator GetActorEnumerator() => _actors.GetEnumerator();
     }
 }
