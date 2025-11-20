@@ -133,9 +133,7 @@ namespace Core
                     navalShipOptionsPanel.ShowOptions(false);
                     break;
                 case NavalActorType.Collectable:
-                    break;
                 case NavalActorType.Obstacle:
-                    break;
                 case NavalActorType.Wave:
                     break;
                 default:
@@ -239,6 +237,7 @@ namespace Core
                         DebugUtils.DebugType.Error);
                 }
             }
+            enumerator.Dispose();
             HideAttackArea();
             if (attackHappened && _selectedActor is NavalShip selectedNavalShip)
             {

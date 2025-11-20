@@ -31,6 +31,9 @@ namespace Core
         [SerializeField, ReadOnly] private List<NavalActor> levelNavalActors;
         [SerializeField, ReadOnly] private List<LevelActorPair> levelActionableActor;
         [SerializeField, ReadOnly] private List<ActorTurnUI> actorTurnUIs;
+        
+        [Header("Level Specific")]
+        [SerializeField] private LevelGoalSO levelGoal;
 
         [Header("References")] [SerializeField]
         private RectTransform actorTurnsHolder;
@@ -176,6 +179,11 @@ namespace Core
             if (actorTurnUIs == null) return;
             actorTurnUIs.Remove(actorTurnUI);
             Destroy(actorTurnUI.gameObject);
+        }
+
+        public void NotifyDestroyedActor(NavalTarget navalTarget)
+        {
+            
         }
 
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)
