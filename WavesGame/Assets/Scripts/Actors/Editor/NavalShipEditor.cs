@@ -7,6 +7,8 @@ namespace Actors.Editor
     [CustomEditor(typeof(NavalShip))]
     public class NavalShipEditor : GridActorEditor
     {
+        private UnityEditor.Editor _scriptableObjectEditor;
+        
         public override void OnInspectorGUI()
         {
             var myTarget = (NavalShip)target;
@@ -16,6 +18,13 @@ namespace Actors.Editor
             GUILayout.Label($"Index [{(grid == null ? -1 : grid.Index().ToString())}]", EditorStyles.boldLabel);
             
             base.OnInspectorGUI();
+
+            var navalShipSo = myTarget.ShipData;
+            if (navalShipSo == null) return;
+            EditorGUILayout.Space(15);
+            EditorGUILayout.HelpBox("Naval Ship SO", MessageType.Info);
+            CreateCachedEditor(navalShipSo, null, ref _scriptableObjectEditor);
+            _scriptableObjectEditor.OnInspectorGUI();
         }
     }
 }
