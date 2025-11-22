@@ -274,10 +274,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7257831185842981266}
-  - {fileID: 6614867942656814316}
   - {fileID: 6735725706467890964}
   - {fileID: 961084996009470017}
-  - {fileID: 1661584950471681247}
+  - {fileID: 6614867942656814316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4922028612217943950
@@ -706,37 +705,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!1 &6608764769674613075
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1661584950471681247}
-  m_Layer: 0
-  m_Name: LevelGoal
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1661584950471681247
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6608764769674613075}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 289677474002587034}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6797527064456598995
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,5 +753,6 @@ MonoBehaviour:
   levelNavalActors: []
   levelActionableActor: []
   actorTurnUIs: []
+  levelGoal: {fileID: 0}
   actorTurnsHolder: {fileID: 4692900238076265019}
   actorTurnUIPrefab: {fileID: -1617867583042874006, guid: 9c238bb53b36f44568f48311cc7362a6, type: 3}

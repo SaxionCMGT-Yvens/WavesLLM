@@ -31,9 +31,9 @@ namespace Core
         [SerializeField, ReadOnly] private List<NavalActor> levelNavalActors;
         [SerializeField, ReadOnly] private List<LevelActorPair> levelActionableActor;
         [SerializeField, ReadOnly] private List<ActorTurnUI> actorTurnUIs;
-        
-        [Header("Level Specific")]
-        [SerializeField] private LevelGoalSO levelGoal;
+
+        [Header("Level Specific")] [SerializeField]
+        private LevelGoal levelGoal;
 
         [Header("References")] [SerializeField]
         private RectTransform actorTurnsHolder;
@@ -43,6 +43,7 @@ namespace Core
         private Coroutine _levelCoroutine;
         private NavalActor _currentActor;
         private bool _endTurn;
+        private bool _finishedLevel;
 
         private void Start()
         {
@@ -53,16 +54,20 @@ namespace Core
         {
             //Wait for one frame for all elements to be initialized
             yield return null;
+
+            //Initialize level goal elements
+            levelGoal.Initialize(levelActors);
+
             //Roll initiatives and order turns
             levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
             levelActionableActor.Sort();
             levelActionableActor.ForEach(actorPair => AddLevelActorToTurnBar(actorPair.One));
 
             //Start level
-            //TODO check! ships being destroyed during the iteration.
-
             var enumerator = levelActionableActor.GetEnumerator();
             var continueLevel = true;
+            var victory = false;
+            var gameOver = false;
             while (continueLevel)
             {
                 //There are no actors left. Finish the level cycle.
@@ -72,7 +77,7 @@ namespace Core
                     continue;
                 }
 
-                while(enumerator.MoveNext())
+                while (enumerator.MoveNext())
                 {
                     //If the current is valid, then proceed with its turn.
                     if (!enumerator.Current) continue;
@@ -90,7 +95,7 @@ namespace Core
                         //TODO check if this is necessary of it maybe this has been destroyed already
                         if (enumerator.Current is { Two: true })
                         {
-                            turnUI.ToggleAvailability(false);    
+                            turnUI.ToggleAvailability(false);
                         }
                     }
                     else
@@ -98,14 +103,30 @@ namespace Core
                         yield return new WaitUntil(() => _endTurn);
                     }
                 }
+
                 enumerator.Dispose();
                 //Finished going through all characters
-                //If there are no more enumerators ahead, then start from the beginning.
-                enumerator = levelActionableActor.GetEnumerator();
+                levelGoal.SurvivedTurn();
+                victory = levelGoal.CheckGoal();
+                gameOver = levelGoal.CheckGameOver();
+                if (victory || gameOver)
+                {
+                    continueLevel = false;
+                }
+                else
+                {
+                    //If there are no more enumerators ahead, then start from the beginning.
+                    enumerator = levelActionableActor.GetEnumerator();
+                }
             }
 
             enumerator.Dispose();
+            if (gameOver)
+            {
+                victory = false;
+            }
 
+            FinishLevel(victory);
             //TODO Level ended
         }
 
@@ -164,7 +185,7 @@ namespace Core
         {
             if (_currentActor.Equals(navalShip))
             {
-                //TODO current turn is for the actor being destroyed
+                //End current turn is for the actor being destroyed
                 EndTurnForCurrentActor();
             }
 
@@ -175,7 +196,18 @@ namespace Core
             //Remove the naval ship from the list of active naval ships.
             levelNavalActors.Remove(navalShip);
 
-            var actorTurnUI = actorTurnUIs.Find(ac => ac.NavalShip.Equals(navalShip));
+            if (levelGoal.CheckGoalActor(navalShip))
+            {
+                //Game level goal was achieved
+                FinishLevel(true);
+            }
+
+            if (levelGoal.CheckGameOver())
+            {
+                FinishLevel(false);
+            }
+
+            var actorTurnUI = actorTurnUIs.Find(turnUI => turnUI.NavalShip.Equals(navalShip));
             if (actorTurnUIs == null) return;
             actorTurnUIs.Remove(actorTurnUI);
             Destroy(actorTurnUI.gameObject);
@@ -183,7 +215,26 @@ namespace Core
 
         public void NotifyDestroyedActor(NavalTarget navalTarget)
         {
-            
+            levelGoal.CheckGoalActor(navalTarget);
+
+            if (levelGoal.CheckGoalActor(navalTarget))
+            {
+                //Game level goal was achieved
+                FinishLevel(true);
+            }
+        }
+
+        private void FinishLevel(bool win)
+        {
+            //Prevents finishing the level more than once
+            if (_finishedLevel) return;
+            _finishedLevel = true;
+            StopCoroutine(_levelCoroutine);
+
+            //TODO execute the results of the level
+            DebugUtils.DebugLogMsg($"Level ended: {(win ? "Victory!" : "Defeat!")}", DebugUtils.DebugType.Verbose);
+            //Disable cursor
+            CursorController.GetSingleton().ToggleActive(false);
         }
 
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)

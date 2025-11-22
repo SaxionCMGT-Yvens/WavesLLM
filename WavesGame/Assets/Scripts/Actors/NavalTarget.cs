@@ -1,3 +1,4 @@
+using Core;
 using UnityEngine;
 using UUtils;
 
@@ -15,7 +16,12 @@ namespace Actors
             DebugUtils.DebugLogMsg($"{name} attacked with {damage}. Sturdiness is {stats.sturdiness}. Damage taken was {damageTaken}.", DebugUtils.DebugType.Temporary);
             base.TakeDamage(damageTaken);
         }
-        
+
+        protected override void NotifyLevelController()
+        {
+            LevelController.GetSingleton().NotifyDestroyedActor(this);
+        }
+
         public NavalActorStats GetStats() => stats;
     }
 }
