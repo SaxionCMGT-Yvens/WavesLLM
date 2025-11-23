@@ -201,6 +201,7 @@ namespace Core
             //Remove the naval ship from the list of active naval ships.
             levelNavalActors.Remove(navalShip);
 
+            DebugUtils.DebugLogMsg($"Naval Ship: {navalShip.name} destroyed. Checking for level finish...", DebugUtils.DebugType.System);
             if (levelGoal.CheckGoalActor(navalShip))
             {
                 //Game level goal was achieved
@@ -220,6 +221,7 @@ namespace Core
 
         public void NotifyDestroyedActor(NavalTarget navalTarget)
         {
+            DebugUtils.DebugLogMsg($"Target: {navalTarget.name} destroyed. Checking for level finish...", DebugUtils.DebugType.System);
             levelGoal.CheckGoalActor(navalTarget);
 
             if (levelGoal.CheckGoalActor(navalTarget))
@@ -237,9 +239,11 @@ namespace Core
             StopCoroutine(_levelCoroutine);
 
             //TODO execute the results of the level
-            DebugUtils.DebugLogMsg($"Level ended: {(win ? "Victory!" : "Defeat!")}", DebugUtils.DebugType.Verbose);
+            DebugUtils.DebugLogMsg($"Level ended: {(win ? "Victory!" : "Defeat!")}", DebugUtils.DebugType.System);
             //Disable cursor
-            CursorController.GetSingleton().ToggleActive(false);
+            CursorController.GetSingleton().FinishLevel();
+            
+            //TODO show end game results/window, etc
         }
 
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)

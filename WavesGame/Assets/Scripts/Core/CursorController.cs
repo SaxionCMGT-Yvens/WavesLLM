@@ -27,8 +27,10 @@ namespace Core
         private NavalActor _selectedActor;
         private bool _movingAnimation;
         private bool _active = true;
+        private bool _levelFinished;
 
         private static readonly int Select = Animator.StringToHash("Select");
+        private static readonly int Finish = Animator.StringToHash("Finish");
 
         protected override void Awake()
         {
@@ -46,6 +48,11 @@ namespace Core
 
         private void OnDisable()
         {
+            RemoveControllerCallbacks();
+        }
+
+        private void RemoveControllerCallbacks()
+        {
             PlayerController.GetSingleton().onMoveAction -= Move;
             PlayerController.GetSingleton().onInteract -= Interact;
         }
@@ -60,7 +67,7 @@ namespace Core
 
         private void Interact()
         {
-            if (!_active) return;
+            if (!_active || _levelFinished) return;
             var validPosition = GridManager.GetSingleton().CheckGridPosition(index, out var gridUnit);
             if (!validPosition)
             {
@@ -73,7 +80,7 @@ namespace Core
 
         private void Move(Vector2 direction)
         {
-            if (!_active) return;
+            if (!_active || _levelFinished) return;
             var newIndex = new Vector2Int(index.x + (int)direction.x, index.y + (int)direction.y);
             MoveToIndex(newIndex);
         }
@@ -91,7 +98,7 @@ namespace Core
                 {
                     _movingAnimation = false;
                     index = gridUnit.Index();
-                });    
+                });
             }
             else
             {
@@ -99,7 +106,6 @@ namespace Core
                 _movingAnimation = false;
                 index = gridUnit.Index();
             }
-            
         }
 
         private void InvalidPosition()
@@ -228,7 +234,7 @@ namespace Core
                 {
                     DebugUtils.DebugLogMsg($"Act upon {targetActor.name}!", DebugUtils.DebugType.Verbose);
                     var damage = navalShip.CalculateDamage();
-                    targetActor.TakeDamage(damage);    
+                    targetActor.TakeDamage(damage);
                     attackHappened = true;
                 }
                 else
@@ -237,12 +243,14 @@ namespace Core
                         DebugUtils.DebugType.Error);
                 }
             }
+
             enumerator.Dispose();
             HideAttackArea();
             if (attackHappened && _selectedActor is NavalShip selectedNavalShip)
             {
                 selectedNavalShip.TryToAct();
             }
+
             return attackHappened;
         }
 
@@ -273,7 +281,7 @@ namespace Core
                         {
                             onFinish?.Invoke(finalGridUnit);
                             //Only change the state after completing the move and proceeding with the finalState calculation.
-                            _stateMachine.ChangeStateTo(CursorState.ShowingOptions);    
+                            _stateMachine.ChangeStateTo(CursorState.ShowingOptions);
                         }
                         else
                         {
@@ -313,6 +321,14 @@ namespace Core
         public void ToggleActive(bool toggle)
         {
             _active = toggle;
+        }
+
+        public void FinishLevel()
+        {
+            _levelFinished = true;
+            cursorAnimator.SetTrigger(Finish);
+            _stateMachine.FinishStateMachine();
+            RemoveControllerCallbacks();
         }
 
         public Vector2Int GetIndex() => index;

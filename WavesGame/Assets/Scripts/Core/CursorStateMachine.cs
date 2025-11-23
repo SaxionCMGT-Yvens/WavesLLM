@@ -12,7 +12,8 @@ namespace Core
         ShowingOptions,
         Moving,
         OnTheMove,
-        Targeting
+        Targeting,
+        Finish
     }
 
     public class CursorStateMachine
@@ -63,6 +64,7 @@ namespace Core
                     break;
                 case CursorState.OnTheMove:
                     break;
+                case CursorState.Finish:
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -82,7 +84,6 @@ namespace Core
                     _cursorController.HideOptionsPanel();
                     break;
                 case CursorState.Targeting:
-                    //TODO remove target from the enemies
                     PlayerController.GetSingleton().onCancel -= CancelTargetingCommand;
                     break;
                 case CursorState.Moving:
@@ -91,6 +92,9 @@ namespace Core
                     break;
                 case CursorState.OnTheMove:
                     break;
+                case CursorState.Finish:
+                    DebugUtils.DebugLogMsg("Finished stated. No change is made!", DebugUtils.DebugType.System);
+                    return;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -143,6 +147,10 @@ namespace Core
                     break;
                 case CursorState.OnTheMove:
                     break;
+                case CursorState.Finish:
+                    _cursorController.ToggleActive(false);
+                    PlayerController.GetSingleton().onCancel -= CancelMovementCommand;
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -155,6 +163,11 @@ namespace Core
                 ChangeStateTo(CursorState.Roaming);
                 // If select a grid unit with no actor, then just return back to roaming
             }
+        }
+
+        public void FinishStateMachine()
+        {
+            ChangeStateTo(CursorState.Finish);
         }
 
         private void CancelMovementCommand()
