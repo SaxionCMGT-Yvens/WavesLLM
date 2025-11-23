@@ -21,7 +21,7 @@ namespace Core
 
         public int CompareTo(LevelActorPair other)
         {
-            return One.CompareTo(other.One);
+            return other.One.Initiative.CompareTo(other.One.Initiative);
         }
     }
 
@@ -29,7 +29,7 @@ namespace Core
     {
         [Header("Data")] [SerializeField] private List<GridActor> levelActors;
         [SerializeField, ReadOnly] private List<NavalActor> levelNavalActors;
-        [SerializeField, ReadOnly] private List<LevelActorPair> levelActionableActor;
+        private List<LevelActorPair> _levelActionableActor;
         [SerializeField, ReadOnly] private List<ActorTurnUI> actorTurnUIs;
 
         [Header("Level Specific")] [SerializeField]
@@ -59,12 +59,16 @@ namespace Core
             levelGoal.Initialize(levelActors);
 
             //Roll initiatives and order turns
-            levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
-            levelActionableActor.Sort();
-            levelActionableActor.ForEach(actorPair => AddLevelActorToTurnBar(actorPair.One));
+            _levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
+            _levelActionableActor.Sort(((pairOne, pairTwo) => pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));
+            _levelActionableActor.ForEach(actorPair =>
+            {
+                DebugUtils.DebugLogMsg($"Creating actor UI {actorPair.One.gameObject.name} [{actorPair.One.Initiative}]", DebugUtils.DebugType.System);
+                AddLevelActorToTurnBar(actorPair.One);
+            });
 
             //Start level
-            var enumerator = levelActionableActor.GetEnumerator();
+            var enumerator = _levelActionableActor.GetEnumerator();
             var continueLevel = true;
             var victory = false;
             var gameOver = false;
@@ -116,7 +120,7 @@ namespace Core
                 else
                 {
                     //If there are no more enumerators ahead, then start from the beginning.
-                    enumerator = levelActionableActor.GetEnumerator();
+                    enumerator = _levelActionableActor.GetEnumerator();
                 }
             }
 
@@ -149,7 +153,8 @@ namespace Core
                 case NavalActorType.Enemy:
                     if (navalActor is NavalShip navalShip)
                     {
-                        levelActionableActor.Add(new LevelActorPair(navalShip));
+                        _levelActionableActor ??= new List<LevelActorPair>();
+                        _levelActionableActor.Add(new LevelActorPair(navalShip));
                     }
 
                     break;
@@ -190,7 +195,7 @@ namespace Core
             }
 
             //Set the pair as false, so its level should be skipped.
-            var actionPair = levelActionableActor.Find(pair => pair.One.Equals(navalShip));
+            var actionPair = _levelActionableActor.Find(pair => pair.One.Equals(navalShip));
             actionPair.Two = false;
 
             //Remove the naval ship from the list of active naval ships.

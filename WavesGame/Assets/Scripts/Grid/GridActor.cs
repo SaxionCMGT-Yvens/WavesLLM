@@ -47,7 +47,7 @@ namespace Grid
             Destroy(gameObject);
         }
 
-        public virtual void MoveTo(GridUnit unit, Action<GridUnit> onFinishMoving, bool animate = false, float time = 0.5f)
+        public virtual bool MoveTo(GridUnit unit, Action<GridUnit> onFinishMoving, bool animate = false, float time = 0.5f)
         {
             UpdateGridUnitOnMovement(unit);
 
@@ -60,6 +60,8 @@ namespace Grid
                 transform.position = unit.transform.position;
                 onFinishMoving?.Invoke(unit);
             }
+
+            return true;
         }
 
         protected void UpdateGridUnitOnMovement(GridUnit unit)

@@ -60,20 +60,29 @@ namespace Actors
             base.TakeDamage(damageTaken);
         }
         
-        public override void MoveTo(GridUnit unit, Action<GridUnit> onFinishMoving, bool animate = false, float time = 0.5f)
+        public override bool MoveTo(GridUnit unit, Action<GridUnit> onFinishMoving, bool animate = false, float time = 0.5f)
         {
             if (animate)
             {
                 var steps = GridManager.GetSingleton()
                     .GetManhattanPathFromToRecursive(GetUnit().Index(), unit.Index(), _stepsAvailable,
                         true);
+
+                if (steps.Count == 0)
+                {
+                    DebugUtils.DebugLogMsg("Path not found! Stay in the same position.", DebugUtils.DebugType.Error);
+                    // Calls the callback without a valid return position
+                    onFinishMoving?.Invoke(null);
+                    return false;
+                }
+                
                 var stepsCount = steps.Count - 1; //Removes the initial (current) step from the movement count.
                 _stepsAvailable = Mathf.Max(_stepsAvailable - stepsCount, 0);
                 
                 if (steps.Count <= 0)
                 {
                     onFinishMoving?.Invoke(unit);
-                    return;
+                    return false;
                 }
                 StartCoroutine(MovementStepsCoroutine(steps, onFinishMoving, time));
             }
@@ -83,6 +92,8 @@ namespace Actors
                 UpdateGridUnitOnMovement(unit);
                 onFinishMoving?.Invoke(unit);
             }
+
+            return true;
         }
 
 
@@ -138,8 +149,11 @@ namespace Actors
                     yield return new WaitUntil(() => nextStep);
                 }
             }
-            
-            TakeDamage(cumulativeDamage);
+
+            if (cumulativeDamage > 0)
+            {
+                TakeDamage(cumulativeDamage);    
+            }
             stepsEnumerator.Dispose();
             DebugUtils.DebugLogMsg($"{name} has final step at {finalStep.Index()}!", DebugUtils.DebugType.Verbose);
             onFinishMoving?.Invoke(finalStep);
@@ -159,7 +173,8 @@ namespace Actors
         public int CompareTo(NavalShip other)
         {
             if (ReferenceEquals(this, other)) return 0;
-            return other is null ? 1 : Initiative.CompareTo(other.Initiative);
+            // Sort by the largest to the smallest
+            return other is null ? 1 : other.Initiative.CompareTo(other.Initiative);
         }
     }
 }

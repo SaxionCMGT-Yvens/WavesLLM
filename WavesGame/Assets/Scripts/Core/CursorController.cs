@@ -267,14 +267,21 @@ namespace Core
 
             if (gridUnit.Type() != GridUnitType.Blocked && _walkableUnits.Contains(gridUnit))
             {
-                _selectedActor.MoveTo(gridUnit, finalState =>
+                var moveTo = _selectedActor.MoveTo(gridUnit, finalGridUnit =>
                     {
-                        onFinish?.Invoke(finalState);
-                        //Only change the state after completing the move and proceeding with the finalState calculation.
-                        _stateMachine.ChangeStateTo(CursorState.ShowingOptions);
+                        if (finalGridUnit != null)
+                        {
+                            onFinish?.Invoke(finalGridUnit);
+                            //Only change the state after completing the move and proceeding with the finalState calculation.
+                            _stateMachine.ChangeStateTo(CursorState.ShowingOptions);    
+                        }
+                        else
+                        {
+                            onFinish?.Invoke(null);
+                        }
                     },
                     true, 0.15f);
-                return true;
+                return moveTo;
             }
 
             DebugUtils.DebugLogMsg($"{name} cannot move to {gridUnit.name}. Not in the Walkable List or it is Blocked.",
@@ -308,6 +315,7 @@ namespace Core
             _active = toggle;
         }
 
+        public Vector2Int GetIndex() => index;
         public NavalActor GetSelectedActor() => _selectedActor;
         public bool IsActive() => _active;
         public CursorState GetState() => _stateMachine?.CurrentState ?? CursorState.Roaming;

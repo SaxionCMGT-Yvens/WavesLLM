@@ -19,7 +19,7 @@ namespace Actors
 
         /// <summary>
         /// Checks if this NavalShip will be moved by a wave or not.
-        /// Rolls a D10 and checks if the result is smaller than the Stability attribute.
+        /// Rolls a d10 and checks if the result is smaller than the Stability attribute.
         /// </summary>
         /// <returns>True if the NavalShip remains steady against the wave force.</returns>
         public bool ResistWave()

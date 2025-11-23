@@ -53,7 +53,6 @@ namespace Core
                         DebugUtils.DebugLogMsg($"Going to final position {final} {(final != null ? final.Index() : "[Invalid]")}.", DebugUtils.DebugType.Verbose);
                         _currentGridUnit = final == null ? unit : final;
                         var index = _currentGridUnit.Index();
-                        //TODO check this - _cursor index is not updating properly
                         DebugUtils.DebugLogMsg($"Move to the index: {index}.", DebugUtils.DebugType.Verbose);
                         _cursorController.MoveToIndex(index, false);
                     });

@@ -30,13 +30,13 @@ namespace Grid
         public void DisplayWalkingVisuals()
         {
             spriteRenderer.gameObject.SetActive(true);
-            spriteRenderer.sprite = GridManager.GetSingleton().GetSpriteForType(currentType);
+            ChangeSprite(GridManager.GetSingleton().GetSpriteForType(currentType));
         }
 
         public void DisplayTargetingVisuals()
         {
             spriteRenderer.gameObject.SetActive(true);
-            spriteRenderer.sprite = GridManager.GetSingleton().GetSpriteForType(GridUnitType.Moveable);
+            ChangeSprite(GridManager.GetSingleton().GetSpriteForType(GridUnitType.Moveable));
         }
 
         public void HideVisuals()
@@ -75,8 +75,13 @@ namespace Grid
         private void UpdateType(GridUnitType type)
         {
             currentType = type;
+            ChangeSprite(GridManager.GetSingleton().GetSpriteForType(currentType));
+        }
+
+        public void ChangeSprite(Sprite sprite)
+        {
+            spriteRenderer.sprite = sprite;
 #if UNITY_EDITOR
-            var sprite = GridManager.GetSingleton().GetSpriteForType(currentType);
             EditorGUIUtility.SetIconForObject(gameObject, sprite.texture);
 #endif
         }

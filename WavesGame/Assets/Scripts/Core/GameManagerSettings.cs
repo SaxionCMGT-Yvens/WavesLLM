@@ -8,6 +8,8 @@ namespace Core
     {
         public DebugUtils.DebugType enabledDebugTypes = DebugUtils.DebugType.Regular | DebugUtils.DebugType.System |
                                                          DebugUtils.DebugType.Warning | DebugUtils.DebugType.Error;
+
+        public bool debugCursorInformation = false;
         public bool alwaysIgnoreWaves = false;
         public bool alwaysHitByWaves = false;
     }

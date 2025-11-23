@@ -5,6 +5,28 @@ using UUtils;
 
 namespace Grid
 {
+    internal class GridUnitVisitRegistry
+    {
+        private readonly Vector2Int _gridPos;
+        public bool visiting = false;
+        public bool fullyVisited = false;
+        private readonly HashSet<Vector2Int> _visited;
+
+        public GridUnitVisitRegistry(Vector2Int gridPos)
+        {
+            _gridPos = gridPos;
+            _visited = new HashSet<Vector2Int>();
+        }
+
+        public void VisitLocation(Vector2Int location) => _visited.Add(location);
+        public bool CheckVisitedLocation(Vector2Int location) => _visited.Contains(location);
+
+        public override string ToString()
+        {
+            return $"<{_gridPos}: V:{visiting} | FV:{fullyVisited} | H:{_visited.Count}>";
+        }
+    }
+
     public class GridManager : WeakSingleton<GridManager>
     {
         [SerializeField] private List<GridUnit> gridUnits;
@@ -364,7 +386,7 @@ namespace Grid
             var current = validPosition;
             while (steps >= 0)
             {
-                DebugUtils.DebugLogMsg($"Current step [{current}] [Step: {steps}].",  DebugUtils.DebugType.Verbose);
+                DebugUtils.DebugLogMsg($"Current step [{current}] [Step: {steps}].", DebugUtils.DebugType.Verbose);
                 var currentUnit = _grid[current.x, current.y];
                 pathFromTo.Add(currentUnit);
                 if (currentUnit.Index() == to)
@@ -410,7 +432,7 @@ namespace Grid
             bool checkBlocked = false)
         {
             var pathFromTo = new List<GridUnit>();
-            var visited = new HashSet<Vector2Int>();
+            var visited = new List<GridUnitVisitRegistry>();
             var success = FindPathRecursive(from, maxSteps);
 
             if (success)
@@ -426,7 +448,12 @@ namespace Grid
                 // Add current position to path
                 var currentUnit = _grid[current.x, current.y];
                 pathFromTo.Add(currentUnit);
-                visited.Add(current);
+                var visitRegistry = new GridUnitVisitRegistry(currentUnit.Index())
+                {
+                    visiting = true
+                };
+                visited.Add(visitRegistry);
+
                 DebugUtils.DebugLogMsg(
                     $"FPR Current step [{currentUnit.Index()}] [Path Size: {pathFromTo.Count}, Hash Size: {visited.Count}] [Steps: {remainingSteps}].",
                     DebugUtils.DebugType.Verbose);
@@ -434,6 +461,9 @@ namespace Grid
                 // Check if we reached target
                 if (current == to)
                 {
+                    DebugUtils.DebugLogMsg(
+                        $"FPR Current {current} equal To {to}. Target reached!",
+                        DebugUtils.DebugType.Verbose);
                     return true;
                 }
 
@@ -441,43 +471,84 @@ namespace Grid
                 if (remainingSteps < 0)
                 {
                     pathFromTo.RemoveAt(pathFromTo.Count - 1); // Backtrack
+                    DebugUtils.DebugLogMsg(
+                        $"FPR Early Backtracking! No more valid steps!",
+                        DebugUtils.DebugType.Verbose);
                     return false;
                 }
 
                 // Try both X and Y directions
                 Vector2Int[] moves =
                 {
-                    new(current.x != to.x ? (to.x > current.x ? 1 : -1) : 0, 0), // X move
-                    new(0, current.y != to.y ? (to.y > current.y ? 1 : -1) : 0) // Y move
+                    new(-1, 0),
+                    new(1, 0),
+                    new(0, -1),
+                    new(0, 1)
                 };
 
                 // Try both moves in a smart order (prioritize the direction with larger difference)
                 var xFirst = Mathf.Abs(to.x - current.x) > Mathf.Abs(to.y - current.y);
-                if (TryMove(current, xFirst ? moves[0] : moves[1], remainingSteps))
-                    return true;
-                if (TryMove(current, xFirst ? moves[1] : moves[0], remainingSteps))
-                    return true;
+                if (xFirst)
+                {
+                    // ReSharper disable once ForCanBeConvertedToForeach
+                    // ReSharper disable once LoopCanBeConvertedToQuery
+                    for (var i = 0; i < moves.Length; i++)
+                        if (TryMove(currentUnit, current, moves[i], visitRegistry, remainingSteps))
+                        {
+                            return true;
+                        }
+                }
+                else
+                {
+                    for (var i = moves.Length - 1; i > -1; i--)
+                        if (TryMove(currentUnit, current, moves[i], visitRegistry, remainingSteps))
+                        {
+                            return true;
+                        }
+                }
+
+                visitRegistry.fullyVisited = true;
 
                 // If no moves work, backtrack
                 pathFromTo.RemoveAt(pathFromTo.Count - 1);
+                DebugUtils.DebugLogMsg(
+                    $"FPR Late Backtracking!",
+                    DebugUtils.DebugType.Verbose);
                 return false;
             }
 
-            bool TryMove(Vector2Int current, Vector2Int move, int remainingSteps)
+            bool TryMove(GridUnit currentUnit, Vector2Int current, Vector2Int move, GridUnitVisitRegistry registry,
+                int remainingSteps)
             {
                 if (move == Vector2Int.zero) return false;
-
                 var next = current + move;
-                // Check if move is valid
-                if (!GetValidGridPosition(next, out var validPosition) ||
-                    visited.Contains(validPosition) ||
-                    (checkBlocked && _grid[validPosition.x, validPosition.y].Type() == GridUnitType.Blocked))
+                if (registry.CheckVisitedLocation(move))
                 {
+                    //Already checked this direction
+                    DebugUtils.DebugLogMsg(
+                        $"Cannot move to {next} - registry states that this move has already been fully visited.",
+                        DebugUtils.DebugType.Verbose);
                     return false;
                 }
 
-                // Recursively try this path
-                return FindPathRecursive(validPosition, remainingSteps - 1);
+                registry.VisitLocation(move);
+                var isValidPosition = GetValidGridPosition(next, out var validPosition);
+                // Check if the move is valid
+                if (isValidPosition)
+                {
+                    var nextUnit = _grid[validPosition.x, validPosition.y];
+                    DebugUtils.DebugLine(currentUnit.transform.position, nextUnit.transform.position, Color.black);
+                    var unblockedMovement = (!checkBlocked || nextUnit.Type() != GridUnitType.Blocked);
+                    if (!registry.fullyVisited && unblockedMovement)
+                    {
+                        return FindPathRecursive(validPosition, remainingSteps - 1);
+                    }
+                }
+
+                DebugUtils.DebugLogMsg(
+                    $"Cannot move to {next} - is valid position {isValidPosition}? was visited {registry}? ",
+                    DebugUtils.DebugType.Verbose);
+                return false;
             }
         }
 
