@@ -34,11 +34,14 @@ namespace Core
 
         [Header("Level Specific")] [SerializeField]
         private LevelGoal levelGoal;
+        [SerializeField, Scene]
+        private string nextLevelName;
 
         [Header("References")] [SerializeField]
         private RectTransform actorTurnsHolder;
 
         [SerializeField] private ActorTurnUI actorTurnUIPrefab;
+        [SerializeField] private EndLevelPanelUI endLevelPanelUI;
 
         private Coroutine _levelCoroutine;
         private NavalActor _currentActor;
@@ -47,6 +50,7 @@ namespace Core
 
         private void Start()
         {
+            endLevelPanelUI.gameObject.SetActive(false);
             _levelCoroutine = StartCoroutine(LevelCoroutine());
         }
 
@@ -238,17 +242,18 @@ namespace Core
             _finishedLevel = true;
             StopCoroutine(_levelCoroutine);
 
-            //TODO execute the results of the level
             DebugUtils.DebugLogMsg($"Level ended: {(win ? "Victory!" : "Defeat!")}", DebugUtils.DebugType.System);
-            //Disable cursor
             CursorController.GetSingleton().FinishLevel();
             
-            //TODO show end game results/window, etc
+            endLevelPanelUI.gameObject.SetActive(true);
+            endLevelPanelUI.OpenEndLevelPanel(win);
         }
 
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)
         {
             return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
         }
+        
+        public string GetNextLevelName() => nextLevelName;
     }
 }
