@@ -29,6 +29,10 @@ namespace Grid
         }
     }
 
+    /// <summary>
+    /// The Grid Manager is a weak singleton that controls the current grid.
+    /// It keeps track of all grid units (tiles) and the 2D matrix of grid units.
+    /// </summary>
     public class GridManager : WeakSingleton<GridManager>
     {
         [SerializeField] private List<GridUnit> gridUnits;
@@ -56,12 +60,28 @@ namespace Grid
             _grid = new GridUnit[dimensions.x, dimensions.y];
             gridUnits.ForEach(unit =>
             {
-                var index = GetUnitPosition(unit, dimensions, bounds);
+                var index = GetUnitPosition(unit, bounds);
                 _grid[index.x, index.y] = unit;
                 unit.SetIndex(index);
             });
+            return;
+
+            Vector2Int GetUnitPosition(GridUnit unit, Bounds tileBounds)
+            {
+                var cellWidth = tileBounds.size.x / dimensions.x;
+                var cellHeight = tileBounds.size.y / dimensions.y;
+                var localOffset = unit.transform.position - tileBounds.min;
+                var gridX = Mathf.FloorToInt(localOffset.x / cellWidth);
+                var gridY = Mathf.FloorToInt(localOffset.y / cellHeight);
+                return new Vector2Int(gridX, gridY);
+            }
         }
 
+        /// <summary>
+        /// Returns the grid unit for the position encoded in the targetTransform.
+        /// </summary>
+        /// <param name="targetTransform">Transform with the position to be used.</param>
+        /// <returns>Grid Unit that more closely matches the position.</returns>
         public GridUnit GetGridPosition(Transform targetTransform)
         {
             var dimensions = tilemapInfo.GetDimensions();
@@ -75,21 +95,17 @@ namespace Grid
             return gridUnit;
         }
 
-        private static Vector2Int GetUnitPosition(GridUnit unit, Vector2Int dimensions, Bounds tileBounds)
-        {
-            var cellWidth = tileBounds.size.x / dimensions.x;
-            var cellHeight = tileBounds.size.y / dimensions.y;
-            var localOffset = unit.transform.position - tileBounds.min;
-            var gridX = Mathf.FloorToInt(localOffset.x / cellWidth);
-            var gridY = Mathf.FloorToInt(localOffset.y / cellHeight);
-            return new Vector2Int(gridX, gridY);
-        }
-
         public void AddGridUnit(GridUnit unit)
         {
             gridUnits.Add(unit);
         }
 
+        /// <summary>
+        /// Checks whether the given position is within a valid grid range.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="unit">Valid GridUnit for the position checked.</param>
+        /// <returns>True if the position is valid for the grid range.</returns>
         public bool CheckGridPosition(Vector2Int position, out GridUnit unit)
         {
             var checkValidPosition = GetValidGridPosition(position, out var validPosition);
@@ -97,6 +113,14 @@ namespace Grid
             return checkValidPosition;
         }
 
+        /// <summary>
+        /// Checks if a given position is valid within the grid range.
+        /// If the position is not valid, then the closest valid position is used and output as the validPosition.
+        /// If the position is valid, the validPosition will be the same as the position.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="validPosition"></param>
+        /// <returns>True if the position is valid.</returns>
         private bool GetValidGridPosition(Vector2Int position, out Vector2Int validPosition)
         {
             validPosition = position;
@@ -108,12 +132,24 @@ namespace Grid
             return false;
         }
 
+        /// <summary>
+        /// Checks if a position is within the grid range.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <returns>True if the position is within the grid range.</returns>
         private bool CheckPosition(Vector2Int position)
         {
             return position.x >= 0 && position.x < _grid.GetLength(0) && position.y >= 0 &&
                    position.y < _grid.GetLength(1);
         }
 
+        /// <summary>
+        /// Returns a list of GridUnit there are within a given radius using manhattan distance.
+        /// Does not include GridUnits that are unreachable and blocked reachable units.
+        /// </summary>
+        /// <param name="position"></param>
+        /// <param name="radius"></param>
+        /// <returns>List of valid GridUnits reachable and unblocked in the given radius.</returns>
         public List<GridUnit> GetGridUnitsInRadiusManhattan(Vector2Int position, int radius)
         {
             DebugUtils.DebugLogMsg("Start Grid Manhattan Area.", DebugUtils.DebugType.Verbose);
