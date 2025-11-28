@@ -200,7 +200,11 @@ namespace Core
         public void HideAttackArea()
         {
             cursorAnimator.SetBool(Select, false);
-            _walkableUnits.ForEach(unit =>
+            if (_walkableUnits == null)
+            {
+                DebugUtils.DebugLogMsg("No valid walkable units available!", DebugUtils.DebugType.Error);
+            }
+            _walkableUnits?.ForEach(unit =>
             {
                 unit.HideVisuals();
                 var unitActor = unit.GetActor();
