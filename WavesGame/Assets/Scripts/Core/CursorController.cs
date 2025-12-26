@@ -220,6 +220,9 @@ namespace Core
 
         public bool TargetSelectedGridUnit(GridUnit gridUnit)
         {
+            var canTarget = _walkableUnits.Contains(gridUnit);
+            if(!canTarget) return false;
+                
             var enumerator = gridUnit.GetActorEnumerator();
             var attackHappened = false;
             while (enumerator.MoveNext())
