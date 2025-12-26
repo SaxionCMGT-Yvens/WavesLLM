@@ -27,6 +27,11 @@ namespace Actors.Editor
             
             base.OnInspectorGUI();
 
+            if (GUILayout.Button("Update Ship Graphics"))
+            {
+                myTarget.Renderer().sprite = myTarget.ShipData.shipSprite;
+            }
+
             var navalShipSo = myTarget.ShipData;
             if (navalShipSo == null) return;
             EditorGUILayout.Space(15);

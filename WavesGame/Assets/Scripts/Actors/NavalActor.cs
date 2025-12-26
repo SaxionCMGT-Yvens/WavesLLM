@@ -23,7 +23,7 @@ namespace Actors
         [SerializeField] private NavalActorType navalType;
         [SerializeField] private FillBar healthBar;
 
-        private void Awake()
+        protected virtual void Awake()
         {
             AssessUtils.CheckRequirement(ref healthBar, this);
         }

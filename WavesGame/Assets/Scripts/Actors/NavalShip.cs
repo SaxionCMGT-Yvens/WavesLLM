@@ -21,20 +21,27 @@ namespace Actors
 {
     public class NavalShip : NavalActor, IComparable<NavalShip>
     {
+        [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private NavalShipSo shipData;
         [SerializeField] private BaseCannon navalCannon;
 
         private int _actions;
         private int _stepsAvailable;
-        
-        public void StartTurn()
+
+        protected override void Awake()
+        {
+            base.Awake();
+            AssessUtils.CheckRequirement(ref spriteRenderer, this);
+        }
+
+        public virtual void StartTurn()
         {
             //Reset turn variables
             _actions = shipData.stats.spirit.Two;
             _stepsAvailable = shipData.stats.speed.Two;
         }
 
-        public void EndTurn()
+        public virtual void EndTurn()
         {
             _actions = 0;
         }
@@ -104,8 +111,7 @@ namespace Actors
 
             return true;
         }
-
-
+        
         private IEnumerator MovementStepsCoroutine(List<GridUnit> steps, Action<GridUnit> onFinishMoving, float time)
         {
             var stepsEnumerator = steps.GetEnumerator();
@@ -178,6 +184,7 @@ namespace Actors
         public int RemainingSteps => _stepsAvailable;
         public int Initiative { get; private set; }
         public int ActionsLeft => _actions;
+        public SpriteRenderer Renderer() => spriteRenderer;
 
         public int CompareTo(NavalShip other)
         {
