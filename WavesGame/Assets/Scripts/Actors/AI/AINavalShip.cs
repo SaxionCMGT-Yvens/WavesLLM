@@ -19,6 +19,7 @@ namespace Actors.AI
         [SerializeField] private AIFaction faction;
 
         private AIBrain _brain;
+        private bool _calculatingAction;
 
         protected override void Awake()
         {
@@ -50,9 +51,12 @@ namespace Actors.AI
             yield return new WaitForSeconds(0.05f);
 
             var canCalculateMove = _brain.CalculateMovement(currentUnit.Index(), stepsAvailable, out var chosenAction);
+            
             //TODO change this so we can give it a time after the attack before ending the turn.
             if (canCalculateMove)
             {
+                _calculatingAction = true;
+                var attacked = false;
                 DebugUtils.DebugLogMsg($"{name} has selected action {chosenAction}.", DebugUtils.DebugType.System);
                 MoveTo(chosenAction.GetUnit(), unit =>
                 {
@@ -66,9 +70,18 @@ namespace Actors.AI
                         DebugUtils.DebugLogMsg($"{name} attacks {chosenAction}!", DebugUtils.DebugType.System);
                         var damage = CalculateDamage();
                         targetUnit.DamageActors(damage);
+                        attacked = true;
                     }
-                    FinishAITurn();
+
+                    _calculatingAction = false;
                 }, true);
+                
+                yield return new WaitUntil(() => !_calculatingAction);
+                if (attacked)
+                {
+                    yield return new WaitForSeconds(1.25f);
+                }
+                FinishAITurn();
             }
             else
             {
