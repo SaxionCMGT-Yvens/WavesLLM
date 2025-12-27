@@ -123,7 +123,7 @@ namespace Actors.AI
             DebugUtils.DebugLogMsg($"Action {index}/{utilities.Count}: {chosenAction} chosen.", DebugUtils.DebugType.Regular);
             for (var i = 0; i < Mathf.Min(5, utilities.Count); i++)
             {
-                DebugUtils.DebugLogMsg($"Utils => {i} {utilities[i]}", DebugUtils.DebugType.Regular);
+                DebugUtils.DebugLogMsg($"Utils => {i} {utilities[i]}", DebugUtils.DebugType.Verbose);
             }
         }
     }

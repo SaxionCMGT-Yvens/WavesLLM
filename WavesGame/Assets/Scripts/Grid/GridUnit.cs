@@ -87,7 +87,7 @@ namespace Grid
             ChangeSprite(GridManager.GetSingleton().GetSpriteForType(currentType));
         }
 
-        public void ChangeSprite(Sprite sprite)
+        private void ChangeSprite(Sprite sprite)
         {
             spriteRenderer.sprite = sprite;
 #if UNITY_EDITOR
@@ -133,9 +133,20 @@ namespace Grid
             return $"{name} {Index()}";
         }
 
-        private void OnDestroy()
+        /// <summary>
+        /// Calculates the Manhattan distance between this and another grid unit.
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public float DistanceTo(GridUnit other)
         {
-            DebugUtils.DebugLogMsg($"{this} destroyed!", DebugUtils.DebugType.System);
+            DebugUtils.DebugLogMsg($"Calculating {name}[{index}] distance to {other.name}[{other.Index()}].", DebugUtils.DebugType.Verbose);
+            return Mathf.Abs(other.Index().x - index.x) + Mathf.Abs(other.Index().y - index.y);
+        }
+
+        public static float Distance(GridUnit a, GridUnit b)
+        {
+            return a.DistanceTo(b);
         }
 
         public GridUnitType Type() => currentType;

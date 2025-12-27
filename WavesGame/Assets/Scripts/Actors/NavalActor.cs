@@ -56,6 +56,7 @@ namespace Actors
 
         protected override void DestroyActor()
         {
+            markedForDeath = true;
             StartCoroutine(DestroyCoroutine());
             NotifyLevelController();
         }

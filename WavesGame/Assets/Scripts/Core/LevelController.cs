@@ -270,5 +270,7 @@ namespace Core
         }
         
         public string GetNextLevelName() => nextLevelName;
+        
+        public List<NavalActor>.Enumerator GetNavalActorsEnumerator() => levelNavalActors.GetEnumerator();
     }
 }

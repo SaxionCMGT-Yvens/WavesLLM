@@ -27,6 +27,8 @@ namespace Grid
         [SerializeField] private bool blockGridUnit;
         [SerializeField] private bool hasStepEffect;
 
+        protected bool markedForDeath;
+
         protected virtual void Start()
         {
             SetUnit(GridManager.GetSingleton().GetGridPosition(transform));
@@ -50,6 +52,7 @@ namespace Grid
 
         protected virtual void DestroyActor()
         {
+            markedForDeath = true;
             DebugUtils.DebugLogMsg($"Destroying actor {name}.", DebugUtils.DebugType.System);
             currentUnit.RemoveActor(this);
             Destroy(gameObject);
@@ -109,5 +112,6 @@ namespace Grid
         public int GetMaxHealth() => maxHealth;
         public int GetCurrentHealth() => currentHealth;
         public float GetHealthRatio() => (float) currentHealth / maxHealth;
+        public bool IsMarkedForDeath() => markedForDeath;
     }
 }

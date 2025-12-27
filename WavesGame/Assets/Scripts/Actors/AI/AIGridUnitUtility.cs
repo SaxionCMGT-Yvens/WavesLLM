@@ -8,7 +8,10 @@
 
 using System;
 using System.Collections.Generic;
+using Core;
 using Grid;
+using UnityEngine;
+using UUtils;
 
 namespace Actors.AI
 {
@@ -104,6 +107,55 @@ namespace Actors.AI
             }
 
             actorEnumerator.Dispose();
+            utility += CalculateActorsGridUnit(aiNavalShip, unit);
+            return utility;
+        }
+
+        /// <summary>
+        /// Calculates the utility of a given unit based on its distance to all the NavalActors in the environment.
+        /// </summary>
+        /// <param name="aiNavalShip"></param>
+        /// <param name="unit"></param>
+        /// <returns></returns>
+        private static float CalculateActorsGridUnit(AINavalShip aiNavalShip, GridUnit unit)
+        {
+            var actorEnumerator = LevelController.GetSingleton().GetNavalActorsEnumerator();
+            var genes = aiNavalShip.GetGenesData();
+            var faction = aiNavalShip.GetFaction();
+            var utility = 0.0f;
+            while (actorEnumerator.MoveNext())
+            {
+                var current = actorEnumerator.Current;
+                if (current == null) continue;
+                if (current.IsMarkedForDeath()) continue;
+                if (current.GetUnit() == null)
+                {
+                    DebugUtils.DebugLogErrorMsg($"Actor {current.GetUnit().name} has no unit.");
+                    continue;
+                }
+
+                var distance = unit.DistanceTo(current.GetUnit());
+                var maxDistance = genes.sight;
+                var distanceFactor = 1.05f - Mathf.Min(distance, maxDistance) / maxDistance;
+
+                switch (current)
+                {
+                    case NavalTarget:
+                        utility += distanceFactor * genes.targetInterest;
+                        break;
+                    case AINavalShip ally when ally.GetFaction().Equals(faction):
+                        utility += distanceFactor * (2.0f - aiNavalShip.GetHealthRatio()) * genes.friendliness;
+                        break;
+                    case AINavalShip enemyAI:
+                        utility += distanceFactor * AttackUtility(enemyAI, aiNavalShip, genes);
+                        break;
+                    case NavalShip navalShip:
+                        utility += distanceFactor * AttackUtility(navalShip, aiNavalShip, genes);
+                        break;
+                }
+            }
+
+            actorEnumerator.Dispose();
             return utility;
         }
 
@@ -141,9 +193,7 @@ namespace Actors.AI
                         utility += AttackUtility(navalShip, aiNavalShip, genes);
                         break;
                     case WaveActor waveActor:
-                    {
                         utility += CalculateAttackAtWaveUtility(aiNavalShip, waveActor);
-                    }
                         break;
                 }
             }
@@ -213,7 +263,7 @@ namespace Actors.AI
             var selfHealthRatio = selfActor.GetHealthRatio();
             return genes.aggressiveness + (selfHealthRatio - targetHealthRatio) * genes.selfPreservation;
         }
-        
+
         /// <summary>
         /// Calculates the utility of attacking a given wave considering its area of effect. 
         /// </summary>
@@ -258,7 +308,8 @@ namespace Actors.AI
         /// <param name="actor"></param>
         /// <param name="hitEnemy"></param>
         /// <returns></returns>
-        private static float CalculateActorInWaveRangeUtility(WaveActor waveActor, AINavalShip aiNavalShip, GridActor actor,
+        private static float CalculateActorInWaveRangeUtility(WaveActor waveActor, AINavalShip aiNavalShip,
+            GridActor actor,
             out bool hitEnemy)
         {
             hitEnemy = false;
@@ -299,7 +350,7 @@ namespace Actors.AI
 
             return actorInWaveRangeUtility;
         }
-        
+
         public float Utility { get; set; }
 
         public GridUnit GetUnit() => _unit;
