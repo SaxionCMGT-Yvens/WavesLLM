@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8e4a7096804eba93b4b8b591a6e4c1, type: 3}
+  m_Name: BasicAI Green Ship
+  m_EditorClassIdentifier: Assembly-CSharp::Actors.NavalShipSo
+  shipSprite: {fileID: 686262427, guid: 2953697ddac6e4f01b58ce0ba10831a8, type: 3}
+  stats:
+    strength:
+      one: {fileID: 11400000, guid: 32fa8050c218842a9b720020f84874ec, type: 2}
+      two: 2
+    speed:
+      one: {fileID: 11400000, guid: 88adb155bbcf14387a3082f848266ba8, type: 2}
+      two: 3
+    stability:
+      one: {fileID: 11400000, guid: f3b0b17e63ebb4be69b3682d73c87c5d, type: 2}
+      two: 1
+    sight:
+      one: {fileID: 11400000, guid: fe295455a4c964dc589f899de4a17047, type: 2}
+      two: 2
+    sturdiness:
+      one: {fileID: 11400000, guid: 4aa07353e781344b4a8be876fa2bd859, type: 2}
+      two: 2
+    spirit:
+      one: {fileID: 11400000, guid: 70d42be893d2d4a8aa51c0df4d767f6b, type: 2}
+      two: 1
+  initiativeDie: 1d10

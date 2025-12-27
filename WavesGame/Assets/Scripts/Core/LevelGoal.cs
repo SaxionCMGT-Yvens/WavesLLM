@@ -9,15 +9,24 @@
 using System;
 using System.Collections.Generic;
 using Actors;
+using Actors.AI;
 using Grid;
 using NaughtyAttributes;
 using UnityEngine;
+using UUtils;
 
 namespace Core
 {
     public enum LevelGoalType
     {
-        DestroyAllTargets, DestroyAllEnemies, SurviveForTurns, DestroySpecificEnemy, Custom
+        DestroyAllTargets, DestroyAllEnemies, SurviveForTurns, DestroySpecificEnemy, AIWars, Custom
+    }
+
+    [Serializable]
+    public class AIShipFactionPair : Pair<NavalShip, AIFaction>
+    {
+        public AIShipFactionPair(NavalShip one, AIFaction two) : base(one, two)
+        { }
     }
     
     public class LevelGoal : MonoBehaviour
@@ -29,7 +38,14 @@ namespace Core
         [SerializeField, ReadOnly] private List<NavalShip> levelShips;
         [SerializeField, ReadOnly] private List<NavalShip> playerLevelShips;
         [SerializeField, ReadOnly] private List<NavalShip> enemyLevelShips;
+        [SerializeField, ReadOnly] private List<AIShipFactionPair> enemyFactionShips;
+        private Dictionary<AIFaction, int> _availableFactions;
         private int _survivedTurns;
+
+        private void Awake()
+        {
+            _availableFactions = new Dictionary<AIFaction, int>();
+        }
 
         public void Initialize(List<GridActor> levelActors)
         {
@@ -48,6 +64,15 @@ namespace Core
                         else
                         {
                             enemyLevelShips.Add(navalShip);
+                            if (navalShip is AINavalShip aiNavalShip)
+                            {
+                                var faction = aiNavalShip.GetFaction();
+                                enemyFactionShips.Add(new AIShipFactionPair(aiNavalShip, faction));
+                                if (!_availableFactions.TryAdd(faction, 1))
+                                {
+                                    _availableFactions[faction]++;
+                                }
+                            }
                         }
                     }
                         break;
@@ -73,6 +98,10 @@ namespace Core
             {
                 enemyLevelShips.Remove(navalShip);
                 enemyLevelShips.RemoveAll(target => target == null);
+
+                if (navalShip is not AINavalShip aiNavalShip) return CheckGoal();
+                var faction = aiNavalShip.GetFaction();
+                _availableFactions[faction]--;
             }
             return CheckGoal();
         }
@@ -92,6 +121,21 @@ namespace Core
                 case LevelGoalType.Custom:
                     //TODO
                     break;
+                case LevelGoalType.AIWars:
+                {
+                    var enumerator = _availableFactions.GetEnumerator();
+                    var alive = 0;
+                    while (enumerator.MoveNext())
+                    {
+                        var current = enumerator.Current;
+                        if (current.Value >= 0)
+                        {
+                            alive++;
+                        }
+                    }
+                    //Only one survived, then it won!
+                    return alive == 1;
+                }
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -107,6 +151,7 @@ namespace Core
                 LevelGoalType.SurviveForTurns => $"Survive for {surviveForTurns} Turns",
                 LevelGoalType.DestroySpecificEnemy => $"Destroy {destroyTarget.name}",
                 LevelGoalType.Custom => $"Custom Goal",
+                LevelGoalType.AIWars => $"AI Wars",
                 _ => throw new ArgumentOutOfRangeException()
             };
         }
@@ -118,7 +163,18 @@ namespace Core
 
         public bool CheckGameOver()
         {
-            return playerLevelShips.Count <= 0;
+            // ReSharper disable once ConvertSwitchStatementToSwitchExpression
+            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+            switch (type)
+            {
+                case LevelGoalType.AIWars:
+                    return false;
+                case LevelGoalType.Custom:
+                    //TODO change this in the future
+                    return false;
+                default:
+                    return playerLevelShips.Count <= 0;
+            }
         }
         
         //TODO for the custom type, create a sort of prefab with script checker.
