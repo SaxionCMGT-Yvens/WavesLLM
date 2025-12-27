@@ -2950,9 +2950,9 @@ Tilemap:
       m_TileSpriteIndex: 31
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
+      m_TileObjectToInstantiateIndex: 1
       dummyAlignment: 0
-      m_AllTileFlags: 1073741825
+      m_AllTileFlags: 2147483649
   - first: {x: 3, y: 2, z: 0}
     second:
       serializedVersion: 2
@@ -4609,7 +4609,7 @@ Tilemap:
   m_TileObjectToInstantiateArray:
   - m_RefCount: 296
     m_Data: {fileID: 6801213328863537374, guid: 5a3c4b9307bc64ff6a7142ab77238b22, type: 3}
-  - m_RefCount: 103
+  - m_RefCount: 104
     m_Data: {fileID: 2881869146655764704, guid: f3d91f7b9b2044ce396cf116fabf82e1, type: 3}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5490,6 +5490,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6313822201612237470, guid: 324f7bb7f338d4dd2a43746c472fcbd6, type: 3}
   m_PrefabInstance: {fileID: 510691199}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1979463419
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 711992543574192054, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_Name
+      value: AI SimpleBoat (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 711992543574192054, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
 --- !u!1 &2017500152
 GameObject:
   m_ObjectHideFlags: 0
@@ -6212,6 +6273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI SimpleBoat
       objectReference: {fileID: 0}
+    - target: {fileID: 711992543574192054, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -6337,6 +6402,7 @@ SceneRoots:
   - {fileID: 590115473}
   - {fileID: 4059300411283383787}
   - {fileID: 7277949426532931278}
+  - {fileID: 1979463419}
   - {fileID: 2689278477905415071}
   - {fileID: 1397302290108224563}
   - {fileID: 7788703986479906163}
