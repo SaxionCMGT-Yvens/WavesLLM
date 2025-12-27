@@ -6,6 +6,7 @@
  * or see the LICENSE file in the root directory of this repository.
  */
 
+using System;
 using System.Collections;
 using Core;
 using Grid;
@@ -77,7 +78,19 @@ namespace Actors
             particles.Play();
             var totalTime = particles.main.duration;
             DebugUtils.DebugLogMsg($"Naval {name} being destroyed in {totalTime}.", DebugUtils.DebugType.Verbose);
-            currentUnit.RemoveActor(this);
+            var removal = false;
+            try
+            {
+                currentUnit.RemoveActor(this);
+                removal = true;
+            }
+            catch(NullReferenceException e)
+            {
+                DebugUtils.DebugLogErrorMsg($"NullReference while destroying NavalActor. Unit: {currentUnit}. Actor: {this}.");
+                DebugUtils.DebugLogException(e);
+                
+            }
+            if (!removal) yield break;
             yield return new WaitForSeconds(totalTime);
             DebugUtils.DebugLogMsg($"Destroy {name} game object!", DebugUtils.DebugType.Verbose);
             Destroy(gameObject);

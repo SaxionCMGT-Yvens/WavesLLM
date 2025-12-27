@@ -47,9 +47,10 @@ namespace Actors.AI
 
         private IEnumerator TurnAI()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.05f);
 
             var canCalculateMove = _brain.CalculateMovement(currentUnit.Index(), stepsAvailable, out var chosenAction);
+            //TODO change this so we can give it a time after the attack before ending the turn.
             if (canCalculateMove)
             {
                 DebugUtils.DebugLogMsg($"{name} has selected action {chosenAction}.", DebugUtils.DebugType.System);
@@ -58,7 +59,7 @@ namespace Actors.AI
                     //Use all actions
                     while (TryToAct())
                     {
-                        var canCalculateAction = _brain.CalculateAction(currentUnit.Index(), out chosenAction);
+                        var canCalculateAction = _brain.CalculateAction(unit.Index(), out chosenAction);
                         if (!canCalculateAction) continue;
                         var targetUnit = chosenAction.GetUnit();
                         if(targetUnit.ActorsCount() <= 0) continue;
@@ -66,7 +67,6 @@ namespace Actors.AI
                         var damage = CalculateDamage();
                         targetUnit.DamageActors(damage);
                     }
-
                     FinishAITurn();
                 }, true);
             }
