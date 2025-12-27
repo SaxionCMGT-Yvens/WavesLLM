@@ -101,8 +101,8 @@ namespace Core
 
                 if (navalShip is not AINavalShip aiNavalShip) return CheckGoal();
                 var faction = aiNavalShip.GetFaction();
-                DebugUtils.DebugLogMsg($"Naval Ship was an AI Ship {aiNavalShip.name} from the {faction} faction.", DebugUtils.DebugType.System);
                 _availableFactions[faction]--;
+                DebugUtils.DebugLogMsg($"Naval Ship was an AI Ship {aiNavalShip.name} from the {faction} faction. Remaining: {_availableFactions[faction]}.", DebugUtils.DebugType.System);
             }
             return CheckGoal();
         }
@@ -129,13 +129,14 @@ namespace Core
                     while (enumerator.MoveNext())
                     {
                         var current = enumerator.Current;
-                        if (current.Value >= 0)
+                        if (current.Value > 0)
                         {
                             alive++;
                         }
                     }
                     //Only one survived, then it won!
                     enumerator.Dispose();
+                    DebugUtils.DebugLogMsg($"Factions remaining {alive}", DebugUtils.DebugType.System);
                     return alive == 1;
                 }
                 default:
