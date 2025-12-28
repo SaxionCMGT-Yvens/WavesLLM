@@ -120,12 +120,14 @@ namespace Grid
             return actorsWithStepEffect;
         }
 
-        public void DamageActors(int damage)
+        /// <summary>
+        /// Returns how many actors were destroyed by the given attack.
+        /// </summary>
+        /// <param name="damage"></param>
+        /// <returns></returns>
+        public int DamageActors(int damage)
         {
-            foreach (var gridActor in _actors)
-            {
-                gridActor.TakeDamage(damage);
-            }
+            return _actors.Count(gridActor => gridActor.TakeDamage(damage));
         }
 
         public override string ToString()

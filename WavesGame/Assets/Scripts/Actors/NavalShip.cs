@@ -68,11 +68,11 @@ namespace Actors
             return ShipData.stats.strength.Two + NavalCannon.CalculateDamage();
         }
 
-        public override void TakeDamage(int damage)
+        public override bool TakeDamage(int damage)
         {
             var damageTaken = damage - shipData.stats.sturdiness.Two;
             DebugUtils.DebugLogMsg($"{name} attacked with {damage}. Sturdiness is {shipData.stats.sturdiness.Two}. Damage taken was {damageTaken}.", DebugUtils.DebugType.Temporary);
-            base.TakeDamage(damageTaken);
+            return base.TakeDamage(damageTaken);
         }
         
         public override bool MoveTo(GridUnit unit, Action<GridUnit> onFinishMoving, bool animate = false, float time = 0.5f)

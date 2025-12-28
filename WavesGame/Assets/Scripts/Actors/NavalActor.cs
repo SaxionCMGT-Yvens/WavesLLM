@@ -35,13 +35,14 @@ namespace Actors
             LevelController.GetSingleton().AddLevelActor(this);
         }
 
-        public override void TakeDamage(int damage)
+        public override bool TakeDamage(int damage)
         {
             //TODO replace MaxValue with some more controlled value
             damage = Mathf.Clamp(damage, 0, int.MaxValue);
+            var destroyed = false;
             if (damage > 0)
             {
-                base.TakeDamage(damage);
+                destroyed = base.TakeDamage(damage);
                 var ratio = GetHealthRatio();
                 healthBar.SetFillFactor(ratio, 1 - ratio);
                 damageParticles.gameObject.SetActive(true);
@@ -52,6 +53,7 @@ namespace Actors
                 missParticles.gameObject.SetActive(true);
                 missParticles.Play();
             }
+            return destroyed;
         }
 
         protected override void DestroyActor()

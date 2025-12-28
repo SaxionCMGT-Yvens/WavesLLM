@@ -39,15 +39,16 @@ namespace Grid
             currentHealth = maxHealth;
         }
 
-        public virtual void TakeDamage(int damage)
+        public virtual bool TakeDamage(int damage)
         {
-            if (!destructible) return;
+            if (!destructible) return false;
             
             currentHealth = Mathf.Clamp(currentHealth - damage, 0, maxHealth);
             if (currentHealth <= 0)
             {
                 DestroyActor();
             }
+            return currentHealth <= 0;
         }
 
         protected virtual void DestroyActor()

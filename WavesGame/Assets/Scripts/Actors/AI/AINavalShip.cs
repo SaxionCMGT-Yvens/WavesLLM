@@ -8,6 +8,7 @@
 
 using System.Collections;
 using Core;
+using Unity.Collections;
 using UnityEngine;
 using UUtils;
 
@@ -17,6 +18,9 @@ namespace Actors.AI
     {
         [SerializeField] private AIGenesSO genesData;
         [SerializeField] private AIFaction faction;
+        
+        [Header("Score")]
+        [SerializeField, ReadOnly] private int kills;
 
         private AIBrain _brain;
         private bool _calculatingAction;
@@ -69,7 +73,7 @@ namespace Actors.AI
                         if(targetUnit.ActorsCount() <= 0) continue;
                         DebugUtils.DebugLogMsg($"{name} attacks {chosenAction}!", DebugUtils.DebugType.System);
                         var damage = CalculateDamage();
-                        targetUnit.DamageActors(damage);
+                        kills = targetUnit.DamageActors(damage);
                         attacked = true;
                     }
 

@@ -50,11 +50,11 @@ namespace Actors
             waveDirectionSpriteRenderer.sprite = waveDirectionSprite.Two;
         }
 
-        public override void TakeDamage(int damage)
+        public override bool TakeDamage(int damage)
         {
             DebugUtils.DebugLogMsg($"Wave actor {name} was attacked with {damage}.", DebugUtils.DebugType.Verbose);
-            base.TakeDamage(damage);
-            if (damage <= 0) return;
+            var destroyed = base.TakeDamage(damage);
+            if (damage <= 0) return false;
             if (damageParticles != null)
             {
                 damageParticles.Play();
@@ -77,6 +77,7 @@ namespace Actors
                     Destroy(particles.gameObject, totalTime);
                 }
             });
+            return destroyed;
         }
 
         public List<GridUnit> GetUnitsAffectedByWaveAttack()
