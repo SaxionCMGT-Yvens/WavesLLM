@@ -7,20 +7,14 @@
  */
 
 using System.Collections;
-using Core;
-using Unity.Collections;
 using UnityEngine;
 using UUtils;
 
 namespace Actors.AI
 {
-    public class AINavalShip : NavalShip
+    public class AINavalShip : AIBaseShip
     {
         [SerializeField] private AIGenesSO genesData;
-        [SerializeField] private AIFaction faction;
-        
-        [Header("Score")]
-        [SerializeField, ReadOnly] private int kills;
 
         private AIBrain _brain;
         private bool _calculatingAction;
@@ -31,26 +25,7 @@ namespace Actors.AI
             _brain = new AIBrain(this, navalCannon.GetCannonSo);
         }
 
-        public override void StartTurn()
-        {
-            base.StartTurn();
-            CursorController.GetSingleton().ToggleActive(false);
-            StartCoroutine(TurnAI());
-        }
-
-        public override void EndTurn()
-        {
-            base.EndTurn();
-            CursorController.GetSingleton().ToggleActive(true);
-        }
-
-        private void FinishAITurn()
-        {
-            LevelController.GetSingleton().EndTurnForCurrentActor();
-            DebugUtils.DebugLogMsg($"{name} has finished its turn.", DebugUtils.DebugType.System);
-        }
-
-        private IEnumerator TurnAI()
+        protected override IEnumerator TurnAI()
         {
             yield return new WaitForSeconds(0.05f);
 
@@ -90,11 +65,10 @@ namespace Actors.AI
             else
             {
                 var moveTo = AIBrain.GenerateRandomMovement(currentUnit.Index(), stepsAvailable);
-                MoveTo(moveTo, unit => { FinishAITurn(); }, true);
+                MoveTo(moveTo, _ => { FinishAITurn(); }, true);
             }
         }
 
-        public AIFaction GetFaction() => faction;
         public AIGenesSO GetGenesData() => genesData;
     }
 }
