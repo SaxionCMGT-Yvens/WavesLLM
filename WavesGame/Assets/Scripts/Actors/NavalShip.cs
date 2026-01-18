@@ -192,5 +192,10 @@ namespace Actors
             // Sort by the largest to the smallest
             return other is null ? 1 : other.Initiative.CompareTo(other.Initiative);
         }
+        
+        public override string ToString()
+        {
+            return $" {base.ToString()}; initiative={Initiative}; ShipData={shipData}; Cannon={navalCannon}";
+        }
     }
 }

@@ -9,6 +9,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Actors.Cannon;
+using Unity.VisualScripting;
 using UnityEngine;
 using UUtils;
 
@@ -143,6 +145,19 @@ namespace Grid
                    position.y < _grid.GetLength(1);
         }
 
+        public List<GridUnit> GetAttackableUnitsInRadiusManhattan(Vector2Int position, CannonSo cannonSo, int radius)
+        {
+            var attackableHash = new HashSet<GridUnit>();
+            var walkableUnits = GetGridUnitsInRadiusManhattan(position, radius, true);
+            attackableHash.AddRange(walkableUnits);
+            foreach (var positions in walkableUnits.Select(unit => GetGridUnitsForMoveType(cannonSo.targetAreaType, unit.Index(), cannonSo.area,
+                         cannonSo.deadZone)))
+            {
+                attackableHash.AddRange(positions);
+            }
+            return attackableHash.ToList();
+        }
+        
         /// <summary>
         /// Returns a list of GridUnit there are within a given radius using manhattan distance.
         /// Does not include GridUnits that are unreachable and blocked reachable units.
@@ -150,7 +165,7 @@ namespace Grid
         /// <param name="position"></param>
         /// <param name="radius"></param>
         /// <returns>List of valid GridUnits reachable and unblocked in the given radius.</returns>
-        public List<GridUnit> GetGridUnitsInRadiusManhattan(Vector2Int position, int radius)
+        public List<GridUnit> GetGridUnitsInRadiusManhattan(Vector2Int position, int radius, bool ignoreBlocked = false)
         {
             DebugUtils.DebugLogMsg("Start Grid Manhattan Area.", DebugUtils.DebugType.Verbose);
             var inRadius = new List<GridUnit>();
@@ -189,8 +204,8 @@ namespace Grid
 
                 var firstUnit = gridUnit == startUnit;
 
-                // Skip this tuple if it is blocked and it is not the current/initial unit
-                if (!firstUnit && gridUnit.Type() == GridUnitType.Blocked) continue;
+                // Either ignore blocked units or skip this tuple if it is blocked and it is not the current/initial unit,
+                if (!ignoreBlocked && !firstUnit && gridUnit.Type() == GridUnitType.Blocked) continue;
                 inRadius.Add(gridUnit);
 
                 DebugUtils.DebugLogMsg($"Visiting next nodes from {gridUnit} [{visited.Count}].",
@@ -449,5 +464,7 @@ namespace Grid
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }
+        
+        public List<GridUnit> Grid() => gridUnits;
     }
 }

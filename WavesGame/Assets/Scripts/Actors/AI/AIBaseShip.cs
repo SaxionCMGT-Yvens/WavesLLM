@@ -22,7 +22,8 @@ namespace Actors.AI
         public override void StartTurn()
         {
             base.StartTurn();
-            CursorController.GetSingleton().ToggleActive(false);
+            //TODO change
+            CursorController.GetSingleton().ToggleActive(true);
             StartCoroutine(TurnAI());
         }
         
@@ -42,5 +43,10 @@ namespace Actors.AI
 
         public AIFaction GetFaction() => faction;
         public int GetKills() => kills;
+
+        public override string ToString()
+        {
+            return $"{base.ToString()}; faction={faction}; kills={kills};";
+        }
     }
 }

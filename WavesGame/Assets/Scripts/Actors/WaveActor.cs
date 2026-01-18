@@ -101,5 +101,10 @@ namespace Actors
         }
 
         public float GetDamage() => waveDamage;
+        
+        public override string ToString()
+        {
+            return $" {base.ToString()}; waveDirection={waveDirection}; areaOfEffect={areaOfEffect}; stepAreaDistance={stepAreaDistance}; waveDamage={waveDamage} ";
+        }
     }
 }

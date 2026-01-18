@@ -114,5 +114,10 @@ namespace Grid
         public int GetCurrentHealth() => currentHealth;
         public float GetHealthRatio() => (float) currentHealth / maxHealth;
         public bool IsMarkedForDeath() => markedForDeath;
+        
+        public override string ToString()
+        {
+            return $"{name}; currentUnit=[{currentUnit.Index().x}, {currentUnit.Index().y}], maxHealth={maxHealth}; currentHealth={currentHealth}; ratio={GetHealthRatio()}; blockGridUnit={blockGridUnit}; hasStepEffect={hasStepEffect}; markedForDeath={markedForDeath}";
+        }
     }
 }

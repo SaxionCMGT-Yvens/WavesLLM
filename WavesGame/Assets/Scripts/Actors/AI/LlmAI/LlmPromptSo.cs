@@ -6,6 +6,6 @@ namespace Actors.AI.LlmAI
     public class LlmPromptSo : ScriptableObject
     {
         [TextArea(10, 20)]
-        public string basePrompt;
+        public string prompt;
     }
 }

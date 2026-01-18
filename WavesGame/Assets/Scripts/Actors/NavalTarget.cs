@@ -31,5 +31,10 @@ namespace Actors
         }
 
         public NavalActorStats GetStats() => stats;
+
+        public override string ToString()
+        {
+            return $" {base.ToString()}; stats={stats}";
+        }
     }
 }

@@ -135,6 +135,22 @@ namespace Grid
             return $"{name} {Index()}";
         }
 
+        public string GetStringInfo()
+        {
+            var info = $"[{index.x}, {index.y}] =";
+            if (_actors.Count == 0)
+            {
+                info += "EMPTY";
+            }
+            else
+            {
+                // (Format: [x,y] = content, where content can be: SHIP_type_faction, WAVE_direction, or EMPTY)
+                info = _actors.Aggregate(info, (current, actor) => current + $"[{actor.ToString()}] ");
+            }
+    
+            return info;
+        }
+
         /// <summary>
         /// Calculates the Manhattan distance between this and another grid unit.
         /// </summary>

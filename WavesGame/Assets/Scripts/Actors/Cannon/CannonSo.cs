@@ -19,5 +19,10 @@ namespace Actors.Cannon
         public int damage;
         public string damageDie;
         public GridMoveType targetAreaType;
+
+        public override string ToString()
+        {
+            return $"[area = {area}; dead zone = {deadZone}; damage = {damage}; damage die = {damageDie}; targetAreaType = {targetAreaType.ToString()}]";
+        }
     }
 }
