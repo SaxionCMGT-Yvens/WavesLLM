@@ -5446,15 +5446,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: orthographic size
-      value: 2.925926
+      value: 7.055556
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.09074733
+      value: 0.16014759
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.81850535
+      value: 0.67896676
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -6311,7 +6311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77501d2c63d1401bb3dc598096653b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FALLA.LlmCallerObject
-  apiKey: YOUR_API_KEY
+  apiKey: 
   llmType: 0
 --- !u!4 &2097152312
 Transform:
@@ -6636,6 +6636,10 @@ PrefabInstance:
       propertyPath: llmCaller
       value: 
       objectReference: {fileID: 2097152311}
+    - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
@@ -7010,6 +7014,7 @@ SceneRoots:
   - {fileID: 510691199}
   - {fileID: 1157383585}
   - {fileID: 1033141280}
+  - {fileID: 2097152312}
   - {fileID: 192609340}
   - {fileID: 330703515}
   - {fileID: 5183575985570343477}
@@ -7034,4 +7039,3 @@ SceneRoots:
   - {fileID: 1123014884}
   - {fileID: 2177167080980415102}
   - {fileID: 1658970052}
-  - {fileID: 2097152312}

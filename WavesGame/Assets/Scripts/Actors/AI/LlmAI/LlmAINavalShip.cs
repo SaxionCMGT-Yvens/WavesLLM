@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using FALLA;
+using FALLA.Helper;
 using Grid;
 using Newtonsoft.Json;
 using UnityEngine;
@@ -11,9 +12,14 @@ namespace Actors.AI.LlmAI
     [Serializable]
     internal class LlmAction
     {
-        public Vector2Int movement;
-        public Vector2Int attack;
-        public Vector2Int move_after_attack;
+        public int[] movement;
+        public int[] attack;
+        public int[] move_after_attack;
+
+        public static Vector2Int getAsVector2Int(int[] pair)
+        {
+            return new Vector2Int(pair[0], pair[1]);
+        } 
     }
 
     public class LlmAINavalShip : AIBaseShip
@@ -37,30 +43,37 @@ namespace Actors.AI.LlmAI
             yield return new WaitForSeconds(0.05f);
 
             var prompt = LlmAiPromptGenerator.GeneratePrompt(this, basePrompt);
-            DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Verbose);
+            DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Temporary);
             llmCaller.CallLlm(prompt);
             yield return new WaitUntil(() => llmCaller.IsReady());
             var result = llmCaller.GetResponse();
-            DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Verbose);
-            var actions = JsonConvert.DeserializeObject<LlmAction>(result);
+            DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Temporary);
 
-            var shouldMove = IsValidLlmAction(actions.movement);
-            var shouldAttack = IsValidLlmAction(actions.attack);
-            var shouldMoveAfterAttack = IsValidLlmAction(actions.move_after_attack);
+            var jsonResult = Sanitizer.ExtractJson(result);
+            DebugUtils.DebugLogMsg(jsonResult, DebugUtils.DebugType.System);
+            
+            var actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);
+
+            var movement = LlmAction.getAsVector2Int(actions.movement);
+            var attack = LlmAction.getAsVector2Int(actions.attack);
+            var moveAfterAttack = LlmAction.getAsVector2Int(actions.move_after_attack);
+            var shouldMove = IsValidLlmAction(movement);
+            var shouldAttack = IsValidLlmAction(attack);
+            var shouldMoveAfterAttack = IsValidLlmAction(moveAfterAttack);
 
             if (shouldMove)
             {
-                yield return StartCoroutine(LlmMoveCoroutine(actions.movement));
+                yield return StartCoroutine(LlmMoveCoroutine(movement));
             }
 
             if (shouldAttack)
             {
-                yield return StartCoroutine(LlmAttackCoroutine(actions.attack));
+                yield return StartCoroutine(LlmAttackCoroutine(attack));
             }
 
             if (shouldMoveAfterAttack)
             {
-                yield return StartCoroutine(LlmMoveCoroutine(actions.move_after_attack));
+                yield return StartCoroutine(LlmMoveCoroutine(moveAfterAttack));
             }
 
             FinishAITurn();

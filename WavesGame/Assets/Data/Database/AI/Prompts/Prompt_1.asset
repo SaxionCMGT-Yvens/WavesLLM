@@ -29,5 +29,8 @@ MonoBehaviour:
     where content can be: SHIP_type_faction, WAVE_direction, or EMPTY)\n`@grid_overview@`\n\n#
     Rules:\n\n- Use [-1, -1] for any action you skip\n- Final position after all
     actions must be valid\n- Consider wave effects when choosing positions\n\n##
-    RESPONSE FORMAT\n\nReturn ONLY valid JSON:```json{\"movement\": [x1, y1], \"attack\":
+    RESPONSE FORMAT\n\n**CRITICAL:** Output **ONLY** a valid JSON object that exactly
+    matches the structure below. Do not include any other text, explanations, or
+    markdown formatting before or after the JSON. Do not wrap the JSON in code blocks
+    or quotes.\nReturn ONLY valid JSON:```json{\"movement\": [x1, y1], \"attack\":
     [x2, y2], \"move_after_attack\": [x3, y3]}```"
