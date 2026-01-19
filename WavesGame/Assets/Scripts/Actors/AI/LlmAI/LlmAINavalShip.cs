@@ -12,11 +12,12 @@ namespace Actors.AI.LlmAI
     [Serializable]
     internal class LlmAction
     {
+        public string reasoning;
         public int[] movement;
         public int[] attack;
         public int[] move_after_attack;
 
-        public static Vector2Int getAsVector2Int(int[] pair)
+        public static Vector2Int GetAsVector2Int(int[] pair)
         {
             return new Vector2Int(pair[0], pair[1]);
         } 
@@ -54,9 +55,11 @@ namespace Actors.AI.LlmAI
             
             var actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);
 
-            var movement = LlmAction.getAsVector2Int(actions.movement);
-            var attack = LlmAction.getAsVector2Int(actions.attack);
-            var moveAfterAttack = LlmAction.getAsVector2Int(actions.move_after_attack);
+            DebugUtils.DebugLogMsg(actions.reasoning, DebugUtils.DebugType.System);
+            
+            var movement = LlmAction.GetAsVector2Int(actions.movement);
+            var attack = LlmAction.GetAsVector2Int(actions.attack);
+            var moveAfterAttack = LlmAction.GetAsVector2Int(actions.move_after_attack);
             var shouldMove = IsValidLlmAction(movement);
             var shouldAttack = IsValidLlmAction(attack);
             var shouldMoveAfterAttack = IsValidLlmAction(moveAfterAttack);
@@ -102,10 +105,20 @@ namespace Actors.AI.LlmAI
             {
                 var hasValidTarget = GridManager.GetSingleton().CheckGridPosition(attackPosition, out var targetUnit);
                 if (!hasValidTarget && targetUnit.ActorsCount() <= 0) continue;
-                DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
-                var damage = CalculateDamage();
-                kills = targetUnit.DamageActors(damage);
-                yield return new WaitForSeconds(1.25f);
+
+                var canAttack = GridManager.GetSingleton()
+                    .CanAttackInRadiusManhattan(currentUnit.Index(), attackPosition, navalCannon.GetCannonSo);
+                if (canAttack)
+                {   
+                    DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
+                    var damage = CalculateDamage();
+                    kills = targetUnit.DamageActors(damage);
+                    yield return new WaitForSeconds(1.25f);
+                }
+                else
+                {
+                    DebugUtils.DebugLogErrorMsg($"Cannot reach target at {targetUnit}.");
+                }
             }
 
             yield return null;

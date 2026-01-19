@@ -7,5 +7,7 @@ namespace Actors.AI.LlmAI
     {
         [TextArea(10, 20)]
         public string prompt;
+
+        public bool includeEmptySpaces;
     }
 }

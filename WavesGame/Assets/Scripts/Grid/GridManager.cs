@@ -157,6 +157,14 @@ namespace Grid
             }
             return attackableHash.ToList();
         }
+
+        public bool CanAttackInRadiusManhattan(Vector2Int selfPosition, Vector2Int position, CannonSo cannonSo)
+        {
+            var attackable =
+                GetGridUnitsForMoveType(cannonSo.targetAreaType, selfPosition, cannonSo.area, cannonSo.deadZone);
+            var canAttack = attackable.Find(unit => unit.Index().Equals(position));
+            return canAttack != null;
+        }
         
         /// <summary>
         /// Returns a list of GridUnit there are within a given radius using manhattan distance.

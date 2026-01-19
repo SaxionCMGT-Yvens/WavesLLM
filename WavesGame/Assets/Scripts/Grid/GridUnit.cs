@@ -67,7 +67,7 @@ namespace Grid
         {
             _actors.Remove(actor);
             actor.SetUnit(null);
-            if (_actors.Count == 0)
+            if (IsEmpty())
             {
                 UpdateType(originalType);
             }
@@ -79,6 +79,11 @@ namespace Grid
                     UpdateType(originalType);
                 }
             }
+        }
+
+        public bool IsEmpty()
+        {
+            return _actors.Count == 0;
         }
 
         private void UpdateType(GridUnitType type)
