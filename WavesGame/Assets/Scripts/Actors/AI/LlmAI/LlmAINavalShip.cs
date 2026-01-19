@@ -15,7 +15,7 @@ namespace Actors.AI.LlmAI
         public string reasoning;
         public int[] movement;
         public int[] attack;
-        public int[] move_after_attack;
+        public int[] moveAfterAttack;
 
         public static Vector2Int GetAsVector2Int(int[] pair)
         {
@@ -56,29 +56,39 @@ namespace Actors.AI.LlmAI
             var actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);
 
             DebugUtils.DebugLogMsg(actions.reasoning, DebugUtils.DebugType.System);
-            
-            var movement = LlmAction.GetAsVector2Int(actions.movement);
-            var attack = LlmAction.GetAsVector2Int(actions.attack);
-            var moveAfterAttack = LlmAction.GetAsVector2Int(actions.move_after_attack);
-            var shouldMove = IsValidLlmAction(movement);
-            var shouldAttack = IsValidLlmAction(attack);
-            var shouldMoveAfterAttack = IsValidLlmAction(moveAfterAttack);
 
+            var shouldMove = false;
+            var shouldAttack = false;
+            var shouldMoveAfterAttack = false;
+            var movement = new Vector2Int(-1, -1);
+            var attack = new Vector2Int(-1, -1);
+            var moveAfterAttack = new Vector2Int(-1, -1);
+            try
+            {
+                shouldMove = IsValidLlmAction(movement);
+                shouldAttack = IsValidLlmAction(attack);
+                shouldMoveAfterAttack = IsValidLlmAction(moveAfterAttack);
+                movement = LlmAction.GetAsVector2Int(actions.movement);
+                attack = LlmAction.GetAsVector2Int(actions.attack);
+                moveAfterAttack = LlmAction.GetAsVector2Int(actions.moveAfterAttack);
+            }
+            catch (Exception e)
+            {
+                DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
+                DebugUtils.DebugLogErrorMsg(e.Message);
+            }
             if (shouldMove)
             {
                 yield return StartCoroutine(LlmMoveCoroutine(movement));
             }
-
             if (shouldAttack)
             {
                 yield return StartCoroutine(LlmAttackCoroutine(attack));
             }
-
             if (shouldMoveAfterAttack)
             {
                 yield return StartCoroutine(LlmMoveCoroutine(moveAfterAttack));
             }
-
             FinishAITurn();
         }
 
@@ -88,11 +98,11 @@ namespace Actors.AI.LlmAI
             var finishedMoving = false;
             if (canMove)
             {
-                MoveTo(moveGridUnit, unit => { finishedMoving = true; }, true);
+                MoveTo(moveGridUnit, _ => { finishedMoving = true; }, true);
             }
             else
             {
-                DebugUtils.DebugLogErrorMsg($"Could not move to {moveToPosition}.");
+                DebugUtils.DebugLogMsg($"Could not move to {moveToPosition}.", DebugUtils.DebugType.Error);
                 finishedMoving = true;
             }
 
@@ -107,7 +117,7 @@ namespace Actors.AI.LlmAI
                 if (!hasValidTarget && targetUnit.ActorsCount() <= 0) continue;
 
                 var canAttack = GridManager.GetSingleton()
-                    .CanAttackInRadiusManhattan(currentUnit.Index(), attackPosition, navalCannon.GetCannonSo);
+                    .CanAttackFrom(currentUnit.Index(), attackPosition, navalCannon.GetCannonSo);
                 if (canAttack)
                 {   
                     DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
@@ -117,7 +127,7 @@ namespace Actors.AI.LlmAI
                 }
                 else
                 {
-                    DebugUtils.DebugLogErrorMsg($"Cannot reach target at {targetUnit}.");
+                    DebugUtils.DebugLogMsg($"Cannot reach target at {targetUnit}.", DebugUtils.DebugType.Error);
                 }
             }
 

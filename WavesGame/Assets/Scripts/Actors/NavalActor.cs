@@ -103,7 +103,7 @@ namespace Actors
         
         public override string ToString()
         {
-            return $" {base.ToString()}; navalType={navalType}";
+            return $"{base.ToString()}; navalType={navalType};";
         }
     }
 }

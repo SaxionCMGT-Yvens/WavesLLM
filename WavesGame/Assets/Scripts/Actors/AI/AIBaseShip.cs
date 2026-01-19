@@ -9,16 +9,16 @@ namespace Actors.AI
     public abstract class AIBaseShip : NavalShip
     {
         [SerializeField] private AIFaction faction;
-        
-        [Header("Score")]
-        [SerializeField, ReadOnly] protected int kills;
+
+        [Header("Score")] [SerializeField, ReadOnly]
+        protected int kills;
 
         protected override void Awake()
         {
             base.Awake();
             kills = 0;
         }
-        
+
         public override void StartTurn()
         {
             base.StartTurn();
@@ -26,13 +26,13 @@ namespace Actors.AI
             CursorController.GetSingleton().ToggleActive(true);
             StartCoroutine(TurnAI());
         }
-        
+
         public override void EndTurn()
         {
             base.EndTurn();
             CursorController.GetSingleton().ToggleActive(true);
         }
-        
+
         protected void FinishAITurn()
         {
             LevelController.GetSingleton().EndTurnForCurrentActor();

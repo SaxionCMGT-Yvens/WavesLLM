@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2025 Yvens R Serpa [https://github.com/YvensFaos/]
- * 
+ *
  * This work is licensed under the Creative Commons Attribution 4.0 International License.
  * To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
  * or see the LICENSE file in the root directory of this repository.
@@ -40,7 +40,7 @@ namespace Actors.AI
                 var movementUtility = AIGridUnitUtility.CalculateUtilityToMoveToGridUnit(_aiNavalShip, unit);
                 var awarenessUtility = 0.0f;
                 var attackUtility = 0.0f;
-                    
+
                 //Then calculate the utility of the surroundings of the given position
                 var awarenessRadius = Mathf.FloorToInt(genes.awareness);
                 if (awarenessRadius >= 1)
@@ -51,10 +51,11 @@ namespace Actors.AI
                     awarenessUnits.Remove(unit);
                     awarenessUnits.ForEach(awarenessUnit =>
                     {
-                        awarenessUtility += AIGridUnitUtility.CalculateProximityUtility(_aiNavalShip, awarenessUnit);
+                        awarenessUtility +=
+                            AIGridUnitUtility.CalculateProximityUtility(_aiNavalShip, awarenessUnit);
                     });
                 }
-                
+
                 //Finally, calculate the utilities of attacking from this position
                 var attackableFromUnit = GridManager.GetSingleton().GetGridUnitsForMoveType(_cannonData.targetAreaType,
                     unit.Index(), _cannonData.area, _cannonData.deadZone);
@@ -67,7 +68,7 @@ namespace Actors.AI
                         attackUtility += AIGridUnitUtility.CalculatePossibleAttackUtility(_aiNavalShip, attackUnit);
                     });
                 }
-                
+
                 gridUnitUtility.Utility = movementUtility + awarenessUtility + attackUtility;
                 utilities.Add(gridUnitUtility);
             }
@@ -90,8 +91,8 @@ namespace Actors.AI
             var attackableFromUnit = GridManager.GetSingleton().GetGridUnitsForMoveType(_cannonData.targetAreaType,
                 position, _cannonData.area, _cannonData.deadZone);
             chosenAction = null;
-            
-            if(attackableFromUnit == null || attackableFromUnit.Count == 0) return false;
+
+            if (attackableFromUnit == null || attackableFromUnit.Count == 0) return false;
 
             var utilities = new List<AIGridUnitUtility>();
             foreach (var unit in attackableFromUnit)
@@ -102,6 +103,7 @@ namespace Actors.AI
                 gridUnitUtility.Utility = utility;
                 utilities.Add(gridUnitUtility);
             }
+
             //TODO transform this into a reusable function
             if (utilities.Count == 0) return false;
             utilities.Sort();
@@ -119,12 +121,13 @@ namespace Actors.AI
             var walkableUnits = GridManager.GetSingleton().GetGridUnitsInRadiusManhattan(position, stepsAvailable);
             return RandomHelper<GridUnit>.GetRandomFromList(walkableUnits);
         }
-        
-        
-        private static void DebugUtilityChoices(AIGridUnitUtility chosenAction, int index, List<AIGridUnitUtility> utilities)
+
+        private static void DebugUtilityChoices(AIGridUnitUtility chosenAction, int index,
+            List<AIGridUnitUtility> utilities)
         {
             //TODO block this when building
-            DebugUtils.DebugLogMsg($"Action {index}/{utilities.Count}: {chosenAction} chosen.", DebugUtils.DebugType.Regular);
+            DebugUtils.DebugLogMsg($"Action {index}/{utilities.Count}: {chosenAction} chosen.",
+                DebugUtils.DebugType.Regular);
             for (var i = 0; i < Mathf.Min(5, utilities.Count); i++)
             {
                 DebugUtils.DebugLogMsg($"Utils => {i} {utilities[i]}", DebugUtils.DebugType.Verbose);

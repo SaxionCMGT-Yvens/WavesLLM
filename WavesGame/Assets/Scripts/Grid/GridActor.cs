@@ -117,7 +117,7 @@ namespace Grid
         
         public override string ToString()
         {
-            return $"{name}; currentUnit=[{currentUnit.Index().x}, {currentUnit.Index().y}], maxHealth={maxHealth}; currentHealth={currentHealth}; ratio={GetHealthRatio()}; blockGridUnit={blockGridUnit}; hasStepEffect={hasStepEffect}; markedForDeath={markedForDeath}";
+            return $"{name}; currentUnit=[{currentUnit.Index().x}, {currentUnit.Index().y}]; maxHealth={maxHealth}; currentHealth={currentHealth}; ratio={GetHealthRatio()}; blockGridUnit={blockGridUnit}; hasStepEffect={hasStepEffect}; markedForDeath={markedForDeath};";
         }
     }
 }

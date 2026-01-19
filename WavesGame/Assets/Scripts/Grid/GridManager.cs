@@ -22,7 +22,7 @@ namespace Grid
         public int Cost { get; set; }
         private int Heuristic { get; }
         public int TotalCost => Cost + Heuristic;
-    
+
         public AStarNode(Vector2Int position, int cost, int heuristic)
         {
             Position = position;
@@ -150,22 +150,31 @@ namespace Grid
             var attackableHash = new HashSet<GridUnit>();
             var walkableUnits = GetGridUnitsInRadiusManhattan(position, radius, true);
             attackableHash.AddRange(walkableUnits);
-            foreach (var positions in walkableUnits.Select(unit => GetGridUnitsForMoveType(cannonSo.targetAreaType, unit.Index(), cannonSo.area,
+            foreach (var positions in walkableUnits.Select(unit => GetGridUnitsForMoveType(cannonSo.targetAreaType,
+                         unit.Index(), cannonSo.area,
                          cannonSo.deadZone)))
             {
                 attackableHash.AddRange(positions);
             }
+
             return attackableHash.ToList();
         }
 
-        public bool CanAttackInRadiusManhattan(Vector2Int selfPosition, Vector2Int position, CannonSo cannonSo)
+        /// <summary>
+        /// Returns if the given "position" can be reached by the "cannonSo" attacking from the "selfPosition". 
+        /// </summary>
+        /// <param name="selfPosition"></param>
+        /// <param name="position"></param>
+        /// <param name="cannonSo"></param>
+        /// <returns></returns>
+        public bool CanAttackFrom(Vector2Int selfPosition, Vector2Int position, CannonSo cannonSo)
         {
             var attackable =
                 GetGridUnitsForMoveType(cannonSo.targetAreaType, selfPosition, cannonSo.area, cannonSo.deadZone);
             var canAttack = attackable.Find(unit => unit.Index().Equals(position));
             return canAttack != null;
         }
-        
+
         /// <summary>
         /// Returns a list of GridUnit there are within a given radius using manhattan distance.
         /// Does not include GridUnits that are unreachable and blocked reachable units.
@@ -354,7 +363,7 @@ namespace Grid
                 units.AddRange(GridUnitsInLine(position, validRightPosition, validDistance));
             }
         }
-        
+
         private List<GridUnit> GetGridUnitsInRadius(Vector2Int position, int radius, int deadZone = 0)
         {
             var inRadius = new List<GridUnit>();
@@ -383,13 +392,14 @@ namespace Grid
 
             return inRadius;
         }
-        
-        public List<GridUnit> GetManhattanPathFromToAStar(Vector2Int from, Vector2Int to, int maxSteps, bool checkBlocked = false)
+
+        public List<GridUnit> GetManhattanPathFromToAStar(Vector2Int from, Vector2Int to, int maxSteps,
+            bool checkBlocked = false)
         {
             var openSet = new List<AStarNode>();
             var closedSet = new HashSet<Vector2Int>();
             var cameFrom = new Dictionary<Vector2Int, Vector2Int>();
-            
+
             var startNode = new AStarNode(from, 0, ManhattanDistance(from, to));
             openSet.Add(startNode);
             while (openSet.Count > 0)
@@ -399,15 +409,16 @@ namespace Grid
                 {
                     return ReconstructPath(cameFrom, current.Position, from);
                 }
-                
+
                 openSet.Remove(current);
                 closedSet.Add(current.Position);
                 if (current.Cost >= maxSteps)
                 {
                     continue;
                 }
+
                 Vector2Int[] moves = { new(-1, 0), new(1, 0), new(0, -1), new(0, 1) };
-                
+
                 foreach (var move in moves)
                 {
                     var neighborPos = current.Position + move;
@@ -415,6 +426,7 @@ namespace Grid
                     {
                         continue;
                     }
+
                     if (checkBlocked)
                     {
                         var neighborUnit = _grid[validPos.x, validPos.y];
@@ -423,6 +435,7 @@ namespace Grid
                             continue;
                         }
                     }
+
                     var tentativeG = current.Cost + 1;
                     var existingNode = openSet.FirstOrDefault(n => n.Position == validPos);
                     if (existingNode != null && tentativeG >= existingNode.Cost) continue;
@@ -436,15 +449,17 @@ namespace Grid
                     {
                         existingNode.Cost = tentativeG;
                     }
+
                     cameFrom[validPos] = current.Position;
                 }
             }
-            
+
             // No path found
             DebugUtils.DebugLogMsg($"Could not find path from {from} to {to}.", DebugUtils.DebugType.Error);
             return new List<GridUnit>();
-            
-            List<GridUnit> ReconstructPath(Dictionary<Vector2Int, Vector2Int> unitCameFrom, Vector2Int current, Vector2Int start)
+
+            List<GridUnit> ReconstructPath(Dictionary<Vector2Int, Vector2Int> unitCameFrom, Vector2Int current,
+                Vector2Int start)
             {
                 var path = new List<GridUnit>();
                 while (current != start)
@@ -452,17 +467,18 @@ namespace Grid
                     path.Add(_grid[current.x, current.y]);
                     current = unitCameFrom[current];
                 }
+
                 path.Add(_grid[start.x, start.y]);
                 path.Reverse();
                 return path;
             }
         }
-        
+
         private static int ManhattanDistance(Vector2Int a, Vector2Int b)
         {
             return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
         }
-        
+
         public Sprite GetSpriteForType(GridUnitType type)
         {
             return type switch
@@ -472,7 +488,7 @@ namespace Grid
                 _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
             };
         }
-        
+
         public List<GridUnit> Grid() => gridUnits;
     }
 }

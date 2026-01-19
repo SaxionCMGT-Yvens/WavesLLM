@@ -71,7 +71,7 @@ namespace Actors
         public override bool TakeDamage(int damage)
         {
             var damageTaken = damage - shipData.stats.sturdiness.Two;
-            DebugUtils.DebugLogMsg($"{name} attacked with {damage}. Sturdiness is {shipData.stats.sturdiness.Two}. Damage taken was {damageTaken}.", DebugUtils.DebugType.Temporary);
+            DebugUtils.DebugLogMsg($"{name} attacked with {damage}. Sturdiness is {shipData.stats.sturdiness.Two}. Damage taken was {damageTaken}.", DebugUtils.DebugType.Verbose);
             return base.TakeDamage(damageTaken);
         }
         
@@ -195,7 +195,7 @@ namespace Actors
         
         public override string ToString()
         {
-            return $" {base.ToString()}; initiative={Initiative}; ShipData={shipData}; Cannon={navalCannon}";
+            return $"{base.ToString()}; initiative={Initiative}; ShipData=[{shipData}]; Cannon=[{navalCannon}];";
         }
     }
 }
