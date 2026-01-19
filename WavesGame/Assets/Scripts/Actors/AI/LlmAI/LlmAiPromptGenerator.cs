@@ -24,9 +24,8 @@ namespace Actors.AI.LlmAI
             template = ReplaceTagWithText(template, "self_y", index.y.ToString());
             template = ReplaceTagWithText(template, "movement_range", shipData.stats.speed.Two.ToString());
             var walkableUnits = GridManager.GetSingleton().GetGridUnitsInRadiusManhattan(index, llmAINavalShip.RemainingSteps);
-            template = ReplaceTagWithText(template, "movement_positions", ListGridUnitsToString(walkableUnits, templatePrompt));
-            
-            //TODO change the method used to return also units that HAVE actors on them. Currently it is only returning empty positions.
+            var movementPositions = ListGridUnitsToString(walkableUnits, templatePrompt);
+            template = ReplaceTagWithText(template, "movement_positions", movementPositions);
             var attackableUnits = GridManager.GetSingleton()
                 .GetAttackableUnitsInRadiusManhattan(index, cannonData.GetCannonSo, llmAINavalShip.RemainingSteps);
             template = ReplaceTagWithText(template, "possible_attack_positions", ListGridUnitsToString(attackableUnits, templatePrompt));
@@ -43,16 +42,12 @@ namespace Actors.AI.LlmAI
 
         private static string ListGridUnitsToString(List<GridUnit> gridUnits, LlmPromptSo promptSo)
         {
-            var text = gridUnits.Aggregate("[", (current, gridUnit) =>
+            var text = "[";
+            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+            foreach (var gridUnit in gridUnits)
             {
-                if (!gridUnit.IsEmpty()) return current + $"[{gridUnit.GetStringInfo()}],";
-                if (promptSo.includeEmptySpaces)
-                {
-                    return current + $"[{gridUnit.GetStringInfo()}],";    
-                }
-                return current;
-
-            });
+                text += $"[{gridUnit.GetStringInfo()}],";
+            }
             return text[..^1] + "]";
         }
     }

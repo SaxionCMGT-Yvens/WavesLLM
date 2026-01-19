@@ -149,11 +149,11 @@ namespace Grid
         {
             var attackableHash = new HashSet<GridUnit>();
             var walkableUnits = GetGridUnitsInRadiusManhattan(position, radius, true);
+            var currentPosition = _grid[position.x, position.y];
             attackableHash.AddRange(walkableUnits);
-            foreach (var positions in walkableUnits.Select(unit => GetGridUnitsForMoveType(cannonSo.targetAreaType,
-                         unit.Index(), cannonSo.area,
-                         cannonSo.deadZone)))
+            foreach (var positions in walkableUnits.Select(unit => GetGridUnitsForMoveType(cannonSo, position)))
             {
+                positions.Remove(currentPosition);
                 attackableHash.AddRange(positions);
             }
 
@@ -181,6 +181,7 @@ namespace Grid
         /// </summary>
         /// <param name="position"></param>
         /// <param name="radius"></param>
+        /// <param name="ignoreBlocked"></param>
         /// <returns>List of valid GridUnits reachable and unblocked in the given radius.</returns>
         public List<GridUnit> GetGridUnitsInRadiusManhattan(Vector2Int position, int radius, bool ignoreBlocked = false)
         {
@@ -220,9 +221,8 @@ namespace Grid
                 if (currentRadius < 0) continue;
 
                 var firstUnit = gridUnit == startUnit;
-
-                // Either ignore blocked units or skip this tuple if it is blocked and it is not the current/initial unit,
-                if (!ignoreBlocked && !firstUnit && gridUnit.Type() == GridUnitType.Blocked) continue;
+                // //Ignores the first unit
+                if (gridUnit.Type() == GridUnitType.Blocked && (!firstUnit || ignoreBlocked)) continue;
                 inRadius.Add(gridUnit);
 
                 DebugUtils.DebugLogMsg($"Visiting next nodes from {gridUnit} [{visited.Count}].",
@@ -243,6 +243,11 @@ namespace Grid
                     toVisit.Add(new Tuple<GridUnit, int>(_grid[index.x, index.y], currentRadius));
                 }
             }
+        }
+
+        public List<GridUnit> GetGridUnitsForMoveType(CannonSo cannonSo, Vector2Int position)
+        {
+            return GetGridUnitsForMoveType(cannonSo.targetAreaType, position, cannonSo.area, cannonSo.deadZone);
         }
 
         public List<GridUnit> GetGridUnitsForMoveType(GridMoveType moveType, Vector2Int position, int distance,

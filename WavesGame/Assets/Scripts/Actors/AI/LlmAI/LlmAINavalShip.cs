@@ -12,10 +12,10 @@ namespace Actors.AI.LlmAI
     [Serializable]
     internal class LlmAction
     {
-        public string reasoning;
-        public int[] movement;
-        public int[] attack;
-        public int[] moveAfterAttack;
+        public string reasoning = "";
+        public int[] movement = new []{-1,-1};
+        public int[] attack = new []{-1,-1};
+        public int[] moveAfterAttack = new []{-1,-1};
 
         public static Vector2Int GetAsVector2Int(int[] pair)
         {
@@ -52,8 +52,16 @@ namespace Actors.AI.LlmAI
 
             var jsonResult = Sanitizer.ExtractJson(result);
             DebugUtils.DebugLogMsg(jsonResult, DebugUtils.DebugType.System);
-            
-            var actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);
+
+            var actions = new LlmAction();
+            try
+            {
+                actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);    
+            } catch (Exception e)
+            {
+                DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
+                DebugUtils.DebugLogErrorMsg(e.Message);
+            }
 
             DebugUtils.DebugLogMsg(actions.reasoning, DebugUtils.DebugType.System);
 
@@ -63,20 +71,22 @@ namespace Actors.AI.LlmAI
             var movement = new Vector2Int(-1, -1);
             var attack = new Vector2Int(-1, -1);
             var moveAfterAttack = new Vector2Int(-1, -1);
+            
             try
             {
-                shouldMove = IsValidLlmAction(movement);
-                shouldAttack = IsValidLlmAction(attack);
-                shouldMoveAfterAttack = IsValidLlmAction(moveAfterAttack);
                 movement = LlmAction.GetAsVector2Int(actions.movement);
                 attack = LlmAction.GetAsVector2Int(actions.attack);
                 moveAfterAttack = LlmAction.GetAsVector2Int(actions.moveAfterAttack);
+                shouldMove = IsValidLlmAction(movement);
+                shouldAttack = IsValidLlmAction(attack);
+                shouldMoveAfterAttack = IsValidLlmAction(moveAfterAttack);
             }
             catch (Exception e)
             {
                 DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
                 DebugUtils.DebugLogErrorMsg(e.Message);
             }
+            
             if (shouldMove)
             {
                 yield return StartCoroutine(LlmMoveCoroutine(movement));
