@@ -5167,6 +5167,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &893963836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 893963838}
+  - component: {fileID: 893963837}
+  m_Layer: 0
+  m_Name: LLMCaller Mistral
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &893963837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893963836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77501d2c63d1401bb3dc598096653b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FALLA.LlmCallerObject
+  apiKeyFile: llm_api_keys.json
+  llmType: 1
+  llmTypeKeyPairs:
+  - type: 1
+    key: mistral
+--- !u!4 &893963838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893963836}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1033141278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6293,7 +6342,7 @@ GameObject:
   - component: {fileID: 2097152312}
   - component: {fileID: 2097152311}
   m_Layer: 0
-  m_Name: LLMCaller
+  m_Name: LLMCaller Gemini
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6311,8 +6360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77501d2c63d1401bb3dc598096653b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FALLA.LlmCallerObject
-  apiKey: 
+  apiKeyFile: llm_api_keys.json
   llmType: 0
+  llmTypeKeyPairs:
+  - type: 0
+    key: gemini
 --- !u!4 &2097152312
 Transform:
   m_ObjectHideFlags: 0
@@ -6347,7 +6399,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 2097152311}
+      objectReference: {fileID: 893963837}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
@@ -6370,7 +6422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3927517475928357642, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Name
-      value: LLM AI SimpleBoat -Green- 2
+      value: LLM AI SimpleBoat Green 1 Mistral
       objectReference: {fileID: 0}
     - target: {fileID: 3927517475928357642, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_IsActive
@@ -6682,7 +6734,11 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
     - target: {fileID: 3927517475928357642, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Name
-      value: LLM AI SimpleBoat Red 1
+      value: LLM AI SimpleBoat Red 1 Gemini
+      objectReference: {fileID: 0}
+    - target: {fileID: 3927517475928357642, guid: 0bc925396065f4527904c6b17945b667, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8212468789275396352, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7051,6 +7107,7 @@ SceneRoots:
   - {fileID: 1157383585}
   - {fileID: 1033141280}
   - {fileID: 2097152312}
+  - {fileID: 893963838}
   - {fileID: 192609340}
   - {fileID: 330703515}
   - {fileID: 5183575985570343477}
