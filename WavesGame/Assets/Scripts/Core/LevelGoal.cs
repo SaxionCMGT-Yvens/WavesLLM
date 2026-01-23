@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using Actors;
 using Actors.AI;
+using Actors.AI.LlmAI;
 using Grid;
 using NaughtyAttributes;
 using UnityEngine;
@@ -64,13 +65,17 @@ namespace Core
                         else
                         {
                             enemyLevelShips.Add(navalShip);
-                            if (navalShip is AINavalShip aiNavalShip)
+                            switch (navalShip)
                             {
-                                var faction = aiNavalShip.GetFaction();
-                                enemyFactionShips.Add(new AIShipFactionPair(aiNavalShip, faction));
-                                if (!_availableFactions.TryAdd(faction, 1))
+                                case AINavalShip aiNavalShip:
                                 {
-                                    _availableFactions[faction]++;
+                                    IncreaseFactionCount(aiNavalShip);
+                                    break;
+                                }
+                                case LlmAINavalShip llmNavalShip:
+                                {
+                                    IncreaseFactionCount(llmNavalShip);
+                                    break;
                                 }
                             }
                         }
@@ -79,7 +84,17 @@ namespace Core
                 }
             });
         }
-        
+
+        private void IncreaseFactionCount(AIBaseShip aiShip)
+        {
+            var faction = aiShip.GetFaction();
+            enemyFactionShips.Add(new AIShipFactionPair(aiShip, faction));
+            if (!_availableFactions.TryAdd(faction, 1))
+            {
+                _availableFactions[faction]++;
+            }
+        }
+
         public bool CheckGoalActor(NavalTarget navalTarget)
         {
             levelTargets.Remove(navalTarget);
@@ -99,12 +114,30 @@ namespace Core
                 enemyLevelShips.Remove(navalShip);
                 enemyLevelShips.RemoveAll(target => target == null);
 
-                if (navalShip is not AINavalShip aiNavalShip) return CheckGoal();
-                var faction = aiNavalShip.GetFaction();
-                _availableFactions[faction]--;
-                DebugUtils.DebugLogMsg($"Naval Ship was an AI Ship {aiNavalShip.name} from the {faction} faction. Remaining: {_availableFactions[faction]}.", DebugUtils.DebugType.System);
+                switch (navalShip)
+                {
+                    case LlmAINavalShip llmNavalShip:
+                    {
+                        UpdateFactionCount(llmNavalShip);
+                        break;
+                    }
+                    case AINavalShip aiNavalShip:
+                    {
+                        UpdateFactionCount(aiNavalShip);
+                        break;
+                    }
+                    default:
+                        return CheckGoal();
+                }
             }
             return CheckGoal();
+
+            void UpdateFactionCount(AIBaseShip aiBaseShip)
+            {
+                var faction = aiBaseShip.GetFaction();
+                _availableFactions[faction]--;
+                DebugUtils.DebugLogMsg($"Naval Ship was an AI Ship {aiBaseShip.name} from the {faction} faction. Remaining: {_availableFactions[faction]}.", DebugUtils.DebugType.System);
+            }
         }
 
         public bool CheckGoal()
