@@ -58,6 +58,13 @@ namespace Actors.AI.LlmAI
             var result = llmCaller.GetResponse();
             stopwatch.Stop();
             DebugUtils.DebugLogMsg($"Request response in {stopwatch.ElapsedMilliseconds} ms.", DebugUtils.DebugType.System);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                DebugUtils.DebugLogMsg("No response returned.", DebugUtils.DebugType.Error);
+                FinishAITurn();
+                yield break;
+            }
             
             DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Temporary);
 
