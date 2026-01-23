@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Diagnostics;
 using FALLA;
 using FALLA.Helper;
 using Grid;
@@ -26,6 +27,7 @@ namespace Actors.AI.LlmAI
     public class LlmAINavalShip : AIBaseShip
     {
         [Header("LLM")] [SerializeField] private LlmCallerObject llmCaller;
+        [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
 
         protected override void Awake()
@@ -42,12 +44,21 @@ namespace Actors.AI.LlmAI
         protected override IEnumerator TurnAI()
         {
             yield return new WaitForSeconds(0.05f);
+            
+            DebugUtils.DebugLogMsg($"Request Timer. Wait for {requestTimeOutTimer} seconds.", DebugUtils.DebugType.System);
+            yield return new WaitForSeconds(requestTimeOutTimer);
+            DebugUtils.DebugLogMsg($"Request Timer Finished.", DebugUtils.DebugType.System);
 
             var prompt = LlmAiPromptGenerator.GeneratePrompt(this, basePrompt);
             DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Temporary);
+            
+            var stopwatch = Stopwatch.StartNew();
             llmCaller.CallLlm(prompt);
             yield return new WaitUntil(() => llmCaller.IsReady());
             var result = llmCaller.GetResponse();
+            stopwatch.Stop();
+            DebugUtils.DebugLogMsg($"Request response in {stopwatch.ElapsedMilliseconds} ms.", DebugUtils.DebugType.System);
+            
             DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Temporary);
 
             var jsonResult = Sanitizer.ExtractJson(result);
