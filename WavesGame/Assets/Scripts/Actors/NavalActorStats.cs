@@ -30,5 +30,10 @@ namespace Actors
             sturdiness.Two = sturdinessValue;
             spirit.Two = spiritValue;
         }
+
+        public override string ToString()
+        {
+            return $"{strength}, {speed}, {stability}, {sight}, {sturdiness}, {spirit}";
+        }
     }
 }

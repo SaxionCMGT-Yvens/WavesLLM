@@ -34,7 +34,7 @@ namespace Actors
 
         public override string ToString()
         {
-            return $" {base.ToString()}; stats={stats}";
+            return $"{base.ToString()}; stats={stats}";
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Actors.Cannon
 
         public override string ToString()
         {
-            return $"{name} - {cannonData}";
+            return $"Cannon: {cannonData}";
         }
     }
 }

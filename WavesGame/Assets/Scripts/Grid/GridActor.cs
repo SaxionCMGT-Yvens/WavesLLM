@@ -112,12 +112,20 @@ namespace Grid
         public void SetUnit(GridUnit unit) => currentUnit = unit;
         public int GetMaxHealth() => maxHealth;
         public int GetCurrentHealth() => currentHealth;
-        public float GetHealthRatio() => (float) currentHealth / maxHealth;
+
+        public float GetHealthRatio()
+        {
+            if (maxHealth != 0)
+            {
+                return (float) currentHealth / maxHealth;
+            }
+            return 1.0f;
+        }
         public bool IsMarkedForDeath() => markedForDeath;
         
         public override string ToString()
         {
-            return $"{name}; currentUnit=[{currentUnit.Index().x}, {currentUnit.Index().y}]; maxHealth={maxHealth}; currentHealth={currentHealth}; ratio={GetHealthRatio()}; blockGridUnit={blockGridUnit}; hasStepEffect={hasStepEffect}; markedForDeath={markedForDeath};";
+            return $"{name} -> position=[{currentUnit.Index().x}, {currentUnit.Index().y}]; maxHealth={maxHealth}; currentHealth={currentHealth}; ratio={GetHealthRatio()}; blockGridUnit={blockGridUnit}; hasStepEffect={hasStepEffect}; markedForDeath={markedForDeath}";
         }
     }
 }

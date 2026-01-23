@@ -22,7 +22,7 @@ namespace Actors.Cannon
 
         public override string ToString()
         {
-            return $"[area = {area}; dead zone = {deadZone}; damage = {damage}; damage die = {damageDie}; targetAreaType = {targetAreaType.ToString()}]";
+            return $"[Cannon = {name}; area = {area}; dead zone = {deadZone}; damage = {damage}; damage die = {damageDie}; targetAreaType = {targetAreaType.ToString()}]";
         }
     }
 }

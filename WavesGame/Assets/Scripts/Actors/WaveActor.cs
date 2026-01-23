@@ -104,7 +104,7 @@ namespace Actors
         
         public override string ToString()
         {
-            return $" {base.ToString()}; waveDirection={waveDirection}; areaOfEffect={areaOfEffect}; stepAreaDistance={stepAreaDistance}; waveDamage={waveDamage} ";
+            return $"{base.ToString()}; waveDirection={waveDirection}; areaOfEffect={areaOfEffect}; stepAreaDistance={stepAreaDistance}; waveDamage={waveDamage}";
         }
     }
 }

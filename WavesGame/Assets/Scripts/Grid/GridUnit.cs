@@ -9,6 +9,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 using UUtils;
 
@@ -149,9 +150,14 @@ namespace Grid
             }
             else
             {
-                // (Format: [x,y] = content, where content can be: SHIP_type_faction, WAVE_direction, or EMPTY)
-                info = _actors.Aggregate(info, (current, actor) => current + $"[{actor.ToString()}] ");
+                // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+                foreach (var actor in _actors)
+                {
+                    info +=  $"[{actor.ToString()}]";
+                }
             }
+
+            info += "]";
     
             return info;
         }

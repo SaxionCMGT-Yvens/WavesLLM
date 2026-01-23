@@ -19,7 +19,7 @@ namespace Actors
 
         public override string ToString()
         {
-            return $"{One.statName}: [{Two}]";
+            return $"{One.statName}: {Two}";
         }
     }
 }

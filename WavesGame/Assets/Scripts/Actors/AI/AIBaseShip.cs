@@ -46,7 +46,7 @@ namespace Actors.AI
 
         public override string ToString()
         {
-            return $"{base.ToString()}; faction={faction}; kills={kills};";
+            return $"{base.ToString()}; faction={faction}; kills={GetKills()}";
         }
     }
 }

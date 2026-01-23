@@ -195,7 +195,7 @@ namespace Actors
         
         public override string ToString()
         {
-            return $"{base.ToString()}; initiative={Initiative}; ShipData=[{shipData}]; Cannon=[{navalCannon}];";
+            return $"{base.ToString()}; initiative={Initiative}; ShipData=[{shipData}]; Cannon=[{navalCannon}]";
         }
     }
 }
