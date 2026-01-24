@@ -26,7 +26,8 @@ namespace Actors.AI.LlmAI
 
     public class LlmAINavalShip : AIBaseShip
     {
-        [Header("LLM")] [SerializeField] private LlmCallerObject llmCaller;
+        [Header("LLM")] 
+        [SerializeField] private LlmCallerObject llmCaller;
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
 
@@ -34,6 +35,15 @@ namespace Actors.AI.LlmAI
         {
             base.Awake();
             AssessUtils.CheckRequirement(ref llmCaller, this);
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            var llmName = llmCaller.GetLlmType().ToString();
+            var factionName = GetFaction().name;
+            var internalIDStr = _internalID.ToString();
+            name = $"LLMAgent - {llmName} - {factionName} - {internalIDStr}";
         }
 
         private static bool IsValidLlmAction(Vector2Int action)

@@ -23,7 +23,8 @@ namespace Actors
         [SerializeField] private ParticleSystem destroyParticles;
         [SerializeField] private NavalActorType navalType;
         [SerializeField] private FillBar healthBar;
-
+        protected int _internalID;
+        
         protected virtual void Awake()
         {
             AssessUtils.CheckRequirement(ref healthBar, this);
@@ -32,7 +33,7 @@ namespace Actors
         protected override void Start()
         {
             base.Start();
-            LevelController.GetSingleton().AddLevelActor(this);
+            _internalID = LevelController.GetSingleton().AddLevelActor(this);
         }
 
         public override bool TakeDamage(int damage)

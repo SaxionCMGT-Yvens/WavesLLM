@@ -161,10 +161,10 @@ namespace Core
             _endTurn = true;
         }
 
-        public void AddLevelActor(GridActor actor)
+        public int AddLevelActor(GridActor actor)
         {
             levelActors.Add(actor);
-            if (actor is not NavalActor navalActor) return;
+            if (actor is not NavalActor navalActor) return levelActors.Count;
             levelNavalActors.Add(navalActor);
             switch (navalActor.NavalType)
             {
@@ -174,16 +174,17 @@ namespace Core
                     {
                         _levelActionableActor ??= new List<LevelActorPair>();
                         _levelActionableActor.Add(new LevelActorPair(navalShip));
+                        return _levelActionableActor.Count;
                     }
-
                     break;
                 case NavalActorType.Collectable:
                 case NavalActorType.Obstacle:
                 case NavalActorType.Wave:
-                    break;
+                    return levelNavalActors.Count;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+            return levelActors.Count;
         }
 
         private void AddLevelActorToTurnBar(NavalShip navalShip)
