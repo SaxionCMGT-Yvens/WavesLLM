@@ -48,5 +48,10 @@ namespace Actors.AI
         {
             return $"{base.ToString()}; faction={faction}; kills={GetKills()}";
         }
+
+        public string ToLlmString()
+        {
+            return $"[{name}]; faction={faction}; currentHealth={GetCurrentHealth()}."; 
+        }
     }
 }

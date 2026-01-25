@@ -138,11 +138,11 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 893963837}
+      objectReference: {fileID: 27660122}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
-      objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
+      objectReference: {fileID: 11400000, guid: d5201056be81a4eaea45129f36f4131c, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: requestTimeOutTimer
       value: 1
@@ -228,6 +228,55 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bc925396065f4527904c6b17945b667, type: 3}
+--- !u!1 &27660121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 27660123}
+  - component: {fileID: 27660122}
+  m_Layer: 0
+  m_Name: LLMCaller DeepSeek
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &27660122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27660121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77501d2c63d1401bb3dc598096653b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FALLA.LlmCallerObject
+  apiKeyFile: llm_api_keys.json
+  llmType: 2
+  llmTypeKeyPairs:
+  - type: 2
+    key: deepSeek
+--- !u!4 &27660123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27660121}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192609339
 GameObject:
   m_ObjectHideFlags: 0
@@ -5017,7 +5066,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 893963837}
+      objectReference: {fileID: 27660122}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5025,7 +5074,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
-      objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
+      objectReference: {fileID: 11400000, guid: d5201056be81a4eaea45129f36f4131c, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: requestTimeOutTimer
       value: 1
@@ -5174,7 +5223,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 893963837}
+      objectReference: {fileID: 27660122}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5182,7 +5231,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
-      objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
+      objectReference: {fileID: 11400000, guid: d5201056be81a4eaea45129f36f4131c, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: requestTimeOutTimer
       value: 1
@@ -5450,15 +5499,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: orthographic size
-      value: 7.5185184
+      value: 4.8333335
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.022160664
+      value: 0.004310345
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.95567864
+      value: 0.9913793
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -5528,11 +5577,11 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 893963837}
+      objectReference: {fileID: 27660122}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
-      objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
+      objectReference: {fileID: 11400000, guid: d5201056be81a4eaea45129f36f4131c, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: requestTimeOutTimer
       value: 1
@@ -5936,11 +5985,11 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 893963837}
+      objectReference: {fileID: 27660122}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
-      objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
+      objectReference: {fileID: 11400000, guid: d5201056be81a4eaea45129f36f4131c, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: requestTimeOutTimer
       value: 1
@@ -6313,7 +6362,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 893963837}
+      objectReference: {fileID: 27660122}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6321,7 +6370,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
-      objectReference: {fileID: 11400000, guid: 17ecde74e20bc4acfac62723941b9e7a, type: 2}
+      objectReference: {fileID: 11400000, guid: d5201056be81a4eaea45129f36f4131c, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: requestTimeOutTimer
       value: 1
@@ -6702,6 +6751,7 @@ SceneRoots:
   - {fileID: 1033141280}
   - {fileID: 2097152312}
   - {fileID: 893963838}
+  - {fileID: 27660123}
   - {fileID: 192609340}
   - {fileID: 330703515}
   - {fileID: 5183575985570343477}

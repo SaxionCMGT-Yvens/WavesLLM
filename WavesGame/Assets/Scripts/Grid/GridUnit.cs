@@ -143,7 +143,7 @@ namespace Grid
 
         public string GetStringInfo()
         {
-            var info = $"[{index.x}, {index.y}] =";
+            var info = $"[{index.x}, {index.y}] = ";
             if (_actors.Count == 0)
             {
                 info += "EMPTY";
@@ -153,7 +153,7 @@ namespace Grid
                 // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
                 foreach (var actor in _actors)
                 {
-                    info +=  $"[{actor.ToString()}]";
+                    info += $"[{actor.ToString()}]";
                 }
             }
 

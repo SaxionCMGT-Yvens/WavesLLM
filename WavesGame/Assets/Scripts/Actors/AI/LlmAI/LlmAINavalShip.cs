@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using FALLA;
+using FALLA.Exception;
 using FALLA.Helper;
 using Grid;
 using Newtonsoft.Json;
@@ -14,20 +15,19 @@ namespace Actors.AI.LlmAI
     internal class LlmAction
     {
         public string reasoning = "";
-        public int[] movement = new []{-1,-1};
-        public int[] attack = new []{-1,-1};
-        public int[] moveAfterAttack = new []{-1,-1};
+        public int[] movement = new[] { -1, -1 };
+        public int[] attack = new[] { -1, -1 };
+        public int[] moveAfterAttack = new[] { -1, -1 };
 
         public static Vector2Int GetAsVector2Int(int[] pair)
         {
             return new Vector2Int(pair[0], pair[1]);
-        } 
+        }
     }
 
     public class LlmAINavalShip : AIBaseShip
     {
-        [Header("LLM")] 
-        [SerializeField] private LlmCallerObject llmCaller;
+        [Header("LLM")] [SerializeField] private LlmCallerObject llmCaller;
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
 
@@ -42,7 +42,7 @@ namespace Actors.AI.LlmAI
             base.Start();
             var llmName = llmCaller.GetLlmType().ToString();
             var factionName = GetFaction().name;
-            var internalIDStr = _internalID.ToString();
+            var internalIDStr = internalID.ToString();
             name = $"LLMAgent - {llmName} - {factionName} - {internalIDStr}";
         }
 
@@ -54,28 +54,53 @@ namespace Actors.AI.LlmAI
         protected override IEnumerator TurnAI()
         {
             yield return new WaitForSeconds(0.05f);
-            
-            DebugUtils.DebugLogMsg($"Request Timer. Wait for {requestTimeOutTimer} seconds.", DebugUtils.DebugType.System);
+
+            DebugUtils.DebugLogMsg($"Request Timer. Wait for {requestTimeOutTimer} seconds.",
+                DebugUtils.DebugType.System);
             yield return new WaitForSeconds(requestTimeOutTimer);
             DebugUtils.DebugLogMsg($"Request Timer Finished.", DebugUtils.DebugType.System);
 
             var prompt = LlmAiPromptGenerator.GeneratePrompt(this, basePrompt);
             DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Temporary);
-            
-            var stopwatch = Stopwatch.StartNew();
-            llmCaller.CallLlm(prompt);
-            yield return new WaitUntil(() => llmCaller.IsReady());
-            var result = llmCaller.GetResponse();
-            stopwatch.Stop();
-            DebugUtils.DebugLogMsg($"Request response in {stopwatch.ElapsedMilliseconds} ms.", DebugUtils.DebugType.System);
 
-            if (string.IsNullOrEmpty(result))
+            bool retry;
+            var maxAttempts = 5;
+            var breakTime = 5.0f;
+            var result = "";
+            do
             {
-                DebugUtils.DebugLogMsg("No response returned.", DebugUtils.DebugType.Error);
-                FinishAITurn();
-                yield break;
-            }
-            
+                var stopwatch = Stopwatch.StartNew();
+                DebugUtils.DebugLogMsg("Prompt sent...", DebugUtils.DebugType.Temporary);
+                llmCaller.CallLlm(prompt);
+                yield return new WaitUntil(() => llmCaller.IsReady());
+                try
+                {
+                    result = llmCaller.GetResponse();
+                }
+                catch (NoResponseException noResponseException)
+                {
+                    DebugUtils.DebugLogMsg($"No response exception: {noResponseException.Message}.", DebugUtils.DebugType.Error);
+                    result = "";
+                }
+                
+                DebugUtils.DebugLogMsg($"Result received: [{result}].", DebugUtils.DebugType.Temporary);
+
+                if (string.IsNullOrEmpty(result))
+                {
+                    DebugUtils.DebugLogMsg("No response returned.", DebugUtils.DebugType.Error);
+                    StopTimer(stopwatch);
+                    retry = true;
+                    DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
+                    yield return new WaitForSeconds(breakTime);
+                    breakTime *= 1.25f;
+                }
+                else
+                {
+                    StopTimer(stopwatch);
+                    retry = false;
+                }
+            } while (retry && --maxAttempts >= 0);
+
             DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Temporary);
 
             var jsonResult = Sanitizer.ExtractJson(result);
@@ -84,8 +109,9 @@ namespace Actors.AI.LlmAI
             var actions = new LlmAction();
             try
             {
-                actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);    
-            } catch (Exception e)
+                actions = JsonConvert.DeserializeObject<LlmAction>(jsonResult);
+            }
+            catch (Exception e)
             {
                 DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
                 DebugUtils.DebugLogErrorMsg(e.Message);
@@ -99,7 +125,7 @@ namespace Actors.AI.LlmAI
             var movement = new Vector2Int(-1, -1);
             var attack = new Vector2Int(-1, -1);
             var moveAfterAttack = new Vector2Int(-1, -1);
-            
+
             try
             {
                 movement = LlmAction.GetAsVector2Int(actions.movement);
@@ -114,20 +140,31 @@ namespace Actors.AI.LlmAI
                 DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
                 DebugUtils.DebugLogErrorMsg(e.Message);
             }
-            
+
             if (shouldMove)
             {
                 yield return StartCoroutine(LlmMoveCoroutine(movement));
             }
+
             if (shouldAttack)
             {
                 yield return StartCoroutine(LlmAttackCoroutine(attack));
             }
+
             if (shouldMoveAfterAttack)
             {
                 yield return StartCoroutine(LlmMoveCoroutine(moveAfterAttack));
             }
+
             FinishAITurn();
+            yield break;
+
+            void StopTimer(Stopwatch stopwatch)
+            {
+                stopwatch.Stop();
+                DebugUtils.DebugLogMsg($"Request response in {stopwatch.ElapsedMilliseconds} ms.",
+                    DebugUtils.DebugType.System);
+            }
         }
 
         private IEnumerator LlmMoveCoroutine(Vector2Int moveToPosition)
@@ -157,7 +194,7 @@ namespace Actors.AI.LlmAI
                 var canAttack = GridManager.GetSingleton()
                     .CanAttackFrom(currentUnit.Index(), attackPosition, navalCannon.GetCannonSo);
                 if (canAttack)
-                {   
+                {
                     DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
                     var damage = CalculateDamage();
                     kills = targetUnit.DamageActors(damage);

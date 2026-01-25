@@ -101,6 +101,7 @@ namespace Actors
         }
 
         public float GetDamage() => waveDamage;
+        public GridMoveType GetWaveDirection => waveDirection;
         
         public override string ToString()
         {

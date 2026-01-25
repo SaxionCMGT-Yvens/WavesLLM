@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Grid;
 
 namespace Actors.AI.LlmAI
@@ -17,20 +16,25 @@ namespace Actors.AI.LlmAI
             template = ReplaceTagWithText(template, "attack_range", cannonData.GetCannonSo.area.ToString());
             template = ReplaceTagWithText(template, "attack_offset", cannonData.GetCannonSo.deadZone.ToString());
             template = ReplaceTagWithText(template, "cannon", cannonData.ToString());
-            template = ReplaceTagWithText(template, "self_status", llmAINavalShip.ToString());
+            template = ReplaceTagWithText(template, "self_status", llmAINavalShip.ToLlmString());
             template = ReplaceTagWithText(template, "health", llmAINavalShip.GetCurrentHealth().ToString());
             var index = llmAINavalShip.GetUnit().Index();            
             template = ReplaceTagWithText(template, "self_x", index.x.ToString());
             template = ReplaceTagWithText(template, "self_y", index.y.ToString());
             template = ReplaceTagWithText(template, "movement_range", shipData.stats.speed.Two.ToString());
+            
             var walkableUnits = GridManager.GetSingleton().GetGridUnitsInRadiusManhattan(index, llmAINavalShip.RemainingSteps);
-            var movementPositions = ListGridUnitsToString(walkableUnits, templatePrompt);
+            var movementPositions = ListGridPositionsToString(walkableUnits);
             template = ReplaceTagWithText(template, "movement_positions", movementPositions);
+            
             var attackableUnits = GridManager.GetSingleton()
                 .GetAttackableUnitsInRadiusManhattan(index, cannonData.GetCannonSo, llmAINavalShip.RemainingSteps);
+            attackableUnits = attackableUnits.FindAll(unit => !unit.IsEmpty());
             template = ReplaceTagWithText(template, "possible_attack_positions", ListGridUnitsToString(attackableUnits, templatePrompt));
+            
             var grid = GridManager.GetSingleton().Grid();
-            template = ReplaceTagWithText(template, "grid_overview", ListGridUnitsToString(grid, templatePrompt));
+            
+            template = ReplaceTagWithText(template, "grid_overview", ListGridToString(llmAINavalShip, grid, false));
             
             return template;
         }
@@ -39,14 +43,92 @@ namespace Actors.AI.LlmAI
         {
             return template.Replace($"@{tag}@", text);
         }
-
-        private static string ListGridUnitsToString(List<GridUnit> gridUnits, LlmPromptSo promptSo)
+        
+        private static string ListGridToString(LlmAINavalShip selfShip, List<GridUnit> gridUnits, bool includeEmpty = true)
         {
+            if (gridUnits == null || gridUnits.Count == 0)
+            {
+                return "Nothing";
+            }
+            
             var text = "[";
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (var gridUnit in gridUnits)
             {
-                text += $"[{gridUnit.GetStringInfo()}],";
+                //(Format: [x,y] = content, where content can be: SHIP_faction_health_ratio, TARGET_health, WAVE_direction, or EMPTY)
+                var index = gridUnit.Index();
+                if (gridUnit.IsEmpty() && includeEmpty)
+                {
+                    text += $"[{index.x}, {index.y}] = EMPTY;";
+                }
+                else
+                {
+                    var topActor = gridUnit.GetActor();
+                    switch (topActor)
+                    {
+                        case LlmAINavalShip llmAINavalShip:
+                        {
+                            text += $"[{index.x}, {index.y}] = ";
+                            if (llmAINavalShip.Equals(selfShip))
+                            {
+                                text += "SELF;";
+                            }
+                            else
+                            {
+                                var opposingFaction = !selfShip.GetFaction().Equals(llmAINavalShip.GetFaction());
+                                var factionText = opposingFaction ? $"Enemy Faction-{llmAINavalShip.GetFaction()}" : "Ally";
+                                var health = llmAINavalShip.GetCurrentHealth();
+                                var ratio = llmAINavalShip.GetHealthRatio();
+                                text += $"SHIP_{factionText}_health[{health}]_ratio[{ratio}];";
+                            }
+
+                            break;
+                        }
+                        case WaveActor wave:
+                            text += $"[{index.x}, {index.y}] = WAVE_direction[{wave.GetWaveDirection}];";
+                            break;
+                        case NavalTarget target:
+                            text += $"[{index.x}, {index.y}] = TARGET_health[{target.GetCurrentHealth()}];";
+                            break;
+                    }
+                }
+            }
+            return text[..^1] + "]";
+        }
+
+        private static string ListGridUnitsToString(List<GridUnit> gridUnits, bool includeEmpty = true)
+        {
+            if (gridUnits == null || gridUnits.Count == 0)
+            {
+                return "Nothing";
+            }
+            
+            var text = "[";
+            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+            foreach (var gridUnit in gridUnits)
+            {
+                if (!gridUnit.IsEmpty() || (gridUnit.IsEmpty() && includeEmpty))
+                {
+                    text += $"[{gridUnit.GetStringInfo()}],";    
+                }
+            }
+            return text[..^1] + "]";
+        }
+        
+        private static string ListGridPositionsToString(List<GridUnit> gridUnits)
+        {
+            if (gridUnits == null || gridUnits.Count == 0)
+            {
+                return "[Nothing]";
+            }
+            
+            var text = "[";
+            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+            foreach (var gridUnit in gridUnits)
+            {
+                if (!gridUnit.IsEmpty()) continue;
+                var index = gridUnit.Index();
+                text += $"({index.x}, {index.y}),";
             }
             return text[..^1] + "]";
         }
