@@ -33,7 +33,7 @@ namespace Actors.AI
             CursorController.GetSingleton().ToggleActive(true);
         }
 
-        protected void FinishAITurn()
+        protected virtual void FinishAITurn()
         {
             LevelController.GetSingleton().EndTurnForCurrentActor();
             DebugUtils.DebugLogMsg($"{name} has finished its turn.", DebugUtils.DebugType.System);

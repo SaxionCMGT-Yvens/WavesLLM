@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Diagnostics;
+using Core;
 using FALLA;
 using FALLA.Exception;
 using FALLA.Helper;
@@ -31,6 +32,13 @@ namespace Actors.AI.LlmAI
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
 
+        private int _internalWrongMovementCount;
+        private int _internalWrongAttackCount;
+        private int _internalTotalRequestCount;
+        private int _internalMovementAttemptCount;
+        private int _internalAttackAttemptCount;
+        private int _internalFaultyMessageCount;
+
         protected override void Awake()
         {
             base.Awake();
@@ -53,6 +61,10 @@ namespace Actors.AI.LlmAI
 
         protected override IEnumerator TurnAI()
         {
+            //Wait two frames for the logger to get ready
+            yield return null;
+            
+            AddInfoLog("Start turn");
             yield return new WaitForSeconds(0.05f);
 
             DebugUtils.DebugLogMsg($"Request Timer. Wait for {requestTimeOutTimer} seconds.",
@@ -72,6 +84,7 @@ namespace Actors.AI.LlmAI
                 var stopwatch = Stopwatch.StartNew();
                 DebugUtils.DebugLogMsg("Prompt sent...", DebugUtils.DebugType.Temporary);
                 llmCaller.CallLlm(prompt);
+                _internalTotalRequestCount++;
                 yield return new WaitUntil(() => llmCaller.IsReady());
                 try
                 {
@@ -80,6 +93,8 @@ namespace Actors.AI.LlmAI
                 catch (NoResponseException noResponseException)
                 {
                     DebugUtils.DebugLogMsg($"No response exception: {noResponseException.Message}.", DebugUtils.DebugType.Error);
+                    AddInfoLog($"No response exception! {noResponseException.Message}");
+                    _internalFaultyMessageCount++;
                     result = "";
                 }
                 
@@ -88,7 +103,9 @@ namespace Actors.AI.LlmAI
                 if (string.IsNullOrEmpty(result))
                 {
                     DebugUtils.DebugLogMsg("No response returned.", DebugUtils.DebugType.Error);
+                    AddInfoLog($"No response exception! Result is empty [{result}]");
                     StopTimer(stopwatch);
+                    _internalFaultyMessageCount++;
                     retry = true;
                     DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
                     yield return new WaitForSeconds(breakTime);
@@ -100,6 +117,7 @@ namespace Actors.AI.LlmAI
                     retry = false;
                 }
             } while (retry && --maxAttempts >= 0);
+            AddDataLog($"attempts,{maxAttempts - 5}");
 
             DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Temporary);
 
@@ -114,7 +132,9 @@ namespace Actors.AI.LlmAI
             catch (Exception e)
             {
                 DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
+                AddInfoLog($"Casting exception! {e.Message}");
                 DebugUtils.DebugLogErrorMsg(e.Message);
+                _internalFaultyMessageCount++;
             }
 
             DebugUtils.DebugLogMsg(actions.reasoning, DebugUtils.DebugType.System);
@@ -138,21 +158,25 @@ namespace Actors.AI.LlmAI
             catch (Exception e)
             {
                 DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
+                AddInfoLog($"Casting exception on trying to act! {e.Message}");
                 DebugUtils.DebugLogErrorMsg(e.Message);
             }
 
             if (shouldMove)
             {
+                _internalMovementAttemptCount++;
                 yield return StartCoroutine(LlmMoveCoroutine(movement));
             }
 
             if (shouldAttack)
             {
+                _internalAttackAttemptCount++;
                 yield return StartCoroutine(LlmAttackCoroutine(attack));
             }
 
             if (shouldMoveAfterAttack)
             {
+                _internalMovementAttemptCount++;
                 yield return StartCoroutine(LlmMoveCoroutine(moveAfterAttack));
             }
 
@@ -162,8 +186,10 @@ namespace Actors.AI.LlmAI
             void StopTimer(Stopwatch stopwatch)
             {
                 stopwatch.Stop();
-                DebugUtils.DebugLogMsg($"Request response in {stopwatch.ElapsedMilliseconds} ms.",
+                var timeText = $"Request response in {stopwatch.ElapsedMilliseconds} ms.";
+                DebugUtils.DebugLogMsg(timeText,
                     DebugUtils.DebugType.System);
+                AddTimeInfoToLog($"request:({stopwatch.ElapsedMilliseconds})");
             }
         }
 
@@ -178,7 +204,9 @@ namespace Actors.AI.LlmAI
             else
             {
                 DebugUtils.DebugLogMsg($"Could not move to {moveToPosition}.", DebugUtils.DebugType.Error);
+                AddInfoLog($"Failed to move to {moveToPosition}");
                 finishedMoving = true;
+                _internalWrongMovementCount++;
             }
 
             yield return new WaitUntil(() => finishedMoving);
@@ -189,7 +217,12 @@ namespace Actors.AI.LlmAI
             while (TryToAct())
             {
                 var hasValidTarget = GridManager.GetSingleton().CheckGridPosition(attackPosition, out var targetUnit);
-                if (!hasValidTarget && targetUnit.ActorsCount() <= 0) continue;
+                if (!hasValidTarget && targetUnit.ActorsCount() <= 0)
+                {
+                    AddInfoLog($"No valid target chosen");
+                    _internalWrongAttackCount++;
+                    continue;
+                }
 
                 var canAttack = GridManager.GetSingleton()
                     .CanAttackFrom(currentUnit.Index(), attackPosition, navalCannon.GetCannonSo);
@@ -198,15 +231,57 @@ namespace Actors.AI.LlmAI
                     DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
                     var damage = CalculateDamage();
                     kills = targetUnit.DamageActors(damage);
-                    yield return new WaitForSeconds(1.25f);
+                    AddInfoLog($"Attacked succeeded at {targetUnit}. Kill count = {kills}.");
+                    yield return new WaitForSeconds(1.5f);
                 }
                 else
                 {
-                    DebugUtils.DebugLogMsg($"Cannot reach target at {targetUnit}.", DebugUtils.DebugType.Error);
+                    var cannotReachMsg = $"Cannot reach target at {targetUnit}.";
+                    DebugUtils.DebugLogMsg(cannotReachMsg, DebugUtils.DebugType.Error);
+                    AddInfoLog(cannotReachMsg);
+                    _internalWrongAttackCount++;
                 }
             }
 
             yield return null;
+        }
+
+        protected override void FinishAITurn()
+        {
+            AddInfoLog("Finish turn");
+            base.FinishAITurn();
+        }
+
+        protected override void DestroyActor()
+        {
+            LogFinalInformation();
+            base.DestroyActor();
+        }
+
+        public void LogFinalInformation()
+        {
+            AddDataLog("_internalWrongMovementCount,_internalWrongAttackCount,_internalTotalRequestCount,_internalMovementAttemptCount,_internalAttackAttemptCount,_internalAttackAttemptCount, _internalFaultyMessageCount, kills");
+            AddDataLog($"{_internalWrongMovementCount},{_internalWrongAttackCount},{_internalTotalRequestCount},{_internalMovementAttemptCount},{_internalAttackAttemptCount},{_internalAttackAttemptCount},{_internalFaultyMessageCount}, {kills}");
+        }
+
+        public string GetLlmInfo()
+        {
+            return $"{llmCaller.GetLlmType().ToString()}-{basePrompt.name}";
+        }
+
+        private void AddInfoLog(string info)
+        {
+            LevelController.GetSingleton().GetLogger().AddLine($"# {info} [{name}]");
+        }
+        
+        private void AddDataLog(string data)
+        {
+            LevelController.GetSingleton().GetLogger().AddLine($"@ [{data}],[{name}]");
+        }
+
+        private void AddTimeInfoToLog(string timeInfo)
+        {
+            LevelController.GetSingleton().GetLogger().AddLine($"& [{timeInfo}],[{name}]");
         }
     }
 }

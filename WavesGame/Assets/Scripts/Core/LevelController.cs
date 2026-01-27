@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2025 Yvens R Serpa [https://github.com/YvensFaos/]
- * 
+ *
  * This work is licensed under the Creative Commons Attribution 4.0 International License.
  * To view a copy of this license, visit http://creativecommons.org/licenses/by/4.0/
  * or see the LICENSE file in the root directory of this repository.
@@ -16,6 +16,7 @@ using TMPro;
 using UI;
 using UnityEngine;
 using UUtils;
+using Logger = UUtils.Logger;
 
 namespace Core
 {
@@ -43,8 +44,8 @@ namespace Core
 
         [Header("Level Specific")] [SerializeField]
         private LevelGoal levelGoal;
-        [SerializeField, Scene]
-        private string nextLevelName;
+
+        [SerializeField, Scene] private string nextLevelName;
 
         [Header("References")] [SerializeField]
         private RectTransform actorTurnsHolder;
@@ -55,12 +56,15 @@ namespace Core
 
         private Coroutine _levelCoroutine;
         private NavalActor _currentActor;
+        private Logger _logger;
         private bool _endTurn;
         private bool _finishedLevel;
 
         private void Start()
         {
             endLevelPanelUI.gameObject.SetActive(false);
+            _logger = new Logger();
+            
             _levelCoroutine = StartCoroutine(LevelCoroutine());
         }
 
@@ -72,15 +76,25 @@ namespace Core
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
             levelGoalText.text = levelGoal.GetLevelMessage();
-
+            var logFileName = $"{levelGoal.GetLevelMessage()}-{Logger.GetSimplifiedTimestamp()}";
+            _logger.StartNewLogFile(logFileName);
+            
             //Roll initiatives and order turns
             _levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
-            _levelActionableActor.Sort(((pairOne, pairTwo) => pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));
+            _levelActionableActor.Sort(((pairOne, pairTwo) =>
+                pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));
             _levelActionableActor.ForEach(actorPair =>
             {
-                DebugUtils.DebugLogMsg($"Creating actor UI {actorPair.One.gameObject.name} [{actorPair.One.Initiative}]", DebugUtils.DebugType.System);
+                DebugUtils.DebugLogMsg(
+                    $"Creating actor UI {actorPair.One.gameObject.name} [{actorPair.One.Initiative}]",
+                    DebugUtils.DebugType.System);
                 AddLevelActorToTurnBar(actorPair.One);
             });
+            
+            var firstActor = _levelActionableActor[0].One;
+            CursorController.GetSingleton().MoveToIndex(firstActor.GetUnit().Index());
+            
+            _logger.AddLine($"Level starts with {_levelActionableActor.Count} actors.");
 
             //Start level
             var enumerator = _levelActionableActor.GetEnumerator();
@@ -109,13 +123,12 @@ namespace Core
                         navalShip.StartTurn();
                         //move the cursor to the ship
                         CursorController.GetSingleton().MoveToIndex(navalShip.GetUnit().Index());
-                        
+
                         yield return new WaitUntil(() => _endTurn);
                         //Check if the naval ship was not destroyed during its own turn.
                         if (navalShip == null) continue;
                         navalShip.EndTurn();
-                        
-                        //TODO check if this is necessary of it maybe this has been destroyed already
+
                         if (enumerator.Current is { Two: true })
                         {
                             turnUI.ToggleAvailability(false);
@@ -123,7 +136,6 @@ namespace Core
                     }
                     else
                     {
-                        //TODO create the logic for non-player _endTurn logic
                         yield return new WaitUntil(() => _endTurn);
                     }
                 }
@@ -136,6 +148,7 @@ namespace Core
                 if (victory || gameOver)
                 {
                     continueLevel = false;
+                    _logger.AddLine($"Level finished!");
                 }
                 else
                 {
@@ -176,6 +189,7 @@ namespace Core
                         _levelActionableActor.Add(new LevelActorPair(navalShip));
                         return _levelActionableActor.Count;
                     }
+
                     break;
                 case NavalActorType.Collectable:
                 case NavalActorType.Obstacle:
@@ -184,6 +198,7 @@ namespace Core
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
             return levelActors.Count;
         }
 
@@ -221,7 +236,8 @@ namespace Core
             //Remove the naval ship from the list of active naval ships.
             levelNavalActors.Remove(navalShip);
 
-            DebugUtils.DebugLogMsg($"Naval Ship: {navalShip.name} destroyed. Checking for level finish...", DebugUtils.DebugType.System);
+            DebugUtils.DebugLogMsg($"Naval Ship: {navalShip.name} destroyed. Checking for level finish...",
+                DebugUtils.DebugType.System);
             if (levelGoal.CheckGoalActor(navalShip))
             {
                 //Game level goal was achieved
@@ -241,7 +257,8 @@ namespace Core
 
         public void NotifyDestroyedActor(NavalTarget navalTarget)
         {
-            DebugUtils.DebugLogMsg($"Target: {navalTarget.name} destroyed. Checking for level finish...", DebugUtils.DebugType.System);
+            DebugUtils.DebugLogMsg($"Target: {navalTarget.name} destroyed. Checking for level finish...",
+                DebugUtils.DebugType.System);
             levelGoal.CheckGoalActor(navalTarget);
 
             if (levelGoal.CheckGoalActor(navalTarget))
@@ -260,7 +277,7 @@ namespace Core
 
             DebugUtils.DebugLogMsg($"Level ended: {(win ? "Victory!" : "Defeat!")}", DebugUtils.DebugType.System);
             CursorController.GetSingleton().FinishLevel();
-            
+
             endLevelPanelUI.gameObject.SetActive(true);
             endLevelPanelUI.OpenEndLevelPanel(win);
         }
@@ -269,9 +286,11 @@ namespace Core
         {
             return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
         }
-        
+
+        public Logger GetLogger() => _logger;
+
         public string GetNextLevelName() => nextLevelName;
-        
+
         public List<NavalActor>.Enumerator GetNavalActorsEnumerator() => levelNavalActors.GetEnumerator();
     }
 }

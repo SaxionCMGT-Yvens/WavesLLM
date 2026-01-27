@@ -20,16 +20,22 @@ namespace Core
 {
     public enum LevelGoalType
     {
-        DestroyAllTargets, DestroyAllEnemies, SurviveForTurns, DestroySpecificEnemy, AIWars, Custom
+        DestroyAllTargets,
+        DestroyAllEnemies,
+        SurviveForTurns,
+        DestroySpecificEnemy,
+        AIWars,
+        Custom
     }
 
     [Serializable]
     public class AIShipFactionPair : Pair<NavalShip, AIFaction>
     {
         public AIShipFactionPair(NavalShip one, AIFaction two) : base(one, two)
-        { }
+        {
+        }
     }
-    
+
     public class LevelGoal : MonoBehaviour
     {
         public LevelGoalType type;
@@ -130,13 +136,16 @@ namespace Core
                         return CheckGoal();
                 }
             }
+
             return CheckGoal();
 
             void UpdateFactionCount(AIBaseShip aiBaseShip)
             {
                 var faction = aiBaseShip.GetFaction();
                 _availableFactions[faction]--;
-                DebugUtils.DebugLogMsg($"Naval Ship was an AI Ship {aiBaseShip.name} from the {faction} faction. Remaining: {_availableFactions[faction]}.", DebugUtils.DebugType.System);
+                DebugUtils.DebugLogMsg(
+                    $"Naval Ship was an AI Ship {aiBaseShip.name} from the {faction} faction. Remaining: {_availableFactions[faction]}.",
+                    DebugUtils.DebugType.System);
             }
         }
 
@@ -159,37 +168,36 @@ namespace Core
                 {
                     var enumerator = _availableFactions.GetEnumerator();
                     var alive = 0;
+                    AIFaction aliveFaction = null;
                     while (enumerator.MoveNext())
                     {
                         var current = enumerator.Current;
-                        if (current.Value > 0)
-                        {
-                            alive++;
-                        }
+                        if (current.Value <= 0) continue;
+                        aliveFaction = current.Key;
+                        alive++;
                     }
+
                     //Only one survived, then it won!
                     enumerator.Dispose();
                     DebugUtils.DebugLogMsg($"Factions remaining {alive}", DebugUtils.DebugType.System);
-                    return alive == 1;
+                    var endLevel = alive == 1;
+                    if (!endLevel) return false;
+                    
+                    LevelController.GetSingleton().GetLogger().AddLine($"Faction {aliveFaction} won.");
+                    foreach (var aiShip in enemyFactionShips)
+                    {
+                        if (aiShip.One != null && aiShip.One is LlmAINavalShip llmAINavalShip)
+                        {
+                            llmAINavalShip.LogFinalInformation();
+                        }
+                    }
+                    return true;
                 }
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-            return false;
-        }
 
-        public string GetLevelMessage()
-        {
-            return type switch
-            {
-                LevelGoalType.DestroyAllTargets => "Destroy All Targets",
-                LevelGoalType.DestroyAllEnemies => "Destroy All Enemies",
-                LevelGoalType.SurviveForTurns => $"Survive for {surviveForTurns} Turns",
-                LevelGoalType.DestroySpecificEnemy => $"Destroy {destroyTarget.name}",
-                LevelGoalType.Custom => $"Custom Goal",
-                LevelGoalType.AIWars => $"AI Wars",
-                _ => throw new ArgumentOutOfRangeException()
-            };
+            return false;
         }
 
         public void SurvivedTurn()
@@ -212,7 +220,50 @@ namespace Core
                     return playerLevelShips.Count <= 0;
             }
         }
-        
+
+        public string GetLevelMessage()
+        {
+            var message = $"{type}";
+            switch (type)
+            {
+                case LevelGoalType.DestroyAllTargets: message += "Destroy All Targets"; break;
+                case LevelGoalType.DestroyAllEnemies:
+                    message += "Destroy All Enemies";
+                    break;
+                case LevelGoalType.SurviveForTurns:
+                    message += $"Survive For {surviveForTurns} Turns";
+                    break;
+                case LevelGoalType.DestroySpecificEnemy:
+                    message += $"Destroy {destroyTarget.name}";
+                    break;
+                case LevelGoalType.AIWars:
+                    message = "AI Wars = ";
+                    var enumerator = _availableFactions.GetEnumerator();
+                    while (enumerator.MoveNext())
+                    {
+                        var llmInfo = "";
+                        var aiShip = enemyFactionShips.Find(ship => ship.Two.Equals(enumerator.Current.Key));
+                        if (aiShip is { One: LlmAINavalShip llmNavalShip })
+                        {
+                            llmInfo = $"[{llmNavalShip.GetLlmInfo()}]";
+                        }
+
+                        message += $"{enumerator.Current.Key}{llmInfo} x ";
+                    }
+
+                    enumerator.Dispose();
+                    message = message[..^2];
+                    break;
+                case LevelGoalType.Custom:
+                    message += $"Custom Goal";
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            return message;
+        }
+
         //TODO for the custom type, create a sort of prefab with script checker.
     }
 }
