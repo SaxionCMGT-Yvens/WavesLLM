@@ -126,7 +126,7 @@ namespace Actors.AI.LlmAI
                 }
             } while (retry && --maxAttempts >= 0);
             AddDataLog($"\"attempts\":{attempt}");
-            _internalTimers.Add(attempt);
+            _internalAttempts.Add(attempt);
 
             DebugUtils.DebugLogMsg(result, DebugUtils.DebugType.Temporary);
 
@@ -267,6 +267,7 @@ namespace Actors.AI.LlmAI
 
         protected override void DestroyActor()
         {
+            AddInfoLog("Destroyed");
             LogFinalInformation();
             base.DestroyActor();
         }
@@ -274,14 +275,17 @@ namespace Actors.AI.LlmAI
         public void LogFinalInformation()
         {
             var averageRequest = (float)_internalTimers.Sum(timer => timer) / _internalTimers.Count;
-            var averageAttempts = (float)_internalAttempts.Sum(timer => timer) / _internalAttempts.Count;
+            var maxRequest = _internalTimers.Max(timer => timer);
+            var minRequest = _internalTimers.Min(timer => timer);
+            var averageAttempts = (float)_internalAttempts.Sum(attempt => attempt) / _internalAttempts.Count;
             AddDataLog( $"\"internalWrongMovementCount\":{_internalWrongMovementCount}" +
                        $",\"internalWrongAttackCount\":{_internalWrongAttackCount}" +
                        $",\"internalTotalRequestCount\":{_internalTotalRequestCount}" +
                        $",\"internalMovementAttemptCount\":{_internalMovementAttemptCount}" +
                        $",\"internalAttackAttemptCount\":{_internalAttackAttemptCount}" +
                        $",\"internalFaultyMessageCount\":{_internalFaultyMessageCount}" +
-                       $",\"averageRequestTime\":{averageRequest}" +
+                       $",\"averageRequestTime\":{averageRequest},\"averageRequestTimeCount\":{_internalTimers.Count}" +
+                       $",\"maxRequestTime\":{maxRequest},\"minRequest\":{minRequest}" +
                        $",\"averageAttempts\":{averageAttempts}" +
                        $",\"kills\":{kills}");
         }
@@ -293,27 +297,27 @@ namespace Actors.AI.LlmAI
 
         private void AddInfoLog(string info)
         {
-            LevelController.GetSingleton().GetLogger().AddLine($"INFO {info} [{name}]");
+            LevelController.GetSingleton().GetLogger().AddLine($"[{name}]; INFO {info}");
         }
         
         private void AddDataLog(string data)
         {
-            LevelController.GetSingleton().GetLogger().AddLine($"DATA [{data}] [{name}]");
+            LevelController.GetSingleton().GetLogger().AddLine($"[{name}]; DATA [{data}]");
         }
         
         private void AddMovementLog(Vector2Int position)
         {
-            LevelController.GetSingleton().GetLogger().AddLine($"MOVE [{position.x}, {position.y}] [{name}]");
+            LevelController.GetSingleton().GetLogger().AddLine($"[{name}]; MOVE [{position.x}, {position.y}]");
         }
         
         private void AddAttackLog(Vector2Int position)
         {
-            LevelController.GetSingleton().GetLogger().AddLine($"ATTK [{position.x}, {position.y}] [{name}]");
+            LevelController.GetSingleton().GetLogger().AddLine($"[{name}]; ATTK [{position.x}, {position.y}]");
         }
 
         private void AddTimeInfoToLog(string timeInfo)
         {
-            LevelController.GetSingleton().GetLogger().AddLine($"TIME [{timeInfo}] [{name}]");
+            LevelController.GetSingleton().GetLogger().AddLine($"[{name}]; TIME [{timeInfo}]");
         }
     }
 }

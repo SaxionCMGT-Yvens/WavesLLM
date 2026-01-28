@@ -184,9 +184,13 @@ namespace Core
                     if (!endLevel) return false;
                     
                     LevelController.GetSingleton().GetLogger().AddLine($"Faction {aliveFaction} won.");
-                    foreach (var aiShip in enemyFactionShips)
+                    LevelController.GetSingleton().GetLogger().AddLine($"Logging remaining ships. Count: {enemyFactionShips.Count}.");
+                    
+                    // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
+                    foreach (var aiShipPair in enemyFactionShips)
                     {
-                        if (aiShip.One != null && aiShip.One is LlmAINavalShip llmAINavalShip)
+                        var aiShip = aiShipPair.One;
+                        if (aiShip != null && aiShip is LlmAINavalShip llmAINavalShip)
                         {
                             llmAINavalShip.LogFinalInformation();
                         }
