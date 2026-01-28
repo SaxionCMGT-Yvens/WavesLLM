@@ -95,6 +95,8 @@ namespace Core
             CursorController.GetSingleton().MoveToIndex(firstActor.GetUnit().Index());
             
             _logger.AddLine($"Level starts with {_levelActionableActor.Count} actors.");
+            var gridDimensions = GridManager.GetSingleton().GetDimensions();
+            _logger.AddLine($"Grid size is {gridDimensions.x} by {gridDimensions.y}.");
 
             //Start level
             var enumerator = _levelActionableActor.GetEnumerator();

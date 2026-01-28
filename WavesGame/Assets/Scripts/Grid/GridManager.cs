@@ -43,6 +43,7 @@ namespace Grid
         [Header("Visuals")] [SerializeField] private List<GridWalkingVisual> visuals;
 
         private GridUnit[,] _grid;
+        private Vector2Int _dimensions;
 
         protected override void Awake()
         {
@@ -57,9 +58,9 @@ namespace Grid
 
         private void InitializeGrid()
         {
-            var dimensions = tilemapInfo.GetDimensions();
+            _dimensions = tilemapInfo.GetDimensions();
             var bounds = tilemapInfo.GetTileMapBounds();
-            _grid = new GridUnit[dimensions.x, dimensions.y];
+            _grid = new GridUnit[_dimensions.x, _dimensions.y];
             gridUnits.ForEach(unit =>
             {
                 var index = GetUnitPosition(unit, bounds);
@@ -70,8 +71,8 @@ namespace Grid
 
             Vector2Int GetUnitPosition(GridUnit unit, Bounds tileBounds)
             {
-                var cellWidth = tileBounds.size.x / dimensions.x;
-                var cellHeight = tileBounds.size.y / dimensions.y;
+                var cellWidth = tileBounds.size.x / _dimensions.x;
+                var cellHeight = tileBounds.size.y / _dimensions.y;
                 var localOffset = unit.transform.position - tileBounds.min;
                 var gridX = Mathf.FloorToInt(localOffset.x / cellWidth);
                 var gridY = Mathf.FloorToInt(localOffset.y / cellHeight);
@@ -495,5 +496,6 @@ namespace Grid
         }
 
         public List<GridUnit> Grid() => gridUnits;
+        public Vector2Int GetDimensions() => _dimensions;
     }
 }
