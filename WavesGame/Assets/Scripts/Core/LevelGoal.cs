@@ -183,8 +183,8 @@ namespace Core
                     var endLevel = alive == 1;
                     if (!endLevel) return false;
                     
-                    LevelController.GetSingleton().GetLogger().AddLine($"Faction {aliveFaction} won.");
-                    LevelController.GetSingleton().GetLogger().AddLine($"Logging remaining ships. Count: {enemyFactionShips.Count}.");
+                    LevelController.GetSingleton().AddInfoLog($"Faction {aliveFaction} won.", "LevelGoal");
+                    LevelController.GetSingleton().AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
                     
                     // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
                     foreach (var aiShipPair in enemyFactionShips)
