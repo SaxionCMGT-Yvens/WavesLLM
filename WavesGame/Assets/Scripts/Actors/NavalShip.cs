@@ -149,6 +149,7 @@ namespace Actors
                     var resist = shipData.ResistWave();
                     if (resist) continue;
                     var moveToUnit = effect.moveTo;
+                    if (moveToUnit == null) continue;
                     nextStep = false;
                     
                     //TODO for now, it does not check for the case of multiple waves moving the ship

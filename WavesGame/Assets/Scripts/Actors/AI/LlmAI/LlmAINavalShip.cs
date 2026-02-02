@@ -146,6 +146,7 @@ namespace Actors.AI.LlmAI
             {
                 DebugUtils.DebugLogMsg($"Exception {e.Message}.", DebugUtils.DebugType.Error);
                 LevelController.GetSingleton().AddInfoLog($"Casting exception! {e.Message}", name);
+                LevelController.GetSingleton().AddInfoLog($"Message was: [{jsonResult}]", name);
                 DebugUtils.DebugLogErrorMsg(e.Message);
                 _internalFaultyMessageCount++;
             }
