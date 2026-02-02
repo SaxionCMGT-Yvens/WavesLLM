@@ -69,7 +69,7 @@ namespace Actors.AI.LlmAI
         {
             //Wait two frames for the logger to get ready
             yield return null;
-            
+
             LevelController.GetSingleton().AddInfoLog("Start turn", name);
             yield return new WaitForSeconds(0.05f);
 
@@ -100,18 +100,21 @@ namespace Actors.AI.LlmAI
                 }
                 catch (NoResponseException noResponseException)
                 {
-                    DebugUtils.DebugLogMsg($"No response exception: {noResponseException.Message}.", DebugUtils.DebugType.Error);
-                    LevelController.GetSingleton().AddInfoLog($"No response exception! {noResponseException.Message}", name);
+                    DebugUtils.DebugLogMsg($"No response exception: {noResponseException.Message}.",
+                        DebugUtils.DebugType.Error);
+                    LevelController.GetSingleton()
+                        .AddInfoLog($"No response exception! {noResponseException.Message}", name);
                     _internalFaultyMessageCount++;
                     result = "";
                 }
-                
+
                 DebugUtils.DebugLogMsg($"Result received: [{result}].", DebugUtils.DebugType.Temporary);
 
                 if (string.IsNullOrEmpty(result))
                 {
                     DebugUtils.DebugLogMsg("No response returned.", DebugUtils.DebugType.Error);
-                    LevelController.GetSingleton().AddInfoLog($"No response exception! Result is empty [{result}]", name);
+                    LevelController.GetSingleton()
+                        .AddInfoLog($"No response exception! Result is empty [{result}]", name);
                     StopTimer(stopwatch);
                     _internalFaultyMessageCount++;
                     retry = true;
@@ -125,6 +128,7 @@ namespace Actors.AI.LlmAI
                     retry = false;
                 }
             } while (retry && --maxAttempts >= 0);
+
             LevelController.GetSingleton().AddDataLog($"\"attempts\":{attempt}", name);
             _internalAttempts.Add(attempt);
 
@@ -148,7 +152,7 @@ namespace Actors.AI.LlmAI
 
             DebugUtils.DebugLogMsg(actions.reasoning, DebugUtils.DebugType.System);
             LevelController.GetSingleton().AddReasonLog(actions.reasoning, name);
-            
+
             var shouldMove = false;
             var shouldAttack = false;
             var shouldMoveAfterAttack = false;
@@ -212,7 +216,11 @@ namespace Actors.AI.LlmAI
             if (canMove)
             {
                 LevelController.GetSingleton().AddMovementLog(moveGridUnit.Index(), name);
-                MoveTo(moveGridUnit, _ => { finishedMoving = true; }, true);
+                var moved = MoveTo(moveGridUnit, _ => { finishedMoving = true; }, true);
+                if (!moved)
+                {
+                    _internalWrongMovementCount++;
+                }
             }
             else
             {
@@ -245,7 +253,8 @@ namespace Actors.AI.LlmAI
                     LevelController.GetSingleton().AddAttackLog(targetUnit.Index(), name);
                     var damage = CalculateDamage();
                     kills = targetUnit.DamageActors(damage);
-                    LevelController.GetSingleton().AddInfoLog($"Attacked succeeded at {targetUnit}. Kill count = {kills}.", name);
+                    LevelController.GetSingleton()
+                        .AddInfoLog($"Attacked succeeded at {targetUnit}. Kill count = {kills}.", name);
                     yield return new WaitForSeconds(1.5f);
                 }
                 else
@@ -279,16 +288,16 @@ namespace Actors.AI.LlmAI
             var maxRequest = _internalTimers.Max(timer => timer);
             var minRequest = _internalTimers.Min(timer => timer);
             var averageAttempts = (float)_internalAttempts.Sum(attempt => attempt) / _internalAttempts.Count;
-            LevelController.GetSingleton().AddDataLog( $"\"internalWrongMovementCount\":{_internalWrongMovementCount}" +
-                       $",\"internalWrongAttackCount\":{_internalWrongAttackCount}" +
-                       $",\"internalTotalRequestCount\":{_internalTotalRequestCount}" +
-                       $",\"internalMovementAttemptCount\":{_internalMovementAttemptCount}" +
-                       $",\"internalAttackAttemptCount\":{_internalAttackAttemptCount}" +
-                       $",\"internalFaultyMessageCount\":{_internalFaultyMessageCount}" +
-                       $",\"averageRequestTime\":{averageRequest},\"averageRequestTimeCount\":{_internalTimers.Count}" +
-                       $",\"maxRequestTime\":{maxRequest},\"minRequest\":{minRequest}" +
-                       $",\"averageAttempts\":{averageAttempts}" +
-                       $",\"kills\":{kills}", name);
+            LevelController.GetSingleton().AddDataLog($"\"internalWrongMovementCount\":{_internalWrongMovementCount}" +
+                                                      $",\"internalWrongAttackCount\":{_internalWrongAttackCount}" +
+                                                      $",\"internalTotalRequestCount\":{_internalTotalRequestCount}" +
+                                                      $",\"internalMovementAttemptCount\":{_internalMovementAttemptCount}" +
+                                                      $",\"internalAttackAttemptCount\":{_internalAttackAttemptCount}" +
+                                                      $",\"internalFaultyMessageCount\":{_internalFaultyMessageCount}" +
+                                                      $",\"averageRequestTime\":{averageRequest},\"averageRequestTimeCount\":{_internalTimers.Count}" +
+                                                      $",\"maxRequestTime\":{maxRequest},\"minRequest\":{minRequest}" +
+                                                      $",\"averageAttempts\":{averageAttempts}" +
+                                                      $",\"kills\":{kills}", name);
         }
 
         public string GetLlmInfo()
