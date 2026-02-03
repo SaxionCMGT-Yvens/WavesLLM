@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 784855913}
+      objectReference: {fileID: 1572162386}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
@@ -5067,7 +5067,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 2097152311}
+      objectReference: {fileID: 1572162386}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5275,7 +5275,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 2097152311}
+      objectReference: {fileID: 1572162386}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -5551,15 +5551,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: orthographic size
-      value: 4.888889
+      value: 8.333334
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.009584664
+      value: 0.06875
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.9797657
+      value: 0.86249995
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
@@ -5629,7 +5629,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 784855913}
+      objectReference: {fileID: 1572162386}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
@@ -5742,6 +5742,56 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1518052475}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1572162385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1572162387}
+  - component: {fileID: 1572162386}
+  m_Layer: 0
+  m_Name: LLMCaller GPT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1572162386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572162385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77501d2c63d1401bb3dc598096653b81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FALLA.LlmCallerObject
+  apiKeyFile: llm_api_keys.json
+  llmType: 4
+  llmModel: 
+  llmTypeKeyPairs:
+  - type: 4
+    key: gpt
+--- !u!4 &1572162387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572162385}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -6037,7 +6087,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 784855913}
+      objectReference: {fileID: 1572162386}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
@@ -6419,7 +6469,7 @@ PrefabInstance:
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: llmCaller
       value: 
-      objectReference: {fileID: 2097152311}
+      objectReference: {fileID: 1572162386}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -6810,6 +6860,7 @@ SceneRoots:
   - {fileID: 893963838}
   - {fileID: 27660123}
   - {fileID: 784855914}
+  - {fileID: 1572162387}
   - {fileID: 192609340}
   - {fileID: 330703515}
   - {fileID: 5183575985570343477}
