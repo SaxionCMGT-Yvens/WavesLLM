@@ -1,0 +1,8 @@
+#!/bin/bash
+LOG_FILE="$1"
+AGENT_FILTER="$2"
+TYPE_FILTER="$3"
+LINE_COUNT=$(grep "$AGENT_FILTER" "$LOG_FILE" | grep -c "$TYPE_FILTER")
+RESULT=$(grep "$AGENT_FILTER" "$LOG_FILE" | grep "$TYPE_FILTER")
+echo "> $TYPE_FILTER $LINE_COUNT"
+echo "$RESULT"
