@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1601717614429036195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1043754721070107645}
+  - component: {fileID: 4897635577557534976}
+  m_Layer: 1
+  m_Name: LevelScheduler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1043754721070107645
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601717614429036195}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4897635577557534976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601717614429036195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 241ee422b41a4c67bc343bd335b4bafb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Actors.AI.LlmAI.LlmLevelScheduler
+  callers: []
+  schedules:
+  - orderId: 0
+    repetitions: 3
+    factionPairs:
+    - one: {fileID: 11400000, guid: cfb967da26c2946d89664483c5a76968, type: 2}
+      two: 0
+      specificModel: 
+      caller: {fileID: 0}
+    - one: {fileID: 11400000, guid: efaed8e15acbb4065a9d24eab268d4aa, type: 2}
+      two: 0
+      specificModel: 
+      caller: {fileID: 0}
+  - orderId: 0
+    repetitions: 3
+    factionPairs:
+    - one: {fileID: 11400000, guid: cfb967da26c2946d89664483c5a76968, type: 2}
+      two: 0
+      specificModel: 
+      caller: {fileID: 0}
+    - one: {fileID: 11400000, guid: efaed8e15acbb4065a9d24eab268d4aa, type: 2}
+      two: 1
+      specificModel: 
+      caller: {fileID: 0}

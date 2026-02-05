@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Actors;
+using Actors.AI.LlmAI;
 using Grid;
 using NaughtyAttributes;
 using TMPro;
@@ -61,13 +62,22 @@ namespace Core
         private Logger _logger;
         private bool _endTurn;
         private bool _finishedLevel;
+        private LlmLevelScheduler _scheduler;
 
         private void Start()
         {
             endLevelPanelUI.gameObject.SetActive(false);
             _logger = new Logger();
-            
+            TryToInitializeViaScheduler();
             _levelCoroutine = StartCoroutine(LevelCoroutine());
+        }
+
+        private void TryToInitializeViaScheduler()
+        {
+            _scheduler = LlmLevelScheduler.GetSingleton();
+            if (_scheduler == null) return;
+            
+            _scheduler.BeginNewLevel();
         }
 
         private IEnumerator LevelCoroutine()
@@ -77,6 +87,8 @@ namespace Core
             
             UnityEngine.Random.InitState(randomSeed);
 
+            _scheduler?.SetupLevel(levelActors);
+            
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
             levelGoalText.text = levelGoal.GetLevelMessage();
@@ -289,8 +301,15 @@ namespace Core
             CursorController.GetSingleton().FinishLevel();
             AddInfoLog("Level finished.", "LevelController");
 
-            endLevelPanelUI.gameObject.SetActive(true);
-            endLevelPanelUI.OpenEndLevelPanel(win);
+            if (_scheduler == null)
+            {
+                endLevelPanelUI.gameObject.SetActive(true);
+                endLevelPanelUI.OpenEndLevelPanel(win);    
+            }
+            else
+            {
+                _scheduler.FinishLevel(levelGoal);
+            }
         }
 
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)

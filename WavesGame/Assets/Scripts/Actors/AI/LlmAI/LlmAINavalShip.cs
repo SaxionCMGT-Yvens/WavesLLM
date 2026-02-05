@@ -53,13 +53,18 @@ namespace Actors.AI.LlmAI
         protected override void Start()
         {
             base.Start();
+            _internalTimers = new List<long>();
+            _internalAttempts = new List<int>();
+            UpdateName();
+            SetInitiative(overrideInitiative);
+        }
+
+        public void UpdateName()
+        {
             var llmName = $"{llmCaller.GetLlmType().ToString()}|{llmCaller.GetLlmModel()}";
             var factionName = GetFaction().name;
             var internalIDStr = internalID.ToString();
-            _internalTimers = new List<long>();
-            _internalAttempts = new List<int>();
             name = $"LLMAgent|{llmName}|{factionName}|{internalIDStr}";
-            SetInitiative(overrideInitiative);
         }
 
         private static bool IsValidLlmAction(Vector2Int action)
@@ -87,15 +92,35 @@ namespace Actors.AI.LlmAI
             PromptInfo($"{basePrompt.name};{prompt.Length}");
             DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Temporary);
 
-            bool retry;
-            
+            var retry = true;
+            var faultyMessage = false;
             var result = "";
             do
             {
                 attempt++;
                 var stopwatch = Stopwatch.StartNew();
                 DebugUtils.DebugLogMsg("Prompt sent...", DebugUtils.DebugType.Temporary);
-                llmCaller.CallLlm(prompt);
+                try
+                {
+                    llmCaller.CallLlm(prompt);
+                }
+                catch (Exception e)
+                {
+                    DebugUtils.DebugLogMsg($"Exception: {e.Message}.",
+                        DebugUtils.DebugType.Error);
+                    StopTimer(stopwatch);
+                    _internalFaultyMessageCount++;
+                    faultyMessage = true;
+                }
+
+                if (faultyMessage)
+                {
+                    DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
+                    yield return new WaitForSeconds(breakTime);
+                    breakTime *= 1.25f;
+                    continue;
+                }
+                
                 _internalTotalRequestCount++;
                 yield return new WaitUntil(() => llmCaller.IsReady());
                 try
@@ -121,7 +146,6 @@ namespace Actors.AI.LlmAI
                         .AddInfoLog($"No response exception! Result is empty [{result}]", name);
                     StopTimer(stopwatch);
                     _internalFaultyMessageCount++;
-                    retry = true;
                     DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
                     yield return new WaitForSeconds(breakTime);
                     breakTime *= 1.25f;
@@ -313,6 +337,11 @@ namespace Actors.AI.LlmAI
         public string GetLlmInfo()
         {
             return $"{llmCaller.GetLlmType().ToString()}-{basePrompt.name}";
+        }
+
+        public void SetCaller(LlmCallerObject caller)
+        {
+            llmCaller = caller;
         }
     }
 }

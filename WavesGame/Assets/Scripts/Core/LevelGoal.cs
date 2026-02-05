@@ -48,6 +48,7 @@ namespace Core
         [SerializeField, ReadOnly] private List<AIShipFactionPair> enemyFactionShips;
         private Dictionary<AIFaction, int> _availableFactions;
         private int _survivedTurns;
+        private AIFaction _winnerFaction;
 
         private void Awake()
         {
@@ -183,7 +184,8 @@ namespace Core
                     var endLevel = alive == 1;
                     if (!endLevel) return false;
                     
-                    LevelController.GetSingleton().AddInfoLog($"Faction {aliveFaction} won.", "LevelGoal");
+                    _winnerFaction = aliveFaction;
+                    LevelController.GetSingleton().AddInfoLog($"Faction {_winnerFaction} won.", "LevelGoal");
                     LevelController.GetSingleton().AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
                     
                     // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
@@ -269,5 +271,7 @@ namespace Core
         }
 
         //TODO for the custom type, create a sort of prefab with script checker.
+        
+        public AIFaction GetWinnerFaction() => _winnerFaction;
     }
 }
