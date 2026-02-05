@@ -58,7 +58,7 @@ namespace Actors.AI.LlmAI
             var internalIDStr = internalID.ToString();
             _internalTimers = new List<long>();
             _internalAttempts = new List<int>();
-            name = $"LLMAgent-{llmName}-{factionName}-{internalIDStr}";
+            name = $"LLMAgent|{llmName}|{factionName}|{internalIDStr}";
             SetInitiative(overrideInitiative);
         }
 
