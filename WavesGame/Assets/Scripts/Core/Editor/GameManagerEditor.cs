@@ -7,7 +7,6 @@
  */
 
 using UnityEditor;
-using UnityEngine.UIElements;
 
 namespace Core.Editor
 {
@@ -15,7 +14,7 @@ namespace Core.Editor
     public class GameManagerEditor : UnityEditor.Editor
     {
         private UnityEditor.Editor _scriptableObjectEditor;
-        
+
         public override void OnInspectorGUI()
         {
             DrawDefaultInspector();

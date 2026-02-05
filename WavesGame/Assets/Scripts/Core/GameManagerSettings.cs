@@ -17,6 +17,8 @@ namespace Core
     {
         public DebugUtils.DebugType enabledDebugTypes = DebugUtils.DebugType.Regular | DebugUtils.DebugType.System |
                                                         DebugUtils.DebugType.Warning | DebugUtils.DebugType.Error;
+        public DebugUtils.DebugType enabledDebugLogTypes = DebugUtils.DebugType.Regular | DebugUtils.DebugType.System |
+                                                        DebugUtils.DebugType.Warning | DebugUtils.DebugType.Error;
 
         public bool logToFile = false;
         [ShowIf("logToFile")] public string logName = "wavesGame";

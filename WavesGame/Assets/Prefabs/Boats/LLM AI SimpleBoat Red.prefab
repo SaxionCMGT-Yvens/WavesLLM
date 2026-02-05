@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 838a7e7f0a84456384d6a3d10fd19ebf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Actors.AI.LlmAI.LlmAINavalShip
-  maxHealth: 10
+  maxHealth: 15
   currentHealth: 0
   currentUnit: {fileID: 0}
   targetRenderer: {fileID: 8810062026556063228}
@@ -182,7 +182,9 @@ MonoBehaviour:
   faction: {fileID: 11400000, guid: cfb967da26c2946d89664483c5a76968, type: 2}
   kills: 0
   llmCaller: {fileID: 0}
+  requestTimeOutTimer: 1
   basePrompt: {fileID: 0}
+  overrideInitiative: 0
 --- !u!114 &1207828299174444129
 MonoBehaviour:
   m_ObjectHideFlags: 0

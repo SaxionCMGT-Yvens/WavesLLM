@@ -23,21 +23,22 @@ namespace Actors.AI.LlmAI
     {
         public int orderId;
         public int repetitions;
-        private int _internalRepetitionsCount;
+        [SerializeField, ReadOnly]
+        private int internalRepetitionsCount;
         public List<FactionLlmPair> factionPairs;
 
         public void Initialize()
         {
-            _internalRepetitionsCount = repetitions;
+            internalRepetitionsCount = repetitions;
         }
 
         public bool Use()
         {
-            _internalRepetitionsCount = Mathf.Max(0, _internalRepetitionsCount - 1);
+            internalRepetitionsCount = Mathf.Max(0, internalRepetitionsCount - 1);
             DebugUtils.DebugLogMsg(
-                $"Update Schedule repetition, _internalRepetitionsCount -> {_internalRepetitionsCount}.",
+                $"Update Schedule repetition, _internalRepetitionsCount -> {internalRepetitionsCount}.",
                 DebugUtils.DebugType.System);
-            return _internalRepetitionsCount <= 0;
+            return internalRepetitionsCount <= 0;
         }
 
         public List<AIFaction> GetFactions()
@@ -77,8 +78,14 @@ namespace Actors.AI.LlmAI
     {
         [SerializeField, ReadOnly] private List<LlmCallerObject> callers;
         [SerializeField] private List<LevelSchedule> schedules;
-
         private int _internalCounter = 0;
+
+        protected override void Awake()
+        {
+            base.Awake();
+            if (markedToDie) return;
+            schedules.ForEach(schedule => schedule.Initialize());
+        }
 
         public void BeginNewLevel()
         {
@@ -110,11 +117,6 @@ namespace Actors.AI.LlmAI
                     llmAINavalShip.SetCaller(pair.Caller);
                     llmAINavalShip.UpdateName();
                 }
-            }
-
-            if (currentSchedule.Use())
-            {
-                _internalCounter++;
             }
         }
 
