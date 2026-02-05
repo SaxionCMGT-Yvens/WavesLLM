@@ -45,6 +45,11 @@ namespace Actors
         {
             _actions = 0;
         }
+
+        protected void SetInitiative(int initiative)
+        {
+            Initiative = initiative;
+        }
         
         public void RollInitiative()
         {

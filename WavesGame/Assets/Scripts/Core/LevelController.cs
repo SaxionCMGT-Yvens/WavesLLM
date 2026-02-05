@@ -41,6 +41,8 @@ namespace Core
         [SerializeField, ReadOnly] private List<NavalActor> levelNavalActors;
         private List<LevelActorPair> _levelActionableActor;
         [SerializeField, ReadOnly] private List<ActorTurnUI> actorTurnUIs;
+        [SerializeField] private bool initiativeBased = true;
+        [SerializeField] private int randomSeed = 6;
 
         [Header("Level Specific")] [SerializeField]
         private LevelGoal levelGoal;
@@ -72,6 +74,8 @@ namespace Core
         {
             //Wait for one frame for all elements to be initialized
             yield return null;
+            
+            UnityEngine.Random.InitState(randomSeed);
 
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
@@ -80,9 +84,13 @@ namespace Core
             _logger.StartNewLogFile(logFileName);
             
             //Roll initiatives and order turns
-            _levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
+            if (initiativeBased)
+            {
+                _levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
+            }
             _levelActionableActor.Sort(((pairOne, pairTwo) =>
-                pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));
+                pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));  
+            
             _levelActionableActor.ForEach(actorPair =>
             {
                 DebugUtils.DebugLogMsg(
@@ -94,9 +102,9 @@ namespace Core
             var firstActor = _levelActionableActor[0].One;
             CursorController.GetSingleton().MoveToIndex(firstActor.GetUnit().Index());
             
-            AddInfoLog($"Level starts with {_levelActionableActor.Count} actors.");
+            AddInfoLog($"Level starts with {_levelActionableActor.Count} actors.", "LevelController");
             var gridDimensions = GridManager.GetSingleton().GetDimensions();
-            AddInfoLog($"Grid size is {gridDimensions.x} by {gridDimensions.y}.");
+            AddInfoLog($"Grid size is {gridDimensions.x} by {gridDimensions.y}.", "LevelController");
 
             //Start level
             var enumerator = _levelActionableActor.GetEnumerator();
@@ -150,7 +158,7 @@ namespace Core
                 if (victory || gameOver)
                 {
                     continueLevel = false;
-                    AddInfoLog($"Level finished!");
+                    AddInfoLog($"Level finished!", "LevelController");
                 }
                 else
                 {
@@ -279,7 +287,7 @@ namespace Core
 
             DebugUtils.DebugLogMsg($"Level ended: {(win ? "Victory!" : "Defeat!")}", DebugUtils.DebugType.System);
             CursorController.GetSingleton().FinishLevel();
-            AddInfoLog("Level finished.");
+            AddInfoLog("Level finished.", "LevelController");
 
             endLevelPanelUI.gameObject.SetActive(true);
             endLevelPanelUI.OpenEndLevelPanel(win);
@@ -289,12 +297,15 @@ namespace Core
         {
             return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
         }
-
-        // public Logger GetLogger() => _logger;
         
         public void AddInfoLog(string info, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];INFO {info}");
+        }
+        
+        public void AddPromptLog(string info, string callerName = "")
+        {
+            _logger.AddLine($"[{callerName}];PRPT {info}");
         }
         
         public void AddDataLog(string data, string callerName = "")

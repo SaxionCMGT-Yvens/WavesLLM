@@ -33,6 +33,7 @@ namespace Actors.AI.LlmAI
         [Header("LLM")] [SerializeField] private LlmCallerObject llmCaller;
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
+        [SerializeField] private int overrideInitiative;
 
         private int _internalWrongMovementCount;
         private int _internalWrongAttackCount;
@@ -52,12 +53,13 @@ namespace Actors.AI.LlmAI
         protected override void Start()
         {
             base.Start();
-            var llmName = llmCaller.GetLlmType().ToString();
+            var llmName = $"{llmCaller.GetLlmType().ToString()}|{llmCaller.GetLlmModel()}";
             var factionName = GetFaction().name;
             var internalIDStr = internalID.ToString();
             _internalTimers = new List<long>();
             _internalAttempts = new List<int>();
-            name = $"LLMAgent - {llmName} - {factionName} - {internalIDStr}";
+            name = $"LLMAgent-{llmName}-{factionName}-{internalIDStr}";
+            SetInitiative(overrideInitiative);
         }
 
         private static bool IsValidLlmAction(Vector2Int action)
@@ -70,7 +72,10 @@ namespace Actors.AI.LlmAI
             //Wait two frames for the logger to get ready
             yield return null;
 
-            LevelController.GetSingleton().AddInfoLog("Start turn", name);
+            var attempt = 0;
+            var maxAttempts = 5;
+            var breakTime = 5.0f;
+            LevelController.GetSingleton().AddInfoLog($"Start turn;{maxAttempts},{breakTime}", name);
             yield return new WaitForSeconds(0.05f);
 
             DebugUtils.DebugLogMsg($"Request Timer. Wait for {requestTimeOutTimer} seconds.",
@@ -79,12 +84,11 @@ namespace Actors.AI.LlmAI
             DebugUtils.DebugLogMsg($"Request Timer Finished.", DebugUtils.DebugType.System);
 
             var prompt = LlmAiPromptGenerator.GeneratePrompt(this, basePrompt);
+            PromptInfo($"{basePrompt.name};{prompt.Length}");
             DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Temporary);
 
             bool retry;
-            var attempt = 0;
-            var maxAttempts = 5;
-            var breakTime = 5.0f;
+            
             var result = "";
             do
             {
@@ -270,6 +274,11 @@ namespace Actors.AI.LlmAI
             yield return null;
         }
 
+        protected void PromptInfo(string promptInfo)
+        {
+            LevelController.GetSingleton().AddPromptLog(promptInfo, name);
+        }
+        
         protected override void FinishAITurn()
         {
             LevelController.GetSingleton().AddInfoLog("Finish turn", name);
