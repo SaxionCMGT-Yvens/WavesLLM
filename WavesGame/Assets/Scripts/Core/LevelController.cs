@@ -92,7 +92,7 @@ namespace Core
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
             levelGoalText.text = levelGoal.GetLevelMessage();
-            var logFileName = $"{levelGoal.GetLevelMessage()}-{Logger.GetSimplifiedTimestamp()}";
+            var logFileName = $"{levelGoal.GetLevelMessage()}-{TimestampHelper.GetSimplifiedTimestamp()}";
             _logger.StartNewLogFile(logFileName);
             
             //Roll initiatives and order turns

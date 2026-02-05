@@ -183,11 +183,12 @@ namespace Core
                     DebugUtils.DebugLogMsg($"Factions remaining {alive}", DebugUtils.DebugType.System);
                     var endLevel = alive == 1;
                     if (!endLevel) return false;
-                    
+
                     _winnerFaction = aliveFaction;
                     LevelController.GetSingleton().AddInfoLog($"Faction {_winnerFaction} won.", "LevelGoal");
-                    LevelController.GetSingleton().AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
-                    
+                    LevelController.GetSingleton()
+                        .AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
+
                     // ReSharper disable once ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator
                     foreach (var aiShipPair in enemyFactionShips)
                     {
@@ -197,6 +198,7 @@ namespace Core
                             llmAINavalShip.LogFinalInformation();
                         }
                     }
+
                     return true;
                 }
                 default:
@@ -271,7 +273,7 @@ namespace Core
         }
 
         //TODO for the custom type, create a sort of prefab with script checker.
-        
+
         public AIFaction GetWinnerFaction() => _winnerFaction;
     }
 }

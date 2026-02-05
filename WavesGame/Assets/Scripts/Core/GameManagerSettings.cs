@@ -6,6 +6,7 @@
  * or see the LICENSE file in the root directory of this repository.
  */
 
+using NaughtyAttributes;
 using UnityEngine;
 using UUtils;
 
@@ -15,8 +16,10 @@ namespace Core
     public class GameManagerSettings : ScriptableObject
     {
         public DebugUtils.DebugType enabledDebugTypes = DebugUtils.DebugType.Regular | DebugUtils.DebugType.System |
-                                                         DebugUtils.DebugType.Warning | DebugUtils.DebugType.Error;
+                                                        DebugUtils.DebugType.Warning | DebugUtils.DebugType.Error;
 
+        public bool logToFile = false;
+        [ShowIf("logToFile")] public string logName = "wavesGame";
         public bool debugCursorInformation = false;
         public bool alwaysIgnoreWaves = false;
         public bool alwaysHitByWaves = false;

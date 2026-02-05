@@ -120,7 +120,7 @@ namespace Actors.AI.LlmAI
                     breakTime *= 1.25f;
                     continue;
                 }
-                
+
                 _internalTotalRequestCount++;
                 yield return new WaitUntil(() => llmCaller.IsReady());
                 try
@@ -302,7 +302,7 @@ namespace Actors.AI.LlmAI
         {
             LevelController.GetSingleton().AddPromptLog(promptInfo, name);
         }
-        
+
         protected override void FinishAITurn()
         {
             LevelController.GetSingleton().AddInfoLog("Finish turn", name);
