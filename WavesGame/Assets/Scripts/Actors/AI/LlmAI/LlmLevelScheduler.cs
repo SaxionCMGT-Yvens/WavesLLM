@@ -92,8 +92,14 @@ namespace Actors.AI.LlmAI
             callers = FindObjectsByType<LlmCallerObject>(FindObjectsSortMode.None).ToList();
         }
 
-        public void SetupLevel(List<GridActor> levelActors)
+        public bool SetupLevel(List<GridActor> levelActors)
         {
+            if (_internalCounter > schedules.Count)
+            {
+                DebugUtils.DebugLogMsg($"All schedules done, current -> {_internalCounter}.", DebugUtils.DebugType.System);
+                return false;
+            }
+            
             var currentSchedule = schedules[_internalCounter];
             var llmActors = levelActors.Select(actor =>
             {
@@ -118,6 +124,8 @@ namespace Actors.AI.LlmAI
                     llmAINavalShip.UpdateName();
                 }
             }
+
+            return true;
         }
 
         public void FinishLevel(LevelGoal levelGoal)

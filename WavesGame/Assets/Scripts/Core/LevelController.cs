@@ -87,7 +87,17 @@ namespace Core
             
             UnityEngine.Random.InitState(randomSeed);
 
-            _scheduler?.SetupLevel(levelActors);
+            if (_scheduler != null)
+            {
+                if (!_scheduler.SetupLevel(levelActors))
+                {
+                    //Finished all the schedules
+                    //Should quit the game
+                    AddInfoLog($"Schedule done.", "LevelController");
+                    ApplicationHelper.QuitApplication();
+                    yield break;    
+                }
+            }
             
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
@@ -354,6 +364,7 @@ namespace Core
 
         public string GetNextLevelName() => nextLevelName;
 
+        // ReSharper disable once NotDisposedResourceIsReturned
         public List<NavalActor>.Enumerator GetNavalActorsEnumerator() => levelNavalActors.GetEnumerator();
     }
 }
