@@ -94,7 +94,7 @@ namespace Actors.AI.LlmAI
 
         public bool SetupLevel(List<GridActor> levelActors)
         {
-            if (_internalCounter > schedules.Count)
+            if (_internalCounter >= schedules.Count)
             {
                 DebugUtils.DebugLogMsg($"All schedules done, current -> {_internalCounter}.", DebugUtils.DebugType.System);
                 return false;
