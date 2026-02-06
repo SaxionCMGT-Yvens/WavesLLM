@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Linq;
 using Core;
 using FALLA;
-using FALLA.Exception;
 using FALLA.Helper;
 using Grid;
 using Newtonsoft.Json;
@@ -115,7 +114,7 @@ namespace Actors.AI.LlmAI
 
                 if (faultyMessage)
                 {
-                    DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
+                    DebugUtils.DebugLogMsg($"Faulty message! Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
                     yield return new WaitForSeconds(breakTime);
                     breakTime *= 1.25f;
                     continue;
@@ -123,38 +122,26 @@ namespace Actors.AI.LlmAI
 
                 _internalTotalRequestCount++;
                 yield return new WaitUntil(() => llmCaller.IsReady());
-                try
+                
+                var llmGenericResponse = llmCaller.GetResponse();
+                if (!llmGenericResponse.Success || string.IsNullOrEmpty(llmGenericResponse.Response))
                 {
-                    result = llmCaller.GetResponse();
-                }
-                catch (NoResponseException noResponseException)
-                {
-                    DebugUtils.DebugLogMsg($"No response exception: {noResponseException.Message}.",
+                    DebugUtils.DebugLogMsg($"No response exception: {llmGenericResponse.Response} Success:{llmGenericResponse.Success}.",
                         DebugUtils.DebugType.Error);
                     LevelController.GetSingleton()
-                        .AddInfoLog($"No response exception! {noResponseException.Message}", name);
-                    _internalFaultyMessageCount++;
-                    result = "";
-                }
-
-                DebugUtils.DebugLogMsg($"Result received: [{result}].", DebugUtils.DebugType.Temporary);
-
-                if (string.IsNullOrEmpty(result))
-                {
-                    DebugUtils.DebugLogMsg("No response returned.", DebugUtils.DebugType.Error);
-                    LevelController.GetSingleton()
-                        .AddInfoLog($"No response exception! Result is empty [{result}]", name);
+                        .AddInfoLog($"No response exception! {llmGenericResponse.Response} Success:{llmGenericResponse.Success}.", name);
                     StopTimer(stopwatch);
                     _internalFaultyMessageCount++;
                     DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
                     yield return new WaitForSeconds(breakTime);
                     breakTime *= 1.25f;
+                    continue;
                 }
-                else
-                {
-                    StopTimer(stopwatch);
-                    retry = false;
-                }
+                result = llmGenericResponse.Response;
+                StopTimer(stopwatch);
+                retry = false;
+
+                DebugUtils.DebugLogMsg($"Result received: [{result}].", DebugUtils.DebugType.Temporary);
             } while (retry && --maxAttempts >= 0);
 
             LevelController.GetSingleton().AddDataLog($"\"attempts\":{attempt}", name);

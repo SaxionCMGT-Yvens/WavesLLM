@@ -78,12 +78,12 @@ namespace Actors.AI.LlmAI
     {
         [SerializeField, ReadOnly] private List<LlmCallerObject> callers;
         [SerializeField] private List<LevelSchedule> schedules;
-        private int _internalCounter = 0;
+        private int _internalCounter;
 
         protected override void Awake()
         {
             base.Awake();
-            if (markedToDie) return;
+            if (MarkedToDie) return;
             schedules.ForEach(schedule => schedule.Initialize());
         }
 

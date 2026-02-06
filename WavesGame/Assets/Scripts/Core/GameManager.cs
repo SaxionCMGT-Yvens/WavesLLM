@@ -18,14 +18,14 @@ namespace Core
         protected override void Awake()
         {
             base.Awake();
-            if (markedToDie) return;
+            if (MarkedToDie) return;
             DebugUtils.enabledDebugTypes = gameManagerSettings.enabledDebugTypes;
             DebugUtils.enabledDebugLogTypes = gameManagerSettings.enabledDebugLogTypes;
         }
 
         private void Start()
         {
-            if (markedToDie) return;
+            if (MarkedToDie) return;
             if (!gameManagerSettings.logToFile) return;
             var logName = $"{gameManagerSettings.logName}-{TimestampHelper.GetSimplifiedTimestamp()}";
             DebugUtils.LogToFile(logName);
