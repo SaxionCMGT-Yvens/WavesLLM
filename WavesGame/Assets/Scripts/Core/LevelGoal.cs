@@ -41,6 +41,8 @@ namespace Core
         public LevelGoalType type;
         [SerializeField] private NavalActor destroyTarget;
         [SerializeField] private int surviveForTurns;
+        [SerializeField] private int maxLLMTurns;
+        [SerializeField, ReadOnly] private int turnNumber;
         [SerializeField, ReadOnly] private List<NavalTarget> levelTargets;
         [SerializeField, ReadOnly] private List<NavalShip> levelShips;
         [SerializeField, ReadOnly] private List<NavalShip> playerLevelShips;
@@ -90,6 +92,7 @@ namespace Core
                         break;
                 }
             });
+            turnNumber = 0;
         }
 
         private void IncreaseFactionCount(AIBaseShip aiShip)
@@ -167,6 +170,24 @@ namespace Core
                     break;
                 case LevelGoalType.AIWars:
                 {
+                    if (turnNumber >= maxLLMTurns)
+                    {
+                        DebugUtils.DebugLogMsg($"Draw! Max number of turns reached: {turnNumber} == {maxLLMTurns}.", DebugUtils.DebugType.System);
+                        LevelController.GetSingleton().AddInfoLog($"Draw! No faction won.", "LevelGoal");
+                        LevelController.GetSingleton()
+                            .AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
+                        foreach (var aiShipPair in enemyFactionShips)
+                        {
+                            var aiShip = aiShipPair.One;
+                            if (aiShip != null && aiShip is LlmAINavalShip llmAINavalShip)
+                            {
+                                llmAINavalShip.LogFinalInformation();
+                            }
+                        }
+
+                        return true;
+                    }
+                    
                     var enumerator = _availableFactions.GetEnumerator();
                     var alive = 0;
                     AIFaction aliveFaction = null;
@@ -211,6 +232,11 @@ namespace Core
         public void SurvivedTurn()
         {
             _survivedTurns++;
+        }
+
+        public void NextTurn()
+        {
+            turnNumber++;
         }
 
         public bool CheckGameOver()

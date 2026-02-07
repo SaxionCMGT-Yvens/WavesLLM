@@ -21,6 +21,7 @@ namespace Actors.AI.LlmAI
     {
         [SerializeField, ReadOnly] private List<LlmCallerObject> callers;
         [SerializeField] private List<LlmScheduleSo> schedules;
+        [SerializeField, ReadOnly] private LlmScheduleSo currentSchedule;
         private int _internalCounter;
 
         protected override void Awake()
@@ -43,7 +44,7 @@ namespace Actors.AI.LlmAI
                 return false;
             }
             
-            var currentSchedule = schedules[_internalCounter];
+            currentSchedule = schedules[_internalCounter];
             var llmActors = levelActors.Select(actor =>
             {
                 if (actor is LlmAINavalShip llm)
@@ -75,7 +76,7 @@ namespace Actors.AI.LlmAI
         {
             DebugUtils.DebugLogMsg($"Finished level, current -> {_internalCounter}.", DebugUtils.DebugType.System);
 
-            var currentSchedule = schedules[_internalCounter];
+            currentSchedule = schedules[_internalCounter];
             if (currentSchedule.Use())
             {
                 _internalCounter++;

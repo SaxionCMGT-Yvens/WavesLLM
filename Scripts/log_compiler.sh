@@ -16,3 +16,4 @@ OUTPUT="$BASE_NAME"_"$MODEL"_c.log
 ./log_grepper.sh "$LOG_FILE" "$MODEL" "internalWrongMovementCount" >> "$OUTPUT"
 ./log_grepper.sh "$LOG_FILE" "$MODEL" "LevelController" >> "$OUTPUT"
 ./log_grepper.sh "$LOG_FILE" "$MODEL" "LevelGoal" >> "$OUTPUT"
+./log_grepper.sh "$LOG_FILE" "LevelGoal" "won" >> "$OUTPUT"

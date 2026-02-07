@@ -175,6 +175,7 @@ namespace Core
                 enumerator.Dispose();
                 //Finished going through all characters
                 levelGoal.SurvivedTurn();
+                levelGoal.NextTurn();
                 victory = levelGoal.CheckGoal();
                 gameOver = levelGoal.CheckGameOver();
                 if (victory || gameOver)
