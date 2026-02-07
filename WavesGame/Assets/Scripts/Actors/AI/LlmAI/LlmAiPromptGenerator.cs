@@ -34,7 +34,7 @@ namespace Actors.AI.LlmAI
             
             var grid = GridManager.GetSingleton().Grid();
             
-            template = ReplaceTagWithText(template, "grid_overview", ListGridToString(llmAINavalShip, grid, false));
+            template = ReplaceTagWithText(template, "grid_overview", ListGridToString(llmAINavalShip, grid, templatePrompt.includeEmptySpaces));
             
             return template;
         }
@@ -100,7 +100,7 @@ namespace Actors.AI.LlmAI
         {
             if (gridUnits == null || gridUnits.Count == 0)
             {
-                return "Nothing";
+                return "[Nothing]";
             }
             
             var text = "[";

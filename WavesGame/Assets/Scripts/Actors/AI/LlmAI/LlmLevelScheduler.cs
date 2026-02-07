@@ -6,7 +6,6 @@
  * or see the LICENSE file in the root directory of this repository.
  */
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Core;
@@ -18,66 +17,10 @@ using UUtils;
 
 namespace Actors.AI.LlmAI
 {
-    [Serializable]
-    internal class LevelSchedule
-    {
-        public int orderId;
-        public int repetitions;
-        [SerializeField, ReadOnly]
-        private int internalRepetitionsCount;
-        public List<FactionLlmPair> factionPairs;
-
-        public void Initialize()
-        {
-            internalRepetitionsCount = repetitions;
-        }
-
-        public bool Use()
-        {
-            internalRepetitionsCount = Mathf.Max(0, internalRepetitionsCount - 1);
-            DebugUtils.DebugLogMsg(
-                $"Update Schedule repetition, _internalRepetitionsCount -> {internalRepetitionsCount}.",
-                DebugUtils.DebugType.System);
-            return internalRepetitionsCount <= 0;
-        }
-
-        public List<AIFaction> GetFactions()
-        {
-            return factionPairs.Select(pair => pair.One).ToList();
-        }
-
-        public FactionLlmPair GetFactionPair(AIFaction faction)
-        {
-            return factionPairs.Find(pair => pair.One.Equals(faction));
-        }
-    }
-
-    [Serializable]
-    internal class FactionLlmPair : Pair<AIFaction, LlmType>
-    {
-        [SerializeField] private string specificModel;
-        [SerializeField, ReadOnly] private LlmCallerObject caller;
-
-        public FactionLlmPair(AIFaction one, LlmType two) : base(one, two)
-        {
-        }
-
-        public void SetCaller(List<LlmCallerObject> callers)
-        {
-            caller = callers.Find(call => call.GetLlmType().Equals(Two));
-            if (!string.IsNullOrEmpty(specificModel))
-            {
-                Caller.LoadModel(specificModel);
-            }
-        }
-
-        public LlmCallerObject Caller => caller;
-    }
-
     public class LlmLevelScheduler : StrongSingleton<LlmLevelScheduler>
     {
         [SerializeField, ReadOnly] private List<LlmCallerObject> callers;
-        [SerializeField] private List<LevelSchedule> schedules;
+        [SerializeField] private List<LlmScheduleSo> schedules;
         private int _internalCounter;
 
         protected override void Awake()
@@ -142,7 +85,13 @@ namespace Actors.AI.LlmAI
             DebugUtils.DebugLogMsg($"Finished level, winner -> {winnerFaction}.", DebugUtils.DebugType.System);
             var winnerPair = currentSchedule.GetFactionPair(winnerFaction);
             LevelController.GetSingleton().AddInfoLog($"LLM {winnerPair.Caller} won.", "LevelGoal");
-            DelayHelper.Delay(this, 1.5f, SceneLoader.ResetCurrentScene);
+            DelayHelper.Delay(this, 5.0f, SceneLoader.ResetCurrentScene);
+        }
+
+        [Button("Shuffle Schedules")]
+        public void ShuffleSchedule()
+        {
+            RandomHelper<LlmScheduleSo>.ShuffleList(ref schedules);
         }
     }
 }
