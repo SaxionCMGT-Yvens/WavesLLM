@@ -83,9 +83,18 @@ namespace Actors.AI.LlmAI
             }
 
             var winnerFaction = levelGoal.GetWinnerFaction();
-            DebugUtils.DebugLogMsg($"Finished level, winner -> {winnerFaction}.", DebugUtils.DebugType.System);
-            var winnerPair = currentSchedule.GetFactionPair(winnerFaction);
-            LevelController.GetSingleton().AddInfoLog($"LLM {winnerPair.Caller} won.", "LevelGoal");
+            if (winnerFaction != null)
+            {
+                DebugUtils.DebugLogMsg($"Finished level, winner -> {winnerFaction}.", DebugUtils.DebugType.System);
+                var winnerPair = currentSchedule.GetFactionPair(winnerFaction);
+                LevelController.GetSingleton().AddInfoLog($"LLM {winnerPair.Caller} won.", "LevelGoal");    
+            }
+            else
+            {
+                DebugUtils.DebugLogMsg($"Finished level, DRAW!", DebugUtils.DebugType.System);
+                LevelController.GetSingleton().AddInfoLog($"DRAW!", "LevelGoal");
+            }
+            
             DelayHelper.Delay(this, 5.0f, SceneLoader.ResetCurrentScene);
         }
 
