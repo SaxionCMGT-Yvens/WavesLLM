@@ -192,6 +192,9 @@ namespace Actors.AI.LlmAI
                 DebugUtils.DebugLogErrorMsg(e.Message);
             }
 
+            LevelController.GetSingleton()
+                .AddInfoLog($"Flags;{shouldMove};{shouldAttack};{shouldMoveAfterAttack}", name);
+
             if (shouldMove)
             {
                 _internalMovementAttemptCount++;
@@ -285,7 +288,7 @@ namespace Actors.AI.LlmAI
             yield return null;
         }
 
-        protected void PromptInfo(string promptInfo)
+        private void PromptInfo(string promptInfo)
         {
             LevelController.GetSingleton().AddPromptLog(promptInfo, name);
         }

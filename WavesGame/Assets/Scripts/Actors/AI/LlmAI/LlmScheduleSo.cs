@@ -14,6 +14,8 @@ namespace Actors.AI.LlmAI
         private int internalRepetitionsCount;
         public List<FactionLlmPair> factionPairs;
 
+        public int InternalRepetitionsCount => internalRepetitionsCount;
+
         public void Initialize()
         {
             internalRepetitionsCount = repetitions;
@@ -21,11 +23,11 @@ namespace Actors.AI.LlmAI
 
         public bool Use()
         {
-            internalRepetitionsCount = Mathf.Max(0, internalRepetitionsCount - 1);
+            internalRepetitionsCount = Mathf.Max(0, InternalRepetitionsCount - 1);
             DebugUtils.DebugLogMsg(
-                $"Update Schedule repetition, _internalRepetitionsCount -> {internalRepetitionsCount}.",
+                $"Update Schedule repetition, _internalRepetitionsCount -> {InternalRepetitionsCount}.",
                 DebugUtils.DebugType.System);
-            return internalRepetitionsCount <= 0;
+            return InternalRepetitionsCount <= 0;
         }
 
         public List<AIFaction> GetFactions()

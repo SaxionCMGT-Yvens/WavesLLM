@@ -31,9 +31,10 @@ namespace Core
             DebugUtils.LogToFile(logName);
         }
 
-        private void OnDestroy()
+        private void OnApplicationQuit()
         {
             if (!gameManagerSettings.logToFile) return;
+            if (MarkedToDie) return;
             DebugUtils.CloseLog();
         }
 

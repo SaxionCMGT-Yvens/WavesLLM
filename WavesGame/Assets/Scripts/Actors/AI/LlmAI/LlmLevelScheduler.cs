@@ -22,7 +22,10 @@ namespace Actors.AI.LlmAI
         [SerializeField, ReadOnly] private List<LlmCallerObject> callers;
         [SerializeField] private List<LlmScheduleSo> schedules;
         [SerializeField, ReadOnly] private LlmScheduleSo currentSchedule;
-        private int _internalCounter;
+        [SerializeField, ReadOnly] private int internalCounter;
+        [SerializeField, ReadOnly] private int internalRepetition;
+
+        public int InternalRepetition => internalRepetition;
 
         protected override void Awake()
         {
@@ -38,13 +41,15 @@ namespace Actors.AI.LlmAI
 
         public bool SetupLevel(List<GridActor> levelActors)
         {
-            if (_internalCounter >= schedules.Count)
+            if (internalCounter >= schedules.Count)
             {
-                DebugUtils.DebugLogMsg($"All schedules done, current -> {_internalCounter}.", DebugUtils.DebugType.System);
+                DebugUtils.DebugLogMsg($"All schedules done, current -> {internalCounter}.", DebugUtils.DebugType.System);
                 return false;
             }
             
-            currentSchedule = schedules[_internalCounter];
+            currentSchedule = schedules[internalCounter];
+            internalRepetition = currentSchedule.InternalRepetitionsCount;
+            
             var llmActors = levelActors.Select(actor =>
             {
                 if (actor is LlmAINavalShip llm)
@@ -74,12 +79,12 @@ namespace Actors.AI.LlmAI
 
         public void FinishLevel(LevelGoal levelGoal)
         {
-            DebugUtils.DebugLogMsg($"Finished level, current -> {_internalCounter}.", DebugUtils.DebugType.System);
+            DebugUtils.DebugLogMsg($"Finished level, current -> {internalCounter}.", DebugUtils.DebugType.System);
 
-            currentSchedule = schedules[_internalCounter];
+            currentSchedule = schedules[internalCounter];
             if (currentSchedule.Use())
             {
-                _internalCounter++;
+                internalCounter++;
             }
 
             var winnerFaction = levelGoal.GetWinnerFaction();
