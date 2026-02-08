@@ -1,0 +1,795 @@
+﻿2026-02-08 14:59:06;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-08 14:59:06;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-08 14:59:06;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 14:59:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3101
+2026-02-08 14:59:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1649}
+2026-02-08 14:59:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 14:59:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move toward nearest target at (3,9). Move 3 tiles left to (6,5) for positioning.]}
+2026-02-08 14:59:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;False;False
+2026-02-08 14:59:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {6, 5}
+2026-02-08 14:59:11;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 14:59:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 14:59:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3113
+2026-02-08 14:59:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":2093}
+2026-02-08 14:59:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 14:59:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 3 tiles up to (10,10) to get in attack range of enemy at (12,9)]}
+2026-02-08 14:59:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 14:59:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 10}
+2026-02-08 14:59:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (12, 9).
+2026-02-08 14:59:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 14:59:16;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 14:59:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3106
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":1017}
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move 3 tiles toward nearest target at (12,9). Position (12,9) is 3 tiles away, within attack range.]}
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {12, 9}
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (12, 9).
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 14:59:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 14:59:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3086
+2026-02-08 14:59:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1570}
+2026-02-08 14:59:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 14:59:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles up to (12, 15) to get within attack range of enemy at (12, 6)]}
+2026-02-08 14:59:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 14:59:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {12, 15}
+2026-02-08 14:59:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (12, 6).
+2026-02-08 14:59:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 14:59:23;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 14:59:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3072
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1088}
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move toward nearest target at [7,9]. Distance 3 tiles south. Position [7,9] within range after move.]}
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {7, 9}
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 14:59:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 14:59:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3083
+2026-02-08 14:59:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1660}
+2026-02-08 14:59:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 14:59:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles to (7,15) to get within attack range of enemy at (6,5)]}
+2026-02-08 14:59:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;False;False
+2026-02-08 14:59:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 15}
+2026-02-08 14:59:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 14:59:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 14:59:31;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3092
+2026-02-08 14:59:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1083}
+2026-02-08 14:59:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 14:59:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move toward nearest target at [3,9]. Distance 5 tiles away. Advance 3 moves left.]}
+2026-02-08 14:59:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;False;False
+2026-02-08 14:59:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {3, 5}
+2026-02-08 14:59:34;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 14:59:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 14:59:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3112
+2026-02-08 14:59:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1629}
+2026-02-08 14:59:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 14:59:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 2 tiles up to (10,14) to get within attack range of enemy at (12,6)]}
+2026-02-08 14:59:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 14:59:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 14}
+2026-02-08 14:59:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (12, 6).
+2026-02-08 14:59:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 14:59:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 14:59:39;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3106
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":1466}
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move 3 tiles toward nearest target at (12,9). Attack from range 2.]}
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {12, 9}
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (12, 9).
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 14:59:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 14:59:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3121
+2026-02-08 14:59:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1197}
+2026-02-08 14:59:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 14:59:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles left to (9,15) to get within attack range of enemy at (12,6)]}
+2026-02-08 14:59:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 14:59:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {9, 15}
+2026-02-08 14:59:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (12, 6).
+2026-02-08 14:59:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 14:59:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 14:59:46;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3078
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1725}
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move toward nearest enemy at [7,15]. Move 3 tiles up to [7,9] to get in range.]}
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;False;False
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {7, 9}
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 14:59:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 14:59:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3090
+2026-02-08 14:59:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1642}
+2026-02-08 14:59:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 14:59:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to (7,12) to get within attack range of enemy at (7,6)]}
+2026-02-08 14:59:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 14:59:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 12}
+2026-02-08 14:59:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (7, 6).
+2026-02-08 14:59:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 14:59:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 14:59:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3070
+2026-02-08 14:59:55;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1177}
+2026-02-08 14:59:55;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 14:59:55;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move toward nearest target at [3,9], distance 4. Advance 3 tiles up to [3,8].]}
+2026-02-08 14:59:55;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;False;False
+2026-02-08 14:59:55;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {3, 8}
+2026-02-08 14:59:57;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 14:59:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 14:59:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3113
+2026-02-08 14:59:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1307}
+2026-02-08 14:59:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 14:59:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (10,13) to get within attack range of enemy at (7,12)]}
+2026-02-08 14:59:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 14:59:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 13}
+2026-02-08 15:00:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (7, 12).
+2026-02-08 15:00:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:00:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 15:00:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3105
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":1709}
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move to (12, 9) to reach TARGET at range 2. Attack TARGET. No move after.]}
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {12, 9}
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (12, 9).
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 15:00:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:00:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3106
+2026-02-08 15:00:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1221}
+2026-02-08 15:00:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:00:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles up to (9,12) to get within attack range of enemy at (7,6)]}
+2026-02-08 15:00:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:00:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {9, 12}
+2026-02-08 15:00:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (7, 6).
+2026-02-08 15:00:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:00:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:00:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3078
+2026-02-08 15:00:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1549}
+2026-02-08 15:00:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:00:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move toward nearest target at [3,9]. Move 3 tiles left to [4,6] for positioning.]}
+2026-02-08 15:00:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;False;False
+2026-02-08 15:00:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {4, 6}
+2026-02-08 15:00:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:00:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3074
+2026-02-08 15:00:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1046}
+2026-02-08 15:00:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:00:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to (7,15) to get within attack range of enemy at (4,9)]}
+2026-02-08 15:00:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:00:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 15}
+2026-02-08 15:00:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (4, 9).
+2026-02-08 15:00:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:00:16;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:00:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3072
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1167}
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move 1 tile up to (3,9) to attack TARGET at range 1. Within cannon range 2.]}
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {3, 9}
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Cannot reach target at GridTile(Clone) (3, 9).
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:00:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:00:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3113
+2026-02-08 15:00:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1310}
+2026-02-08 15:00:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:00:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (10,12) to get within attack range of enemy at (12,6)]}
+2026-02-08 15:00:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:00:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 12}
+2026-02-08 15:00:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (12, 6).
+2026-02-08 15:00:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:00:21;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 15:00:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3105
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":2303}
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move toward nearest target at (12,9), distance 3. Position (12,9) within range 2 for attack.]}
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {12, 9}
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (12, 9).
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 15:00:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:00:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3078
+2026-02-08 15:00:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1710}
+2026-02-08 15:00:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:00:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles up to (9,9) to get attack range on enemy wave at (9,7)]}
+2026-02-08 15:00:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;False;False
+2026-02-08 15:00:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {9, 9}
+2026-02-08 15:00:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:00:29;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:00:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3097
+2026-02-08 15:00:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":2431}
+2026-02-08 15:00:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:00:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move toward nearest enemy Red ship at (9,9). Move 2 tiles right to (6,6) for positioning.]}
+2026-02-08 15:00:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;False;False
+2026-02-08 15:00:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {6, 6}
+2026-02-08 15:00:34;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:00:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:00:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3106
+2026-02-08 15:00:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":2709}
+2026-02-08 15:00:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:00:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to [7,12] to get attack range on enemy at [6,6]]}
+2026-02-08 15:00:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:00:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 12}
+2026-02-08 15:00:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (6, 6).
+2026-02-08 15:00:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:00:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:00:41;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3078
+2026-02-08 15:00:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1141}
+2026-02-08 15:00:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:00:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move to (5,8) to get within range 2 of target at (3,9). Attack target. Move to (4,8).]}
+2026-02-08 15:00:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:00:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {5, 8}
+2026-02-08 15:00:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Cannot reach target at GridTile(Clone) (3, 9).
+2026-02-08 15:00:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:00:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:00:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3102
+2026-02-08 15:00:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1645}
+2026-02-08 15:00:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:00:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (10,13) to get attack range on enemy at (12,12)]}
+2026-02-08 15:00:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:00:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 13}
+2026-02-08 15:00:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (12, 12).
+2026-02-08 15:00:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:00:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 15:00:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3104
+2026-02-08 15:00:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":2140}
+2026-02-08 15:00:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 15:00:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move 3 tiles toward nearest enemy Red ship at (9,9). Position (10,6) reaches attack range.]}
+2026-02-08 15:00:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 15:00:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {10, 6}
+2026-02-08 15:00:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (9, 9).
+2026-02-08 15:00:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 15:00:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3068
+2026-02-08 15:00:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1270}
+2026-02-08 15:00:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:00:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 2 tiles up to (9,11) to get attack range on target at (7,9)]}
+2026-02-08 15:00:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:00:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {9, 11}
+2026-02-08 15:00:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:00:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:00:56;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:00:57;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3091
+2026-02-08 15:01:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":2933}
+2026-02-08 15:01:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:01:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move toward nearest target at (3,9). Move 3 tiles left to (3,6) for positioning.]}
+2026-02-08 15:01:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;False;False
+2026-02-08 15:01:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {3, 6}
+2026-02-08 15:01:02;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:01:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:01:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3083
+2026-02-08 15:01:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":2066}
+2026-02-08 15:01:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:01:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to (7,15) to get within attack range of enemy at (5,8)]}
+2026-02-08 15:01:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:01:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 15}
+2026-02-08 15:01:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (5, 8).
+2026-02-08 15:01:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:01:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:01:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3088
+2026-02-08 15:01:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1038}
+2026-02-08 15:01:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:01:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move 2 tiles right to (7,8) to get within range 2 of target at (7,9)]}
+2026-02-08 15:01:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:01:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {7, 8}
+2026-02-08 15:01:11;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:01:11;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:01:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3113
+2026-02-08 15:01:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1539}
+2026-02-08 15:01:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:01:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 3 tiles up to (10, 16) to get within attack range of enemy at (10, 6)]}
+2026-02-08 15:01:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:01:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 16}
+2026-02-08 15:01:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 6).
+2026-02-08 15:01:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:01:15;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 15:01:16;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3106
+2026-02-08 15:01:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":1907}
+2026-02-08 15:01:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 15:01:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move toward nearest enemy at [9,11]. Position [10,9] gets within 2-tile attack range.]}
+2026-02-08 15:01:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 15:01:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {10, 9}
+2026-02-08 15:01:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (9, 11).
+2026-02-08 15:01:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 15:01:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:01:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3077
+2026-02-08 15:01:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1398}
+2026-02-08 15:01:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:01:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles up to (9,8) to get within attack range of enemy at (10,9)]}
+2026-02-08 15:01:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:01:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {9, 8}
+2026-02-08 15:01:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 9}
+2026-02-08 15:01:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 9). Kill count = 0.
+2026-02-08 15:01:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:01:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:01:27;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3083
+2026-02-08 15:01:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":3061}
+2026-02-08 15:01:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:01:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move toward nearest target at (3,9), distance 3. Position (3,7) gets within range 2 for attack.]}
+2026-02-08 15:01:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:01:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {3, 7}
+2026-02-08 15:01:31;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];ATTK {3, 9}
+2026-02-08 15:01:31;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Attacked succeeded at GridTile(Clone) (3, 9). Kill count = 1.
+2026-02-08 15:01:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:01:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:01:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3087
+2026-02-08 15:01:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":5720}
+2026-02-08 15:01:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:01:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to (7,12) to get within attack range of enemy at (7,9)]}
+2026-02-08 15:01:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:01:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 12}
+2026-02-08 15:01:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:01:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:01:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:01:43;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3024
+2026-02-08 15:01:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1553}
+2026-02-08 15:01:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:01:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move to (8,8) to get within range 2 of Red enemy at (9,8). Attack from there.]}
+2026-02-08 15:01:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:01:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {8, 8}
+2026-02-08 15:01:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Cannot reach target at GridTile(Clone) (9, 8).
+2026-02-08 15:01:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:01:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:01:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3075
+2026-02-08 15:01:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1414}
+2026-02-08 15:01:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:01:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 3 tiles up to [10,13] to get within attack range of enemy at [10,9]]}
+2026-02-08 15:01:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:01:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 13}
+2026-02-08 15:01:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 9).
+2026-02-08 15:01:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:01:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Start turn;5,5
+2026-02-08 15:01:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];PRPT Prompt_2;3049
+2026-02-08 15:01:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];TIME {"request":1154}
+2026-02-08 15:01:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"attempts":1}
+2026-02-08 15:01:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];RESN {"reasoning":Move to (9,9) to get within range 2 of enemy at (9,8). Attack enemy ship.]}
+2026-02-08 15:01:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Flags;True;True;False
+2026-02-08 15:01:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];MOVE {9, 9}
+2026-02-08 15:01:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Cannot reach target at GridTile(Clone) (9, 8).
+2026-02-08 15:01:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Finish turn
+2026-02-08 15:01:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:01:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;3001
+2026-02-08 15:01:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1458}
+2026-02-08 15:01:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:01:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile right to (10,8) to get in attack range of enemy at (9,9)]}
+2026-02-08 15:01:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:01:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 8}
+2026-02-08 15:01:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {9, 9}
+2026-02-08 15:01:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (9, 9). Kill count = 0.
+2026-02-08 15:01:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:01:58;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:01:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3080
+2026-02-08 15:02:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":969}
+2026-02-08 15:02:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:02:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move 3 tiles right to (6,7), positioning within range of Red ship at (10,8) and targets.]}
+2026-02-08 15:02:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;False;False
+2026-02-08 15:02:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {6, 7}
+2026-02-08 15:02:02;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:02:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:02:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3072
+2026-02-08 15:02:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1666}
+2026-02-08 15:02:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:02:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles to [7,15] to get within attack range of target at [7,9]]}
+2026-02-08 15:02:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:02:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 15}
+2026-02-08 15:02:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:02:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:02:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:02:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3035
+2026-02-08 15:02:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1489}
+2026-02-08 15:02:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:02:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move to (9,8) to get within range 2 of enemy at (10,8). Attack enemy ship.]}
+2026-02-08 15:02:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:02:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {9, 8}
+2026-02-08 15:02:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-08 15:02:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:02:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3102
+2026-02-08 15:02:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1324}
+2026-02-08 15:02:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:02:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 3 tiles up to (10,10) to get within attack range of enemy at (9,9)]}
+2026-02-08 15:02:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:02:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 10}
+2026-02-08 15:02:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];ATTK {9, 9}
+2026-02-08 15:02:15;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];INFO Destroyed
+2026-02-08 15:02:15;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|5];DATA {"internalWrongMovementCount":4,"internalWrongAttackCount":7,"internalTotalRequestCount":7,"internalMovementAttemptCount":7,"internalAttackAttemptCount":7,"internalFaultyMessageCount":0,"averageRequestTime":1670.857,"averageRequestTimeCount":7,"maxRequestTime":2303,"minRequest":1017,"averageAttempts":1,"kills":0}
+2026-02-08 15:02:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Attacked succeeded at GridTile(Clone) (9, 9). Kill count = 1.
+2026-02-08 15:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:02:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2966
+2026-02-08 15:02:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1491}
+2026-02-08 15:02:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:02:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile up to (10,7) to get within attack range of enemy at (9,8)]}
+2026-02-08 15:02:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:02:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 7}
+2026-02-08 15:02:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {9, 8}
+2026-02-08 15:02:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (9, 8). Kill count = 0.
+2026-02-08 15:02:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:02:21;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:02:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3019
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1352}
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move 2 tiles to (8,7) to get within range 2 of Red ship at (10,7). Attack from there.]}
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {8, 7}
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:02:24;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:02:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3033
+2026-02-08 15:02:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":2630}
+2026-02-08 15:02:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:02:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to (7,12) to get within attack range of enemy at (6,7)]}
+2026-02-08 15:02:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:02:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 14}
+2026-02-08 15:02:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:02:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:02:28;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:02:29;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;3013
+2026-02-08 15:02:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":3165}
+2026-02-08 15:02:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:02:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move to (10,8) to get within range 2 of Red ship at (10,7). Attack from there.]}
+2026-02-08 15:02:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:02:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {10, 8}
+2026-02-08 15:02:34;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-08 15:02:34;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:02:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:02:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;3006
+2026-02-08 15:02:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1610}
+2026-02-08 15:02:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:02:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (10,9) to get within attack range of enemy at (10,8)]}
+2026-02-08 15:02:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:02:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {10, 9}
+2026-02-08 15:02:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-08 15:02:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:02:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:02:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2977
+2026-02-08 15:02:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1860}
+2026-02-08 15:02:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:02:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile up to (10,6) to get within attack range of enemy at (10,8)]}
+2026-02-08 15:02:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:02:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 6}
+2026-02-08 15:02:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 8}
+2026-02-08 15:02:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 8). Kill count = 0.
+2026-02-08 15:02:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:02:43;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:02:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;3020
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1048}
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move to (7,9) to attack TARGET at range 1. Then reposition for safety.]}
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {7, 9}
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:02:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:02:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;3034
+2026-02-08 15:02:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1609}
+2026-02-08 15:02:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:02:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 1 tile down to (7,13) to get within attack range of target at (7,9)]}
+2026-02-08 15:02:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:02:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 13}
+2026-02-08 15:02:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:02:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:02:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Start turn;5,5
+2026-02-08 15:02:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];PRPT Prompt_2;2993
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];TIME {"request":1527}
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"attempts":1}
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];RESN {"reasoning":Move to (10,6) to attack Red ship. Distance 2 tiles, within cannon range.]}
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Flags;True;True;False
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];MOVE {10, 6}
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];ATTK {10, 6}
+2026-02-08 15:02:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Attacked succeeded at GridTile(Clone) (10, 6). Kill count = 0.
+2026-02-08 15:02:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Finish turn
+2026-02-08 15:02:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:02:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2985
+2026-02-08 15:02:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1743}
+2026-02-08 15:02:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:02:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile to [9,9] to get attack range on enemy at [10,8]]}
+2026-02-08 15:02:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:02:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {9, 9}
+2026-02-08 15:02:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];ATTK {10, 8}
+2026-02-08 15:02:56;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];INFO Destroyed
+2026-02-08 15:02:56;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2];DATA {"internalWrongMovementCount":2,"internalWrongAttackCount":6,"internalTotalRequestCount":10,"internalMovementAttemptCount":10,"internalAttackAttemptCount":7,"internalFaultyMessageCount":0,"averageRequestTime":1498.9,"averageRequestTimeCount":10,"maxRequestTime":3165,"minRequest":1038,"averageAttempts":1,"kills":0}
+2026-02-08 15:02:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Attacked succeeded at GridTile(Clone) (10, 8). Kill count = 1.
+2026-02-08 15:02:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:02:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:02:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2952
+2026-02-08 15:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1522}
+2026-02-08 15:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile up to (10,7) to get within attack range of enemy at (6,7)]}
+2026-02-08 15:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 7}
+2026-02-08 15:03:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:03:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:03:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:03:02;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2978
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1367}
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move 2 tiles to (8,7) to get within range 2 of Red ship at (10,7). Attack after positioning.]}
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {8, 7}
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:03:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2969
+2026-02-08 15:03:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1640}
+2026-02-08 15:03:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:03:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles left to (4,13) to get within attack range of enemy at (6,7)]}
+2026-02-08 15:03:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:03:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {6, 13}
+2026-02-08 15:03:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:03:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:03:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:03:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2931
+2026-02-08 15:03:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1359}
+2026-02-08 15:03:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:03:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 2 tiles up to (9,7) to attack target at (7,9) within range 2]}
+2026-02-08 15:03:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:03:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {9, 7}
+2026-02-08 15:03:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:03:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:03:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:03:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2931
+2026-02-08 15:03:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1153}
+2026-02-08 15:03:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:03:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile down to (10,6) to get within attack range of target at (7,9)]}
+2026-02-08 15:03:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:03:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 6}
+2026-02-08 15:03:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:03:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:03:15;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:03:16;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2978
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":5983}
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move 2 tiles right to (8,7), get within range 2 of Red ship at (9,6). Attack after positioning.]}
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {8, 7}
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (9, 6).
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:03:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:03:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2976
+2026-02-08 15:03:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1470}
+2026-02-08 15:03:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:03:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles up to (6,10) to get 2 tiles away from enemy at (6,7) for attack]}
+2026-02-08 15:03:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:03:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {6, 10}
+2026-02-08 15:03:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:03:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:03:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:03:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2930
+2026-02-08 15:03:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1447}
+2026-02-08 15:03:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:03:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (9,5) to get within attack range of enemy at (6,7)]}
+2026-02-08 15:03:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:03:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {9, 5}
+2026-02-08 15:03:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:03:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:03:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:03:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2945
+2026-02-08 15:03:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1431}
+2026-02-08 15:03:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:03:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile down to (10,5) to get within attack range of enemy at (6,7)]}
+2026-02-08 15:03:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:03:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 5}
+2026-02-08 15:03:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:03:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:03:34;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:03:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2970
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1360}
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move 3 tiles right toward Red ships at (9,5) and (10,5). Position (9,7) reaches attack range.]}
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {9, 7}
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (9, 5).
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:03:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:03:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2953
+2026-02-08 15:03:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1667}
+2026-02-08 15:03:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:03:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 1 tile down to [6,9] to get within attack range of target at [7,9]]}
+2026-02-08 15:03:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:03:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {6, 9}
+2026-02-08 15:03:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:03:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:03:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:03:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2936
+2026-02-08 15:03:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1630}
+2026-02-08 15:03:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:03:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 2 tiles to [7,5] to get within attack range of enemy at [6,7]]}
+2026-02-08 15:03:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:03:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {7, 5}
+2026-02-08 15:03:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:03:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:03:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:03:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2952
+2026-02-08 15:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1183}
+2026-02-08 15:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles to [7,5] to attack enemy at [7,9] within range 2]}
+2026-02-08 15:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {9, 5}
+2026-02-08 15:03:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:03:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:03:47;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:03:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2954
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":2125}
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move to (7,5) to attack Red ship at (7,5). Within range 2, outside dead zone 1.]}
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {7, 5}
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (7, 5).
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:03:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:03:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2916
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1460}
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 1 tile right to (7,9) to attack target at (7,9) within range 2.]}
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 9}
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:03:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:03:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2922
+2026-02-08 15:03:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1038}
+2026-02-08 15:03:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:03:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile left to (6,5) to get within attack range of enemy at (6,7)]}
+2026-02-08 15:03:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:03:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {6, 5}
+2026-02-08 15:03:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];ATTK {6, 7}
+2026-02-08 15:03:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Attacked succeeded at GridTile(Clone) (6, 7). Kill count = 0.
+2026-02-08 15:03:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:03:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:03:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2951
+2026-02-08 15:04:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1534}
+2026-02-08 15:04:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:04:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 3 tiles to [6,5] to attack enemy at [6,7] within range 2]}
+2026-02-08 15:04:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:04:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {8, 5}
+2026-02-08 15:04:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (6, 7).
+2026-02-08 15:04:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:04:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:04:02;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2946
+2026-02-08 15:04:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1018}
+2026-02-08 15:04:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:04:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move to (6,8) to get within range 2 of enemy at (6,9). Attack from there.]}
+2026-02-08 15:04:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:04:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {6, 8}
+2026-02-08 15:04:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (6, 9).
+2026-02-08 15:04:04;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:04:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:04:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2902
+2026-02-08 15:04:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1638}
+2026-02-08 15:04:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:04:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 1 tile up to (6,10) to get within attack range of enemy at (7,9)]}
+2026-02-08 15:04:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:04:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {6, 10}
+2026-02-08 15:04:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];ATTK {7, 9}
+2026-02-08 15:04:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Attacked succeeded at GridTile(Clone) (7, 9). Kill count = 1.
+2026-02-08 15:04:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:04:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:04:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2911
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1239}
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 3 tiles to (6,8) to attack enemy at (6,8) within range 2]}
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {6, 8}
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (6, 8).
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:04:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:04:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2907
+2026-02-08 15:04:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1703}
+2026-02-08 15:04:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:04:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile down to (8,4) to get within attack range of enemy at (6,8)]}
+2026-02-08 15:04:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:04:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {8, 4}
+2026-02-08 15:04:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (6, 8).
+2026-02-08 15:04:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:04:15;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:04:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2951
+2026-02-08 15:04:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":1604}
+2026-02-08 15:04:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:04:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move to (6,6) to get within range 2 of Red ship at (6,5). Attack from there.]}
+2026-02-08 15:04:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:04:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {6, 6}
+2026-02-08 15:04:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (6, 5).
+2026-02-08 15:04:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:04:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:04:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2947
+2026-02-08 15:04:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1425}
+2026-02-08 15:04:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:04:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 1 tile up to (6,9) to get within attack range of enemy at (6,6)]}
+2026-02-08 15:04:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:04:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {6, 9}
+2026-02-08 15:04:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (6, 6).
+2026-02-08 15:04:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:04:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:04:24;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2903
+2026-02-08 15:04:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1170}
+2026-02-08 15:04:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:04:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile right to (7,5) to get within attack range of enemy at (6,6)]}
+2026-02-08 15:04:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:04:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {7, 5}
+2026-02-08 15:04:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];ATTK {6, 6}
+2026-02-08 15:04:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Attacked succeeded at GridTile(Clone) (6, 6). Kill count = 0.
+2026-02-08 15:04:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:04:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:04:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2928
+2026-02-08 15:04:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1454}
+2026-02-08 15:04:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:04:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile left to (7,4) to get within attack range of enemy at (6,6)]}
+2026-02-08 15:04:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:04:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {7, 4}
+2026-02-08 15:04:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (6, 6).
+2026-02-08 15:04:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:04:31;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:04:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2948
+2026-02-08 15:04:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":2967}
+2026-02-08 15:04:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:04:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move 2 tiles to (7,6) to get within range 2 of Red ship at (7,4). Attack after positioning.]}
+2026-02-08 15:04:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:04:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {7, 6}
+2026-02-08 15:04:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];ATTK {7, 4}
+2026-02-08 15:04:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Attacked succeeded at GridTile(Clone) (7, 4). Kill count = 0.
+2026-02-08 15:04:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:04:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:04:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2934
+2026-02-08 15:04:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1447}
+2026-02-08 15:04:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:04:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles to [9,9] to get within attack range of target at [12,9]]}
+2026-02-08 15:04:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:04:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {7, 9}
+2026-02-08 15:04:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];ATTK {9, 9}
+2026-02-08 15:04:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Attacked succeeded at GridTile(Clone) (9, 9). Kill count = 0.
+2026-02-08 15:04:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:04:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:04:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2899
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1263}
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (7,4) to be 2 tiles away from enemy at (7,6) for attack]}
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {7, 4}
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Cannot reach target at GridTile(Clone) (7, 6).
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn
+2026-02-08 15:04:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-08 15:04:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_2;2911
+2026-02-08 15:04:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1299}
+2026-02-08 15:04:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-08 15:04:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Moved 1 tile up to (7,3) to get within attack range of enemy at (7,6)]}
+2026-02-08 15:04:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-08 15:04:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {7, 3}
+2026-02-08 15:04:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (7, 6).
+2026-02-08 15:04:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-08 15:04:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Start turn;5,5
+2026-02-08 15:04:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];PRPT Prompt_2;2929
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TIME {"request":983}
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"attempts":1}
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];RESN {"reasoning":Move to (7,5) to attack weakened Red ship at (7,3) from range 2.]}
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Flags;True;True;False
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];MOVE {7, 5}
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Cannot reach target at GridTile(Clone) (7, 3).
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Finish turn
+2026-02-08 15:04:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-08 15:04:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_2;2920
+2026-02-08 15:04:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1283}
+2026-02-08 15:04:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-08 15:04:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Moved 3 tiles right to (10,9) to get within attack range of target at (12,9)]}
+2026-02-08 15:04:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-08 15:04:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {10, 9}
+2026-02-08 15:04:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];ATTK {12, 9}
+2026-02-08 15:04:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Attacked succeeded at GridTile(Clone) (12, 9). Kill count = 1.
+2026-02-08 15:04:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-08 15:04:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Start turn;5,5
+2026-02-08 15:04:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];PRPT Prompt_2;2880
+2026-02-08 15:04:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];TIME {"request":1226}
+2026-02-08 15:04:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"attempts":1}
+2026-02-08 15:04:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];RESN {"reasoning":Moved 1 tile up to (7,4) to get within attack range of enemy at (7,6)]}
+2026-02-08 15:04:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Flags;True;True;False
+2026-02-08 15:04:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];MOVE {7, 4}
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];ATTK {7, 6}
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];INFO Destroyed
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"internalWrongMovementCount":9,"internalWrongAttackCount":10,"internalTotalRequestCount":17,"internalMovementAttemptCount":17,"internalAttackAttemptCount":12,"internalFaultyMessageCount":0,"averageRequestTime":1974.294,"averageRequestTimeCount":17,"maxRequestTime":5983,"minRequest":969,"averageAttempts":1,"kills":0}
+2026-02-08 15:05:00;[SYSTEM];[LevelGoal];INFO Faction Red won.
+2026-02-08 15:05:00;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];DATA {"internalWrongMovementCount":2,"internalWrongAttackCount":13,"internalTotalRequestCount":18,"internalMovementAttemptCount":18,"internalAttackAttemptCount":18,"internalFaultyMessageCount":0,"averageRequestTime":1443.667,"averageRequestTimeCount":18,"maxRequestTime":2093,"minRequest":1038,"averageAttempts":1,"kills":0}
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];DATA {"internalWrongMovementCount":9,"internalWrongAttackCount":10,"internalTotalRequestCount":17,"internalMovementAttemptCount":17,"internalAttackAttemptCount":12,"internalFaultyMessageCount":0,"averageRequestTime":1974.294,"averageRequestTimeCount":17,"maxRequestTime":5983,"minRequest":969,"averageAttempts":1,"kills":0}
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":13,"internalTotalRequestCount":17,"internalMovementAttemptCount":17,"internalAttackAttemptCount":16,"internalFaultyMessageCount":0,"averageRequestTime":1928.118,"averageRequestTimeCount":17,"maxRequestTime":5720,"minRequest":1046,"averageAttempts":1,"kills":1}
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":12,"internalTotalRequestCount":17,"internalMovementAttemptCount":17,"internalAttackAttemptCount":16,"internalFaultyMessageCount":0,"averageRequestTime":1438.471,"averageRequestTimeCount":17,"maxRequestTime":1860,"minRequest":1153,"averageAttempts":1,"kills":0}
+2026-02-08 15:05:00;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-08 15:05:00;[SYSTEM];[LevelGoal];INFO LLM GPT|gpt-4.1-mini won.
+2026-02-08 15:05:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Attacked succeeded at GridTile(Clone) (7, 6). Kill count = 1.
+2026-02-08 15:05:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|1];INFO Finish turn

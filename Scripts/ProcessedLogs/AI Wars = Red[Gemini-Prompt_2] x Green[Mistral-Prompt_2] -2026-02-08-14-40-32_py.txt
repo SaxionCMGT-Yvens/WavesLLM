@@ -1,0 +1,49 @@
+General Information
+========================================
+Initial time = [2026-02-08 14:40:32]
+Last time = [2026-02-08 14:59:03]
+Total time: 18:31
+RED gemini-2.5-flash-lite x GREEN magistral-small-2509
+INFO Faction Green won.
+INFO LLM Mistral|magistral-small-2509 won.
+========================================
+Number of movements = 55
+Number of green movements = 33
+Number of red movements = 22
+Movement ratio = 0.60/0.40
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = magistral-small-2509
+Average magistral-small-2509 prompt = 2972.18
+Average magistral-small-2509 request = 22007.24 (41 requests)
+Max magistral-small-2509 request = 44761.00
+Min magistral-small-2509 request = 6931.00
+Average magistral-small-2509 attempts = 1.2424242424242424
+Total of magistral-small-2509 failed movements = 13 / 33 (39.39%)
+Total of magistral-small-2509 failed movements [from agents] = 1.0 / 33.0 (3.03%)
+Total of attack attempts from magistral-small-2509 = 13
+Total of attack attempts from magistral-small-2509 [from agents] = 26.0
+Total of success attack attempts from magistral-small-2509  = 13 (100.00%)
+Total of success attack attempts from magistral-small-2509 [from agents] = 13.0 (50.00%)
+Total of failed attack attempts from magistral-small-2509 [from agents] = 13.0 (50.00%)
+Total of faulty messages magistral-small-2509 = 8.0
+========================================
+Faction = |Red| Model = gemini-2.5-flash-lite
+Average gemini-2.5-flash-lite prompt = 2987.23
+Average gemini-2.5-flash-lite request = 663.45 (22 requests)
+Max gemini-2.5-flash-lite request = 913.00
+Min gemini-2.5-flash-lite request = 450.00
+Average gemini-2.5-flash-lite attempts = 1.0
+Total of gemini-2.5-flash-lite failed movements = 8 / 22 (36.36%)
+Total of gemini-2.5-flash-lite failed movements [from agents] = 4.0 / 22.0 (18.18%)
+Total of attack attempts from gemini-2.5-flash-lite = 3
+Total of attack attempts from gemini-2.5-flash-lite [from agents] = 11.0
+Total of success attack attempts from gemini-2.5-flash-lite  = 3 (100.00%)
+Total of success attack attempts from gemini-2.5-flash-lite [from agents] = 3.0 (27.27%)
+Total of failed attack attempts from gemini-2.5-flash-lite [from agents] = 8.0 (72.73%)
+Total of faulty messages gemini-2.5-flash-lite = 0.0
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Red[Gemini-Prompt_2] x Green[Mistral-Prompt_2] -2026-02-08-14-40-32.log;2026-02-08 14:40:32;1111.0;RED gemini-2.5-flash-lite;GREEN magistral-small-2509;INFO Faction Green won.-INFO LLM Mistral|magistral-small-2509 won.;55;0.60/0.40;Faction = |Green; Model = magistral-small-2509;2972.18;22007.24;44761.00;6931.00;1.24;33.00;13.00;20.00;39.39;33.00;1.00;32.00;3.03;96.97;13.00;26.00;13.00;100.00;0.00;13.00;13.00;26.00;50.00;50.00;8.00;Faction = |Red; Model = gemini-2.5-flash-lite;2987.23;663.45;913.00;450.00;1.00;22.00;8.00;14.00;36.36;22.00;4.00;18.00;18.18;81.82;3.00;11.00;3.00;100.00;0.00;8.00;3.00;11.00;27.27;72.73;0.00

@@ -1,0 +1,49 @@
+General Information
+========================================
+Initial time = [2026-02-08 15:42:56]
+Last time = [2026-02-08 15:51:09]
+Total time: 8:13
+RED gemini-2.5-flash-lite x GREEN gpt-4.1-mini
+INFO Faction Green won.
+INFO LLM GPT|gpt-4.1-mini won.
+========================================
+Number of movements = 141
+Number of green movements = 82
+Number of red movements = 59
+Movement ratio = 0.58/0.42
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = gpt-4.1-mini
+Average gpt-4.1-mini prompt = 2988.74
+Average gpt-4.1-mini request = 1459.82 (82 requests)
+Max gpt-4.1-mini request = 4064.00
+Min gpt-4.1-mini request = 1014.00
+Average gpt-4.1-mini attempts = 1.0
+Total of gpt-4.1-mini failed movements = 63 / 82 (76.83%)
+Total of gpt-4.1-mini failed movements [from agents] = 7.0 / 82.0 (8.54%)
+Total of attack attempts from gpt-4.1-mini = 16
+Total of attack attempts from gpt-4.1-mini [from agents] = 79.0
+Total of success attack attempts from gpt-4.1-mini  = 16 (100.00%)
+Total of success attack attempts from gpt-4.1-mini [from agents] = 16.0 (20.25%)
+Total of failed attack attempts from gpt-4.1-mini [from agents] = 63.0 (79.75%)
+Total of faulty messages gpt-4.1-mini = 0.0
+========================================
+Faction = |Red| Model = gemini-2.5-flash-lite
+Average gemini-2.5-flash-lite prompt = 3027.36
+Average gemini-2.5-flash-lite request = 665.08 (60 requests)
+Max gemini-2.5-flash-lite request = 1335.00
+Min gemini-2.5-flash-lite request = 388.00
+Average gemini-2.5-flash-lite attempts = 1.0169491525423728
+Total of gemini-2.5-flash-lite failed movements = 12 / 59 (20.34%)
+Total of gemini-2.5-flash-lite failed movements [from agents] = 14.0 / 59.0 (23.73%)
+Total of attack attempts from gemini-2.5-flash-lite = 1
+Total of attack attempts from gemini-2.5-flash-lite [from agents] = 13.0
+Total of success attack attempts from gemini-2.5-flash-lite  = 1 (100.00%)
+Total of success attack attempts from gemini-2.5-flash-lite [from agents] = 1.0 (7.69%)
+Total of failed attack attempts from gemini-2.5-flash-lite [from agents] = 12.0 (92.31%)
+Total of faulty messages gemini-2.5-flash-lite = 1.0
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Red[Gemini-Prompt_2] x Green[GPT-Prompt_2] -2026-02-08-15-42-56.log;2026-02-08 15:42:56;493.0;RED gemini-2.5-flash-lite;GREEN gpt-4.1-mini;INFO Faction Green won.-INFO LLM GPT|gpt-4.1-mini won.;141;0.58/0.42;Faction = |Green; Model = gpt-4.1-mini;2988.74;1459.82;4064.00;1014.00;1.00;82.00;63.00;19.00;76.83;82.00;7.00;75.00;8.54;91.46;16.00;79.00;16.00;100.00;0.00;63.00;16.00;79.00;20.25;79.75;0.00;Faction = |Red; Model = gemini-2.5-flash-lite;3027.36;665.08;1335.00;388.00;1.02;59.00;12.00;47.00;20.34;59.00;14.00;45.00;23.73;76.27;1.00;13.00;1.00;100.00;0.00;12.00;1.00;13.00;7.69;92.31;1.00
