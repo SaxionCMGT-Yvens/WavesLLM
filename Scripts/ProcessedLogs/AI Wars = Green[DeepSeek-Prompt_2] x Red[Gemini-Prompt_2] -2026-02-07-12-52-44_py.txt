@@ -14,7 +14,7 @@ Movement ratio = 0.55/0.45
 ========================================
 General Information per Faction
 ========================================
-Faction = Green; Model = deepseek-chat
+Faction = Green| Model = deepseek-chat
 Average deepseek-chat prompt = 3052.07
 Average deepseek-chat request = 2862.58 (85 requests)
 Max deepseek-chat request = 3454.00
@@ -29,7 +29,7 @@ Total of success attack attempts from deepseek-chat [from agents] = 10.0 (14.71%
 Total of failed attack attempts from deepseek-chat [from agents] = 58.0 (85.29%)
 Total of faulty messages deepseek-chat = 0.0
 ========================================
-Faction = Red; Model = gemini-2.5-flash-lite
+Faction = Red| Model = gemini-2.5-flash-lite
 Average gemini-2.5-flash-lite prompt = 3085.96
 Average gemini-2.5-flash-lite request = 631.57 (70 requests)
 Max gemini-2.5-flash-lite request = 861.00
@@ -43,6 +43,7 @@ Total of success attack attempts from gemini-2.5-flash-lite  = 0 (0.00%)
 Total of success attack attempts from gemini-2.5-flash-lite [from agents] = 0.0 (0.00%)
 Total of failed attack attempts from gemini-2.5-flash-lite [from agents] = 9.0 (100.00%)
 Total of faulty messages gemini-2.5-flash-lite = 0.0
-========================================
 CSV line
-ProcessLogs/AI Wars = Green[DeepSeek-Prompt_2] x Red[Gemini-Prompt_2] -2026-02-07-12-52-44.log;2026-02-07 12:52:44;10:20;RED gemini-2.5-flash-lite x GREEN deepseek-chat;INFO Faction Green won.;INFO LLM DeepSeek|deepseek-chat won.;155;85;70;0.55/0.45;Faction = Green; Model = deepseek-chat;3052.07;2862.58;3454.00;2510.00;1.00;85.00;58.00;27.00;68.24;85.00;23.00;62.00;27.06;72.94;10.00;68.00;10.00;100.00;0.00;58.00;10.00;68.00;14.71;85.29;0.00;Faction = Red; Model = gemini-2.5-flash-lite;3085.96;631.57;861.00;351.00;1.00;70.00;9.00;61.00;12.86;70.00;14.00;56.00;20.00;80.00;0.00;9.00;0.00;0.00;100.00;9.00;0.00;9.00;0.00;100.00;0.00
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Green[DeepSeek-Prompt_2] x Red[Gemini-Prompt_2] -2026-02-07-12-52-44.log;2026-02-07 12:52:44;620.0;RED gemini-2.5-flash-lite;GREEN deepseek-chat;INFO Faction Green won.-INFO LLM DeepSeek|deepseek-chat won.;155;0.55/0.45;Faction = Green; Model = deepseek-chat;3052.07;2862.58;3454.00;2510.00;1.00;85.00;58.00;27.00;68.24;85.00;23.00;62.00;27.06;72.94;10.00;68.00;10.00;100.00;0.00;58.00;10.00;68.00;14.71;85.29;0.00;Faction = Red; Model = gemini-2.5-flash-lite;3085.96;631.57;861.00;351.00;1.00;70.00;9.00;61.00;12.86;70.00;14.00;56.00;20.00;80.00;0.00;9.00;0.00;0.00;100.00;9.00;0.00;9.00;0.00;100.00;0.00

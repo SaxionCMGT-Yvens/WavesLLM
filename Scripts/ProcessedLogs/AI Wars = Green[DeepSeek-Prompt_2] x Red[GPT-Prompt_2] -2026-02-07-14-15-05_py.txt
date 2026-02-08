@@ -14,7 +14,7 @@ Movement ratio = 0.51/0.49
 ========================================
 General Information per Faction
 ========================================
-Faction = Green; Model = deepseek-chat
+Faction = Green| Model = deepseek-chat
 Average deepseek-chat prompt = 3035.39
 Average deepseek-chat request = 2942.60 (72 requests)
 Max deepseek-chat request = 5173.00
@@ -29,7 +29,7 @@ Total of success attack attempts from deepseek-chat [from agents] = 6.0 (15.38%)
 Total of failed attack attempts from deepseek-chat [from agents] = 33.0 (84.62%)
 Total of faulty messages deepseek-chat = 0.0
 ========================================
-Faction = Red; Model = gpt-4.1-mini
+Faction = Red| Model = gpt-4.1-mini
 Average gpt-4.1-mini prompt = 3025.56
 Average gpt-4.1-mini request = 1436.04 (75 requests)
 Max gpt-4.1-mini request = 3928.00
@@ -43,6 +43,7 @@ Total of success attack attempts from gpt-4.1-mini  = 15 (100.00%)
 Total of success attack attempts from gpt-4.1-mini [from agents] = 15.0 (24.59%)
 Total of failed attack attempts from gpt-4.1-mini [from agents] = 46.0 (75.41%)
 Total of faulty messages gpt-4.1-mini = 0.0
-========================================
 CSV line
-ProcessLogs/AI Wars = Green[DeepSeek-Prompt_2] x Red[GPT-Prompt_2] -2026-02-07-14-15-05.log;2026-02-07 14:15:05;11:40;RED gpt-4.1-mini x GREEN deepseek-chat;INFO Faction Red won.;INFO LLM GPT|gpt-4.1-mini won.;147;72;75;0.51/0.49;Faction = Green; Model = deepseek-chat;3035.39;2942.60;5173.00;2621.00;1.00;72.00;33.00;39.00;45.83;72.00;5.00;67.00;6.94;93.06;6.00;39.00;6.00;100.00;0.00;33.00;6.00;39.00;15.38;84.62;0.00;Faction = Red; Model = gpt-4.1-mini;3025.56;1436.04;3928.00;1026.00;1.00;75.00;46.00;29.00;61.33;75.00;5.00;70.00;6.67;93.33;15.00;61.00;15.00;100.00;0.00;46.00;15.00;61.00;24.59;75.41;0.00
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Green[DeepSeek-Prompt_2] x Red[GPT-Prompt_2] -2026-02-07-14-15-05.log;2026-02-07 14:15:05;700.0;RED gpt-4.1-mini;GREEN deepseek-chat;INFO Faction Red won.-INFO LLM GPT|gpt-4.1-mini won.;147;0.51/0.49;Faction = Green; Model = deepseek-chat;3035.39;2942.60;5173.00;2621.00;1.00;72.00;33.00;39.00;45.83;72.00;5.00;67.00;6.94;93.06;6.00;39.00;6.00;100.00;0.00;33.00;6.00;39.00;15.38;84.62;0.00;Faction = Red; Model = gpt-4.1-mini;3025.56;1436.04;3928.00;1026.00;1.00;75.00;46.00;29.00;61.33;75.00;5.00;70.00;6.67;93.33;15.00;61.00;15.00;100.00;0.00;46.00;15.00;61.00;24.59;75.41;0.00

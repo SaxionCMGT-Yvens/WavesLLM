@@ -20,7 +20,7 @@ def parse_per_faction(faction, lines_array):
     # Parse model
     # 2026-02-06 20:54:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Green|1];INFO Start turn;5,5
     model = faction_lines[0].split(";")[2].split("|")[2]
-    print(f"Faction = {faction}; Model = {model}")
+    print(f"Faction = {faction}| Model = {model}")
     output_line.append(f"Faction = {faction}; Model = {model}")
 
     # Parse prompt lines
@@ -192,23 +192,26 @@ total_seconds = diff.total_seconds()
 minutes = int(total_seconds // 60)
 seconds = int(total_seconds % 60)
 print(f"Total time: {minutes}:{seconds}")
-output_line.append(f"{minutes}:{seconds}")
+output_line.append(f"{total_seconds}")
 
 # Parse models
 llm_green_model = get_model("Green", lines)
 llm_red_model = get_model("Red", lines)
 print(f"RED {llm_red_model} x GREEN {llm_green_model}")
-output_line.append(f"RED {llm_red_model} x GREEN {llm_green_model}")
+output_line.append(f"RED {llm_red_model}")
+output_line.append(f"GREEN {llm_green_model}")
 
 winner = find_lines_containing_string("won", lines)
 if len(winner) == 0:
     print("No winner. Draw!")
     output_line.append(f"DRAW")
 else:
+    winning_lines = []
     for line in winner:
         winning_model = line.split(';')[3].strip()
         print(winning_model)
-        output_line.append(f"{winning_model}")
+        winning_lines.append(winning_model)
+    output_line.append(f"{'-'.join(winning_lines)}")
 
 print("=" * 40)
 
@@ -218,9 +221,7 @@ red_moves = find_lines_containing_string("Red", move_lines)
 print(f"Number of movements = {len(move_lines)}")
 output_line.append(f"{len(move_lines)}")
 print(f"Number of green movements = {len(green_moves)}")
-output_line.append(f"{len(green_moves)}")
 print(f"Number of red movements = {len(red_moves)}")
-output_line.append(f"{len(red_moves)}")
 move_ratio = max(len(green_moves), len(red_moves)) / len(move_lines)
 print(f"Movement ratio = {move_ratio:.2f}/{1 - move_ratio:.2f}")
 output_line.append(f"{move_ratio:.2f}/{1 - move_ratio:.2f}")
@@ -230,6 +231,16 @@ print("=" * 40)
 parse_per_faction("Green", lines)
 print("=" * 40)
 parse_per_faction("Red", lines)
-print("="*40)
+
 print("CSV line")
+print("="*40)
+print("filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;"
+      "faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;"
+      "% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;"
+      "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
+      "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;"
+      "faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;"
+      "% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;"
+      "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
+      "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;")
 print(';'.join(output_line))

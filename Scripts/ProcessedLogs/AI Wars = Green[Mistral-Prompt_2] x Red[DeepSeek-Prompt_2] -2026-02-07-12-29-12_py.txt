@@ -14,7 +14,7 @@ Movement ratio = 0.56/0.44
 ========================================
 General Information per Faction
 ========================================
-Faction = Green; Model = magistral-small-2509
+Faction = Green| Model = magistral-small-2509
 Average magistral-small-2509 prompt = 3024.96
 Average magistral-small-2509 request = 21413.19 (27 requests)
 Max magistral-small-2509 request = 45871.00
@@ -29,7 +29,7 @@ Total of success attack attempts from magistral-small-2509 [from agents] = 11.0 
 Total of failed attack attempts from magistral-small-2509 [from agents] = 9.0 (45.00%)
 Total of faulty messages magistral-small-2509 = 4.0
 ========================================
-Faction = Red; Model = deepseek-chat
+Faction = Red| Model = deepseek-chat
 Average deepseek-chat prompt = 3030.53
 Average deepseek-chat request = 2972.35 (17 requests)
 Max deepseek-chat request = 3365.00
@@ -43,6 +43,7 @@ Total of success attack attempts from deepseek-chat  = 3 (100.00%)
 Total of success attack attempts from deepseek-chat [from agents] = 3.0 (33.33%)
 Total of failed attack attempts from deepseek-chat [from agents] = 6.0 (66.67%)
 Total of faulty messages deepseek-chat = 0.0
-========================================
 CSV line
-ProcessLogs/AI Wars = Green[Mistral-Prompt_2] x Red[DeepSeek-Prompt_2] -2026-02-07-12-29-12.log;2026-02-07 12:29:12;12:41;RED deepseek-chat x GREEN magistral-small-2509;INFO Faction Green won.;INFO LLM Mistral|magistral-small-2509 won.;39;22;17;0.56/0.44;Faction = Green; Model = magistral-small-2509;3024.96;21413.19;45871.00;8574.00;1.17;22.00;9.00;13.00;40.91;22.00;2.00;20.00;9.09;90.91;11.00;20.00;11.00;100.00;0.00;9.00;11.00;20.00;55.00;45.00;4.00;Faction = Red; Model = deepseek-chat;3030.53;2972.35;3365.00;2549.00;1.00;17.00;6.00;11.00;35.29;17.00;1.00;16.00;5.88;94.12;3.00;9.00;3.00;100.00;0.00;6.00;3.00;9.00;33.33;66.67;0.00
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Green[Mistral-Prompt_2] x Red[DeepSeek-Prompt_2] -2026-02-07-12-29-12.log;2026-02-07 12:29:12;761.0;RED deepseek-chat;GREEN magistral-small-2509;INFO Faction Green won.-INFO LLM Mistral|magistral-small-2509 won.;39;0.56/0.44;Faction = Green; Model = magistral-small-2509;3024.96;21413.19;45871.00;8574.00;1.17;22.00;9.00;13.00;40.91;22.00;2.00;20.00;9.09;90.91;11.00;20.00;11.00;100.00;0.00;9.00;11.00;20.00;55.00;45.00;4.00;Faction = Red; Model = deepseek-chat;3030.53;2972.35;3365.00;2549.00;1.00;17.00;6.00;11.00;35.29;17.00;1.00;16.00;5.88;94.12;3.00;9.00;3.00;100.00;0.00;6.00;3.00;9.00;33.33;66.67;0.00

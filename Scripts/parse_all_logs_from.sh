@@ -44,4 +44,6 @@ for LOG_FILE in "$INPUT_FOLDER"/*.log; do
     fi
 done
 
+python3 log_csv_compiler.py "$OUTPUT_FOLDER" > "results.csv"
+
 echo "Processing complete!"

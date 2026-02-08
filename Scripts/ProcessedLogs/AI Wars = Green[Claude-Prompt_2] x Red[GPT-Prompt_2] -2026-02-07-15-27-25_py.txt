@@ -14,7 +14,7 @@ Movement ratio = 0.55/0.45
 ========================================
 General Information per Faction
 ========================================
-Faction = Green; Model = claude-haiku-4-5-20251001
+Faction = Green| Model = claude-haiku-4-5-20251001
 Average claude-haiku-4-5-20251001 prompt = 2945.79
 Average claude-haiku-4-5-20251001 request = 1768.04 (94 requests)
 Max claude-haiku-4-5-20251001 request = 11526.00
@@ -29,7 +29,7 @@ Total of success attack attempts from claude-haiku-4-5-20251001 [from agents] = 
 Total of failed attack attempts from claude-haiku-4-5-20251001 [from agents] = 43.0 (76.79%)
 Total of faulty messages claude-haiku-4-5-20251001 = 0.0
 ========================================
-Faction = Red; Model = gpt-4.1-mini
+Faction = Red| Model = gpt-4.1-mini
 Average gpt-4.1-mini prompt = 2955.95
 Average gpt-4.1-mini request = 1427.92 (77 requests)
 Max gpt-4.1-mini request = 3538.00
@@ -43,6 +43,7 @@ Total of success attack attempts from gpt-4.1-mini  = 7 (100.00%)
 Total of success attack attempts from gpt-4.1-mini [from agents] = 7.0 (11.29%)
 Total of failed attack attempts from gpt-4.1-mini [from agents] = 55.0 (88.71%)
 Total of faulty messages gpt-4.1-mini = 0.0
-========================================
 CSV line
-ProcessLogs/AI Wars = Green[Claude-Prompt_2] x Red[GPT-Prompt_2] -2026-02-07-15-27-25.log;2026-02-07 15:27:25;11:24;RED gpt-4.1-mini x GREEN claude-haiku-4-5-20251001;INFO Faction Green won.;INFO LLM Claude|claude-haiku-4-5-20251001 won.;171;94;77;0.55/0.45;Faction = Green; Model = claude-haiku-4-5-20251001;2945.79;1768.04;11526.00;879.00;1.00;94.00;43.00;51.00;45.74;94.00;27.00;67.00;28.72;71.28;13.00;56.00;13.00;100.00;0.00;43.00;13.00;56.00;23.21;76.79;0.00;Faction = Red; Model = gpt-4.1-mini;2955.95;1427.92;3538.00;986.00;1.00;77.00;55.00;22.00;71.43;77.00;11.00;66.00;14.29;85.71;7.00;62.00;7.00;100.00;0.00;55.00;7.00;62.00;11.29;88.71;0.00
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Green[Claude-Prompt_2] x Red[GPT-Prompt_2] -2026-02-07-15-27-25.log;2026-02-07 15:27:25;684.0;RED gpt-4.1-mini;GREEN claude-haiku-4-5-20251001;INFO Faction Green won.-INFO LLM Claude|claude-haiku-4-5-20251001 won.;171;0.55/0.45;Faction = Green; Model = claude-haiku-4-5-20251001;2945.79;1768.04;11526.00;879.00;1.00;94.00;43.00;51.00;45.74;94.00;27.00;67.00;28.72;71.28;13.00;56.00;13.00;100.00;0.00;43.00;13.00;56.00;23.21;76.79;0.00;Faction = Red; Model = gpt-4.1-mini;2955.95;1427.92;3538.00;986.00;1.00;77.00;55.00;22.00;71.43;77.00;11.00;66.00;14.29;85.71;7.00;62.00;7.00;100.00;0.00;55.00;7.00;62.00;11.29;88.71;0.00
