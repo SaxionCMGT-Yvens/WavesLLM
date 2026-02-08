@@ -194,9 +194,12 @@ seconds = int(total_seconds % 60)
 print(f"Total time: {minutes}:{seconds}")
 output_line.append(f"{total_seconds}")
 
+green_faction_name = "|Green"
+red_faction_name = "|Red"
+
 # Parse models
-llm_green_model = get_model("Green", lines)
-llm_red_model = get_model("Red", lines)
+llm_green_model = get_model(green_faction_name, lines)
+llm_red_model = get_model(red_faction_name, lines)
 print(f"RED {llm_red_model} x GREEN {llm_green_model}")
 output_line.append(f"RED {llm_red_model}")
 output_line.append(f"GREEN {llm_green_model}")
@@ -216,8 +219,8 @@ else:
 print("=" * 40)
 
 move_lines = find_lines_containing_string("MOVE", lines)
-green_moves = find_lines_containing_string("Green", move_lines)
-red_moves = find_lines_containing_string("Red", move_lines)
+green_moves = find_lines_containing_string(green_faction_name, move_lines)
+red_moves = find_lines_containing_string(red_faction_name, move_lines)
 print(f"Number of movements = {len(move_lines)}")
 output_line.append(f"{len(move_lines)}")
 print(f"Number of green movements = {len(green_moves)}")
@@ -228,9 +231,9 @@ output_line.append(f"{move_ratio:.2f}/{1 - move_ratio:.2f}")
 print("="*40)
 print("General Information per Faction")
 print("=" * 40)
-parse_per_faction("Green", lines)
+parse_per_faction(green_faction_name, lines)
 print("=" * 40)
-parse_per_faction("Red", lines)
+parse_per_faction(red_faction_name, lines)
 
 print("CSV line")
 print("="*40)
