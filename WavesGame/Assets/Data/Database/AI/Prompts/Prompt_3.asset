@@ -30,9 +30,10 @@ MonoBehaviour:
     -y (toward BOTTOM, y=0).\n  - Example: Moving \"to the top\" means increasing
     y (e.g., (10,13) \u2192 (10,14)).\n\n---\n\n## CURRENT STATE\n\n- **Your Ship**:
     `@self_status@`\n- **Position**: (`@self_x@`, `@self_y@`)\n\n---\n\n## AVAILABLE
-    ACTIONS\n\n### Movement Options (Radius `@move_count@`)\n**Safe Positions**:
-    `@safe_movement_positions@`\n**Risky Positions**:\n- Waves: `@wave_movement_positions@`
-    *(Example: (10,11) = `~>` \u2192 pushes to (11,11))*\n- Enemies/Allies: `@blocked_movement_positions@`
+    ACTIONS\n\n### Movement Options (Radius `@move_count@`)\n**Allowed Positions**:
+    \n- You *HAVE* to move to one of these positions.\n`@safe_movement_positions@`\n**Risky
+    Positions**:\n- Waves: `@wave_movement_positions@` *(Example: (10,11) = `~>`
+    \u2192 pushes to (11,11))*\n- Enemies/Allies: `@blocked_movement_positions@`
     *(Cannot move here)*\n\n### Attack Options\n- **Range**: `@attack_range@` | **Offset**:
     `@attack_offset@`\n- **Current Attackable Positions**: `@current_attack_positions@`
     *(No Movement)*\n\n---\n\n## GRID OVERVIEW\n`@grid_overview_symbolic@`\n\n---\n\n##
@@ -55,5 +56,5 @@ MonoBehaviour:
     after the JSON. Do not wrap the JSON in code blocks or quotes. Limit \"reasoning\"
     to 15 words.\n```json\n{\n  \"reasoning\": \"Goal + risk mitigation (e.g., 'Avoid
     wave; target low-health enemy')\",\n  \"movement\": [x1, y1],\n  \"attack\":
-    [x2, y2],\n  \"move_after_attack\": [x3, y3]\n}"
+    [x2, y2],\n  \"move_after_attack\": [x3, y3]\n}\n"
   includeEmptySpaces: 0

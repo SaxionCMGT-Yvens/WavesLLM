@@ -16,6 +16,7 @@ namespace Actors.AI.LlmAI
 
         public int InternalRepetitionsCount => internalRepetitionsCount;
 
+        [Button("Initialize")]
         public void Initialize()
         {
             internalRepetitionsCount = repetitions;
