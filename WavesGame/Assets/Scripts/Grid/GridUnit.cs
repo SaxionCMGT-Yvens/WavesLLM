@@ -110,6 +110,38 @@ namespace Grid
             return current;
         }
 
+        public bool HasActorOfType<T>() where T : GridActor
+        {
+            var enumerator = _actors.GetEnumerator();
+            var hasActorOfType = false;
+            while (enumerator.MoveNext())
+            {
+                var enumeratorCurrent = enumerator.Current;
+                if (enumeratorCurrent is T)
+                {
+                    hasActorOfType = true;
+                }
+            }
+            enumerator.Dispose();
+            return hasActorOfType;
+        }
+
+        public bool GetFirstActorOfType<T>(out T firstActor) where T : GridActor
+        {
+            var enumerator = _actors.GetEnumerator();
+            var hasActorOfType = false;
+            firstActor  = null;
+            while (enumerator.MoveNext())
+            {
+                var enumeratorCurrent = enumerator.Current;
+                if (enumeratorCurrent is not T actor) continue;
+                hasActorOfType = true;
+                firstActor = actor;
+            }
+            enumerator.Dispose();
+            return hasActorOfType;
+        }
+
         public List<GridActor> GetHasStepEffectActors()
         {
             var actorsWithStepEffect = new List<GridActor>();
