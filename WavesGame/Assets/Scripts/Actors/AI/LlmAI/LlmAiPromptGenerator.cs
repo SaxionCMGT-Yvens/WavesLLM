@@ -30,7 +30,12 @@ namespace Actors.AI.LlmAI
             var attackableUnits = GridManager.GetSingleton()
                 .GetAttackableUnitsInRadiusManhattan(index, cannonData.GetCannonSo, llmAINavalShip.RemainingSteps);
             attackableUnits = attackableUnits.FindAll(unit => !unit.IsEmpty());
+
             template = ReplaceTagWithText(template, "possible_attack_positions", ListGridUnitsToString(attackableUnits, templatePrompt));
+            
+            var currentAttackableUnits = GridManager.GetSingleton()
+                .GetGridUnitsForMoveType(cannonData.GetCannonSo.targetAreaType, index, cannonData.GetCannonSo.area, cannonData.GetCannonSo.deadZone);
+            template = ReplaceTagWithText(template, "current_attack_positions", ListGridUnitsToString(currentAttackableUnits, templatePrompt));
             
             var grid = GridManager.GetSingleton().Grid();
             

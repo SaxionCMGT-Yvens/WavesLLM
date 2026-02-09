@@ -32,18 +32,24 @@ MonoBehaviour:
     Select one of them to where you want to move. [`@movement_positions@`]\n**Tips
     to Attack**: After selecting where to move, use your range and your offset to
     calculate the possible attack positions and select one from them. Your range
-    is [`@attack_range@`] and your offset is [`@attack_offset@`].\n\n## GRID OVERVIEW\n\nThis
-    is now a list of the content that is present in the grid, including yourself.
-    Use this to calculate your movements and your attacks.\n(Format: [x,y] = content)\n`@grid_overview@`\n\n#
-    Rules:\n\n- You cannot move to positions marked as Blocked. If you chose a Blocked
-    location, the movement and subsequent actions will be skipped.\n- Movement is
-    Manhattan based. Moving diagonally is not possible.\n- Analyze the distance to
-    the targets around you and consider their health. Downing enemies is usually
-    more efficient than harming enemies with full health.\n- Use [-1, -1] for any
-    action you skip.\n- Final position after all actions must be valid.\n- Pay attention
-    to the Waves in the grid when considering your attacks.\n- You don't get points
-    or any benefits from attacking your own faction. Refrain from attacking your
-    own faction as this might lead to the enemy winning.\n\n## RESPONSE FORMAT\n\n**CRITICAL:**
+    is [`@attack_range@`] and your offset is [`@attack_offset@`].\n**Current Attack
+    Options**: If you do not move, you can already attack the following positions:
+    [`@current_attack_positions@`]\n\n## GRID OVERVIEW\n\nThis is now a list of the
+    content that is present in the grid, including yourself. Use this to calculate
+    your movements and your attacks. The ratio is a linear valued from 0 to 1 that
+    indicates how much health a ship has compared to its maximum health. Ratio of
+    1 means full healt, while ratio near 0 indicates a ship almost destroyed.\n(Format:
+    [x,y] = content)\n`@grid_overview@`\n\n# Rules:\n\n- Remember: Movement is Manhattan
+    based. Moving diagonally is not possible. You cannot control your path towards
+    a given position, so consider your movement carefully to avoid hitting waves
+    or being blocked.\n- You cannot move on top of occupied tiles from other ships,
+    such as grid positions marked as SHIP.\n- Analyze the distance to the targets
+    around you and consider their health. Downing enemies is usually more efficient
+    than harming enemies with full health.\n- Use [-1, -1] for any action you skip.\n-
+    Pay attention to the Waves in the grid when considering your attacks. You may
+    also use Waves to move you more than your movement range allows you.\n- You don't
+    get points or any benefits from attacking your own faction. Refrain from attacking
+    your own faction as this might lead to the enemy winning.\n\n## RESPONSE FORMAT\n\n**CRITICAL:**
     Output **ONLY** a valid JSON object that exactly matches the structure below.
     Do not include any other text, explanations, or markdown formatting before or
     after the JSON. Do not wrap the JSON in code blocks or quotes.\nLimit \"reasoning\"
