@@ -35,28 +35,25 @@ MonoBehaviour:
     *(Example: (10,11) = `~>` \u2192 pushes to (11,11))*\n- Enemies/Allies: `@blocked_movement_positions@`
     *(Cannot move here)*\n\n### Attack Options\n- **Range**: `@attack_range@` | **Offset**:
     `@attack_offset@`\n- **Current Attackable Positions**: `@current_attack_positions@`
-    *(No Movement)*\n\n---\n\n## GRID OVERVIEW\n**Symbols**:\n| Symbol       | Meaning         
-    |\n|--------------|------------------|\n| `~>`         | Wave (Right)     |\n|
-    `\U0001F6A2 Faction` | Ship             |\n| `\U0001F3AF`         | Target          
-    |\n\n`@grid_overview_symbolic@`\n\n---\n\n## RULES\n- **Movement**: Manhattan
-    distance only. Paths through waves end at the wave.\n- **Blocking**: Cannot move
-    onto tiles occupied by other ships.\n- **Friendly Fire**: *DO NOT* attacking
-    allies!\n- **Strategy**: \n\t- Prioritize low-health enemies. Use waves to extend
-    attacks or movement.\n\t - Never target allies, regardless of their health.\n-
-    **Attack Validation**:\n  - Is the target an **enemy** or **target**? If not,
-    **DO NOT ATTACK**.\n  - Is the target in **range** and **offset**? If not, **DO
-    NOT ATTACK**.\n- **Move After Attack**: Use \"move_after_attack\" **only if**
-    your ship can move again after attacking. Otherwise, use `[-1, -1]`.\n- **Skip
-    Actions**: Use `[-1, -1]` to skip.\n-- **Example Turn**:\n```json\n{\n  \"reasoning\":
-    \"Move up to attack enemy; avoid wave.\",\n  \"movement\": [10, 14],\n  \"attack\":
-    [10, 16],\n  \"move_after_attack\": [-1, -1]\n}\n```\n-- **Example Valid Attack**:\n```json\n{\n 
-    \"reasoning\": \"Attack enemy at [7,12]; high health but only target in range.\",\n 
-    \"movement\": [-1, -1],\n  \"attack\": [7, 12],\n  \"move_after_attack\": [-1,
-    -1]\n}\n```\n\n---\n\n## RESPONSE FORMAT\n**CRITICAL:** Output **ONLY** a valid
-    JSON object that exactly matches the structure below. Do not include any other
-    text, explanations, or markdown formatting before or after the JSON. Do not wrap
-    the JSON in code blocks or quotes. Limit \"reasoning\" to 15 words.\n```json\n{\n 
-    \"reasoning\": \"Goal + risk mitigation (e.g., 'Avoid wave; target low-health
-    enemy')\",\n  \"movement\": [x1, y1],\n  \"attack\": [x2, y2],\n  \"move_after_attack\":
-    [x3, y3]\n}\n"
+    *(No Movement)*\n\n---\n\n## GRID OVERVIEW\n`@grid_overview_symbolic@`\n\n---\n\n##
+    RULES\n- **Movement**: Manhattan distance only. Paths through waves end at the
+    wave.\n- **Blocking**: Cannot move onto tiles occupied by other ships.\n- **Friendly
+    Fire**: *DO NOT* attacking allies!\n\t- **Only attack tiles marked as \"Enemy\"
+    or \"Target\" in the grid.**\n- **Strategy**: \n\t- Prioritize low-health enemies.
+    Use waves to extend attacks or movement.\n\t - Never target allies, regardless
+    of their health.\n**BEFORE RESPONDING, VERIFY:**\n\t1. Is the **attack target**
+    an **ENEMY** or **TARGET**? If not, **DO NOT ATTACK**.\n\t2. Is the target within
+    **range (@attack_range@)** and **offset (@attack_offset@)**?\n\t3. Is the **movement
+    path** free of **waves** and **blocked tiles**?\n- **Move After Attack**: Use
+    \"move_after_attack\" **only if** your ship can move again after attacking. Otherwise,
+    use `[-1, -1]`.\n- **Skip Actions**: Use `[-1, -1]` to skip.\n-- **Example Valid
+    Attack**:\n```json\n{\n  \"reasoning\": \"Attack enemy at [7,12]; high health
+    but only target in range.\",\n  \"movement\": [-1, -1],\n  \"attack\": [7, 12],\n 
+    \"move_after_attack\": [-1, -1]\n}\n```\n\n---\n\n## RESPONSE FORMAT\n**CRITICAL:**
+    Output **ONLY** a valid JSON object that exactly matches the structure below.
+    Do not include any other text, explanations, or markdown formatting before or
+    after the JSON. Do not wrap the JSON in code blocks or quotes. Limit \"reasoning\"
+    to 15 words.\n```json\n{\n  \"reasoning\": \"Goal + risk mitigation (e.g., 'Avoid
+    wave; target low-health enemy')\",\n  \"movement\": [x1, y1],\n  \"attack\":
+    [x2, y2],\n  \"move_after_attack\": [x3, y3]\n}"
   includeEmptySpaces: 0

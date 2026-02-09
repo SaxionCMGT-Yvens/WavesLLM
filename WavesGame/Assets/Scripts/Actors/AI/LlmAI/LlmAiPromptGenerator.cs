@@ -66,7 +66,15 @@ namespace Actors.AI.LlmAI
             var currentAttackableActors = new List<GridActor>();
             currentAttackableUnits.ForEach(position =>
             {
-                if (!position.Index().Equals(index) && position.GetFirstActorOfType<GridActor>(out var actor))
+                if (position.Index().Equals(index) || !position.GetFirstActorOfType<GridActor>(out var actor)) return;
+                if (actor is AINavalShip navalShip)
+                {
+                    if (navalShip.GetFaction() != selfFaction)
+                    {
+                        currentAttackableActors.Add(actor);        
+                    }
+                }
+                else
                 {
                     currentAttackableActors.Add(actor);
                 }
