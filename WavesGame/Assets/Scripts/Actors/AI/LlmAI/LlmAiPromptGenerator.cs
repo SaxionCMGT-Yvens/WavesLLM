@@ -90,7 +90,7 @@ namespace Actors.AI.LlmAI
                             break;
                         }
                         case WaveActor wave:
-                            text += $"[{index.x}, {index.y}] = WAVE_direction[{wave.GetWaveDirection}];";
+                            text += $"[{index.x}, {index.y}] = WAVE_direction[{GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}];";
                             break;
                         case NavalTarget target:
                             text += $"[{index.x}, {index.y}] = TARGET_health[{target.GetCurrentHealth()}];";
