@@ -1,0 +1,51 @@
+General Information
+========================================
+Initial time = [2026-02-07 18:33:21]
+Last time = [2026-02-07 18:53:56]
+Total time: 20:35
+RED gemini-2.5-flash-lite x GREEN gpt-4.1-mini
+INFO Faction Green won.
+INFO LLM GPT|gpt-4.1-mini won.
+========================================
+Number of movements = 353
+Number of green movements = 229
+Number of red movements = 124
+Movement ratio = 0.65/0.35
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = gpt-4.1-mini
+Average gpt-4.1-mini prompt = 2927.69
+Average gpt-4.1-mini request = 1433.07 (229 requests)
+Max gpt-4.1-mini request = 4360.00
+Min gpt-4.1-mini request = 966.00
+Average gpt-4.1-mini attempts = 1.0 (229)
+Failed Movement from gpt-4.1-mini = 170 (229)
+Total of gpt-4.1-mini failed movements = 170 / 229 (74.24%)
+Total of gpt-4.1-mini failed movements [from agents] = 24.0 / 229.0 (10.48%)
+Total of attack attempts from gpt-4.1-mini = 17
+Total of attack attempts from gpt-4.1-mini [from agents] = 187.0
+Total of success attack attempts from gpt-4.1-mini  = 17 (100.00%)
+Total of successful attack attempts from gpt-4.1-mini [from agents] = 17.0 (9.09%)
+Total of failed attack attempts from gpt-4.1-mini [from agents] = 170.0 (90.91%)
+Total of faulty messages gpt-4.1-mini = 0.0
+========================================
+Faction = |Red| Model = gemini-2.5-flash-lite
+Average gemini-2.5-flash-lite prompt = 3007.52
+Average gemini-2.5-flash-lite request = 662.15 (124 requests)
+Max gemini-2.5-flash-lite request = 1331.00
+Min gemini-2.5-flash-lite request = 398.00
+Average gemini-2.5-flash-lite attempts = 1.0 (124)
+Failed Movement from gemini-2.5-flash-lite = 17 (124)
+Total of gemini-2.5-flash-lite failed movements = 17 / 124 (13.71%)
+Total of gemini-2.5-flash-lite failed movements [from agents] = 7.0 / 124.0 (5.65%)
+Total of attack attempts from gemini-2.5-flash-lite = 0
+Total of attack attempts from gemini-2.5-flash-lite [from agents] = 17.0
+Total of success attack attempts from gemini-2.5-flash-lite  = 0 (0.00%)
+Total of successful attack attempts from gemini-2.5-flash-lite [from agents] = 0.0 (0.00%)
+Total of failed attack attempts from gemini-2.5-flash-lite [from agents] = 17.0 (100.00%)
+Total of faulty messages gemini-2.5-flash-lite = 0.0
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Green[GPT-Prompt_2] x Red[Gemini-Prompt_2] -2026-02-07-18-33-21.log;2026-02-07 18:33:21;1235.0;RED gemini-2.5-flash-lite;GREEN gpt-4.1-mini;INFO Faction Green won.-INFO LLM GPT|gpt-4.1-mini won.;353;0.65/0.35;Faction = |Green; Model = gpt-4.1-mini;2927.69;1433.07;4360.00;966.00;1.00;229.00;170.00;59.00;74.24;229.00;24.00;205.00;10.48;89.52;17.00;187.00;17.00;100.00;0.00;170.00;17.00;187.00;9.09;90.91;0.00;Faction = |Red; Model = gemini-2.5-flash-lite;3007.52;662.15;1331.00;398.00;1.00;124.00;17.00;107.00;13.71;124.00;7.00;117.00;5.65;94.35;0.00;17.00;0.00;0.00;100.00;17.00;0.00;17.00;0.00;100.00;0.00
