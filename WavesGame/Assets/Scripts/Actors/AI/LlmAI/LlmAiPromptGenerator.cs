@@ -40,14 +40,15 @@ namespace Actors.AI.LlmAI
 
             var nearbyWavePositions = walkableUnits.FindAll(position => position.HasActorOfType<WaveActor>());
             template = ReplaceTagWithText(template, "wave_movement_positions",
-                ListGridUnitIndicesToString(nearbyWavePositions, false));
+                ListGridUnitIndicesToString(nearbyWavePositions, false, "\r\n"));
 
             var nearbyShipsPositions = new List<GridActor>();
             walkableUnits.ForEach(position =>
             {
-                if (!position.Index().Equals(index) && position.GetFirstActorOfType<GridActor>(out var actor))
+                if (position.Index().Equals(index) || !position.GetFirstActorOfType<GridActor>(out var actor)) return;
+                if (actor is not WaveActor)
                 {
-                    nearbyShipsPositions.Add(actor);
+                    nearbyShipsPositions.Add(actor);    
                 }
             });
             template = ReplaceTagWithText(template, "blocked_movement_positions",
@@ -254,7 +255,7 @@ namespace Actors.AI.LlmAI
                 }
             }
 
-            return separator.Equals(",") ? text[..^1] + "]" : text + "\r\n";
+            return separator.Equals(",") ? text[..^1] : text + "\r\n";
         }
 
         private static string ListGridActorsIndicesToString(List<GridActor> gridActors, AIFaction selfFaction, bool fullInfo = false,
@@ -265,7 +266,7 @@ namespace Actors.AI.LlmAI
                 return "[Nothing]";
             }
 
-            var text = "[";
+            var text = "\r\n";
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (var gridActor in gridActors)
             {
@@ -288,7 +289,7 @@ namespace Actors.AI.LlmAI
                             break;
                     }
 
-                    text += $"{gridActor.GetUnit().Index()}({gridActor.ToString()}){separator}";
+                    text += $"{separator}";
                 }
                 else
                 {
@@ -296,7 +297,7 @@ namespace Actors.AI.LlmAI
                 }
             }
 
-            return separator.Equals(",") ? text[..^1] + "]" : text + "]";
+            return separator.Equals(",") ? text[..^1] : text + "\r\n";
         }
     }
 }
