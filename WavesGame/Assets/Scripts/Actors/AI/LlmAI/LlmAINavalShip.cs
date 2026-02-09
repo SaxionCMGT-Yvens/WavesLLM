@@ -33,6 +33,7 @@ namespace Actors.AI.LlmAI
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
         [SerializeField] private int overrideInitiative;
+        [SerializeField] private List<AIFaction> enemyFactions;
 
         private int _internalWrongMovementCount;
         private int _internalWrongAttackCount;
@@ -87,7 +88,7 @@ namespace Actors.AI.LlmAI
             yield return new WaitForSeconds(requestTimeOutTimer);
             DebugUtils.DebugLogMsg($"Request Timer Finished.", DebugUtils.DebugType.System);
 
-            var prompt = LlmAiPromptGenerator.GeneratePrompt(this, basePrompt);
+            var prompt = LlmAiPromptGenerator.GeneratePrompt(this, basePrompt, enemyFactions);
             PromptInfo($"{basePrompt.name};{prompt.Length}");
             DebugUtils.DebugLogMsg(prompt, DebugUtils.DebugType.Temporary);
 

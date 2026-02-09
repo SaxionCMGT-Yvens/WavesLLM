@@ -5,11 +5,11 @@ namespace Actors.AI.LlmAI
 {
     public static class LlmAiPromptGenerator
     {
-        public static string GeneratePrompt(LlmAINavalShip llmAINavalShip, LlmPromptSo templatePrompt)
-        {
+        public static string GeneratePrompt(LlmAINavalShip llmAINavalShip, LlmPromptSo templatePrompt, List<AIFaction> enemyFactions){
             var template = templatePrompt.prompt;
             var faction = llmAINavalShip.GetFaction().ToString();
             template = ReplaceTagWithText(template, "faction", faction);
+            template = ReplaceTagWithText(template, "enemy_factions", ListEnemyFactions(enemyFactions));
             var shipData = llmAINavalShip.ShipData;
             template = ReplaceTagWithText(template, "move_count", shipData.stats.speed.Two.ToString());
             var cannonData = llmAINavalShip.NavalCannon;
@@ -96,6 +96,17 @@ namespace Actors.AI.LlmAI
             return text[..^1] + "]";
         }
 
+        private static string ListEnemyFactions(List<AIFaction> enemyFactions)
+        {
+            var text = "[";
+            // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
+            foreach (var aiFaction in enemyFactions)
+            {
+                text += $"[{aiFaction}],";
+            }
+            return text[..^1] + "]";
+        }
+        
         private static string ListGridUnitsToString(List<GridUnit> gridUnits, bool includeEmpty = true)
         {
             if (gridUnits == null || gridUnits.Count == 0)
