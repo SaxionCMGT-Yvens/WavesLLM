@@ -10,6 +10,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Actors;
+using Actors.AI;
 using Actors.AI.LlmAI;
 using Grid;
 using NaughtyAttributes;
@@ -76,7 +77,7 @@ namespace Core
         {
             _scheduler = LlmLevelScheduler.GetSingleton();
             if (_scheduler == null) return;
-            
+
             _scheduler.BeginNewLevel();
         }
 
@@ -84,7 +85,7 @@ namespace Core
         {
             //Wait for one frame for all elements to be initialized
             yield return null;
-            
+
             UnityEngine.Random.InitState(randomSeed);
 
             if (_scheduler != null)
@@ -95,24 +96,25 @@ namespace Core
                     //Should quit the game
                     AddInfoLog($"Schedule done.", "LevelController");
                     ApplicationHelper.QuitApplication();
-                    yield break;    
+                    yield break;
                 }
             }
-            
+
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
             levelGoalText.text = levelGoal.GetLevelMessage();
             var logFileName = $"{levelGoal.GetLevelMessage()}-{TimestampHelper.GetSimplifiedTimestamp()}";
             _logger.StartNewLogFile(logFileName);
-            
+
             //Roll initiatives and order turns
             if (initiativeBased)
             {
                 _levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
             }
+
             _levelActionableActor.Sort(((pairOne, pairTwo) =>
-                pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));  
-            
+                pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));
+
             _levelActionableActor.ForEach(actorPair =>
             {
                 DebugUtils.DebugLogMsg(
@@ -120,10 +122,10 @@ namespace Core
                     DebugUtils.DebugType.System);
                 AddLevelActorToTurnBar(actorPair.One);
             });
-            
+
             var firstActor = _levelActionableActor[0].One;
             CursorController.GetSingleton().MoveToIndex(firstActor.GetUnit().Index());
-            
+
             AddInfoLog($"Level starts with {_levelActionableActor.Count} actors.", "LevelController");
             var gridDimensions = GridManager.GetSingleton().GetDimensions();
             AddInfoLog($"Grid size is {gridDimensions.x} by {gridDimensions.y}.", "LevelController");
@@ -315,7 +317,7 @@ namespace Core
             if (_scheduler == null)
             {
                 endLevelPanelUI.gameObject.SetActive(true);
-                endLevelPanelUI.OpenEndLevelPanel(win);    
+                endLevelPanelUI.OpenEndLevelPanel(win);
             }
             else
             {
@@ -327,32 +329,55 @@ namespace Core
         {
             return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
         }
-        
+
         public void AddInfoLog(string info, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];INFO {info}");
         }
-        
+
         public void AddPromptLog(string info, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];PRPT {info}");
         }
-        
+
         public void AddDataLog(string data, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];DATA {{{data}}}");
         }
-        
+
         public void AddMovementLog(Vector2Int position, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];MOVE {{{position.x}, {position.y}}}");
         }
-        
-        public void AddAttackLog(Vector2Int position, string callerName = "")
+
+        public void AddAttackLog(Vector2Int position, AIBaseShip attacker, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];ATTK {{{position.x}, {position.y}}}");
+            if (!GridManager.GetSingleton().CheckGridPosition(position, out var unit)) return;
+            var actor = unit.GetActor();
+            switch (actor)
+            {
+                case LlmAINavalShip llm:
+                {
+                    var factionStr = attacker.GetFaction().Equals(llm.GetFaction()) ? "ALLY" : "ENEMY";
+                    _logger.AddLine($"[{callerName}];TRGT LLM {{{factionStr}}}");
+                    break;
+                }
+                case AINavalShip ai:
+                {
+                    var factionStr = attacker.GetFaction().Equals(ai.GetFaction()) ? "ALLY" : "ENEMY";
+                    _logger.AddLine($"[{callerName}];TRGT LLM {{{factionStr}}}");
+                    break;
+                }
+                case WaveActor:
+                    _logger.AddLine($"[{callerName}];TRGT WAVE");
+                    break;
+                case NavalTarget:
+                    _logger.AddLine($"[{callerName}];TRGT TARGET");
+                    break;
+            }
         }
-        
+
         public void AddReasonLog(string data, string callerName = "")
         {
             _logger.AddLine($"[{callerName}];RESN {{\"reasoning\":{data}]}}");

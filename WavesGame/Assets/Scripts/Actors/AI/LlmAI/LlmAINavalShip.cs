@@ -270,7 +270,7 @@ namespace Actors.AI.LlmAI
                 if (canAttack)
                 {
                     DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
-                    LevelController.GetSingleton().AddAttackLog(targetUnit.Index(), name);
+                    LevelController.GetSingleton().AddAttackLog(targetUnit.Index(), this, name);
                     var damage = CalculateDamage();
                     kills = targetUnit.DamageActors(damage);
                     LevelController.GetSingleton()
