@@ -192,6 +192,21 @@ def extract_prompt_data(process_lines: list[Any], model, output_list):
     output_list.append(f"{avg_prompt:.2f}")
     return avg_prompt
 
+def parse_duration_seconds(lines: list[str], output_list):
+    first_line = lines[0]
+    last_line = lines[-1]
+
+    initial_time = first_line.split(';', 1)[0].lstrip('\ufeff')
+    last_time = last_line.split(';', 1)[0].lstrip('\ufeff')
+    print(f"Initial time = [{initial_time}]")
+    output_list.append(f"{initial_time}")
+    print(f"Last time = [{last_time}]")
+    start = datetime.strptime(initial_time, "%Y-%m-%d %H:%M:%S")
+    end = datetime.strptime(last_time, "%Y-%m-%d %H:%M:%S")
+    diff = end - start
+    total_seconds = diff.total_seconds()
+    return total_seconds
+
 def main():
     # Get the filename from command line arguments
     filename = sys.argv[1]
@@ -206,18 +221,7 @@ def main():
     print("General Information")
     print("=" * 40)
 
-    first_line = lines[0]
-    last_line = lines[-1]
-
-    initial_time = first_line.split(';', 1)[0].lstrip('\ufeff')
-    last_time = last_line.split(';', 1)[0].lstrip('\ufeff')
-    print(f"Initial time = [{initial_time}]")
-    output_line.append(f"{initial_time}")
-    print(f"Last time = [{last_time}]")
-    start = datetime.strptime(initial_time, "%Y-%m-%d %H:%M:%S")
-    end = datetime.strptime(last_time, "%Y-%m-%d %H:%M:%S")
-    diff = end - start
-    total_seconds = diff.total_seconds()
+    total_seconds = parse_duration_seconds(lines, output_line)
     minutes = int(total_seconds // 60)
     seconds = int(total_seconds % 60)
     print(f"Total time: {minutes}:{seconds}")
@@ -276,6 +280,7 @@ def main():
           "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
           "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;")
     print(';'.join(output_line))
+
 
 if __name__ == "__main__":
     main()

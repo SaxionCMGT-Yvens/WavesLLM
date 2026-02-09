@@ -9,6 +9,7 @@ def main():
     files = file_utils.get_valid_files_from_folder(folder)
     matching_files_count = 0
     output_lines = [model]
+    avg_battle_duration = 0
     avg_prompt = 0
     avg_req = 0
     max_req = 0
@@ -30,6 +31,7 @@ def main():
             continue
 
         matching_files_count += 1
+        avg_battle_duration += log_parser.parse_duration_seconds(lines_model, [])
         avg_prompt += log_parser.extract_prompt_data(lines_model, model, [])
         l_avg_req, l_max_req, l_min_req, l_num_req = log_parser.extract_request_data(lines_model, model, [])
         avg_req += l_avg_req
@@ -51,7 +53,7 @@ def main():
         print("=" * 40)
 
     print(f"Matching files found: {matching_files_count}")
-
+    avg_battle_duration /= matching_files_count
     avg_prompt /= matching_files_count
     avg_req /= matching_files_count
     max_req /= matching_files_count
@@ -67,6 +69,7 @@ def main():
     num_failed_movements /= matching_files_count
     avg_movements /= matching_files_count
 
+    output_lines.append(f"{avg_battle_duration:.2f}")
     output_lines.append(f"{avg_prompt:.2f}")
     output_lines.append(f"{avg_req:.2f}")
     output_lines.append(f"{max_req:.2f}")
@@ -83,7 +86,7 @@ def main():
     output_lines.append(f"{avg_movements:.2f}")
     print("=" * 40)
     print("CSV line")
-    print("model;avg_prompt;avg_req;max_req;min_req;num_req;attempts;num_attempts;"
+    print("model;avg_battle_duration;avg_prompt;avg_req;max_req;min_req;num_req;attempts;num_attempts;"
           "total_faulty_message;total_internal_attack_attempts;"
           "total_internal_wrong_attack;total_internal_wrong_movements;"
           "total_internal_movement_attempts;num_failed_movements;avg_movements")

@@ -24,6 +24,6 @@ for model in "${models[@]}"; do
     python3 log_model_parse.py "$INPUT_FOLDER" "$model" > "$OUTPUT_FILE"
 done
 
-python3 log_csv_compiler.py "$OUTPUT_FOLDER" > "model_results.csv"
+python3 log_csv_compiler.py "$OUTPUT_FOLDER" > "results_per_model.csv"
 
 echo "Processing complete!"
