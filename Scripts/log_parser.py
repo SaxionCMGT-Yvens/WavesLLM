@@ -74,6 +74,10 @@ def parse_per_faction(faction, lines_array):
     print(f"Total of faulty messages {model} = {total_faulty_message}")
     output_line.append(f"{total_faulty_message:.2f}")
 
+    # Parse target attacks
+    # 2026-02-10 00:28:58;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TRGT LLM {ENEMY}
+    extract_target_data(faction_lines, model, output_line)
+
 def extract_internal_data(faction_lines: list[Any], model, output_list) -> tuple[int, int, int]:
     filtered_data_with_timestamps = file_utils.find_lines_containing_string("internalWrongMovementCount", faction_lines)
     filtered_data = [single_line.split(';', 1)[1] for single_line in filtered_data_with_timestamps]
@@ -192,6 +196,22 @@ def extract_prompt_data(process_lines: list[Any], model, output_list):
     output_list.append(f"{avg_prompt:.2f}")
     return avg_prompt
 
+def extract_target_data(process_lines: list[Any], model, output_list):
+    all_targets = file_utils.find_lines_containing_string("TRGT", process_lines)
+    enemy_targets =  len(file_utils.find_lines_containing_string("ENEMY", all_targets))
+    ally_targets =   len(file_utils.find_lines_containing_string("ALLY", all_targets))
+    target_targets = len(file_utils.find_lines_containing_string("TARGET", all_targets))
+    wave_targets = len(file_utils.find_lines_containing_string("WAVE", all_targets))
+    print(f"Enemies targeted by {model} = {enemy_targets:.2f}")
+    output_list.append(f"{enemy_targets:.2f}")
+    print(f"Allies targeted by {model} = {ally_targets:.2f}")
+    output_list.append(f"{ally_targets:.2f}")
+    print(f"Targets targeted by {model} = {target_targets:.2f}")
+    output_list.append(f"{target_targets:.2f}")
+    print(f"Waves targeted by {model} = {wave_targets:.2f}")
+    output_list.append(f"{wave_targets:.2f}")
+    return enemy_targets, ally_targets, target_targets, wave_targets
+
 def parse_duration_seconds(lines: list[str], output_list):
     first_line = lines[0]
     last_line = lines[-1]
@@ -270,15 +290,14 @@ def main():
 
     print("CSV line")
     print("=" * 40)
-    print("filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;"
-          "faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;"
-          "% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;"
-          "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
-          "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;"
-          "faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;"
-          "% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;"
-          "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
-          "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;")
+
+    faction_line = ("faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;"
+                   "% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;"
+                   "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
+                   "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; "
+                    "%faulty_messages; enemy_targets; ally_targets; target_targets; target_waves")
+
+    print(f"filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;{faction_line}{faction_line}")
     print(';'.join(output_line))
 
 
