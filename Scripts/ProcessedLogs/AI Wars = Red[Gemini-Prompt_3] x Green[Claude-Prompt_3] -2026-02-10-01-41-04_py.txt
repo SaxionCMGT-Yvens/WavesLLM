@@ -1,0 +1,51 @@
+General Information
+========================================
+Initial time = [2026-02-10 01:41:04]
+Last time = [2026-02-10 01:44:42]
+Total time: 3:38
+RED gemini-2.5-flash-lite x GREEN claude-haiku-4-5-20251001
+INFO Faction Green won.
+INFO LLM Claude|claude-haiku-4-5-20251001 won.
+========================================
+Number of movements = 55
+Number of green movements = 29
+Number of red movements = 26
+Movement ratio = 0.53/0.47
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = claude-haiku-4-5-20251001
+Average claude-haiku-4-5-20251001 prompt = 3819.18
+Average claude-haiku-4-5-20251001 request = 1364.53 (38 requests)
+Max claude-haiku-4-5-20251001 request = 3184.00
+Min claude-haiku-4-5-20251001 request = 939.00
+Average claude-haiku-4-5-20251001 attempts = 1.0 (38)
+Failed Movement from claude-haiku-4-5-20251001 = 10 (29)
+Total of claude-haiku-4-5-20251001 failed movements = 10 / 29 (34.48%)
+Total of claude-haiku-4-5-20251001 failed movements [from agents] = 4.0 / 29.0 (13.79%)
+Total of attack attempts from claude-haiku-4-5-20251001 = 11
+Total of attack attempts from claude-haiku-4-5-20251001 [from agents] = 21.0
+Total of success attack attempts from claude-haiku-4-5-20251001  = 11 (100.00%)
+Total of successful attack attempts from claude-haiku-4-5-20251001 [from agents] = 11.0 (52.38%)
+Total of failed attack attempts from claude-haiku-4-5-20251001 [from agents] = 10.0 (47.62%)
+Total of faulty messages claude-haiku-4-5-20251001 = 0.0
+========================================
+Faction = |Red| Model = gemini-2.5-flash-lite
+Average gemini-2.5-flash-lite prompt = 3829.08
+Average gemini-2.5-flash-lite request = 654.58 (26 requests)
+Max gemini-2.5-flash-lite request = 1262.00
+Min gemini-2.5-flash-lite request = 506.00
+Average gemini-2.5-flash-lite attempts = 1.0 (26)
+Failed Movement from gemini-2.5-flash-lite = 14 (26)
+Total of gemini-2.5-flash-lite failed movements = 14 / 26 (53.85%)
+Total of gemini-2.5-flash-lite failed movements [from agents] = 0.0 / 26.0 (0.00%)
+Total of attack attempts from gemini-2.5-flash-lite = 0
+Total of attack attempts from gemini-2.5-flash-lite [from agents] = 14.0
+Total of success attack attempts from gemini-2.5-flash-lite  = 0 (0.00%)
+Total of successful attack attempts from gemini-2.5-flash-lite [from agents] = 0.0 (0.00%)
+Total of failed attack attempts from gemini-2.5-flash-lite [from agents] = 14.0 (100.00%)
+Total of faulty messages gemini-2.5-flash-lite = 0.0
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages;
+ProcessLogs/AI Wars = Red[Gemini-Prompt_3] x Green[Claude-Prompt_3] -2026-02-10-01-41-04.log;2026-02-10 01:41:04;218.0;RED gemini-2.5-flash-lite;GREEN claude-haiku-4-5-20251001;INFO Faction Green won.-INFO LLM Claude|claude-haiku-4-5-20251001 won.;55;0.53/0.47;Faction = |Green; Model = claude-haiku-4-5-20251001;3819.18;1364.53;3184.00;939.00;1.00;29.00;10.00;19.00;34.48;29.00;4.00;25.00;13.79;86.21;11.00;21.00;11.00;100.00;0.00;10.00;11.00;21.00;52.38;47.62;0.00;Faction = |Red; Model = gemini-2.5-flash-lite;3829.08;654.58;1262.00;506.00;1.00;26.00;14.00;12.00;53.85;26.00;0.00;26.00;0.00;100.00;0.00;14.00;0.00;0.00;100.00;14.00;0.00;14.00;0.00;100.00;0.00
