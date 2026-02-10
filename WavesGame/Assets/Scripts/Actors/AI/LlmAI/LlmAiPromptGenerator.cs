@@ -82,12 +82,30 @@ namespace Actors.AI.LlmAI
             });
 
             template = ReplaceTagWithText(template, "current_attack_positions",
-                ListGridActorsIndicesToString(currentAttackableActors, selfFaction, false, "\r\n"));
+                ListGridActorsIndicesToString(currentAttackableActors, selfFaction, true, "\r\n"));
 
             var grid = GridManager.GetSingleton().Grid();
 
             template = ReplaceTagWithText(template, "grid_overview",
                 ListGridToString(llmAINavalShip, grid, templatePrompt.includeEmptySpaces));
+
+            var enemiesOnTheGrid = grid.FindAll(gridUnit =>
+            {
+                var actor = gridUnit.GetActor();
+                var isAIEnemy = actor is AINavalShip aiNavalShip && aiNavalShip.GetFaction() != selfFaction;
+                var isLlmAiEnemy = actor is LlmAINavalShip llmAI && llmAI.GetFaction() != selfFaction;
+                return isAIEnemy || isLlmAiEnemy;
+            });
+            template = ReplaceTagWithText(template, "grid_overview_enemies",
+                ListGridToString(llmAINavalShip, enemiesOnTheGrid, templatePrompt.includeEmptySpaces));
+            
+            var wavesOnTheGrid = grid.FindAll(gridUnit =>
+            {
+                var actor = gridUnit.GetActor();
+                return actor is WaveActor;
+            });
+            template = ReplaceTagWithText(template, "grid_overview_waves",
+                ListGridToString(llmAINavalShip, wavesOnTheGrid, templatePrompt.includeEmptySpaces));
 
             template = ReplaceTagWithText(template, "grid_overview_symbolic",
                 ListSymbolicGridToString(llmAINavalShip, grid));
@@ -158,7 +176,7 @@ namespace Actors.AI.LlmAI
                 return "Nothing";
             }
 
-            var text = "[";
+            var text = "\r\n";
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
             foreach (var gridUnit in gridUnits)
             {
@@ -166,7 +184,7 @@ namespace Actors.AI.LlmAI
                 var index = gridUnit.Index();
                 if (gridUnit.IsEmpty() && includeEmpty)
                 {
-                    text += $"{index} = EMPTY;";
+                    text += $"{index} = EMPTY\r\n";
                 }
                 else
                 {
@@ -178,7 +196,7 @@ namespace Actors.AI.LlmAI
                             text += $"{index} = ";
                             if (llmAINavalShip.Equals(selfShip))
                             {
-                                text += "SELF;";
+                                text += "SELF\r\n";
                             }
                             else
                             {
@@ -186,23 +204,23 @@ namespace Actors.AI.LlmAI
                                 var factionText = opposingFaction ? $"Enemy {llmAINavalShip.GetFaction()}" : "Ally";
                                 var health = llmAINavalShip.GetCurrentHealth();
                                 var ratio = llmAINavalShip.GetHealthRatio();
-                                text += $"🚢 {factionText} health:{health} ratio: {ratio};";
+                                text += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
                             }
 
                             break;
                         }
                         case WaveActor wave:
                             text +=
-                                $"{index} = {GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)};";
+                                $"{index} = {GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}\r\n";
                             break;
                         case NavalTarget target:
-                            text += $"{index} = 🎯 health:{target.GetCurrentHealth()};";
+                            text += $"{index} = 🎯 health:{target.GetCurrentHealth()}\r\n";
                             break;
                     }
                 }
             }
 
-            return text[..^1] + "]";
+            return text;
         }
 
         private static string ListEnemyFactions(List<AIFaction> enemyFactions)
