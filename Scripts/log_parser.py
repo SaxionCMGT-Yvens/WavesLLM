@@ -62,7 +62,7 @@ def parse_per_faction(faction, lines_array):
         f"Total of success attack attempts from {model}  = {success_attack_attempts} ({percentage_success_attacks * 100:.2f}%)")
 
     output_line.append(f"{total_internal_wrong_attack:.2f}")
-    output_line.append(f"{total_internal_attack_attempts - total_internal_wrong_attack:.2f}")
+    output_line.append(f"{(total_internal_attack_attempts - total_internal_wrong_attack):.2f}")
     output_line.append(f"{total_internal_attack_attempts:.2f}")
     percentage_failed_attacks_from_agents = total_internal_wrong_attack / total_internal_attack_attempts
     output_line.append(f"{(1 - percentage_failed_attacks_from_agents) * 100:.2f}")
@@ -78,7 +78,7 @@ def parse_per_faction(faction, lines_array):
     # 2026-02-10 00:28:58;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Green|3];TRGT LLM {ENEMY}
     extract_target_data(faction_lines, model, output_line)
 
-def extract_internal_data(faction_lines: list[Any], model, output_list) -> tuple[int, int, int]:
+def extract_internal_data(faction_lines: list[Any], model, output_list):
     filtered_data_with_timestamps = file_utils.find_lines_containing_string("internalWrongMovementCount", faction_lines)
     filtered_data = [single_line.split(';', 1)[1] for single_line in filtered_data_with_timestamps]
     filtered_unique_data = list(dict.fromkeys(filtered_data))
@@ -271,7 +271,7 @@ def main():
 
     print("=" * 40)
 
-    move_lines = file_utils.find_lines_containing_string("MOVE", lines)
+    move_lines = file_utils.find_lines_containing_string(";MOVE", lines)
     green_moves = file_utils.find_lines_containing_string(green_faction_name, move_lines)
     red_moves = file_utils.find_lines_containing_string(red_faction_name, move_lines)
     print(f"Number of movements = {len(move_lines)}")
