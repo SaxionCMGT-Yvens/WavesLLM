@@ -40,5 +40,16 @@ namespace Actors.AI.LlmAI
         {
             return factionPairs.Find(pair => pair.One.Equals(faction));
         }
+
+        public override string ToString()
+        {
+            var str = "";
+            factionPairs.ForEach(pair => str += pair + "=");
+            if (str.Length > 0)
+            {
+                str = str[..^1];
+            }
+            return str;
+        }
     }
 }

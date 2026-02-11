@@ -27,5 +27,10 @@ namespace Actors.AI.LlmAI
         }
 
         public LlmCallerObject Caller => caller;
+
+        public override string ToString()
+        {
+            return Two.modelPair.ToString();
+        }
     }
 }

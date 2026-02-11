@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Actors;
 using Actors.AI;
 using Actors.AI.LlmAI;
@@ -272,7 +273,9 @@ namespace Core
                     break;
                 case LevelGoalType.AIWars:
                     message = "AI Wars = ";
-                    var enumerator = _availableFactions.GetEnumerator();
+                    var sortedFactions = _availableFactions.ToList();
+                    sortedFactions.Sort((pair, valuePair) => string.Compare(pair.Key.ToString(), valuePair.Key.ToString(), StringComparison.Ordinal));
+                    var enumerator = sortedFactions.GetEnumerator();
                     while (enumerator.MoveNext())
                     {
                         var llmInfo = "";

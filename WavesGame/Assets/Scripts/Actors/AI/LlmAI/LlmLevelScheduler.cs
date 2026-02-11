@@ -43,7 +43,7 @@ namespace Actors.AI.LlmAI
         {
             if (internalCounter >= schedules.Count)
             {
-                DebugUtils.DebugLogMsg($"All schedules done, current -> {internalCounter}.", DebugUtils.DebugType.System);
+                DebugUtils.DebugLogMsg($"Finish! All schedules done, current -> {internalCounter}.", DebugUtils.DebugType.System);
                 return false;
             }
             
