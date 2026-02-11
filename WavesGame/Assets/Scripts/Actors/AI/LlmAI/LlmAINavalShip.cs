@@ -23,7 +23,7 @@ namespace Actors.AI.LlmAI
 
         public static Vector2Int GetAsVector2Int(int[] pair)
         {
-            return new Vector2Int(pair[0], pair[1]);
+            return pair == null ? new Vector2Int(-1, -1) : new Vector2Int(pair[0], pair[1]);
         }
     }
 
