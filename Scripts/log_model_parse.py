@@ -62,10 +62,14 @@ def main():
         print("=" * 40)
 
     print(f"Matching files found: {matching_files_count}")
+
+    if matching_files_count <= 0:
+        print("Matching files not found")
+        return
+
     avg_battle_duration /= matching_files_count
     avg_prompt /= matching_files_count
     avg_req /= matching_files_count
-    avg_req_secs = avg_req / 100
     max_req /= matching_files_count
     min_req /= matching_files_count
     num_req /= matching_files_count
@@ -75,11 +79,11 @@ def main():
     total_internal_attack_attempts /= matching_files_count
     total_internal_wrong_attack /= matching_files_count
     total_success_attacks = total_internal_wrong_attack - total_internal_attack_attempts
-    percentage_success_attacks = total_success_attacks / total_internal_attack_attempts
+    percentage_success_attacks = total_success_attacks / total_internal_attack_attempts if total_internal_attack_attempts > 0 else 0
     total_internal_wrong_movements /= matching_files_count
     total_internal_movement_attempts /= matching_files_count
     total_success_movements = total_internal_movement_attempts - total_internal_wrong_movements
-    percentage_success_movements = total_success_movements / total_internal_movement_attempts
+    percentage_success_movements = total_success_movements / total_internal_movement_attempts if total_internal_movement_attempts > 0 else 0
     num_failed_movements /= matching_files_count
     avg_movements /= matching_files_count
     avg_enemy /= matching_files_count

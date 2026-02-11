@@ -1,0 +1,59 @@
+General Information
+========================================
+Initial time = [2026-02-11 16:07:50]
+Last time = [2026-02-11 16:13:46]
+Total time: 5:56
+RED gemini-2.5-flash x GREEN ministral-3b-2512
+INFO Faction Red won.
+INFO LLM Gemini|gemini-2.5-flash won.
+========================================
+Number of movements = 23
+Number of green movements = 10
+Number of red movements = 13
+Movement ratio = 0.57/0.43
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = ministral-3b-2512
+Average ministral-3b-2512 prompt = 4282.47
+Average ministral-3b-2512 request = 836.33 (15 requests)
+Max ministral-3b-2512 request = 3312.00
+Min ministral-3b-2512 request = 369.00
+Average ministral-3b-2512 attempts = 1.0 (15)
+Failed Movement from ministral-3b-2512 = 5 (10)
+Total of ministral-3b-2512 failed movements = 5 / 10 (50.00%)
+Total of ministral-3b-2512 failed movements [from agents] = 0.0 / 10.0 (0.00%)
+Total of attack attempts from ministral-3b-2512 = 9
+Total of attack attempts from ministral-3b-2512 [from agents] = 14.0
+Total of success attack attempts from ministral-3b-2512  = 9 (100.00%)
+Total of successful attack attempts from ministral-3b-2512 [from agents] = 9.0 (64.29%)
+Total of failed attack attempts from ministral-3b-2512 [from agents] = 5.0 (35.71%)
+Total of faulty messages ministral-3b-2512 = 0.0
+Enemies targeted by ministral-3b-2512 = 8.00
+Allies targeted by ministral-3b-2512 = 0.00
+Targets targeted by ministral-3b-2512 = 1.00
+Waves targeted by ministral-3b-2512 = 0.00
+========================================
+Faction = |Red| Model = gemini-2.5-flash
+Average gemini-2.5-flash prompt = 4283.27
+Average gemini-2.5-flash request = 16896.80 (15 requests)
+Max gemini-2.5-flash request = 19455.00
+Min gemini-2.5-flash request = 11043.00
+Average gemini-2.5-flash attempts = 1.0 (15)
+Failed Movement from gemini-2.5-flash = 3 (13)
+Total of gemini-2.5-flash failed movements = 3 / 13 (23.08%)
+Total of gemini-2.5-flash failed movements [from agents] = 1.0 / 13.0 (7.69%)
+Total of attack attempts from gemini-2.5-flash = 9
+Total of attack attempts from gemini-2.5-flash [from agents] = 12.0
+Total of success attack attempts from gemini-2.5-flash  = 9 (100.00%)
+Total of successful attack attempts from gemini-2.5-flash [from agents] = 9.0 (75.00%)
+Total of failed attack attempts from gemini-2.5-flash [from agents] = 3.0 (25.00%)
+Total of faulty messages gemini-2.5-flash = 0.0
+Enemies targeted by gemini-2.5-flash = 9.00
+Allies targeted by gemini-2.5-flash = 0.00
+Targets targeted by gemini-2.5-flash = 0.00
+Waves targeted by gemini-2.5-flash = 0.00
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;
+ProcessLogs/AI Wars = Red[Gemini-Prompt_4] x Green[Mistral-Prompt_4] -2026-02-11-16-07-50.log;2026-02-11 16:07:50;356.0;RED gemini-2.5-flash;GREEN ministral-3b-2512;INFO Faction Red won.-INFO LLM Gemini|gemini-2.5-flash won.;23;0.57/0.43;Faction = |Green; Model = ministral-3b-2512;4282.47;836.33;3312.00;369.00;1.00;10.00;5.00;5.00;50.00;10.00;0.00;10.00;0.00;100.00;9.00;14.00;9.00;100.00;0.00;5.00;9.00;14.00;64.29;35.71;0.00;8.00;0.00;1.00;0.00;Faction = |Red; Model = gemini-2.5-flash;4283.27;16896.80;19455.00;11043.00;1.00;13.00;3.00;10.00;23.08;13.00;1.00;12.00;7.69;92.31;9.00;12.00;9.00;100.00;0.00;3.00;9.00;12.00;75.00;25.00;0.00;9.00;0.00;0.00;0.00

@@ -1,0 +1,59 @@
+General Information
+========================================
+Initial time = [2026-02-11 14:16:38]
+Last time = [2026-02-11 14:21:17]
+Total time: 4:39
+RED gpt-4.1 x GREEN ministral-3b-2512
+INFO Faction Red won.
+INFO LLM GPT|gpt-4.1 won.
+========================================
+Number of movements = 45
+Number of green movements = 22
+Number of red movements = 23
+Movement ratio = 0.51/0.49
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = ministral-3b-2512
+Average ministral-3b-2512 prompt = 4317.40
+Average ministral-3b-2512 request = 828.00 (30 requests)
+Max ministral-3b-2512 request = 2087.00
+Min ministral-3b-2512 request = 477.00
+Average ministral-3b-2512 attempts = 1.0 (30)
+Failed Movement from ministral-3b-2512 = 21 (22)
+Total of ministral-3b-2512 failed movements = 21 / 22 (95.45%)
+Total of ministral-3b-2512 failed movements [from agents] = 7.0 / 22.0 (31.82%)
+Total of attack attempts from ministral-3b-2512 = 5
+Total of attack attempts from ministral-3b-2512 [from agents] = 26.0
+Total of success attack attempts from ministral-3b-2512  = 5 (100.00%)
+Total of successful attack attempts from ministral-3b-2512 [from agents] = 5.0 (19.23%)
+Total of failed attack attempts from ministral-3b-2512 [from agents] = 21.0 (80.77%)
+Total of faulty messages ministral-3b-2512 = 0.0
+Enemies targeted by ministral-3b-2512 = 3.00
+Allies targeted by ministral-3b-2512 = 0.00
+Targets targeted by ministral-3b-2512 = 1.00
+Waves targeted by ministral-3b-2512 = 1.00
+========================================
+Faction = |Red| Model = gpt-4.1
+Average gpt-4.1 prompt = 4266.68
+Average gpt-4.1 request = 2256.22 (41 requests)
+Max gpt-4.1 request = 6069.00
+Min gpt-4.1 request = 1111.00
+Average gpt-4.1 attempts = 1.0 (41)
+Failed Movement from gpt-4.1 = 1 (23)
+Total of gpt-4.1 failed movements = 1 / 23 (4.35%)
+Total of gpt-4.1 failed movements [from agents] = 0.0 / 23.0 (0.00%)
+Total of attack attempts from gpt-4.1 = 23
+Total of attack attempts from gpt-4.1 [from agents] = 24.0
+Total of success attack attempts from gpt-4.1  = 23 (100.00%)
+Total of successful attack attempts from gpt-4.1 [from agents] = 23.0 (95.83%)
+Total of failed attack attempts from gpt-4.1 [from agents] = 1.0 (4.17%)
+Total of faulty messages gpt-4.1 = 0.0
+Enemies targeted by gpt-4.1 = 7.00
+Allies targeted by gpt-4.1 = 0.00
+Targets targeted by gpt-4.1 = 1.00
+Waves targeted by gpt-4.1 = 15.00
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;
+ProcessLogs/AI Wars = Red[GPT-Prompt_4] x Green[Mistral-Prompt_4] -2026-02-11-14-16-38.log;2026-02-11 14:16:38;279.0;RED gpt-4.1;GREEN ministral-3b-2512;INFO Faction Red won.-INFO LLM GPT|gpt-4.1 won.;45;0.51/0.49;Faction = |Green; Model = ministral-3b-2512;4317.40;828.00;2087.00;477.00;1.00;22.00;21.00;1.00;95.45;22.00;7.00;15.00;31.82;68.18;5.00;26.00;5.00;100.00;0.00;21.00;5.00;26.00;19.23;80.77;0.00;3.00;0.00;1.00;1.00;Faction = |Red; Model = gpt-4.1;4266.68;2256.22;6069.00;1111.00;1.00;23.00;1.00;22.00;4.35;23.00;0.00;23.00;0.00;100.00;23.00;24.00;23.00;100.00;0.00;1.00;23.00;24.00;95.83;4.17;0.00;7.00;0.00;1.00;15.00

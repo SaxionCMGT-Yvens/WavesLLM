@@ -8,6 +8,8 @@ def main():
 
     i = 0
     for lines in files:
+        if lines[0] == "Matching files found: 0":
+            continue
         if i == 0:
             # Header line
             output_lines.append(lines[-2])

@@ -122,7 +122,7 @@ def extract_internal_data(faction_lines: list[Any], model, output_list):
     output_list.append(f"{total_internal_movement_attempts:.2f}")
     output_list.append(f"{total_internal_wrong_movements:.2f}")
     output_list.append(f"{total_internal_movement_attempts - total_internal_wrong_movements:.2f}")
-    percentage_failed_movements_from_agents = total_internal_wrong_movements / total_internal_movement_attempts
+    percentage_failed_movements_from_agents = total_internal_wrong_movements / total_internal_movement_attempts if total_internal_movement_attempts > 0 else 0
     print(
         f"Total of {model} failed movements [from agents] = {total_internal_wrong_movements} / {total_internal_movement_attempts} ({percentage_failed_movements_from_agents * 100:.2f}%)")
     output_list.append(f"{percentage_failed_movements_from_agents * 100:.2f}")
