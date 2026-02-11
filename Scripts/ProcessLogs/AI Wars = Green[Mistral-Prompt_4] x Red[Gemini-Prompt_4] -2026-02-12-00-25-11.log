@@ -1,0 +1,557 @@
+﻿2026-02-12 00:25:11;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-12 00:25:11;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-12 00:25:11;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Start turn;5,5
+2026-02-12 00:25:12;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];PRPT Prompt_4;4312
+2026-02-12 00:25:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TIME {"request":1414}
+2026-02-12 00:25:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];DATA {"attempts":1}
+2026-02-12 00:25:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];RESN {"reasoning":Wave tile at (9,7) is adjacent to enemy at (7,12). Moving to (8,6) positions me to use the wave (~V) to extend attack range and target (7,12) or (12,12) next turn. Immediate attack on (9,7) is invalid (no enemy), so movement prioritizes wave leverage for extended reach.]}
+2026-02-12 00:25:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Flags;True;False;False
+2026-02-12 00:25:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];MOVE {8, 6}
+2026-02-12 00:25:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Finish turn
+2026-02-12 00:25:15;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:25:16;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4345
+2026-02-12 00:25:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":599}
+2026-02-12 00:25:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:25:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":No immediate attack is possible. Moving to (10,12) to get closer to enemies and prepare for a potential wave-assisted attack next turn.]}
+2026-02-12 00:25:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;False;False
+2026-02-12 00:25:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {10, 12}
+2026-02-12 00:25:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:25:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:25:19;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4301
+2026-02-12 00:25:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":1036}
+2026-02-12 00:25:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:25:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Enemy ships are clustered at (7,12), (10,12), (12,12). Moving to (11,6) positions me to attack (10,12) and (12,12) in the next turn via wave extension (via ~V at (9,7)). This secures a direct hit on two high-value targets while avoiding immediate danger.]}
+2026-02-12 00:25:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;False;False
+2026-02-12 00:25:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {11, 6}
+2026-02-12 00:25:21;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:25:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Start turn;5,5
+2026-02-12 00:25:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];PRPT Prompt_4;4338
+2026-02-12 00:25:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TIME {"request":560}
+2026-02-12 00:25:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"attempts":1}
+2026-02-12 00:25:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];RESN {"reasoning":No immediate attack is possible. Moving to (11, 11) to get closer to enemies and set up a potential wave-assisted attack next turn.]}
+2026-02-12 00:25:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Flags;True;False;False
+2026-02-12 00:25:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];MOVE {11, 11}
+2026-02-12 00:25:24;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Finish turn
+2026-02-12 00:25:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:25:25;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4232
+2026-02-12 00:25:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":878}
+2026-02-12 00:25:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:25:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave-extended attack on enemy at (10, 12) via wave at (10, 11) to maximize damage while avoiding direct range conflict. Movement to (8, 5) positions for optimal wave-lineup and extends attack range to (10, 12).]}
+2026-02-12 00:25:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:25:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {8, 5}
+2026-02-12 00:25:27;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 12).
+2026-02-12 00:25:27;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:25:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:25:28;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4294
+2026-02-12 00:25:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":873}
+2026-02-12 00:25:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:25:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. Moving to (8, 12) to get closer to the enemy cluster and prepare for a potential attack next turn. This position also allows for better positioning relative to the waves.]}
+2026-02-12 00:25:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:25:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {8, 12}
+2026-02-12 00:25:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:25:30;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Start turn;5,5
+2026-02-12 00:25:31;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];PRPT Prompt_4;4274
+2026-02-12 00:25:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TIME {"request":506}
+2026-02-12 00:25:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];DATA {"attempts":1}
+2026-02-12 00:25:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];RESN {"reasoning":Wave tile at (9,7) is within range (1 tile offset) and can extend attack range to (11,11) or (10,12) by using wave for a +1 range boost. Prioritize attacking (11,11) or (10,12) via wave extension.]}
+2026-02-12 00:25:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Flags;True;True;False
+2026-02-12 00:25:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];MOVE {9, 6}
+2026-02-12 00:25:33;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Cannot reach target at GridTile(Clone) (11, 11).
+2026-02-12 00:25:33;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Finish turn
+2026-02-12 00:25:33;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:25:34;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4380
+2026-02-12 00:25:35;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":855}
+2026-02-12 00:25:35;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:25:35;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":No immediate attack is possible. Moving to (10,10) to set up a wave-extended attack on the (8,5) enemy next turn.]}
+2026-02-12 00:25:35;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;False;False
+2026-02-12 00:25:35;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {10, 10}
+2026-02-12 00:25:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:25:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:25:37;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4331
+2026-02-12 00:25:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":1131}
+2026-02-12 00:25:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:25:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Enemy at (11,11) is directly in attack range (1 tile offset, 2 tiles range) and is a valid target. Moving to (11,7) extends my range to include (10,11) and (12,11) while also threatening the wave at (10,11) for potential wave-extension next turn. Attacking (11,11) immediately ensures a high-probability hit before repositioning.]}
+2026-02-12 00:25:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:25:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {11, 7}
+2026-02-12 00:25:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (11, 11).
+2026-02-12 00:25:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:25:39;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Start turn;5,5
+2026-02-12 00:25:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];PRPT Prompt_4;4331
+2026-02-12 00:25:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TIME {"request":745}
+2026-02-12 00:25:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"attempts":1}
+2026-02-12 00:25:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];RESN {"reasoning":No immediate enemy targets in range. Moving to (10, 10) to get closer to the enemy at (9, 6) and set up a wave-assisted attack next turn. The wave at (10, 11) is hazardous.]}
+2026-02-12 00:25:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Flags;True;False;False
+2026-02-12 00:25:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];MOVE {10, 10}
+2026-02-12 00:25:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Finish turn
+2026-02-12 00:25:43;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:25:44;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4323
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":904}
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Attacking the enemy at (10, 10) directly is optimal—it’s within range (1 tile offset, 2 tiles max range) and a high-priority target. No need for movement or wave extension here.]}
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;False;True;False
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 10).
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:25:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:25:46;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4337
+2026-02-12 00:25:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":907}
+2026-02-12 00:25:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:25:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. Moving to (9, 11) positions me to attack the Green ship at (8, 5) next turn using the wave at (10, 11) for extended range.]}
+2026-02-12 00:25:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:25:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {9, 11}
+2026-02-12 00:25:48;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:25:48;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Start turn;5,5
+2026-02-12 00:25:49;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];PRPT Prompt_4;4319
+2026-02-12 00:25:50;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TIME {"request":937}
+2026-02-12 00:25:50;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];DATA {"attempts":1}
+2026-02-12 00:25:50;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];RESN {"reasoning":Targeting (10, 10) directly with a wave extension via (10, 11) wave tile to maximize damage and secure a priority hit. Movement to (10, 7) positions for optimal wave-assisted attack range.]}
+2026-02-12 00:25:50;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Flags;True;True;False
+2026-02-12 00:25:50;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];MOVE {10, 7}
+2026-02-12 00:25:52;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Cannot reach target at GridTile(Clone) (10, 10).
+2026-02-12 00:25:52;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Finish turn
+2026-02-12 00:25:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:25:53;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4372
+2026-02-12 00:25:54;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":884}
+2026-02-12 00:25:54;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:25:54;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":No immediate attack is possible. Moving to (11, 11) to get into range of the enemy at (10, 7) next turn, and to position for a potential wave-assisted attack.]}
+2026-02-12 00:25:54;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;False;False
+2026-02-12 00:25:54;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {11, 11}
+2026-02-12 00:25:55;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:25:55;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:25:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4275
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":583}
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave tile at (9,7) is within attack range (distance 2) and offset 1, allowing a direct attack on the enemy at (10,10) via wave extension. Prioritizing this immediate threat to secure a kill before enemy counterattacks.]}
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;False;True;False
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 10).
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:25:57;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Start turn;5,5
+2026-02-12 00:25:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];PRPT Prompt_4;4364
+2026-02-12 00:25:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TIME {"request":695}
+2026-02-12 00:25:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"attempts":1}
+2026-02-12 00:25:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];RESN {"reasoning":No immediate attack is possible. Moving to (10, 9) to get closer to the enemy at (10, 7) and (11, 7) for a potential attack next turn. This move also positions me to potentially use the wave at (9, 7) next turn.]}
+2026-02-12 00:25:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Flags;True;False;False
+2026-02-12 00:25:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];MOVE {10, 9}
+2026-02-12 00:26:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Finish turn
+2026-02-12 00:26:00;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:26:01;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4296
+2026-02-12 00:26:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":904}
+2026-02-12 00:26:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:26:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave-extended attack on enemy at (10, 9) via wave at (10, 11) to maximize damage and pressure the enemy cluster. Moving to (10, 6) positions me to either attack (11, 11) or (9, 11) next turn while leveraging the wave at (9, 7) for future range extension.]}
+2026-02-12 00:26:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:26:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {10, 6}
+2026-02-12 00:26:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-12 00:26:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:26:04;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:26:05;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4323
+2026-02-12 00:26:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":1131}
+2026-02-12 00:26:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:26:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. Moving to (10, 10) to get into range of the enemy at (10, 6) next turn. This position also sets up a potential wave-extended attack using the wave at (9, 7) if needed.]}
+2026-02-12 00:26:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:26:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 10}
+2026-02-12 00:26:07;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:26:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Start turn;5,5
+2026-02-12 00:26:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];PRPT Prompt_4;4250
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TIME {"request":582}
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];DATA {"attempts":1}
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];RESN {"reasoning":Directly attack the enemy at (10, 9) within range (1 tile offset, 2 tiles range) to maximize precision and health reduction. No movement is needed to secure this immediate target.]}
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Flags;False;True;False
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];ATTK {10, 9}
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TRGT LLM {ENEMY}
+2026-02-12 00:26:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Attacked succeeded at GridTile(Clone) (10, 9). Kill count = 0.
+2026-02-12 00:26:10;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Finish turn
+2026-02-12 00:26:10;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:26:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4324
+2026-02-12 00:26:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":677}
+2026-02-12 00:26:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:26:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":No immediate attack is possible. Moving to (11, 10) to position for a wave-extended attack on the enemy at (10, 6) next turn.]}
+2026-02-12 00:26:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;False;False
+2026-02-12 00:26:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {11, 10}
+2026-02-12 00:26:13;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:26:13;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:26:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4286
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":994}
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Target the high-health enemy at (11, 10) directly via wave extension: moving to (10, 11) (~^) extends range to hit it while avoiding the ally at (10, 6). This maximizes damage output against the priority target.]}
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 11}
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (11, 10).
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:26:15;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Start turn;5,5
+2026-02-12 00:26:16;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];PRPT Prompt_4;4370
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TIME {"request":749}
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"attempts":1}
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];RESN {"reasoning":The enemy at (10, 7) is within direct attack range (offset 1, range 2). I will attack it directly. No movement is necessary as I can attack this turn.]}
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Flags;False;True;False
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];ATTK {10, 7}
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TRGT LLM {ENEMY}
+2026-02-12 00:26:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 7). Kill count = 0.
+2026-02-12 00:26:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Finish turn
+2026-02-12 00:26:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4320
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":753}
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave-extended attack on (10, 9) enemy via wave at (10, 11) to maximize damage on low-health target (health: 8). Moving to (10, 11) positions ship to shoot through wave, ensuring priority hit before enemy counters.]}
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {10, 11}
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 9).
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:26:20;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:26:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4322
+2026-02-12 00:26:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":911}
+2026-02-12 00:26:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:26:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. Moving to (10,10) to get into range of the enemy at (10,7) and (11,7) next turn. The wave at (10,11) is also now in a position to be used for an extended attack.]}
+2026-02-12 00:26:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:26:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 10}
+2026-02-12 00:26:24;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:26:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Start turn;5,5
+2026-02-12 00:26:25;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];PRPT Prompt_4;4263
+2026-02-12 00:26:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TIME {"request":887}
+2026-02-12 00:26:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];DATA {"attempts":1}
+2026-02-12 00:26:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];RESN {"reasoning":Target `(10, 9)` is within attack range (1 tile offset, 2 tiles max range) and has low health (8/15). Moving to `(11, 8)` positions me to attack `(10, 9)` directly on the next turn, leveraging its proximity. No immediate wave extension is needed here, but `(11, 8)` avoids the wave `(9, 7)` while securing a clear shot.]}
+2026-02-12 00:26:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Flags;True;True;False
+2026-02-12 00:26:26;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];MOVE {11, 8}
+2026-02-12 00:26:27;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];ATTK {10, 9}
+2026-02-12 00:26:27;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];TRGT LLM {ENEMY}
+2026-02-12 00:26:27;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Attacked succeeded at GridTile(Clone) (10, 9). Kill count = 0.
+2026-02-12 00:26:29;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Finish turn
+2026-02-12 00:26:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4413
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":618}
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":Target the lowest health enemy ship directly. No movement needed as it's in range.]}
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;False;True;False
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];ATTK {11, 8}
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TRGT LLM {ENEMY}
+2026-02-12 00:26:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Attacked succeeded at GridTile(Clone) (11, 8). Kill count = 0.
+2026-02-12 00:26:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:26:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:26:33;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4281
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":1120}
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Targeting the low-health enemy at (10, 9) directly via wave extension: moving to (10, 11) (wave tile ~^) extends range to (10, 9) and (11, 10) (enemy). This maximizes precision against the vulnerable target while avoiding unnecessary movement.]}
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 11}
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 9).
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:26:34;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Start turn;5,5
+2026-02-12 00:26:35;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];PRPT Prompt_4;4377
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TIME {"request":700}
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"attempts":1}
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];RESN {"reasoning":The enemy ship at (11, 8) has very low health (1). I can attack it directly. Moving to (10, 10) will not improve my attack options this turn, and attacking the low-health enemy is the highest priority.]}
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Flags;False;True;False
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];ATTK {11, 8}
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TRGT LLM {ENEMY}
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];INFO Destroyed
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|4];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":5,"internalMovementAttemptCount":4,"internalAttackAttemptCount":4,"internalFaultyMessageCount":0,"averageRequestTime":865.2,"averageRequestTimeCount":5,"maxRequestTime":1414,"minRequest":506,"averageAttempts":1,"kills":0}
+2026-02-12 00:26:36;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Attacked succeeded at GridTile(Clone) (11, 8). Kill count = 1.
+2026-02-12 00:26:37;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Finish turn
+2026-02-12 00:26:37;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:26:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4348
+2026-02-12 00:26:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":502}
+2026-02-12 00:26:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:26:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave-extended attack on the low-health enemy at (10,9) via wave at (10,11) to maximize damage. Moving to (10,8) positions me to attack (10,9) directly next turn if needed, while also allowing wave extension on (11,10) if it’s a target.]}
+2026-02-12 00:26:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:26:39;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {10, 8}
+2026-02-12 00:26:40;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-12 00:26:40;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:26:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:26:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4270
+2026-02-12 00:26:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":728}
+2026-02-12 00:26:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:26:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. Moving to (10,10) to get into range of the enemy at (10,8) next turn. This also positions me to potentially use the wave at (10,11) for an extended attack.]}
+2026-02-12 00:26:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:26:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 10}
+2026-02-12 00:26:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:26:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4325
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":537}
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":Enemy at (10,8) is within range after moving to (10,9). This allows for a direct attack and sets up future attacks.]}
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;True;False
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {10, 9}
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:26:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:26:46;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4317
+2026-02-12 00:26:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":540}
+2026-02-12 00:26:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:26:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave-extended attack on (10, 9) via ~V wave (9, 7) to exploit its range extension, prioritizing the low-health enemy (ratio 0.066) while avoiding the neutral ally at (10, 8).]}
+2026-02-12 00:26:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:26:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {9, 7}
+2026-02-12 00:26:49;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 9).
+2026-02-12 00:26:49;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:26:49;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Start turn;5,5
+2026-02-12 00:26:50;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];PRPT Prompt_4;4277
+2026-02-12 00:26:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TIME {"request":730}
+2026-02-12 00:26:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"attempts":1}
+2026-02-12 00:26:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];RESN {"reasoning":No immediate enemy in range. Moving to (11, 8) to get closer to the enemy at (10, 8) and potentially attack next turn. The neutral target at (12, 9) is also within range after moving.]}
+2026-02-12 00:26:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Flags;True;True;False
+2026-02-12 00:26:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];MOVE {11, 8}
+2026-02-12 00:26:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];ATTK {12, 9}
+2026-02-12 00:26:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];TRGT TARGET
+2026-02-12 00:26:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Attacked succeeded at GridTile(Clone) (12, 9). Kill count = 1.
+2026-02-12 00:26:54;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Finish turn
+2026-02-12 00:26:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:26:55;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4285
+2026-02-12 00:26:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":780}
+2026-02-12 00:26:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:26:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave-extended attack on the low-health enemy at (11, 8) by moving to (10, 11) to leverage the ~^ wave and extend range to 3 tiles (covering (11, 8) within offset 1). This maximizes precision against the weakest enemy while avoiding unnecessary movement.]}
+2026-02-12 00:26:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:26:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {10, 11}
+2026-02-12 00:26:58;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-12 00:26:58;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:26:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4207
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":760}
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. Moving to (10,11) to position for a wave-extended attack on the enemy at (9,6) next turn. The wave at (10,11) will be used to extend the attack.]}
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 11}
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:26:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:27:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4296
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":792}
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":The enemy ship is within direct attack range. I will attack it immediately to reduce their health. No movement is necessary as I can attack now.]}
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;False;True;False
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Cannot reach target at GridTile(Clone) (9, 6).
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:27:01;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:27:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4310
+2026-02-12 00:27:03;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":907}
+2026-02-12 00:27:03;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:27:03;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":No immediate valid attack range, but moving to `(10, 7)` positions me to attack `(11, 8)` via wave extension (wave at `(9, 7)` extends range to `(11, 8)`). This is a high-probability hit on the low-health enemy while avoiding unnecessary movement.]}
+2026-02-12 00:27:03;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:27:03;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 7}
+2026-02-12 00:27:05;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];ATTK {11, 8}
+2026-02-12 00:27:05;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TRGT LLM {ENEMY}
+2026-02-12 00:27:05;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];INFO Destroyed
+2026-02-12 00:27:05;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":0,"internalTotalRequestCount":6,"internalMovementAttemptCount":4,"internalAttackAttemptCount":3,"internalFaultyMessageCount":0,"averageRequestTime":696.5,"averageRequestTimeCount":6,"maxRequestTime":749,"minRequest":560,"averageAttempts":1,"kills":1}
+2026-02-12 00:27:05;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Attacked succeeded at GridTile(Clone) (11, 8). Kill count = 1.
+2026-02-12 00:27:06;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:27:06;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:27:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4267
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":411}
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Directly attack the enemy at (11, 10) since it is within range (Manhattan distance 1) and is a valid target. No need for movement as the attack is immediate and optimal.]}
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;False;True;False
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];ATTK {11, 10}
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TRGT LLM {ENEMY}
+2026-02-12 00:27:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Attacked succeeded at GridTile(Clone) (11, 10). Kill count = 0.
+2026-02-12 00:27:09;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:27:09;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:27:10;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4208
+2026-02-12 00:27:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":6298}
+2026-02-12 00:27:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:27:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":]}
+2026-02-12 00:27:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;False;False;False
+2026-02-12 00:27:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:27:17;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4266
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":607}
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":Enemy is in range and can be attacked directly. No movement needed.]}
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;False;True;False
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];ATTK {10, 11}
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TRGT WAVE
+2026-02-12 00:27:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-12 00:27:20;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:27:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:27:21;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4263
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":1141}
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave-extended attack on the enemy at (11, 10) via the wave at (10, 11). Moving to (10, 11) positions the ship to shoot through the wave and hit the enemy in range 2+ (offset 1, range 2). This maximizes precision and minimizes counterattacks while leveraging the wave advantage.]}
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 11}
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (11, 10).
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:27:22;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:27:23;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4287
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":1026}
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Directly attack the enemy at (11, 10) since it is within range (Manhattan distance 1) and is a valid target. No movement is needed to secure a hit.]}
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;False;True;False
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];ATTK {11, 10}
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TRGT LLM {ENEMY}
+2026-02-12 00:27:24;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Attacked succeeded at GridTile(Clone) (11, 10). Kill count = 0.
+2026-02-12 00:27:25;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:27:26;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4207
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":852}
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":The enemy is at (10, 7). My current position is (10, 12). The wave at (10, 11) is directly between me and the enemy. Moving to (10, 11) will allow me to attack the enemy on the next turn using the wave to extend my range. Since I cannot attack this turn, I will move.]}
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 11}
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:27:27;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:27:28;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4273
+2026-02-12 00:27:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":1035}
+2026-02-12 00:27:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:27:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":The enemy ship at (10, 7) is within range of the wave at (9, 7). Moving to (10, 8) will allow me to attack the enemy ship at (10, 7) by using the wave at (9, 7) to extend my attack range.]}
+2026-02-12 00:27:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;True;False
+2026-02-12 00:27:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {10, 8}
+2026-02-12 00:27:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-12 00:27:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:27:32;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:27:33;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4235
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":1461}
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave-extended attack on (10, 12) via (10, 11) wave tile to maximize damage on high-health enemy while avoiding immediate counterattack risk. Movement to (10, 11) ensures optimal wave positioning for next turn.]}
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 11}
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 12).
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:27:34;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:27:35;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4250
+2026-02-12 00:27:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":1097}
+2026-02-12 00:27:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:27:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave tile at (10, 11) is adjacent to my current position, but since it's a wave and not a target, moving there would be invalid (early stop). Instead, move to (11, 12) to extend attack range toward the low-health enemy at (10, 8) via wave extension next turn. This prioritizes targeting the vulnerable enemy while leveraging wave mechanics.]}
+2026-02-12 00:27:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;False;False
+2026-02-12 00:27:36;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {11, 12}
+2026-02-12 00:27:38;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:27:38;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:27:39;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4266
+2026-02-12 00:27:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":845}
+2026-02-12 00:27:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:27:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. The enemy at (11, 12) is 1 tile away, but within my offset of 1. The enemy at (10, 7) is 5 tiles away, too far. I will move to (11, 11) to get closer to the enemy at (10, 7) and position myself to potentially use the wave at (10, 11) next turn. This move also avoids the wave at (10, 11) for now.]}
+2026-02-12 00:27:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:27:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {11, 11}
+2026-02-12 00:27:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:27:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:27:42;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4260
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":1111}
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":The enemy at (10, 7) is within direct attack range. I will attack it to reduce enemy threat. My current health is low, so I will not move to conserve my position.]}
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;False;True;False
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:27:43;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:27:44;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4235
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":511}
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave-extended attack on (10, 12) via (10, 11) wave tile to maximize damage on high-health enemy while avoiding immediate counterattack risk.]}
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 11}
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 12).
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:27:45;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:27:46;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4290
+2026-02-12 00:27:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":656}
+2026-02-12 00:27:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:27:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave-extended attack on (10, 12) via (10, 11) wave tile to exploit its offset and maximize damage on the high-health enemy (ratio: 0.533). This leverages wave advantage while prioritizing the critical target.]}
+2026-02-12 00:27:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:27:47;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {10, 11}
+2026-02-12 00:27:48;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 12).
+2026-02-12 00:27:48;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:27:48;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:27:49;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4217
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":1487}
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. The enemy is at (10, 7). My current position is (10, 12). The closest safe move is to (10, 11) to get closer to the enemy. From (10, 11), I can attack the enemy at (10, 7) using the wave at (10, 11) to extend my range. The wave at (10, 11) is a '~^' which means it pushes ships north. This wave does not help me attack south. I need to move to a position where I can attack the enemy at (10, 7). The enemy is 5 tiles away. My range is 2 tiles. I need to get within 3 tiles of the enemy to attack them directly. Moving to (10, 11) puts me 4 tiles away. Moving to (10, 10) puts me 3 tiles away. (10,10) is not a safe move. The closest safe move that gets me closer is (10, 11). From (10, 11), I am 4 tiles away from the enemy. I cannot attack. I will move to (10, 11) to prepare for a future attack.]}
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 11}
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:27:51;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4197
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":656}
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":Enemy is in range. Attack directly to eliminate threat.]}
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;False;True;False
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:27:52;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:27:53;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4235
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":885}
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave-extended attack on (10, 12) via wave at (10, 11) to maximize damage on the low-health enemy while avoiding immediate counterattacks. Movement to (10, 8) ensures optimal wave alignment for next turn.]}
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;True;False
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 8}
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Cannot reach target at GridTile(Clone) (10, 12).
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:27:54;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:27:55;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4250
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":513}
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Wave tile at (10,11) is adjacent to my current position, allowing a wave-extended attack on the low-health enemy at (10,8) (range 2 + wave offset). This maximizes precision against the vulnerable target while avoiding unnecessary movement.]}
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;False;True;False
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:27:56;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:27:57;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4217
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":906}
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":No immediate attack is possible. The enemy is at (10, 7). My current position is (10, 12). The closest safe move is to (10, 11) to get closer to the enemy and potentially use the wave at (10, 11) to extend my attack range next turn. Moving to (10, 11) will place me within range of the enemy at (10, 7) if I can use the wave at (10, 11) to extend my attack.]}
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;True;False;False
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];MOVE {10, 11}
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:27:58;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Start turn;5,5
+2026-02-12 00:27:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];PRPT Prompt_4;4197
+2026-02-12 00:28:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TIME {"request":688}
+2026-02-12 00:28:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"attempts":1}
+2026-02-12 00:28:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];RESN {"reasoning":The enemy is at (10, 7). My current position is (10, 8). The enemy is 1 tile away. I can attack directly. I will move to (10, 9) to get closer and then attack the enemy.]}
+2026-02-12 00:28:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Flags;True;True;False
+2026-02-12 00:28:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];MOVE {10, 9}
+2026-02-12 00:28:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];ATTK {10, 7}
+2026-02-12 00:28:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];TRGT LLM {ENEMY}
+2026-02-12 00:28:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Attacked succeeded at GridTile(Clone) (10, 7). Kill count = 0.
+2026-02-12 00:28:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Finish turn
+2026-02-12 00:28:02;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:28:03;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4291
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":583}
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Directly attack the low-health enemy at (10,9) within range (1 tile offset, 2 tiles max range). This maximizes precision and eliminates a critical threat immediately.]}
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;False;True;False
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];ATTK {10, 9}
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TRGT LLM {ENEMY}
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];INFO Destroyed
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|1];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":5,"internalTotalRequestCount":12,"internalMovementAttemptCount":7,"internalAttackAttemptCount":8,"internalFaultyMessageCount":0,"averageRequestTime":754.9167,"averageRequestTimeCount":12,"maxRequestTime":1111,"minRequest":537,"averageAttempts":1,"kills":0}
+2026-02-12 00:28:04;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Attacked succeeded at GridTile(Clone) (10, 9). Kill count = 1.
+2026-02-12 00:28:05;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:28:05;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:28:06;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4208
+2026-02-12 00:28:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":748}
+2026-02-12 00:28:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:28:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Enemy at (10,12) is within direct attack range (Manhattan distance 1) and outside offset (1). Moving to (10,10) places the enemy within range for a direct hit, maximizing precision and health reduction. This is the optimal immediate action.]}
+2026-02-12 00:28:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;True;True;False
+2026-02-12 00:28:07;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];MOVE {10, 10}
+2026-02-12 00:28:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];ATTK {10, 12}
+2026-02-12 00:28:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TRGT LLM {ENEMY}
+2026-02-12 00:28:08;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Attacked succeeded at GridTile(Clone) (10, 12). Kill count = 0.
+2026-02-12 00:28:10;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
+2026-02-12 00:28:10;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Start turn;5,5
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];PRPT Prompt_4;4334
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TIME {"request":744}
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"attempts":1}
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];RESN {"reasoning":Direct attack on the closest enemy within range. No movement needed as an attack is possible.]}
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Flags;False;True;False
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];ATTK {10, 10}
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];TRGT LLM {ENEMY}
+2026-02-12 00:28:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-12 00:28:13;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Finish turn
+2026-02-12 00:28:13;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Start turn;5,5
+2026-02-12 00:28:14;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];PRPT Prompt_4;4202
+2026-02-12 00:28:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];TIME {"request":832}
+2026-02-12 00:28:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"attempts":1}
+2026-02-12 00:28:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];RESN {"reasoning":Wave tile at (10,11) (`~^`) extends attack range to (10,12) enemy, which is within offset+range (1+2=3 tiles). Moving to (10,9) positions ship to attack via wave next turn, maximizing precision against the low-health enemy.]}
+2026-02-12 00:28:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Flags;True;False;False
+2026-02-12 00:28:15;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];MOVE {10, 9}
+2026-02-12 00:28:16;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];INFO Finish turn
+2026-02-12 00:28:16;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Start turn;5,5
+2026-02-12 00:28:17;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];PRPT Prompt_4;4245
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TIME {"request":770}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"attempts":1}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];RESN {"reasoning":Directly attack the enemy at (10, 12) from current position (10, 10) within valid range (Manhattan distance 2, offset 1). This maximizes precision and eliminates the only enemy ship immediately.]}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Flags;False;True;False
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];ATTK {10, 12}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];TRGT LLM {ENEMY}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];INFO Destroyed
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"internalWrongMovementCount":4,"internalWrongAttackCount":0,"internalTotalRequestCount":12,"internalMovementAttemptCount":10,"internalAttackAttemptCount":1,"internalFaultyMessageCount":0,"averageRequestTime":1370.167,"averageRequestTimeCount":12,"maxRequestTime":6298,"minRequest":728,"averageAttempts":1,"kills":0}
+2026-02-12 00:28:18;[SYSTEM];[LevelGoal];INFO Faction Green won.
+2026-02-12 00:28:18;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|2];DATA {"internalWrongMovementCount":6,"internalWrongAttackCount":9,"internalTotalRequestCount":13,"internalMovementAttemptCount":11,"internalAttackAttemptCount":11,"internalFaultyMessageCount":0,"averageRequestTime":901.8461,"averageRequestTimeCount":13,"maxRequestTime":1461,"minRequest":511,"averageAttempts":1,"kills":1}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":8,"internalTotalRequestCount":13,"internalMovementAttemptCount":8,"internalAttackAttemptCount":12,"internalFaultyMessageCount":0,"averageRequestTime":764.7692,"averageRequestTimeCount":13,"maxRequestTime":1097,"minRequest":411,"averageAttempts":1,"kills":0}
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Red|5];DATA {"internalWrongMovementCount":4,"internalWrongAttackCount":0,"internalTotalRequestCount":12,"internalMovementAttemptCount":10,"internalAttackAttemptCount":1,"internalFaultyMessageCount":0,"averageRequestTime":1370.167,"averageRequestTimeCount":12,"maxRequestTime":6298,"minRequest":728,"averageAttempts":1,"kills":0}
+2026-02-12 00:28:18;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-12 00:28:18;[SYSTEM];[LevelGoal];INFO LLM Mistral|ministral-3b-2512 won.
+2026-02-12 00:28:18;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Attacked succeeded at GridTile(Clone) (10, 12). Kill count = 1.
+2026-02-12 00:28:20;[SYSTEM];[LLMAgent|Mistral|ministral-3b-2512|Green|3];INFO Finish turn
