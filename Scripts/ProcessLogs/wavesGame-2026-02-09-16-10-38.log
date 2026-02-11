@@ -1,0 +1,397 @@
+﻿2026-02-09 16:10:41;[SYSTEM];Creating actor UI LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2 [6]
+2026-02-09 16:10:41;[SYSTEM];Creating actor UI LLMAgent|DeepSeek|deepseek-chat|Red|5 [5]
+2026-02-09 16:10:41;[SYSTEM];Creating actor UI LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 [4]
+2026-02-09 16:10:41;[SYSTEM];Creating actor UI LLMAgent|DeepSeek|deepseek-chat|Red|3 [3]
+2026-02-09 16:10:41;[SYSTEM];Creating actor UI LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 [2]
+2026-02-09 16:10:41;[SYSTEM];Creating actor UI LLMAgent|DeepSeek|deepseek-chat|Red|4 [1]
+2026-02-09 16:10:42;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:10:43;[SYSTEM];Request Timer Finished.
+2026-02-09 16:10:45;[SYSTEM];Request response in 2250 ms.
+2026-02-09 16:10:45;[SYSTEM];{  "reasoning": "Move south toward enemy ships at y=12. Attack wave at (9,7) to potentially extend range toward distant targets.",  "movement": [9, 8],  "attack": [9, 7],  "move_after_attack": [-1, -1]}
+2026-02-09 16:10:45;[SYSTEM];Move south toward enemy ships at y=12. Attack wave at (9,7) to potentially extend range toward distant targets.
+2026-02-09 16:10:47;[ERROR];Cannot reach target at GridTile(Clone) (9, 7).
+2026-02-09 16:10:47;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2 has finished its turn.
+2026-02-09 16:10:47;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:10:48;[SYSTEM];Request Timer Finished.
+2026-02-09 16:10:51;[SYSTEM];Request response in 3151 ms.
+2026-02-09 16:10:51;[SYSTEM];{"reasoning": "Move closer to enemy ships while avoiding waves, then attack nearest enemy.", "movement": [11, 13], "attack": [9, 12], "move_after_attack": [-1, -1]}
+2026-02-09 16:10:51;[SYSTEM];Move closer to enemy ships while avoiding waves, then attack nearest enemy.
+2026-02-09 16:10:52;[ERROR];Cannot reach target at GridTile(Clone) (9, 12).
+2026-02-09 16:10:52;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:10:52;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:10:53;[SYSTEM];Request Timer Finished.
+2026-02-09 16:10:55;[SYSTEM];Request response in 1329 ms.
+2026-02-09 16:10:55;[SYSTEM];{"reasoning": "Move toward enemy ships at bottom of grid. Position to attack Red faction vessels while maintaining distance from waves.", "movement": [12, 9], "attack": [12, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:10:55;[SYSTEM];Move toward enemy ships at bottom of grid. Position to attack Red faction vessels while maintaining distance from waves.
+2026-02-09 16:10:55;[ERROR];Could not find path from (12, 6) to (12, 9).
+2026-02-09 16:10:55;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:10:55;[ERROR];Cannot reach target at GridTile(Clone) (12, 9).
+2026-02-09 16:10:55;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:10:55;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:10:56;[SYSTEM];Request Timer Finished.
+2026-02-09 16:10:59;[SYSTEM];Request response in 2918 ms.
+2026-02-09 16:10:59;[SYSTEM];{"reasoning": "Move closer to enemy at (12,6) while staying safe from waves.", "movement": [12, 14], "attack": [-1, -1], "move_after_attack": [-1, -1]}
+2026-02-09 16:10:59;[SYSTEM];Move closer to enemy at (12,6) while staying safe from waves.
+2026-02-09 16:11:00;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:11:00;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:01;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:03;[SYSTEM];Request response in 1731 ms.
+2026-02-09 16:11:03;[SYSTEM];{"reasoning": "Move toward enemy at (7,12). Attack enemy ship at (9,6) to eliminate nearby threat.", "movement": [7, 9], "attack": [9, 6], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:03;[SYSTEM];Move toward enemy at (7,12). Attack enemy ship at (9,6) to eliminate nearby threat.
+2026-02-09 16:11:03;[ERROR];Could not find path from (7, 6) to (7, 9).
+2026-02-09 16:11:03;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:11:03;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 attacks GridTile(Clone) (9, 6)!
+2026-02-09 16:11:04;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:11:04;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:05;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:08;[SYSTEM];Request response in 2956 ms.
+2026-02-09 16:11:08;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (9,6) while staying safe from waves.", "movement": [8, 11], "attack": [9, 6], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:08;[SYSTEM];Move closer to damaged enemy at (9,6) while staying safe from waves.
+2026-02-09 16:11:10;[ERROR];Cannot reach target at GridTile(Clone) (9, 6).
+2026-02-09 16:11:10;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:11:10;[SYSTEM];Factions remaining 2
+2026-02-09 16:11:10;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:11;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:12;[SYSTEM];Request response in 1428 ms.
+2026-02-09 16:11:12;[SYSTEM];{"reasoning": "Move closer to Red enemies at bottom. Attack ally at [7,6] to clear path for positioning against Red faction threats.", "movement": [9, 8], "attack": [7, 6], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:12;[SYSTEM];Move closer to Red enemies at bottom. Attack ally at [7,6] to clear path for positioning against Red faction threats.
+2026-02-09 16:11:14;[ERROR];Cannot reach target at GridTile(Clone) (7, 6).
+2026-02-09 16:11:14;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2 has finished its turn.
+2026-02-09 16:11:14;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:15;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:18;[SYSTEM];Request response in 3548 ms.
+2026-02-09 16:11:18;[SYSTEM];{"reasoning": "Move closer to enemy at (9,8) while avoiding waves, then attack it.", "movement": [10, 12], "attack": [9, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:18;[SYSTEM];Move closer to enemy at (9,8) while avoiding waves, then attack it.
+2026-02-09 16:11:20;[ERROR];Cannot reach target at GridTile(Clone) (9, 8).
+2026-02-09 16:11:20;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:11:20;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:21;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:22;[SYSTEM];Request response in 1394 ms.
+2026-02-09 16:11:22;[SYSTEM];{  "reasoning": "Move toward Red ships at bottom of map. Attack enemy at [12, 14] if in range after movement.",  "movement": [12, 9],  "attack": [12, 11],  "move_after_attack": [-1, -1]}
+2026-02-09 16:11:22;[SYSTEM];Move toward Red ships at bottom of map. Attack enemy at [12, 14] if in range after movement.
+2026-02-09 16:11:22;[ERROR];Could not find path from (12, 6) to (12, 9).
+2026-02-09 16:11:22;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:11:22;[ERROR];Cannot reach target at GridTileBlocked Variant(Clone) (12, 11).
+2026-02-09 16:11:22;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:11:23;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:24;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:27;[SYSTEM];Request response in 3197 ms.
+2026-02-09 16:11:27;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (9,8) while avoiding waves, then attack it.", "movement": [11, 13], "attack": [9, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:27;[SYSTEM];Move closer to damaged enemy at (9,8) while avoiding waves, then attack it.
+2026-02-09 16:11:28;[ERROR];Cannot reach target at GridTile(Clone) (9, 8).
+2026-02-09 16:11:28;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:11:28;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:29;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:31;[SYSTEM];Request response in 1343 ms.
+2026-02-09 16:11:31;[SYSTEM];{  "reasoning": "Move toward enemy ships at bottom of map. Attack Red ship at [8,11] after repositioning to get in range.",  "movement": [8, 8],  "attack": [8, 11],  "move_after_attack": [-1, -1]}
+2026-02-09 16:11:31;[SYSTEM];Move toward enemy ships at bottom of map. Attack Red ship at [8,11] after repositioning to get in range.
+2026-02-09 16:11:33;[ERROR];Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-09 16:11:33;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:11:33;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:34;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:37;[SYSTEM];Request response in 3194 ms.
+2026-02-09 16:11:37;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (9,8) while avoiding waves, then attack it.", "movement": [9, 10], "attack": [9, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:37;[SYSTEM];Move closer to damaged enemy at (9,8) while avoiding waves, then attack it.
+2026-02-09 16:11:38;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 attacks GridTile(Clone) (9, 8)!
+2026-02-09 16:11:40;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:11:40;[SYSTEM];Factions remaining 2
+2026-02-09 16:11:40;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:41;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:42;[SYSTEM];Request response in 1169 ms.
+2026-02-09 16:11:42;[SYSTEM];{"reasoning": "Attack enemy at [9,10] with full health. Move to maximize future positioning against other Red ships.", "movement": [9, 9], "attack": [9, 10], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:42;[SYSTEM];Attack enemy at [9,10] with full health. Move to maximize future positioning against other Red ships.
+2026-02-09 16:11:43;[ERROR];Cannot reach target at GridTile(Clone) (9, 10).
+2026-02-09 16:11:43;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2 has finished its turn.
+2026-02-09 16:11:43;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:44;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:47;[SYSTEM];Request response in 3127 ms.
+2026-02-09 16:11:47;[SYSTEM];{"reasoning": "Move toward damaged enemy at (9,9) to finish it off, then attack it.", "movement": [9, 11], "attack": [9, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:47;[SYSTEM];Move toward damaged enemy at (9,9) to finish it off, then attack it.
+2026-02-09 16:11:49;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 attacks GridTile(Clone) (9, 9)!
+2026-02-09 16:11:49;[SYSTEM];Naval Ship: LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2 destroyed. Checking for level finish...
+2026-02-09 16:11:49;[SYSTEM];Naval Ship was an AI Ship LLMAgent|Claude|claude-haiku-4-5-20251001|Green|2 from the Green faction. Remaining: 2.
+2026-02-09 16:11:49;[SYSTEM];Factions remaining 2
+2026-02-09 16:11:50;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:11:50;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:51;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:53;[SYSTEM];Request response in 1754 ms.
+2026-02-09 16:11:53;[SYSTEM];{  "reasoning": "Move toward Red ships at (9,10) and (9,11). Attack (9,10) to damage nearest enemy.",  "movement": [10, 7],  "attack": [9, 10],  "move_after_attack": [-1, -1]}
+2026-02-09 16:11:53;[SYSTEM];Move toward Red ships at (9,10) and (9,11). Attack (9,10) to damage nearest enemy.
+2026-02-09 16:11:55;[ERROR];Cannot reach target at GridTile(Clone) (9, 10).
+2026-02-09 16:11:55;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:11:55;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:11:56;[SYSTEM];Request Timer Finished.
+2026-02-09 16:11:59;[SYSTEM];Request response in 2945 ms.
+2026-02-09 16:11:59;[SYSTEM];{"reasoning": "Move closer to enemy ships while avoiding waves, then attack nearest enemy.", "movement": [10, 13], "attack": [8, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:11:59;[SYSTEM];Move closer to enemy ships while avoiding waves, then attack nearest enemy.
+2026-02-09 16:12:00;[ERROR];Cannot reach target at GridTile(Clone) (8, 8).
+2026-02-09 16:12:00;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:12:00;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:01;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:02;[SYSTEM];Request response in 1148 ms.
+2026-02-09 16:12:02;[SYSTEM];{  "reasoning": "Attack enemy at [7,9] with full health. Move closer to other targets afterward for better positioning.",  "movement": [7, 8],  "attack": [7, 9],  "move_after_attack": [-1, -1]}
+2026-02-09 16:12:02;[SYSTEM];Attack enemy at [7,9] with full health. Move closer to other targets afterward for better positioning.
+2026-02-09 16:12:03;[ERROR];Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-09 16:12:03;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:12:03;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:04;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:08;[SYSTEM];Request response in 3144 ms.
+2026-02-09 16:12:08;[SYSTEM];{"reasoning": "Move closer to enemy at (10,7) while avoiding waves, then attack it.", "movement": [10, 9], "attack": [10, 7], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:08;[SYSTEM];Move closer to enemy at (10,7) while avoiding waves, then attack it.
+2026-02-09 16:12:09;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 attacks GridTile(Clone) (10, 7)!
+2026-02-09 16:12:11;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:12:11;[SYSTEM];Factions remaining 2
+2026-02-09 16:12:11;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:12;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:15;[SYSTEM];Request response in 2953 ms.
+2026-02-09 16:12:15;[SYSTEM];{  "reasoning": "Move closer to enemy at (10,7) while staying out of wave, then attack it.",  "movement": [10, 12],  "attack": [10, 7],  "move_after_attack": [-1, -1]}
+2026-02-09 16:12:15;[SYSTEM];Move closer to enemy at (10,7) while staying out of wave, then attack it.
+2026-02-09 16:12:16;[ERROR];Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-09 16:12:16;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:12:16;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:17;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:19;[SYSTEM];Request response in 1443 ms.
+2026-02-09 16:12:19;[SYSTEM];{  "reasoning": "Attack the full-health Red ship at [10, 9] to eliminate a threat. Move up to position for better positioning.",  "movement": [10, 8],  "attack": [10, 9],  "move_after_attack": [-1, -1]}
+2026-02-09 16:12:19;[SYSTEM];Attack the full-health Red ship at [10, 9] to eliminate a threat. Move up to position for better positioning.
+2026-02-09 16:12:20;[ERROR];Cannot reach target at GridTile(Clone) (10, 9).
+2026-02-09 16:12:20;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:12:20;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:21;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:24;[SYSTEM];Request response in 3153 ms.
+2026-02-09 16:12:24;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (10,8) while staying safe from waves.", "movement": [10, 14], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:24;[SYSTEM];Move closer to damaged enemy at (10,8) while staying safe from waves.
+2026-02-09 16:12:25;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:12:25;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:12:25;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:26;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:28;[SYSTEM];Request response in 1642 ms.
+2026-02-09 16:12:28;[SYSTEM];{"reasoning": "Move toward enemy at (7,9) to attack. Close distance and eliminate weakened target efficiently.", "movement": [7, 9], "attack": [7, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:28;[SYSTEM];Move toward enemy at (7,9) to attack. Close distance and eliminate weakened target efficiently.
+2026-02-09 16:12:28;[ERROR];Could not find path from (7, 8) to (7, 9).
+2026-02-09 16:12:28;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:12:28;[ERROR];Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-09 16:12:28;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:12:28;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:29;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:33;[SYSTEM];Request response in 3798 ms.
+2026-02-09 16:12:33;[SYSTEM];{"reasoning": "Attack enemy target at (12,9) while staying in current position to maintain range advantage.", "movement": [-1, -1], "attack": [12, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:33;[SYSTEM];Attack enemy target at (12,9) while staying in current position to maintain range advantage.
+2026-02-09 16:12:33;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 attacks GridTile(Clone) (12, 9)!
+2026-02-09 16:12:33;[SYSTEM];Target: Target destroyed. Checking for level finish...
+2026-02-09 16:12:33;[SYSTEM];Factions remaining 2
+2026-02-09 16:12:33;[SYSTEM];Factions remaining 2
+2026-02-09 16:12:34;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:12:34;[SYSTEM];Factions remaining 2
+2026-02-09 16:12:34;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:35;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:38;[SYSTEM];Request response in 3265 ms.
+2026-02-09 16:12:38;[SYSTEM];{"reasoning": "Move to attack wounded enemy at (10,8) while avoiding waves.", "movement": [10, 10], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:38;[SYSTEM];Move to attack wounded enemy at (10,8) while avoiding waves.
+2026-02-09 16:12:40;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:12:40;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:12:40;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:41;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:42;[SYSTEM];Request response in 1243 ms.
+2026-02-09 16:12:42;[SYSTEM];{  "reasoning": "Move toward Red ship at (10,9) to get in range. Attack it to damage before it advances further.",  "movement": [10, 9],  "attack": [-1, -1],  "move_after_attack": [-1, -1]}
+2026-02-09 16:12:42;[SYSTEM];Move toward Red ship at (10,9) to get in range. Attack it to damage before it advances further.
+2026-02-09 16:12:42;[ERROR];Could not find path from (10, 8) to (10, 9).
+2026-02-09 16:12:42;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:12:42;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:12:42;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:43;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:46;[SYSTEM];Request response in 3086 ms.
+2026-02-09 16:12:46;[SYSTEM];{"reasoning": "Move toward enemy at (10,8) while staying out of its range, then attack it.", "movement": [10, 13], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:46;[SYSTEM];Move toward enemy at (10,8) while staying out of its range, then attack it.
+2026-02-09 16:12:47;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:12:47;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:12:47;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:48;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:50;[SYSTEM];Request response in 1174 ms.
+2026-02-09 16:12:50;[SYSTEM];{"reasoning": "Move toward enemy at (7,9) to attack. Close distance and eliminate weakened target efficiently.", "movement": [7, 9], "attack": [-1, -1], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:50;[SYSTEM];Move toward enemy at (7,9) to attack. Close distance and eliminate weakened target efficiently.
+2026-02-09 16:12:50;[ERROR];Could not find path from (7, 8) to (7, 9).
+2026-02-09 16:12:50;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:12:50;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:12:50;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:51;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:54;[SYSTEM];Request response in 2964 ms.
+2026-02-09 16:12:54;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (10,8) to attack next turn, avoid waves.", "movement": [11, 8], "attack": [-1, -1], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:54;[SYSTEM];Move closer to damaged enemy at (10,8) to attack next turn, avoid waves.
+2026-02-09 16:12:55;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:12:55;[SYSTEM];Factions remaining 2
+2026-02-09 16:12:55;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:12:56;[SYSTEM];Request Timer Finished.
+2026-02-09 16:12:59;[SYSTEM];Request response in 2783 ms.
+2026-02-09 16:12:59;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (10,8) while avoiding waves, then attack it.", "movement": [11, 11], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:12:59;[SYSTEM];Move closer to damaged enemy at (10,8) while avoiding waves, then attack it.
+2026-02-09 16:13:00;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:13:00;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:13:01;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:02;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:03;[SYSTEM];Request response in 1812 ms.
+2026-02-09 16:13:03;[SYSTEM];{"reasoning": "Move closer to Red ship at (11,8). Attack it to damage before it can retaliate effectively.", "movement": [11, 8], "attack": [-1, -1], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:03;[SYSTEM];Move closer to Red ship at (11,8). Attack it to damage before it can retaliate effectively.
+2026-02-09 16:13:03;[ERROR];Could not find path from (10, 8) to (11, 8).
+2026-02-09 16:13:03;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:13:03;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:13:03;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:04;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:07;[SYSTEM];Request response in 2971 ms.
+2026-02-09 16:13:07;[SYSTEM];{"reasoning": "Move closer to damaged enemy at (10,8) while staying out of wave range.", "movement": [10, 12], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:07;[SYSTEM];Move closer to damaged enemy at (10,8) while staying out of wave range.
+2026-02-09 16:13:08;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:13:08;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:13:09;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:10;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:11;[SYSTEM];Request response in 1155 ms.
+2026-02-09 16:13:11;[SYSTEM];{  "reasoning": "Move toward Red enemy at (11,8). Attack the weakened target at (7,9) with range 2.",  "movement": [9, 8],  "attack": [7, 9],  "move_after_attack": [-1, -1]}
+2026-02-09 16:13:11;[SYSTEM];Move toward Red enemy at (11,8). Attack the weakened target at (7,9) with range 2.
+2026-02-09 16:13:12;[ERROR];Cannot reach target at GridTile(Clone) (7, 9).
+2026-02-09 16:13:12;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:13:12;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:13;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:16;[SYSTEM];Request response in 2865 ms.
+2026-02-09 16:13:16;[SYSTEM];{"reasoning": "Attack wounded enemy at (10,8) while staying out of wave range.", "movement": [11, 9], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:16;[SYSTEM];Attack wounded enemy at (10,8) while staying out of wave range.
+2026-02-09 16:13:17;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 attacks GridTile(Clone) (10, 8)!
+2026-02-09 16:13:19;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:13:19;[SYSTEM];Factions remaining 2
+2026-02-09 16:13:19;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:20;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:23;[SYSTEM];Request response in 3373 ms.
+2026-02-09 16:13:23;[SYSTEM];{"reasoning": "Attack wounded enemy at (10,8) to eliminate it, then move to (11,12) to avoid waves and stay near ally.", "movement": [11, 11], "attack": [10, 8], "move_after_attack": [11, 12]}
+2026-02-09 16:13:23;[SYSTEM];Attack wounded enemy at (10,8) to eliminate it, then move to (11,12) to avoid waves and stay near ally.
+2026-02-09 16:13:24;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:13:24;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:13:24;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:25;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:27;[SYSTEM];Request response in 1875 ms.
+2026-02-09 16:13:27;[SYSTEM];{"reasoning": "Attack enemy at [11,9] with full health. Move to maximize future positioning against clustered enemies below.","movement": [11, 8], "attack": [11, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:27;[SYSTEM];Attack enemy at [11,9] with full health. Move to maximize future positioning against clustered enemies below.
+2026-02-09 16:13:28;[ERROR];Cannot reach target at GridTile(Clone) (11, 9).
+2026-02-09 16:13:28;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 has finished its turn.
+2026-02-09 16:13:28;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:29;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:32;[SYSTEM];Request response in 3157 ms.
+2026-02-09 16:13:32;[SYSTEM];{"reasoning": "Move toward damaged enemy at (11,8) while avoiding waves, then attack it.", "movement": [11, 13], "attack": [11, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:32;[SYSTEM];Move toward damaged enemy at (11,8) while avoiding waves, then attack it.
+2026-02-09 16:13:33;[ERROR];Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-09 16:13:33;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:13:33;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:34;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:36;[SYSTEM];Request response in 1424 ms.
+2026-02-09 16:13:36;[SYSTEM];{"reasoning": "Move right to attack Red ship at [11,8]. Ally ship there is critical health, eliminate nearby Red threat.", "movement": [10, 8], "attack": [11, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:36;[SYSTEM];Move right to attack Red ship at [11,8]. Ally ship there is critical health, eliminate nearby Red threat.
+2026-02-09 16:13:37;[ERROR];Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-09 16:13:37;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:13:37;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:38;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:41;[SYSTEM];Request response in 3387 ms.
+2026-02-09 16:13:41;[SYSTEM];{"reasoning": "Attack wounded enemy at (11,8) to eliminate it, then move to (12,8) to avoid waves and position for next turn.", "movement": [12, 8], "attack": [11, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:41;[SYSTEM];Attack wounded enemy at (11,8) to eliminate it, then move to (12,8) to avoid waves and position for next turn.
+2026-02-09 16:13:43;[ERROR];Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-09 16:13:43;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:13:43;[SYSTEM];Factions remaining 2
+2026-02-09 16:13:43;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:44;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:47;[SYSTEM];Request response in 3344 ms.
+2026-02-09 16:13:47;[SYSTEM];{    "reasoning": "Move to attack wounded enemy at (11,8) while avoiding waves.",    "movement": [11, 10],    "attack": [11, 8],    "move_after_attack": [-1, -1]}
+2026-02-09 16:13:47;[SYSTEM];Move to attack wounded enemy at (11,8) while avoiding waves.
+2026-02-09 16:13:48;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 attacks GridTile(Clone) (11, 8)!
+2026-02-09 16:13:48;[SYSTEM];Naval Ship: LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 destroyed. Checking for level finish...
+2026-02-09 16:13:48;[SYSTEM];Naval Ship was an AI Ship LLMAgent|Claude|claude-haiku-4-5-20251001|Green|6 from the Green faction. Remaining: 1.
+2026-02-09 16:13:48;[SYSTEM];Factions remaining 2
+2026-02-09 16:13:50;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:13:50;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:51;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:54;[SYSTEM];Request response in 2879 ms.
+2026-02-09 16:13:54;[SYSTEM];{"reasoning": "Move closer to enemy at (10,8) while staying out of wave tiles.", "movement": [12, 12], "attack": [10, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:13:54;[SYSTEM];Move closer to enemy at (10,8) while staying out of wave tiles.
+2026-02-09 16:13:55;[ERROR];Cannot reach target at GridTile(Clone) (10, 8).
+2026-02-09 16:13:55;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:13:55;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:13:56;[SYSTEM];Request Timer Finished.
+2026-02-09 16:13:57;[SYSTEM];Request response in 1292 ms.
+2026-02-09 16:13:57;[SYSTEM];{  "reasoning": "Attack enemy ship at [12, 8] with full health. Move closer to maximize future positioning against multiple threats.",  "movement": [11, 8],  "attack": [12, 8],  "move_after_attack": [-1, -1]}
+2026-02-09 16:13:57;[SYSTEM];Attack enemy ship at [12, 8] with full health. Move closer to maximize future positioning against multiple threats.
+2026-02-09 16:13:58;[ERROR];Cannot reach target at GridTile(Clone) (12, 8).
+2026-02-09 16:13:58;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:13:59;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:00;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:03;[SYSTEM];Request response in 3243 ms.
+2026-02-09 16:14:03;[SYSTEM];{"reasoning": "Move closer to enemy Green ship at (11,8) while staying out of its attack range, then attack it.", "movement": [13, 9], "attack": [11, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:14:03;[SYSTEM];Move closer to enemy Green ship at (11,8) while staying out of its attack range, then attack it.
+2026-02-09 16:14:04;[ERROR];Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-09 16:14:04;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:14:04;[SYSTEM];Factions remaining 2
+2026-02-09 16:14:04;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:05;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:09;[SYSTEM];Request response in 3357 ms.
+2026-02-09 16:14:09;[SYSTEM];{"reasoning": "Attack enemy at (11,8) from current position, then move to (12,9) to maintain distance.", "movement": [11, 10], "attack": [11, 8], "move_after_attack": [12, 9]}
+2026-02-09 16:14:09;[SYSTEM];Attack enemy at (11,8) from current position, then move to (12,9) to maintain distance.
+2026-02-09 16:14:09;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 attacks GridTile(Clone) (11, 8)!
+2026-02-09 16:14:11;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:14:11;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:12;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:15;[SYSTEM];Request response in 2954 ms.
+2026-02-09 16:14:15;[SYSTEM];{"reasoning": "Move toward enemy at (11,8) while staying out of wave range, then attack it.", "movement": [11, 13], "attack": [11, 8], "move_after_attack": [-1, -1]}
+2026-02-09 16:14:15;[SYSTEM];Move toward enemy at (11,8) while staying out of wave range, then attack it.
+2026-02-09 16:14:16;[ERROR];Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-09 16:14:16;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:14:16;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:17;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:18;[SYSTEM];Request response in 1187 ms.
+2026-02-09 16:14:18;[SYSTEM];{  "reasoning": "Attack the full-health Red ship at [11, 10] to eliminate a threat. Move closer to engage other enemies.",  "movement": [11, 9],  "attack": [11, 10],  "move_after_attack": [-1, -1]}
+2026-02-09 16:14:18;[SYSTEM];Attack the full-health Red ship at [11, 10] to eliminate a threat. Move closer to engage other enemies.
+2026-02-09 16:14:19;[ERROR];Cannot reach target at GridTile(Clone) (11, 10).
+2026-02-09 16:14:19;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:14:20;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:21;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:23;[SYSTEM];Request response in 2792 ms.
+2026-02-09 16:14:23;[SYSTEM];{"reasoning": "Attack weakened enemy at (11,9) while staying safe from waves.", "movement": [13, 9], "attack": [11, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:14:23;[SYSTEM];Attack weakened enemy at (11,9) while staying safe from waves.
+2026-02-09 16:14:24;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 attacks GridTile(Clone) (11, 9)!
+2026-02-09 16:14:25;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:14:25;[SYSTEM];Factions remaining 2
+2026-02-09 16:14:25;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:26;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:30;[SYSTEM];Request response in 3308 ms.
+2026-02-09 16:14:30;[SYSTEM];{"reasoning": "Move to attack enemy at (11,9) with low health, finishing it off.", "movement": [12, 9], "attack": [11, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:14:30;[SYSTEM];Move to attack enemy at (11,9) with low health, finishing it off.
+2026-02-09 16:14:31;[ERROR];Cannot reach target at GridTile(Clone) (11, 9).
+2026-02-09 16:14:31;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|5 has finished its turn.
+2026-02-09 16:14:31;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:32;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:35;[SYSTEM];Request response in 2833 ms.
+2026-02-09 16:14:35;[SYSTEM];{"reasoning": "Move closer to enemy ship at (11,9) to attack next turn.", "movement": [11, 12], "attack": [-1, -1], "move_after_attack": [-1, -1]}
+2026-02-09 16:14:35;[SYSTEM];Move closer to enemy ship at (11,9) to attack next turn.
+2026-02-09 16:14:36;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|3 has finished its turn.
+2026-02-09 16:14:36;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:37;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:39;[SYSTEM];Request response in 1568 ms.
+2026-02-09 16:14:39;[SYSTEM];{"reasoning": "Attack enemy at [13,9] with full health. Move right to [12,9] to get closer, then attack the weakened target.", "movement": [12, 9], "attack": [13, 9], "move_after_attack": [-1, -1]}
+2026-02-09 16:14:39;[SYSTEM];Attack enemy at [13,9] with full health. Move right to [12,9] to get closer, then attack the weakened target.
+2026-02-09 16:14:39;[ERROR];Could not find path from (11, 9) to (12, 9).
+2026-02-09 16:14:39;[ERROR];Path not found! Stay in the same position.
+2026-02-09 16:14:39;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 attacks GridTile(Clone) (13, 9)!
+2026-02-09 16:14:40;[SYSTEM];LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 has finished its turn.
+2026-02-09 16:14:40;[SYSTEM];Request Timer. Wait for 1 seconds.
+2026-02-09 16:14:41;[SYSTEM];Request Timer Finished.
+2026-02-09 16:14:45;[SYSTEM];Request response in 3347 ms.
+2026-02-09 16:14:45;[SYSTEM];{"reasoning": "Attack the weak enemy at (11,9) to eliminate it, then move to (12,10) to maintain distance from ally.", "movement": [-1, -1], "attack": [11, 9], "move_after_attack": [12, 10]}
+2026-02-09 16:14:45;[SYSTEM];Attack the weak enemy at (11,9) to eliminate it, then move to (12,10) to maintain distance from ally.
+2026-02-09 16:14:45;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 attacks GridTile(Clone) (11, 9)!
+2026-02-09 16:14:45;[SYSTEM];Naval Ship: LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 destroyed. Checking for level finish...
+2026-02-09 16:14:45;[SYSTEM];Naval Ship was an AI Ship LLMAgent|Claude|claude-haiku-4-5-20251001|Green|1 from the Green faction. Remaining: 0.
+2026-02-09 16:14:45;[SYSTEM];Factions remaining 1
+2026-02-09 16:14:45;[SYSTEM];Level ended: Victory!
+2026-02-09 16:14:45;[SYSTEM];Change state from Roaming to Finish.
+2026-02-09 16:14:45;[SYSTEM];Stated changed to Finish.
+2026-02-09 16:14:45;[SYSTEM];Finished level, current -> 0.
+2026-02-09 16:14:45;[SYSTEM];Update Schedule repetition, _internalRepetitionsCount -> 0.
+2026-02-09 16:14:45;[SYSTEM];Finished level, winner -> Red.
+2026-02-09 16:14:46;[SYSTEM];LLMAgent|DeepSeek|deepseek-chat|Red|4 has finished its turn.
+2026-02-09 16:14:50;[SYSTEM];Tile Map Bounds: Center: (0.00, -0.50, 0.00), Extents: (10.00, 9.50, 0.00)
+2026-02-09 16:14:50;[SYSTEM];Width: 20
+2026-02-09 16:14:50;[SYSTEM];Height: 19
+2026-02-09 16:14:51;[SYSTEM];All schedules done, current -> 1.

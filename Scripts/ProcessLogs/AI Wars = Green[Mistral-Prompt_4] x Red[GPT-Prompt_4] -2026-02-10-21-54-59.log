@@ -1,0 +1,655 @@
+﻿2026-02-10 21:54:59;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-10 21:54:59;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-10 21:54:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Start turn;5,5
+2026-02-10 21:55:00;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];PRPT Prompt_4;4315
+2026-02-10 21:55:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];TIME {"request":14453}
+2026-02-10 21:55:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];DATA {"attempts":1}
+2026-02-10 21:55:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];RESN {"reasoning":Moving towards enemy at (10,13) to reduce distance for future attacks]}
+2026-02-10 21:55:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Flags;True;False;False
+2026-02-10 21:55:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];MOVE {10, 6}
+2026-02-10 21:55:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Finish turn
+2026-02-10 21:55:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 21:55:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4334
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1637}
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (10,6)]}
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 21:55:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 21:55:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 21:55:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 21:55:21;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4322
+2026-02-10 21:55:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":19489}
+2026-02-10 21:55:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 21:55:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Move to (11,7) to position for potential wave-extended attack next turn]}
+2026-02-10 21:55:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;True;False;False
+2026-02-10 21:55:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];MOVE {11, 7}
+2026-02-10 21:55:42;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 21:55:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Start turn;5,5
+2026-02-10 21:55:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];PRPT Prompt_4;4300
+2026-02-10 21:55:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];TIME {"request":1365}
+2026-02-10 21:55:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];DATA {"attempts":1}
+2026-02-10 21:55:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];RESN {"reasoning":Move to (11,11) to get enemy at (11,7) within direct attack range next turn]}
+2026-02-10 21:55:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Flags;True;False;False
+2026-02-10 21:55:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];MOVE {11, 11}
+2026-02-10 21:55:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Finish turn
+2026-02-10 21:55:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 21:55:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4272
+2026-02-10 21:56:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":19896}
+2026-02-10 21:56:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 21:56:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Move to (8,7) to close distance on enemy at (10,13)]}
+2026-02-10 21:56:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;True;False;False
+2026-02-10 21:56:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];MOVE {8, 7}
+2026-02-10 21:56:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 21:56:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 21:56:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4293
+2026-02-10 21:56:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1517}
+2026-02-10 21:56:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 21:56:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Move to (8,11) to get enemy at (8,7) within direct attack range next turn]}
+2026-02-10 21:56:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;True;False;False
+2026-02-10 21:56:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];MOVE {8, 11}
+2026-02-10 21:56:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 21:56:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Start turn;5,5
+2026-02-10 21:56:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];PRPT Prompt_4;4344
+2026-02-10 21:56:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];TIME {"request":21743}
+2026-02-10 21:56:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];DATA {"attempts":1}
+2026-02-10 21:56:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];RESN {"reasoning":Move to (10,7) to position for wave-extended attack on enemy at (10,13) via wave at (10,11)]}
+2026-02-10 21:56:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Flags;True;True;False
+2026-02-10 21:56:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];MOVE {10, 7}
+2026-02-10 21:56:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-10 21:56:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Finish turn
+2026-02-10 21:56:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 21:56:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4334
+2026-02-10 21:56:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1985}
+2026-02-10 21:56:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 21:56:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (10,7)]}
+2026-02-10 21:56:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-10 21:56:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-10 21:56:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 21:56:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 21:56:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 21:56:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 21:56:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 21:56:42;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4278
+2026-02-10 21:57:03;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":20946}
+2026-02-10 21:57:03;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 21:57:03;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Move to (11,10) to bring enemy at (11,11) within attack range (distance 1), then attack it.]}
+2026-02-10 21:57:03;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;True;True;False
+2026-02-10 21:57:03;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];MOVE {11, 10}
+2026-02-10 21:57:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Cannot reach target at GridTile(Clone) (11, 11).
+2026-02-10 21:57:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 21:57:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Start turn;5,5
+2026-02-10 21:57:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];PRPT Prompt_4;4228
+2026-02-10 21:57:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];TIME {"request":1159}
+2026-02-10 21:57:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];DATA {"attempts":1}
+2026-02-10 21:57:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];RESN {"reasoning":Move to (10,10) to get (11,10) enemy into direct attack range next turn]}
+2026-02-10 21:57:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Flags;True;False;False
+2026-02-10 21:57:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];MOVE {10, 10}
+2026-02-10 21:57:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Finish turn
+2026-02-10 21:57:09;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 21:57:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4294
+2026-02-10 21:57:29;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":18789}
+2026-02-10 21:57:29;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 21:57:29;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Move to (8,10) to bring enemy at (8,11) into attack range, then attack it.]}
+2026-02-10 21:57:29;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;True;True;False
+2026-02-10 21:57:29;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];MOVE {8, 10}
+2026-02-10 21:57:31;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 21:57:31;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 21:57:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 21:57:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4242
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1117}
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (11,10) immediately without moving]}
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 21:57:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 21:57:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 21:57:34;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Start turn;5,5
+2026-02-10 21:57:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];PRPT Prompt_4;4302
+2026-02-10 21:57:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];TIME {"request":19689}
+2026-02-10 21:57:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];DATA {"attempts":1}
+2026-02-10 21:57:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];RESN {"reasoning":Moving to (10,10) to attack low-health enemy at (10,12) next turn]}
+2026-02-10 21:57:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Flags;True;False;False
+2026-02-10 21:57:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];MOVE {10, 10}
+2026-02-10 21:57:57;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Finish turn
+2026-02-10 21:57:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 21:57:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4320
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1659}
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (10,10)]}
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 21:58:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 21:58:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 21:58:01;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 21:58:02;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4329
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":12173}
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Wave-extended attack on low-health enemy at (10,12) via wave at (10,11). Move to (11,11) for future positioning.]}
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {10, 11}
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT WAVE
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];INFO Destroyed
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|3];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":0,"internalTotalRequestCount":2,"internalMovementAttemptCount":2,"internalAttackAttemptCount":0,"internalFaultyMessageCount":0,"averageRequestTime":1262,"averageRequestTimeCount":2,"maxRequestTime":1365,"minRequest":1159,"averageAttempts":1,"kills":0}
+2026-02-10 21:58:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 21:58:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 21:58:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 21:58:17;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4267
+2026-02-10 21:58:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO No response exception!  Success:True.
+2026-02-10 21:58:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":23583}
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":27141}
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":2}
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Immediate attack on enemy at (8,11) within range]}
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 21:59:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 21:59:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4243
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1521}
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (10,10)]}
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 21:59:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 21:59:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 21:59:17;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Start turn;5,5
+2026-02-10 21:59:18;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];PRPT Prompt_4;4241
+2026-02-10 21:59:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO No response exception!  Success:True.
+2026-02-10 21:59:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];TIME {"request":27843}
+2026-02-10 22:00:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];TIME {"request":17209}
+2026-02-10 22:00:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];DATA {"attempts":2}
+2026-02-10 22:00:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];RESN {"reasoning":Move to (10,12) to position for direct attack on enemy at (10,13) next turn]}
+2026-02-10 22:00:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Flags;True;False;False
+2026-02-10 22:00:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];MOVE {10, 12}
+2026-02-10 22:00:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Finish turn
+2026-02-10 22:00:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:00:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4320
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1812}
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack enemy at (10,12) directly in range without moving; immediate attack prioritized]}
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (10, 12).
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:00:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:00:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4296
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":21494}
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Wave-extended attack on enemy at (10,13) via wave at (10,11)]}
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {10, 11}
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT WAVE
+2026-02-10 22:00:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:00:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:00:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:00:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4236
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":13207}
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Immediate attack on high-priority enemy ship at (8,11) within optimal range.]}
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:00:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:00:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4250
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1330}
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (10,12) using wave-extended shot from current position]}
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 22:00:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:00:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:00:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Start turn;5,5
+2026-02-10 22:00:56;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];PRPT Prompt_4;4240
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];TIME {"request":14020}
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];DATA {"attempts":1}
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];RESN {"reasoning":Direct attack on enemy at (10,13) within immediate range]}
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Flags;False;True;False
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Cannot reach target at GridTile(Clone) (10, 13).
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Finish turn
+2026-02-10 22:01:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:01:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4328
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1399}
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack low-health enemy at (10,12) via wave-extended shot from current position]}
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];INFO Destroyed
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|1];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":6,"internalMovementAttemptCount":4,"internalAttackAttemptCount":2,"internalFaultyMessageCount":1,"averageRequestTime":19159.5,"averageRequestTimeCount":6,"maxRequestTime":27843,"minRequest":14020,"averageAttempts":1.2,"kills":0}
+2026-02-10 22:01:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:01:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:01:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:01:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4306
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":30479}
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Attack neutral target at (12,9) to clear the board, then move to (9,10) to position for enemy attack next turn]}
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {12, 9}
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT TARGET
+2026-02-10 22:01:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (12, 9). Kill count = 1.
+2026-02-10 22:01:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:01:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:01:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4236
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":20098}
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Direct attack on enemy ship at (8, 11) to reduce immediate threat]}
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:02:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:02:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4207
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1916}
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (11,10) using wave-extended shot from current position (8,11) via wave at (10,11)]}
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 22:02:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:02:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:02:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:02:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4301
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":2163}
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (11,10)]}
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:02:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:02:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:02:17;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:02:18;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4290
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":19300}
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Wave-extended attack on enemy at (10,13) using wave at (10,11)]}
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {10, 11}
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT WAVE
+2026-02-10 22:02:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:02:39;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:02:39;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:02:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4236
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":17521}
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Direct attack on enemy ship at (8,11) within range]}
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:02:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:02:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4207
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1423}
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (11,10) using wave-extended shot from current position (8,11) via wave at (10,11)]}
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 22:03:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:03:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:03:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:03:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4301
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1247}
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (11,10)]}
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:03:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:03:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:03:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:03:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4290
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":18801}
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Wave-extended attack on enemy at (10,13) via wave at (10,11)]}
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {10, 11}
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT WAVE
+2026-02-10 22:03:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:03:27;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:03:27;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:03:28;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4236
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":11928}
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Immediate attack on enemy at (8,11) to reduce threat.]}
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:03:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:03:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4207
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1472}
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (11,10) using wave-extended shot from current position (8,11) via wave at (10,11)]}
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 22:03:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:03:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:03:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:03:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4301
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1001}
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (11,10)]}
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:03:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:03:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:03:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:03:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4290
+2026-02-10 22:04:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO No response exception!  Success:True.
+2026-02-10 22:04:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":25118}
+2026-02-10 22:05:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO No response exception!  Success:True.
+2026-02-10 22:05:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":47006}
+2026-02-10 22:05:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO No response exception!  Success:True.
+2026-02-10 22:05:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":24684}
+2026-02-10 22:06:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":21415}
+2026-02-10 22:06:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":4}
+2026-02-10 22:06:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Move to (9,10) to bring enemy at (8,11) within attack range next turn]}
+2026-02-10 22:06:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;True;False;False
+2026-02-10 22:06:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];MOVE {9, 10}
+2026-02-10 22:06:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:06:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:06:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4192
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":16312}
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Direct attack on enemy ship at (8,11) to reduce enemy threat]}
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:06:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:06:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4236
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1733}
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (9,10) directly in range without moving; immediate damage prioritized over repositioning.]}
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {9, 10}
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT LLM {ENEMY}
+2026-02-10 22:06:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (9, 10). Kill count = 0.
+2026-02-10 22:06:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:06:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:06:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4307
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":2165}
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (9,10) with low health]}
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:06:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:06:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:06:34;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:06:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4288
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":11544}
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Immediate attack on enemy at (8,11) within range]}
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {8, 11}
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT LLM {ENEMY}
+2026-02-10 22:06:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (8, 11). Kill count = 0.
+2026-02-10 22:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:06:49;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4199
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":21361}
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Attack immediate enemy at (8,11) with low health, then move to (10,9) to close distance on the other enemy.]}
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:07:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:07:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4249
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1435}
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack low-health enemy at (9,10) immediately; no movement needed as attack is available now]}
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {9, 10}
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT LLM {ENEMY}
+2026-02-10 22:07:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (9, 10). Kill count = 0.
+2026-02-10 22:07:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:07:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:07:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4308
+2026-02-10 22:07:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1233}
+2026-02-10 22:07:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:07:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit low-health enemy at (9,10)]}
+2026-02-10 22:07:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-10 22:07:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-10 22:07:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:07:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:07:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:07:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:07:18;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Start turn;5,5
+2026-02-10 22:07:19;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];PRPT Prompt_4;4302
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TIME {"request":12685}
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"attempts":1}
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];RESN {"reasoning":Immediate attack on low-health enemy at (8,11)]}
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Flags;False;True;False
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];ATTK {8, 11}
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];TRGT LLM {ENEMY}
+2026-02-10 22:07:32;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Attacked succeeded at GridTile(Clone) (8, 11). Kill count = 0.
+2026-02-10 22:07:34;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Finish turn
+2026-02-10 22:07:34;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4200
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":17548}
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Immediate attack on low-health enemy at (8,11) to eliminate a ship. Move after to (8,9) for better positioning.]}
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:07:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:07:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4251
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1755}
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack low-health enemy at (9,10) immediately; no movement needed to maximize damage and secure kill.]}
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {9, 10}
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT LLM {ENEMY}
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];INFO Destroyed
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|5];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":13,"internalMovementAttemptCount":3,"internalAttackAttemptCount":8,"internalFaultyMessageCount":3,"averageRequestTime":21933.38,"averageRequestTimeCount":13,"maxRequestTime":47006,"minRequest":11544,"averageAttempts":1.3,"kills":0}
+2026-02-10 22:07:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (9, 10). Kill count = 1.
+2026-02-10 22:07:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:07:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:07:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4255
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1300}
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10) immediately]}
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:07:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:08:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:08:00;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:08:01;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4254
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":21935}
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Eliminate low-health enemy ship at (8,11) to reduce enemy fleet immediately.]}
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:08:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:08:24;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4160
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":3150}
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (8,10) by shooting wave tile at (10,11) to extend range; no movement needed as attack is possible now.]}
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 22:08:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:08:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:08:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:08:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4255
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1395}
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10) immediately]}
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:08:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:08:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:08:33;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:08:34;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4254
+2026-02-10 22:08:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO No response exception!  Success:True.
+2026-02-10 22:08:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":16857}
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":16544}
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":2}
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Attack low-health enemy at (8,11) to eliminate it, then move to (9,12) to position for next turn's attack on remaining enemy.]}
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:09:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:09:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4160
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1684}
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10) immediately without moving, preserving health.]}
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 11}
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TRGT WAVE
+2026-02-10 22:09:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:09:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:09:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:09:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4255
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1448}
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10)]}
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:09:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:09:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:09:21;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:09:22;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4254
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":20752}
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Immediate attack on low-health enemy at (8,11) to eliminate threat. Stay in position to avoid unnecessary movement.]}
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;True;True;False
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];MOVE {8, 10}
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:09:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:09:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4160
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":1549}
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (8,10) directly now; enemy is in range (distance 1), offset 1, range 2. No movement needed to attack immediately.]}
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;False;True;False
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Cannot reach target at GridTile(Clone) (8, 10).
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:09:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:09:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4255
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1843}
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10) immediately]}
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:09:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:09:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:09:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:09:51;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4254
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":20035}
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Direct attack on low-health enemy at (8,11) to eliminate it immediately]}
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:10:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Start turn;5,5
+2026-02-10 22:10:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];PRPT Prompt_4;4160
+2026-02-10 22:10:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];TIME {"request":5050}
+2026-02-10 22:10:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"attempts":1}
+2026-02-10 22:10:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];RESN {"reasoning":Attack enemy at (8,10) directly now; enemy is in range (distance 1), offset 1 excludes distance 1 but range 2 includes distance 2, so cannot attack directly now. Check wave-extended attack: wave at (10,11) ~^ extends attack range but no enemy behind it. No direct attack possible. Move to (9,10) to get enemy at (8,10) within attack range next turn (distance 1 from (9,10) to (8,10) is 1, offset excludes 1, so need to be at distance 2). From (9,10), enemy at (8,10) is distance 1, so no attack next turn either. Better move to (9,11): from (9,11) enemy at (8,10) is distance 2, offset 1 excludes distance 1, so attack possible next turn. Move to (9,11) to enable attack next turn.]}
+2026-02-10 22:10:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Flags;True;False;False
+2026-02-10 22:10:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];MOVE {9, 11}
+2026-02-10 22:10:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Finish turn
+2026-02-10 22:10:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:10:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4246
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1357}
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10)]}
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:10:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:10:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:10:22;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:10:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4334
+2026-02-10 22:10:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":21944}
+2026-02-10 22:10:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:10:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Eliminate low-health enemy at (9,11), then reposition to (9,12) for next turn attack on (10,13)]}
+2026-02-10 22:10:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;True;True;False
+2026-02-10 22:10:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];MOVE {8, 10}
+2026-02-10 22:10:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];ATTK {9, 11}
+2026-02-10 22:10:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TRGT LLM {ENEMY}
+2026-02-10 22:10:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];INFO Destroyed
+2026-02-10 22:10:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":14,"internalMovementAttemptCount":2,"internalAttackAttemptCount":12,"internalFaultyMessageCount":0,"averageRequestTime":1903.714,"averageRequestTimeCount":14,"maxRequestTime":5050,"minRequest":1117,"averageAttempts":1,"kills":0}
+2026-02-10 22:10:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Attacked succeeded at GridTile(Clone) (9, 11). Kill count = 1.
+2026-02-10 22:10:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:10:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:10:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4255
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":2706}
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (8,10) immediately]}
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-10 22:10:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-10 22:10:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:10:53;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:10:54;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4239
+2026-02-10 22:11:18;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO No response exception!  Success:True.
+2026-02-10 22:11:18;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":23918}
+2026-02-10 22:11:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":13640}
+2026-02-10 22:11:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":2}
+2026-02-10 22:11:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Move to (9,12) to bring enemy ship into attack range, then attack it]}
+2026-02-10 22:11:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;True;True;False
+2026-02-10 22:11:36;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];MOVE {9, 12}
+2026-02-10 22:11:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];ATTK {10, 13}
+2026-02-10 22:11:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TRGT LLM {ENEMY}
+2026-02-10 22:11:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Attacked succeeded at GridTile(Clone) (10, 13). Kill count = 0.
+2026-02-10 22:11:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:11:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:11:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4292
+2026-02-10 22:11:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1700}
+2026-02-10 22:11:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:11:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack enemy at (9,12) directly from current position (10,13) within range 2 and offset 1]}
+2026-02-10 22:11:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-10 22:11:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-10 22:11:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {9, 12}
+2026-02-10 22:11:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT LLM {ENEMY}
+2026-02-10 22:11:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (9, 12). Kill count = 0.
+2026-02-10 22:11:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:11:44;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:11:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4302
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":13772}
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Direct attack on enemy at (10,13) with follow-up repositioning to (10,12) for continued pressure.]}
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];ATTK {10, 13}
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TRGT LLM {ENEMY}
+2026-02-10 22:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Attacked succeeded at GridTile(Clone) (10, 13). Kill count = 0.
+2026-02-10 22:12:01;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
+2026-02-10 22:12:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-10 22:12:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4306
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1587}
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack enemy at (9,12) immediately; enemy is in range and attacking now is highest priority given low health and no safer moves.]}
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {9, 12}
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT LLM {ENEMY}
+2026-02-10 22:12:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (9, 12). Kill count = 0.
+2026-02-10 22:12:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-10 22:12:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Start turn;5,5
+2026-02-10 22:12:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];PRPT Prompt_4;4304
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TIME {"request":9492}
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"attempts":1}
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];RESN {"reasoning":Direct attack on enemy ship at (10,13) to destroy it.]}
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Flags;False;True;False
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];ATTK {10, 13}
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];TRGT LLM {ENEMY}
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Destroyed
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":18,"internalMovementAttemptCount":3,"internalAttackAttemptCount":18,"internalFaultyMessageCount":0,"averageRequestTime":1646.5,"averageRequestTimeCount":18,"maxRequestTime":2706,"minRequest":1001,"averageAttempts":1,"kills":0}
+2026-02-10 22:12:15;[SYSTEM];[LevelGoal];INFO Faction Green won.
+2026-02-10 22:12:15;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":13,"internalTotalRequestCount":21,"internalMovementAttemptCount":5,"internalAttackAttemptCount":17,"internalFaultyMessageCount":3,"averageRequestTime":18393.95,"averageRequestTimeCount":21,"maxRequestTime":27141,"minRequest":9492,"averageAttempts":1.166667,"kills":0}
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":18,"internalMovementAttemptCount":3,"internalAttackAttemptCount":18,"internalFaultyMessageCount":0,"averageRequestTime":1646.5,"averageRequestTimeCount":18,"maxRequestTime":2706,"minRequest":1001,"averageAttempts":1,"kills":0}
+2026-02-10 22:12:15;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-10 22:12:15;[SYSTEM];[LevelGoal];INFO LLM Mistral|magistral-small-2509 won.
+2026-02-10 22:12:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Attacked succeeded at GridTile(Clone) (10, 13). Kill count = 1.
+2026-02-10 22:12:17;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Green|4];INFO Finish turn
