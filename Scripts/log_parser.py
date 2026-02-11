@@ -257,7 +257,7 @@ def main():
     output_line.append(f"RED {llm_red_model}")
     output_line.append(f"GREEN {llm_green_model}")
 
-    winner = file_utils.find_lines_containing_string("won", lines)
+    winner = file_utils.find_lines_containing_string("won.", lines)
     if len(winner) == 0:
         print("No winner. Draw!")
         output_line.append(f"DRAW")
@@ -295,7 +295,7 @@ def main():
                    "% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;"
                    "attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;"
                    "total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; "
-                    "%faulty_messages; enemy_targets; ally_targets; target_targets; target_waves")
+                    "%faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;")
 
     print(f"filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;{faction_line}{faction_line}")
     print(';'.join(output_line))
