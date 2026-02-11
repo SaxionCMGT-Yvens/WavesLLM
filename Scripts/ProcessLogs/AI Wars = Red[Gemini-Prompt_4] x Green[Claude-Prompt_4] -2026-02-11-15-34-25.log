@@ -1,0 +1,279 @@
+﻿2026-02-11 15:34:25;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-11 15:34:25;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-11 15:34:25;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Start turn;5,5
+2026-02-11 15:34:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];PRPT Prompt_4;4320
+2026-02-11 15:34:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];TIME {"request":12161}
+2026-02-11 15:34:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];DATA {"attempts":1}
+2026-02-11 15:34:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];RESN {"reasoning":Move to (9,8) to position near wave at (9,7). From (9,8), enemies at (7,12), (10,13), (12,12) are still out of direct range (distance 4-5). Attack wave at (9,7) to extend shot upward toward enemy cluster.]}
+2026-02-11 15:34:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Flags;True;True;False
+2026-02-11 15:34:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];MOVE {9, 8}
+2026-02-11 15:34:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Cannot reach target at GridTile(Clone) (9, 7).
+2026-02-11 15:34:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Finish turn
+2026-02-11 15:34:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Start turn;5,5
+2026-02-11 15:34:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];PRPT Prompt_4;4340
+2026-02-11 15:35:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];TIME {"request":18954}
+2026-02-11 15:35:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];DATA {"attempts":1}
+2026-02-11 15:35:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];RESN {"reasoning":No direct attack or wave-extended attack is possible this turn. Moving to (10, 10) to close distance to the enemy cluster and prepare for future attacks.]}
+2026-02-11 15:35:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Flags;True;False;False
+2026-02-11 15:35:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];MOVE {10, 10}
+2026-02-11 15:35:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Finish turn
+2026-02-11 15:35:02;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Start turn;5,5
+2026-02-11 15:35:03;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];PRPT Prompt_4;4301
+2026-02-11 15:35:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TIME {"request":6057}
+2026-02-11 15:35:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"attempts":1}
+2026-02-11 15:35:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];RESN {"reasoning":Move to (10,7) to position near wave at (9,7). From (10,7), enemy at (10,10) will be in attack range (distance 3 via wave extension through (9,7)). This sets up wave-extended attack next turn while closing distance on primary target cluster.]}
+2026-02-11 15:35:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Flags;True;False;False
+2026-02-11 15:35:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];MOVE {10, 7}
+2026-02-11 15:35:11;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Finish turn
+2026-02-11 15:35:11;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Start turn;5,5
+2026-02-11 15:35:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];PRPT Prompt_4;4316
+2026-02-11 15:35:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TIME {"request":17198}
+2026-02-11 15:35:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"attempts":1}
+2026-02-11 15:35:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];RESN {"reasoning":No direct attacks or effective wave-extended attacks are possible from the current position or any immediately reachable safe tile. The best strategy is to move closer to the cluster of enemy ships to set up an attack in the next turn. Moving to (10, 13) gets the ship closer to the enemies at (7,6), (9,6), and (10,7) without crossing any waves.]}
+2026-02-11 15:35:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Flags;True;False;False
+2026-02-11 15:35:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];MOVE {10, 13}
+2026-02-11 15:35:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Finish turn
+2026-02-11 15:35:32;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Start turn;5,5
+2026-02-11 15:35:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];PRPT Prompt_4;4303
+2026-02-11 15:35:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];TIME {"request":5609}
+2026-02-11 15:35:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];DATA {"attempts":1}
+2026-02-11 15:35:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];RESN {"reasoning":Move to (8,8) to position for attacking Red ship at (7,12). From (8,8), enemy at (10,10) will be in range (distance 4 diagonal = 2 Manhattan). Attack (10,10) immediately after moving.]}
+2026-02-11 15:35:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Flags;True;True;False
+2026-02-11 15:35:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];MOVE {8, 8}
+2026-02-11 15:35:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Cannot reach target at GridTile(Clone) (10, 10).
+2026-02-11 15:35:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Finish turn
+2026-02-11 15:35:40;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Start turn;5,5
+2026-02-11 15:35:41;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];PRPT Prompt_4;4299
+2026-02-11 15:36:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TIME {"request":18658}
+2026-02-11 15:36:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];DATA {"attempts":1}
+2026-02-11 15:36:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];RESN {"reasoning":Move to (8,11) to bring the wave tile (10,11) into attack range. Attacking the ~^ wave at (10,11) will propagate the wave downwards (decreasing Y) and hit the enemy ship at (10,7). This leverages wave mechanics for an extended attack.]}
+2026-02-11 15:36:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Flags;True;True;False
+2026-02-11 15:36:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];MOVE {8, 11}
+2026-02-11 15:36:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];ATTK {10, 11}
+2026-02-11 15:36:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TRGT WAVE
+2026-02-11 15:36:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-11 15:36:03;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Finish turn
+2026-02-11 15:36:03;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Start turn;5,5
+2026-02-11 15:36:04;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];PRPT Prompt_4;4328
+2026-02-11 15:36:10;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];TIME {"request":5912}
+2026-02-11 15:36:10;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];DATA {"attempts":1}
+2026-02-11 15:36:10;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];RESN {"reasoning":Move to (9,8) to position near wave at (9,7). From (9,8), enemies at (10,10) and (8,11) will be in attack range (2 tiles away, outside offset of 1). Attack (10,10) immediately after moving.]}
+2026-02-11 15:36:10;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Flags;True;True;False
+2026-02-11 15:36:10;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];MOVE {9, 8}
+2026-02-11 15:36:12;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Cannot reach target at GridTile(Clone) (10, 10).
+2026-02-11 15:36:12;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Finish turn
+2026-02-11 15:36:12;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Start turn;5,5
+2026-02-11 15:36:13;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];PRPT Prompt_4;4282
+2026-02-11 15:36:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];TIME {"request":17115}
+2026-02-11 15:36:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];DATA {"attempts":1}
+2026-02-11 15:36:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];RESN {"reasoning":Move to (9,8) to bring three enemy ships into attack range, then attack the closest enemy at (8,8).]}
+2026-02-11 15:36:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Flags;True;True;False
+2026-02-11 15:36:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];MOVE {9, 8}
+2026-02-11 15:36:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Cannot reach target at GridTile(Clone) (8, 8).
+2026-02-11 15:36:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Finish turn
+2026-02-11 15:36:32;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Start turn;5,5
+2026-02-11 15:36:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];PRPT Prompt_4;4352
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TIME {"request":8369}
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"attempts":1}
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];RESN {"reasoning":Direct attack on enemy at (9,8) from current position. No movement needed as target is within range (distance 2, outside offset 1). After attack, move to (10,8) to maintain pressure and prepare for next engagement.]}
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Flags;False;True;False
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];ATTK {9, 8}
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TRGT LLM {ENEMY}
+2026-02-11 15:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Attacked succeeded at GridTile(Clone) (9, 8). Kill count = 0.
+2026-02-11 15:36:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Finish turn
+2026-02-11 15:36:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Start turn;5,5
+2026-02-11 15:36:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];PRPT Prompt_4;4350
+2026-02-11 15:37:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TIME {"request":16919}
+2026-02-11 15:37:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"attempts":1}
+2026-02-11 15:37:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];RESN {"reasoning":Move closer to the enemy, then use a wave-extended attack to hit an enemy ship, and finally reposition to maintain pressure on remaining enemies.]}
+2026-02-11 15:37:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Flags;True;True;False
+2026-02-11 15:37:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];MOVE {10, 12}
+2026-02-11 15:37:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-11 15:37:02;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Finish turn
+2026-02-11 15:37:02;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Start turn;5,5
+2026-02-11 15:37:03;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];PRPT Prompt_4;4288
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];TIME {"request":4609}
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];DATA {"attempts":1}
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];RESN {"reasoning":Attack low-health enemy at (9,8) via wave extension through (9,7). Enemy is 1 tile away, within offset+range. After attack, move to (8,9) to maintain central position and prepare for next engagement.]}
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Flags;False;True;False
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];ATTK {9, 7}
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];TRGT WAVE
+2026-02-11 15:37:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Attacked succeeded at GridTile(Clone) (9, 7). Kill count = 0.
+2026-02-11 15:37:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Finish turn
+2026-02-11 15:37:09;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Start turn;5,5
+2026-02-11 15:37:10;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];PRPT Prompt_4;4288
+2026-02-11 15:37:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TIME {"request":12286}
+2026-02-11 15:37:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];DATA {"attempts":1}
+2026-02-11 15:37:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];RESN {"reasoning":Move south to bring an enemy ship into direct attack range, then attack that ship.]}
+2026-02-11 15:37:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Flags;True;True;False
+2026-02-11 15:37:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];MOVE {8, 10}
+2026-02-11 15:37:23;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];ATTK {8, 8}
+2026-02-11 15:37:23;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TRGT LLM {ENEMY}
+2026-02-11 15:37:23;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Attacked succeeded at GridTile(Clone) (8, 8). Kill count = 0.
+2026-02-11 15:37:25;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Finish turn
+2026-02-11 15:37:25;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Start turn;5,5
+2026-02-11 15:37:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];PRPT Prompt_4;4358
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];TIME {"request":4516}
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];DATA {"attempts":1}
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];RESN {"reasoning":Direct attack on weakened enemy at (9,8) with health 8. No movement needed as target is already in range (distance 2, within offset 1-2). After attack, move to (8,7) to maintain tactical position and avoid wave at (9,7).]}
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Flags;False;True;False
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];ATTK {9, 8}
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];TRGT LLM {ENEMY}
+2026-02-11 15:37:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Attacked succeeded at GridTile(Clone) (9, 8). Kill count = 0.
+2026-02-11 15:37:32;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Finish turn
+2026-02-11 15:37:32;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Start turn;5,5
+2026-02-11 15:37:33;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];PRPT Prompt_4;4335
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];TIME {"request":19128}
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];DATA {"attempts":1}
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];RESN {"reasoning":Prioritizing destruction of a low-health enemy. Attacking (9,6) which is at MD=2. After attack, moving to (8,9) to get closer to the other 8-health enemy at (8,8) for a potential MD=1 attack next turn (if rules allow MD=1) or to position for a MD=2 attack.]}
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Flags;False;True;False
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];ATTK {9, 6}
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];TRGT LLM {ENEMY}
+2026-02-11 15:37:52;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Attacked succeeded at GridTile(Clone) (9, 6). Kill count = 0.
+2026-02-11 15:37:53;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Finish turn
+2026-02-11 15:37:53;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Start turn;5,5
+2026-02-11 15:37:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];PRPT Prompt_4;4376
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TIME {"request":4410}
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"attempts":1}
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];RESN {"reasoning":Attack low-health enemy at (9,8) immediately - guaranteed kill. No movement needed as target is in range (distance 1.4, within offset 1-range 2). Move after attack to (10,8) to maintain pressure on remaining enemies.]}
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Flags;False;True;False
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];ATTK {9, 8}
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TRGT LLM {ENEMY}
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];INFO Destroyed
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|1];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":3,"internalMovementAttemptCount":2,"internalAttackAttemptCount":2,"internalFaultyMessageCount":0,"averageRequestTime":18399,"averageRequestTimeCount":3,"maxRequestTime":19128,"minRequest":17115,"averageAttempts":1,"kills":0}
+2026-02-11 15:37:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Attacked succeeded at GridTile(Clone) (9, 8). Kill count = 1.
+2026-02-11 15:38:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Finish turn
+2026-02-11 15:38:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Start turn;5,5
+2026-02-11 15:38:01;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];PRPT Prompt_4;4342
+2026-02-11 15:38:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TIME {"request":17834}
+2026-02-11 15:38:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"attempts":1}
+2026-02-11 15:38:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];RESN {"reasoning":Move to (9, 10) to enable a wave-extended attack on enemy (10, 7) via the ~^ wave at (10, 11). This is the most effective attack possible this turn, as the lowest health enemy is out of range.]}
+2026-02-11 15:38:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Flags;True;True;False
+2026-02-11 15:38:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];MOVE {9, 10}
+2026-02-11 15:38:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];ATTK {10, 11}
+2026-02-11 15:38:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TRGT WAVE
+2026-02-11 15:38:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-11 15:38:23;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Finish turn
+2026-02-11 15:38:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Start turn;5,5
+2026-02-11 15:38:24;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];PRPT Prompt_4;4281
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];TIME {"request":3519}
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];DATA {"attempts":1}
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];RESN {"reasoning":Attack Red enemy at (8,10) immediately - it's in range. Then move to (9,9) to position for attacking second Red enemy at (9,10) next turn.]}
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Flags;False;True;False
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];ATTK {8, 10}
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];TRGT LLM {ENEMY}
+2026-02-11 15:38:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Attacked succeeded at GridTile(Clone) (8, 10). Kill count = 0.
+2026-02-11 15:38:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Finish turn
+2026-02-11 15:38:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Start turn;5,5
+2026-02-11 15:38:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];PRPT Prompt_4;4333
+2026-02-11 15:38:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TIME {"request":13857}
+2026-02-11 15:38:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];DATA {"attempts":1}
+2026-02-11 15:38:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];RESN {"reasoning":Move to a position that brings the lowest health enemy ship (health 1) into attack range, then attack to eliminate it. This prioritizes destroying an enemy ship.]}
+2026-02-11 15:38:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Flags;True;True;False
+2026-02-11 15:38:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];MOVE {9, 8}
+2026-02-11 15:38:46;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];ATTK {9, 6}
+2026-02-11 15:38:46;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TRGT LLM {ENEMY}
+2026-02-11 15:38:46;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];INFO Destroyed
+2026-02-11 15:38:46;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|5];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":3,"internalMovementAttemptCount":2,"internalAttackAttemptCount":3,"internalFaultyMessageCount":0,"averageRequestTime":7529.667,"averageRequestTimeCount":3,"maxRequestTime":12161,"minRequest":4516,"averageAttempts":1,"kills":0}
+2026-02-11 15:38:46;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Attacked succeeded at GridTile(Clone) (9, 6). Kill count = 1.
+2026-02-11 15:38:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Finish turn
+2026-02-11 15:38:47;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Start turn;5,5
+2026-02-11 15:38:48;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];PRPT Prompt_4;4291
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TIME {"request":9428}
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"attempts":1}
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];RESN {"reasoning":Direct attack on low-health enemy at (9,8) to eliminate threat. No movement needed as target is in range (offset 1, range 2). After attack, move to (11,8) to maintain distance from remaining enemy at (9,10).]}
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Flags;False;True;False
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];ATTK {9, 8}
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TRGT LLM {ENEMY}
+2026-02-11 15:38:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Attacked succeeded at GridTile(Clone) (9, 8). Kill count = 0.
+2026-02-11 15:38:59;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Finish turn
+2026-02-11 15:38:59;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Start turn;5,5
+2026-02-11 15:39:00;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];PRPT Prompt_4;4303
+2026-02-11 15:39:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TIME {"request":18961}
+2026-02-11 15:39:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"attempts":1}
+2026-02-11 15:39:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];RESN {"reasoning":Move to (10,8) to bring both enemies into range. Prioritize attacking the lower-health enemy at (8,8) to secure a destruction.]}
+2026-02-11 15:39:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Flags;True;True;False
+2026-02-11 15:39:19;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];MOVE {10, 8}
+2026-02-11 15:39:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];ATTK {8, 8}
+2026-02-11 15:39:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TRGT LLM {ENEMY}
+2026-02-11 15:39:21;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Attacked succeeded at GridTile(Clone) (8, 8). Kill count = 0.
+2026-02-11 15:39:23;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Finish turn
+2026-02-11 15:39:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Start turn;5,5
+2026-02-11 15:39:24;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];PRPT Prompt_4;4306
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];TIME {"request":3791}
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];DATA {"attempts":1}
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];RESN {"reasoning":Direct attack on low-health enemy at (9,8) to eliminate threat, then attack high-value enemy at (10,8). No movement needed as both targets are in range.]}
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Flags;False;True;False
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Cannot reach target at GridTile(Clone) (9, 8).
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Finish turn
+2026-02-11 15:39:28;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Start turn;5,5
+2026-02-11 15:39:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];PRPT Prompt_4;4230
+2026-02-11 15:39:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TIME {"request":18336}
+2026-02-11 15:39:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];DATA {"attempts":1}
+2026-02-11 15:39:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];RESN {"reasoning":Prioritize eliminating the low-health enemy. Move to a position that allows attacking the 1-health enemy, then reposition to a safer distance from the remaining enemy.]}
+2026-02-11 15:39:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Flags;True;True;False
+2026-02-11 15:39:47;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];MOVE {9, 9}
+2026-02-11 15:39:48;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];ATTK {8, 8}
+2026-02-11 15:39:48;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TRGT LLM {ENEMY}
+2026-02-11 15:39:48;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];INFO Destroyed
+2026-02-11 15:39:48;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":4,"internalMovementAttemptCount":1,"internalAttackAttemptCount":4,"internalFaultyMessageCount":0,"averageRequestTime":4382,"averageRequestTimeCount":4,"maxRequestTime":5609,"minRequest":3519,"averageAttempts":1,"kills":0}
+2026-02-11 15:39:48;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Attacked succeeded at GridTile(Clone) (8, 8). Kill count = 1.
+2026-02-11 15:39:50;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Finish turn
+2026-02-11 15:39:50;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Start turn;5,5
+2026-02-11 15:39:51;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];PRPT Prompt_4;4226
+2026-02-11 15:39:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TIME {"request":3010}
+2026-02-11 15:39:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"attempts":1}
+2026-02-11 15:39:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];RESN {"reasoning":Move to (9,8) to bring both enemies into attack range. Priority target is low-health enemy at (9,9) for quick elimination.]}
+2026-02-11 15:39:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Flags;True;True;False
+2026-02-11 15:39:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];MOVE {9, 8}
+2026-02-11 15:39:55;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Cannot reach target at GridTile(Clone) (9, 9).
+2026-02-11 15:39:55;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Finish turn
+2026-02-11 15:39:55;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Start turn;5,5
+2026-02-11 15:39:56;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];PRPT Prompt_4;4251
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TIME {"request":9404}
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"attempts":1}
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];RESN {"reasoning":Leveraging a wave tile to extend attack range and hit the enemy ship. No movement is necessary as the target is within wave-extended range.]}
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Flags;False;True;False
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];ATTK {9, 7}
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TRGT WAVE
+2026-02-11 15:40:06;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Attacked succeeded at GridTile(Clone) (9, 7). Kill count = 0.
+2026-02-11 15:40:07;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Finish turn
+2026-02-11 15:40:07;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Start turn;5,5
+2026-02-11 15:40:08;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];PRPT Prompt_4;4264
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TIME {"request":13708}
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];DATA {"attempts":1}
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];RESN {"reasoning":Wave-extended attack on enemy ship at (9,6) by targeting wave (9,7). Then, reposition to (9,12) to increase distance from the enemy due to low health.]}
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Flags;False;True;False
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];ATTK {9, 7}
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];TRGT WAVE
+2026-02-11 15:40:22;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Attacked succeeded at GridTile(Clone) (9, 7). Kill count = 0.
+2026-02-11 15:40:23;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];INFO Finish turn
+2026-02-11 15:40:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Start turn;5,5
+2026-02-11 15:40:24;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];PRPT Prompt_4;4254
+2026-02-11 15:40:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];TIME {"request":2988}
+2026-02-11 15:40:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"attempts":1}
+2026-02-11 15:40:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];RESN {"reasoning":Move to (10,7) to get low-health enemy at (9,9) into attack range (distance 2), then attack to eliminate it immediately.]}
+2026-02-11 15:40:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Flags;True;True;False
+2026-02-11 15:40:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];MOVE {10, 7}
+2026-02-11 15:40:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Cannot reach target at GridTile(Clone) (9, 9).
+2026-02-11 15:40:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Finish turn
+2026-02-11 15:40:29;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Start turn;5,5
+2026-02-11 15:40:30;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];PRPT Prompt_4;4241
+2026-02-11 15:40:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TIME {"request":12883}
+2026-02-11 15:40:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"attempts":1}
+2026-02-11 15:40:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];RESN {"reasoning":Move to (10,9) to bring the low-health enemy at (10,7) into direct attack range (Manhattan distance 2) and destroy it.]}
+2026-02-11 15:40:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Flags;True;True;False
+2026-02-11 15:40:43;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];MOVE {10, 9}
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];ATTK {10, 7}
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];TRGT LLM {ENEMY}
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];INFO Destroyed
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":6,"internalMovementAttemptCount":3,"internalAttackAttemptCount":5,"internalFaultyMessageCount":0,"averageRequestTime":5710.333,"averageRequestTimeCount":6,"maxRequestTime":9428,"minRequest":2988,"averageAttempts":1,"kills":0}
+2026-02-11 15:40:44;[SYSTEM];[LevelGoal];INFO Faction Red won.
+2026-02-11 15:40:44;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|2];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":0,"internalTotalRequestCount":5,"internalMovementAttemptCount":4,"internalAttackAttemptCount":5,"internalFaultyMessageCount":0,"averageRequestTime":15369,"averageRequestTimeCount":5,"maxRequestTime":18658,"minRequest":12286,"averageAttempts":1,"kills":0}
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Green|3];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":6,"internalMovementAttemptCount":3,"internalAttackAttemptCount":5,"internalFaultyMessageCount":0,"averageRequestTime":5710.333,"averageRequestTimeCount":6,"maxRequestTime":9428,"minRequest":2988,"averageAttempts":1,"kills":0}
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":6,"internalMovementAttemptCount":5,"internalAttackAttemptCount":5,"internalFaultyMessageCount":0,"averageRequestTime":15533.17,"averageRequestTimeCount":6,"maxRequestTime":18961,"minRequest":9404,"averageAttempts":1,"kills":0}
+2026-02-11 15:40:44;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-11 15:40:44;[SYSTEM];[LevelGoal];INFO LLM Gemini|gemini-2.5-flash won.
+2026-02-11 15:40:44;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Attacked succeeded at GridTile(Clone) (10, 7). Kill count = 1.
+2026-02-11 15:40:45;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash|Red|4];INFO Finish turn
