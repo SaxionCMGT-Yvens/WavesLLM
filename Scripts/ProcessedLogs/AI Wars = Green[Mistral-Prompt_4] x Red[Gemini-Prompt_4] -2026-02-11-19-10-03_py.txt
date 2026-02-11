@@ -1,0 +1,59 @@
+General Information
+========================================
+Initial time = [2026-02-11 19:10:03]
+Last time = [2026-02-11 19:21:05]
+Total time: 11:2
+RED gemini-2.5-flash x GREEN magistral-small-2509
+INFO Faction Red won.
+INFO LLM Gemini|gemini-2.5-flash won.
+========================================
+Number of movements = 20
+Number of green movements = 9
+Number of red movements = 11
+Movement ratio = 0.55/0.45
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = magistral-small-2509
+Average magistral-small-2509 prompt = 4304.86
+Average magistral-small-2509 request = 18171.00 (18 requests)
+Max magistral-small-2509 request = 24939.00
+Min magistral-small-2509 request = 9741.00
+Average magistral-small-2509 attempts = 1.2857142857142858 (14)
+Failed Movement from magistral-small-2509 = 1 (9)
+Total of magistral-small-2509 failed movements = 1 / 9 (11.11%)
+Total of magistral-small-2509 failed movements [from agents] = 0.0 / 9.0 (0.00%)
+Total of attack attempts from magistral-small-2509 = 7
+Total of attack attempts from magistral-small-2509 [from agents] = 8.0
+Total of success attack attempts from magistral-small-2509  = 7 (100.00%)
+Total of successful attack attempts from magistral-small-2509 [from agents] = 7.0 (87.50%)
+Total of failed attack attempts from magistral-small-2509 [from agents] = 1.0 (12.50%)
+Total of faulty messages magistral-small-2509 = 4.0
+Enemies targeted by magistral-small-2509 = 6.00
+Allies targeted by magistral-small-2509 = 0.00
+Targets targeted by magistral-small-2509 = 0.00
+Waves targeted by magistral-small-2509 = 1.00
+========================================
+Faction = |Red| Model = gemini-2.5-flash
+Average gemini-2.5-flash prompt = 4305.73
+Average gemini-2.5-flash request = 14953.80 (15 requests)
+Max gemini-2.5-flash request = 18028.00
+Min gemini-2.5-flash request = 8548.00
+Average gemini-2.5-flash attempts = 1.0 (15)
+Failed Movement from gemini-2.5-flash = 3 (11)
+Total of gemini-2.5-flash failed movements = 3 / 11 (27.27%)
+Total of gemini-2.5-flash failed movements [from agents] = 0.0 / 11.0 (0.00%)
+Total of attack attempts from gemini-2.5-flash = 11
+Total of attack attempts from gemini-2.5-flash [from agents] = 14.0
+Total of success attack attempts from gemini-2.5-flash  = 11 (100.00%)
+Total of successful attack attempts from gemini-2.5-flash [from agents] = 11.0 (78.57%)
+Total of failed attack attempts from gemini-2.5-flash [from agents] = 3.0 (21.43%)
+Total of faulty messages gemini-2.5-flash = 0.0
+Enemies targeted by gemini-2.5-flash = 8.00
+Allies targeted by gemini-2.5-flash = 0.00
+Targets targeted by gemini-2.5-flash = 0.00
+Waves targeted by gemini-2.5-flash = 3.00
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;
+ProcessLogs/AI Wars = Green[Mistral-Prompt_4] x Red[Gemini-Prompt_4] -2026-02-11-19-10-03.log;2026-02-11 19:10:03;662.0;RED gemini-2.5-flash;GREEN magistral-small-2509;INFO Faction Red won.-INFO LLM Gemini|gemini-2.5-flash won.;20;0.55/0.45;Faction = |Green; Model = magistral-small-2509;4304.86;18171.00;24939.00;9741.00;1.29;9.00;1.00;8.00;11.11;9.00;0.00;9.00;0.00;100.00;7.00;8.00;7.00;100.00;0.00;1.00;7.00;8.00;87.50;12.50;4.00;6.00;0.00;0.00;1.00;Faction = |Red; Model = gemini-2.5-flash;4305.73;14953.80;18028.00;8548.00;1.00;11.00;3.00;8.00;27.27;11.00;0.00;11.00;0.00;100.00;11.00;14.00;11.00;100.00;0.00;3.00;11.00;14.00;78.57;21.43;0.00;8.00;0.00;0.00;3.00
