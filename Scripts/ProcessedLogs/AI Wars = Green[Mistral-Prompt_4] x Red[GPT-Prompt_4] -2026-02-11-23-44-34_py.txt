@@ -1,0 +1,59 @@
+General Information
+========================================
+Initial time = [2026-02-11 23:44:34]
+Last time = [2026-02-11 23:55:10]
+Total time: 10:36
+RED o4-mini x GREEN ministral-3b-2512
+INFO Faction Green won.
+INFO LLM Mistral|ministral-3b-2512 won.
+========================================
+Number of movements = 37
+Number of green movements = 21
+Number of red movements = 16
+Movement ratio = 0.57/0.43
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = ministral-3b-2512
+Average ministral-3b-2512 prompt = 4286.33
+Average ministral-3b-2512 request = 847.96 (27 requests)
+Max ministral-3b-2512 request = 3703.00
+Min ministral-3b-2512 request = 456.00
+Average ministral-3b-2512 attempts = 1.0 (27)
+Failed Movement from ministral-3b-2512 = 19 (21)
+Total of ministral-3b-2512 failed movements = 19 / 21 (90.48%)
+Total of ministral-3b-2512 failed movements [from agents] = 6.0 / 21.0 (28.57%)
+Total of attack attempts from ministral-3b-2512 = 7
+Total of attack attempts from ministral-3b-2512 [from agents] = 26.0
+Total of success attack attempts from ministral-3b-2512  = 7 (100.00%)
+Total of successful attack attempts from ministral-3b-2512 [from agents] = 7.0 (26.92%)
+Total of failed attack attempts from ministral-3b-2512 [from agents] = 19.0 (73.08%)
+Total of faulty messages ministral-3b-2512 = 0.0
+Enemies targeted by ministral-3b-2512 = 6.00
+Allies targeted by ministral-3b-2512 = 0.00
+Targets targeted by ministral-3b-2512 = 1.00
+Waves targeted by ministral-3b-2512 = 0.00
+========================================
+Faction = |Red| Model = o4-mini
+Average o4-mini prompt = 4286.58
+Average o4-mini request = 20110.58 (24 requests)
+Max o4-mini request = 37983.00
+Min o4-mini request = 7275.00
+Average o4-mini attempts = 1.0 (24)
+Failed Movement from o4-mini = 2 (16)
+Total of o4-mini failed movements = 2 / 16 (12.50%)
+Total of o4-mini failed movements [from agents] = 0.0 / 16.0 (0.00%)
+Total of attack attempts from o4-mini = 13
+Total of attack attempts from o4-mini [from agents] = 15.0
+Total of success attack attempts from o4-mini  = 13 (100.00%)
+Total of successful attack attempts from o4-mini [from agents] = 13.0 (86.67%)
+Total of failed attack attempts from o4-mini [from agents] = 2.0 (13.33%)
+Total of faulty messages o4-mini = 0.0
+Enemies targeted by o4-mini = 8.00
+Allies targeted by o4-mini = 0.00
+Targets targeted by o4-mini = 0.00
+Waves targeted by o4-mini = 5.00
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;
+ProcessLogs/AI Wars = Green[Mistral-Prompt_4] x Red[GPT-Prompt_4] -2026-02-11-23-44-34.log;2026-02-11 23:44:34;636.0;RED o4-mini;GREEN ministral-3b-2512;INFO Faction Green won.-INFO LLM Mistral|ministral-3b-2512 won.;37;0.57/0.43;Faction = |Green; Model = ministral-3b-2512;4286.33;847.96;3703.00;456.00;1.00;21.00;19.00;2.00;90.48;21.00;6.00;15.00;28.57;71.43;7.00;26.00;7.00;100.00;0.00;19.00;7.00;26.00;26.92;73.08;0.00;6.00;0.00;1.00;0.00;Faction = |Red; Model = o4-mini;4286.58;20110.58;37983.00;7275.00;1.00;16.00;2.00;14.00;12.50;16.00;0.00;16.00;0.00;100.00;13.00;15.00;13.00;100.00;0.00;2.00;13.00;15.00;86.67;13.33;0.00;8.00;0.00;0.00;5.00

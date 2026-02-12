@@ -1,0 +1,59 @@
+General Information
+========================================
+Initial time = [2026-02-12 00:04:00]
+Last time = [2026-02-12 00:06:51]
+Total time: 2:51
+RED claude-haiku-4-5-20251001 x GREEN ministral-3b-2512
+INFO Faction Red won.
+INFO LLM Claude|claude-haiku-4-5-20251001 won.
+========================================
+Number of movements = 28
+Number of green movements = 17
+Number of red movements = 11
+Movement ratio = 0.61/0.39
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = ministral-3b-2512
+Average ministral-3b-2512 prompt = 4323.10
+Average ministral-3b-2512 request = 678.65 (20 requests)
+Max ministral-3b-2512 request = 1304.00
+Min ministral-3b-2512 request = 492.00
+Average ministral-3b-2512 attempts = 1.0 (20)
+Failed Movement from ministral-3b-2512 = 13 (17)
+Total of ministral-3b-2512 failed movements = 13 / 17 (76.47%)
+Total of ministral-3b-2512 failed movements [from agents] = 4.0 / 17.0 (23.53%)
+Total of attack attempts from ministral-3b-2512 = 5
+Total of attack attempts from ministral-3b-2512 [from agents] = 18.0
+Total of success attack attempts from ministral-3b-2512  = 5 (100.00%)
+Total of successful attack attempts from ministral-3b-2512 [from agents] = 5.0 (27.78%)
+Total of failed attack attempts from ministral-3b-2512 [from agents] = 13.0 (72.22%)
+Total of faulty messages ministral-3b-2512 = 0.0
+Enemies targeted by ministral-3b-2512 = 3.00
+Allies targeted by ministral-3b-2512 = 2.00
+Targets targeted by ministral-3b-2512 = 0.00
+Waves targeted by ministral-3b-2512 = 0.00
+========================================
+Faction = |Red| Model = claude-haiku-4-5-20251001
+Average claude-haiku-4-5-20251001 prompt = 4318.75
+Average claude-haiku-4-5-20251001 request = 2227.46 (24 requests)
+Max claude-haiku-4-5-20251001 request = 7418.00
+Min claude-haiku-4-5-20251001 request = 1310.00
+Average claude-haiku-4-5-20251001 attempts = 1.0 (24)
+Failed Movement from claude-haiku-4-5-20251001 = 5 (11)
+Total of claude-haiku-4-5-20251001 failed movements = 5 / 11 (45.45%)
+Total of claude-haiku-4-5-20251001 failed movements [from agents] = 0.0 / 11.0 (0.00%)
+Total of attack attempts from claude-haiku-4-5-20251001 = 11
+Total of attack attempts from claude-haiku-4-5-20251001 [from agents] = 16.0
+Total of success attack attempts from claude-haiku-4-5-20251001  = 11 (100.00%)
+Total of successful attack attempts from claude-haiku-4-5-20251001 [from agents] = 11.0 (68.75%)
+Total of failed attack attempts from claude-haiku-4-5-20251001 [from agents] = 5.0 (31.25%)
+Total of faulty messages claude-haiku-4-5-20251001 = 0.0
+Enemies targeted by claude-haiku-4-5-20251001 = 7.00
+Allies targeted by claude-haiku-4-5-20251001 = 0.00
+Targets targeted by claude-haiku-4-5-20251001 = 0.00
+Waves targeted by claude-haiku-4-5-20251001 = 4.00
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;
+ProcessLogs/AI Wars = Green[Mistral-Prompt_4] x Red[Claude-Prompt_4] -2026-02-12-00-04-00.log;2026-02-12 00:04:00;171.0;RED claude-haiku-4-5-20251001;GREEN ministral-3b-2512;INFO Faction Red won.-INFO LLM Claude|claude-haiku-4-5-20251001 won.;28;0.61/0.39;Faction = |Green; Model = ministral-3b-2512;4323.10;678.65;1304.00;492.00;1.00;17.00;13.00;4.00;76.47;17.00;4.00;13.00;23.53;76.47;5.00;18.00;5.00;100.00;0.00;13.00;5.00;18.00;27.78;72.22;0.00;3.00;2.00;0.00;0.00;Faction = |Red; Model = claude-haiku-4-5-20251001;4318.75;2227.46;7418.00;1310.00;1.00;11.00;5.00;6.00;45.45;11.00;0.00;11.00;0.00;100.00;11.00;16.00;11.00;100.00;0.00;5.00;11.00;16.00;68.75;31.25;0.00;7.00;0.00;0.00;4.00

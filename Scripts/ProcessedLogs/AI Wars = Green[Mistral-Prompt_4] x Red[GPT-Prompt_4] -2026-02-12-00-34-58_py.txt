@@ -1,0 +1,59 @@
+General Information
+========================================
+Initial time = [2026-02-12 00:34:58]
+Last time = [2026-02-12 00:37:39]
+Total time: 2:41
+RED gpt-4.1-mini x GREEN ministral-3b-2512
+INFO Faction Red won.
+INFO LLM GPT|gpt-4.1-mini won.
+========================================
+Number of movements = 27
+Number of green movements = 18
+Number of red movements = 9
+Movement ratio = 0.67/0.33
+========================================
+General Information per Faction
+========================================
+Faction = |Green| Model = ministral-3b-2512
+Average ministral-3b-2512 prompt = 4298.94
+Average ministral-3b-2512 request = 949.22 (18 requests)
+Max ministral-3b-2512 request = 3148.00
+Min ministral-3b-2512 request = 489.00
+Average ministral-3b-2512 attempts = 1.0 (18)
+Failed Movement from ministral-3b-2512 = 12 (18)
+Total of ministral-3b-2512 failed movements = 12 / 18 (66.67%)
+Total of ministral-3b-2512 failed movements [from agents] = 2.0 / 18.0 (11.11%)
+Total of attack attempts from ministral-3b-2512 = 1
+Total of attack attempts from ministral-3b-2512 [from agents] = 13.0
+Total of success attack attempts from ministral-3b-2512  = 1 (100.00%)
+Total of successful attack attempts from ministral-3b-2512 [from agents] = 1.0 (7.69%)
+Total of failed attack attempts from ministral-3b-2512 [from agents] = 12.0 (92.31%)
+Total of faulty messages ministral-3b-2512 = 0.0
+Enemies targeted by ministral-3b-2512 = 1.00
+Allies targeted by ministral-3b-2512 = 0.00
+Targets targeted by ministral-3b-2512 = 0.00
+Waves targeted by ministral-3b-2512 = 0.00
+========================================
+Faction = |Red| Model = gpt-4.1-mini
+Average gpt-4.1-mini prompt = 4264.96
+Average gpt-4.1-mini request = 1598.50 (24 requests)
+Max gpt-4.1-mini request = 2488.00
+Min gpt-4.1-mini request = 1062.00
+Average gpt-4.1-mini attempts = 1.0 (24)
+Failed Movement from gpt-4.1-mini = 1 (9)
+Total of gpt-4.1-mini failed movements = 1 / 9 (11.11%)
+Total of gpt-4.1-mini failed movements [from agents] = 0.0 / 9.0 (0.00%)
+Total of attack attempts from gpt-4.1-mini = 17
+Total of attack attempts from gpt-4.1-mini [from agents] = 18.0
+Total of success attack attempts from gpt-4.1-mini  = 17 (100.00%)
+Total of successful attack attempts from gpt-4.1-mini [from agents] = 17.0 (94.44%)
+Total of failed attack attempts from gpt-4.1-mini [from agents] = 1.0 (5.56%)
+Total of faulty messages gpt-4.1-mini = 0.0
+Enemies targeted by gpt-4.1-mini = 0.00
+Allies targeted by gpt-4.1-mini = 0.00
+Targets targeted by gpt-4.1-mini = 0.00
+Waves targeted by gpt-4.1-mini = 17.00
+CSV line
+========================================
+filename; initial time; seconds; RED model; GREEN model; win/draw; total moves; move ratio;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;faction; model; avg_prompt; avg_req; max_req; min_req; avg_attempts; move_attempts; failed_moves; success_moves;% failed moves; total_internal_moves; total_internal_wrong_moves; total_internal_success_moves; %internal_failed_moves; %internal_success_moves;attack_attempts; attack_internal_attempts; success_attack_attempts; %success_attempts; %failed_attempts;total_internal_wrong_attacks; total_internal_success_attack; total_attacks; %success_attacks; %failed_attacks; %faulty_messages; enemy_targets; ally_targets; target_targets; target_waves;
+ProcessLogs/AI Wars = Green[Mistral-Prompt_4] x Red[GPT-Prompt_4] -2026-02-12-00-34-58.log;2026-02-12 00:34:58;161.0;RED gpt-4.1-mini;GREEN ministral-3b-2512;INFO Faction Red won.-INFO LLM GPT|gpt-4.1-mini won.;27;0.67/0.33;Faction = |Green; Model = ministral-3b-2512;4298.94;949.22;3148.00;489.00;1.00;18.00;12.00;6.00;66.67;18.00;2.00;16.00;11.11;88.89;1.00;13.00;1.00;100.00;0.00;12.00;1.00;13.00;7.69;92.31;0.00;1.00;0.00;0.00;0.00;Faction = |Red; Model = gpt-4.1-mini;4264.96;1598.50;2488.00;1062.00;1.00;9.00;1.00;8.00;11.11;9.00;0.00;9.00;0.00;100.00;17.00;18.00;17.00;100.00;0.00;1.00;17.00;18.00;94.44;5.56;0.00;0.00;0.00;0.00;17.00
