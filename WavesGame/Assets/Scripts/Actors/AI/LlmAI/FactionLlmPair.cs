@@ -11,6 +11,7 @@ namespace Actors.AI.LlmAI
     public class FactionLlmPair : Pair<AIFaction, LlmModelPairSo>
     {
         [SerializeField, ReadOnly] private LlmCallerObject caller;
+        [SerializeField] private bool matchModel;
 
         public FactionLlmPair(AIFaction one, LlmModelPairSo two) : base(one, two)
         {
@@ -18,7 +19,15 @@ namespace Actors.AI.LlmAI
 
         public void SetCaller(List<LlmCallerObject> callers)
         {
-            caller = callers.Find(call => call.GetLlmType().Equals(Two.modelPair.One));
+            caller = callers.Find(call =>
+            {
+                if (matchModel)
+                {
+                    return call.GetLlmType().Equals(Two.modelPair.One) && call.GetLlmModel().Equals(Two.modelPair.Two);
+                }
+                return call.GetLlmType().Equals(Two.modelPair.One);
+
+            });
             var specificModel = Two.modelPair.Two;
             if (!string.IsNullOrEmpty(specificModel))
             {

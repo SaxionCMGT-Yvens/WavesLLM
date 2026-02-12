@@ -44,7 +44,7 @@ namespace Actors.AI.LlmAI
         public override string ToString()
         {
             var str = "";
-            factionPairs.ForEach(pair => str += pair + "=");
+            factionPairs.ForEach(pair => str += $"{pair}" + "=");
             if (str.Length > 0)
             {
                 str = str[..^1];

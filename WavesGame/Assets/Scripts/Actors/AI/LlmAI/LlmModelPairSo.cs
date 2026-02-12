@@ -6,5 +6,10 @@ namespace Actors.AI.LlmAI
     public class LlmModelPairSo : ScriptableObject
     {
         public LlmModelPair modelPair;
+
+        public override string ToString()
+        {
+            return modelPair.ToString();
+        }
     }
 }
