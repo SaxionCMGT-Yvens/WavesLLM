@@ -45,7 +45,7 @@ namespace Actors
             ActionsLeft = 0;
         }
 
-        protected void SetInitiative(int initiative)
+        public void SetInitiative(int initiative)
         {
             Initiative = initiative;
         }

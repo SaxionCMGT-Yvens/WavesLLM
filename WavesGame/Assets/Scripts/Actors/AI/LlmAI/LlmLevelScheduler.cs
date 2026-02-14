@@ -73,6 +73,22 @@ namespace Actors.AI.LlmAI
                     llmAINavalShip.UpdateName();
                 }
             }
+            
+            var customFactions = currentSchedule.factionPairs.FindAll(pair => pair.Two.modelPair.One == LlmType.Custom);
+            foreach (var customFaction in customFactions)
+            {
+                var faction = customFaction.One;
+                var llmFactionShips = llmActors.FindAll(actor => actor.GetFaction().Equals(faction));
+
+                foreach (var llmFactionShip in llmFactionShips)
+                {
+                    var newAiBaseShip = Instantiate(customFaction.AIBaseShipPrefab, llmFactionShip.transform.position, llmFactionShip.transform.rotation);
+                    //TODO check if this works for the grid
+                    newAiBaseShip.SetUnit(llmFactionShip.GetUnit());
+                    newAiBaseShip.SetInitiative(llmFactionShip.OverrideInitiative);
+                    Destroy(llmFactionShip.gameObject);
+                }
+            }
 
             return true;
         }

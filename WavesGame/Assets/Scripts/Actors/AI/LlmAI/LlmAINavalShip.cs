@@ -44,6 +44,7 @@ namespace Actors.AI.LlmAI
         private List<long> _internalTimers;
         private List<int> _internalAttempts;
 
+
         protected override void Awake()
         {
             base.Awake();
@@ -56,15 +57,22 @@ namespace Actors.AI.LlmAI
             _internalTimers = new List<long>();
             _internalAttempts = new List<int>();
             UpdateName();
-            SetInitiative(overrideInitiative);
+            SetInitiative(OverrideInitiative);
         }
 
         public void UpdateName()
         {
-            var llmName = $"{llmCaller.GetLlmType().ToString()}|{llmCaller.GetLlmModel()}";
-            var factionName = GetFaction().name;
             var internalIDStr = internalID.ToString();
-            name = $"LLMAgent|{llmName}|{factionName}|{internalIDStr}";
+            if (llmCaller == null || llmCaller.GetLlmType() == LlmType.Custom)
+            {
+                name = $"LLMAgent|Utility|{internalIDStr}";
+            }
+            else
+            {
+                var llmName = $"{llmCaller.GetLlmType().ToString()}|{llmCaller.GetLlmModel()}";
+                var factionName = GetFaction().name;
+                name = $"LLMAgent|{llmName}|{factionName}|{internalIDStr}";
+            }
         }
 
         private static bool IsValidLlmAction(Vector2Int action)
@@ -115,7 +123,8 @@ namespace Actors.AI.LlmAI
 
                 if (faultyMessage)
                 {
-                    DebugUtils.DebugLogMsg($"Faulty message! Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
+                    DebugUtils.DebugLogMsg($"Faulty message! Retrying in {breakTime} seconds...",
+                        DebugUtils.DebugType.Error);
                     yield return new WaitForSeconds(breakTime);
                     breakTime *= 1.25f;
                     continue;
@@ -123,14 +132,17 @@ namespace Actors.AI.LlmAI
 
                 _internalTotalRequestCount++;
                 yield return new WaitUntil(() => llmCaller.IsReady());
-                
+
                 var llmGenericResponse = llmCaller.GetResponse();
                 if (!llmGenericResponse.Success || string.IsNullOrEmpty(llmGenericResponse.Response))
                 {
-                    DebugUtils.DebugLogMsg($"No response exception: {llmGenericResponse.Response} Success:{llmGenericResponse.Success}.",
+                    DebugUtils.DebugLogMsg(
+                        $"No response exception: {llmGenericResponse.Response} Success:{llmGenericResponse.Success}.",
                         DebugUtils.DebugType.Error);
                     LevelController.GetSingleton()
-                        .AddInfoLog($"No response exception! {llmGenericResponse.Response} Success:{llmGenericResponse.Success}.", name);
+                        .AddInfoLog(
+                            $"No response exception! {llmGenericResponse.Response} Success:{llmGenericResponse.Success}.",
+                            name);
                     StopTimer(stopwatch);
                     _internalFaultyMessageCount++;
                     DebugUtils.DebugLogMsg($"Retrying in {breakTime} seconds...", DebugUtils.DebugType.Error);
@@ -138,6 +150,7 @@ namespace Actors.AI.LlmAI
                     breakTime *= 1.25f;
                     continue;
                 }
+
                 result = llmGenericResponse.Response;
                 StopTimer(stopwatch);
                 retry = false;
@@ -327,12 +340,14 @@ namespace Actors.AI.LlmAI
 
         public string GetLlmInfo()
         {
-            return $"{llmCaller.GetLlmType().ToString()}-{basePrompt.name}";
+            return llmCaller != null && llmCaller.GetLlmType() != LlmType.Custom ? $"{llmCaller.GetLlmType().ToString()}-{basePrompt.name}" : "Utility";
         }
 
         public void SetCaller(LlmCallerObject caller)
         {
             llmCaller = caller;
         }
+        
+        public int OverrideInitiative => overrideInitiative;
     }
 }

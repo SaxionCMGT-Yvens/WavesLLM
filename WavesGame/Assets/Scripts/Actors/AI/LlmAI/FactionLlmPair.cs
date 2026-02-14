@@ -12,6 +12,9 @@ namespace Actors.AI.LlmAI
     {
         [SerializeField, ReadOnly] private LlmCallerObject caller;
         [SerializeField] private bool matchModel;
+        
+        [Header("For Custom LLM Type and Regular AIs")]
+        [SerializeField] private AIBaseShip aiBaseShipPrefab;
 
         public FactionLlmPair(AIFaction one, LlmModelPairSo two) : base(one, two)
         {
@@ -19,23 +22,26 @@ namespace Actors.AI.LlmAI
 
         public void SetCaller(List<LlmCallerObject> callers)
         {
+            var llmType = Two.modelPair.One;
+            if (llmType == LlmType.Custom) return;
+            var llmModel = Two.modelPair.Two;
             caller = callers.Find(call =>
             {
                 if (matchModel)
                 {
-                    return call.GetLlmType().Equals(Two.modelPair.One) && call.GetLlmModel().Equals(Two.modelPair.Two);
+                    return call.GetLlmType().Equals(llmType) && call.GetLlmModel().Equals(llmModel);
                 }
-                return call.GetLlmType().Equals(Two.modelPair.One);
-
+                return call.GetLlmType().Equals(llmType);
             });
-            var specificModel = Two.modelPair.Two;
-            if (!string.IsNullOrEmpty(specificModel))
+            if (!string.IsNullOrEmpty(llmModel))
             {
-                Caller.LoadModel(specificModel);
+                Caller.LoadModel(llmModel);
             }
         }
 
         public LlmCallerObject Caller => caller;
+
+        public AIBaseShip AIBaseShipPrefab => aiBaseShipPrefab;
 
         public override string ToString()
         {

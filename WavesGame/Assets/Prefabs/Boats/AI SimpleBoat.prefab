@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 711992543574192054}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 2.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -65,8 +65,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 386411791612610567}
   shipData: {fileID: 11400000, guid: 43f494d61b5cd48f28f7a6eff95158d6, type: 2}
   navalCannon: {fileID: 7889225319036759644}
-  genesData: {fileID: 11400000, guid: cee14c0b324364f2ebc98f9725f1de87, type: 2}
   faction: {fileID: 11400000, guid: cfb967da26c2946d89664483c5a76968, type: 2}
+  kills: 0
+  genesData: {fileID: 11400000, guid: cee14c0b324364f2ebc98f9725f1de87, type: 2}
 --- !u!114 &7889225319036759644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +115,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &386411791612610567
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,6 +161,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 1383930265, guid: 2953697ddac6e4f01b58ce0ba10831a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -168,7 +171,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2387021722008431629
 GameObject:
@@ -205,6 +207,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2759963361646680205
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -250,6 +253,7 @@ SpriteRenderer:
   m_SortingLayerID: -1261158079
   m_SortingLayer: 3
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 868371405, guid: d760b04eb1fe245c5b6351ceec5025dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -259,7 +263,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &7240622926782663119
 Animator:

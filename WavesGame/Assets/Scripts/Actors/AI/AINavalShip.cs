@@ -15,6 +15,7 @@ namespace Actors.AI
     public class AINavalShip : AIBaseShip
     {
         [SerializeField] private AIGenesSO genesData;
+        [SerializeField] private int overrideInitiative;
 
         private AIBrain _brain;
         private bool _calculatingAction;
@@ -23,6 +24,12 @@ namespace Actors.AI
         {
             base.Awake();
             _brain = new AIBrain(this, navalCannon.GetCannonSo);
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            UpdateName();
         }
 
         protected override IEnumerator TurnAI()
@@ -67,6 +74,13 @@ namespace Actors.AI
                 var moveTo = AIBrain.GenerateRandomMovement(currentUnit.Index(), stepsAvailable);
                 MoveTo(moveTo, _ => { FinishAITurn(); }, true);
             }
+        }
+
+        private void UpdateName()
+        {
+            var internalIDStr = internalID.ToString();
+            var factionName = GetFaction().name;
+            name = $"LLMAgent|Utility|{factionName}|{internalIDStr}";
         }
 
         public AIGenesSO GetGenesData() => genesData;

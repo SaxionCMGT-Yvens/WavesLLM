@@ -41,7 +41,7 @@ namespace Core
     {
         [Header("Data")] [SerializeField] private List<GridActor> levelActors;
         [SerializeField, ReadOnly] private List<NavalActor> levelNavalActors;
-        private List<LevelActorPair> _levelActionableActor;
+        [SerializeField, ReadOnly]private List<LevelActorPair> levelActionableActor;
         [SerializeField, ReadOnly] private List<ActorTurnUI> actorTurnUIs;
         [SerializeField] private bool initiativeBased = true;
         [SerializeField] private int randomSeed = 6;
@@ -98,10 +98,18 @@ namespace Core
                     ApplicationHelper.QuitApplication();
                     yield break;
                 }
+                
+                //Wait for one more frame to destroy the unused LLM actors replaced by Utility Agent AIs, if any
+                yield return null;
             }
 
+            levelActors = levelActors.FindAll(actor => actor is not null);
+            levelNavalActors  = levelNavalActors.FindAll(levelNavalActor => levelNavalActor is not null);
+            levelActionableActor = levelActionableActor.FindAll(levelActorPair => levelActorPair?.One != null);
+            
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
+            
             levelGoalText.text = levelGoal.GetLevelMessage();
             var logFileName = $"{levelGoal.GetLevelMessage()}-{TimestampHelper.GetSimplifiedTimestamp()}";
             _logger.StartNewLogFile(logFileName);
@@ -109,13 +117,13 @@ namespace Core
             //Roll initiatives and order turns
             if (initiativeBased)
             {
-                _levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
+                levelActionableActor.ForEach(actorPair => actorPair.One.RollInitiative());
             }
 
-            _levelActionableActor.Sort(((pairOne, pairTwo) =>
+            levelActionableActor.Sort(((pairOne, pairTwo) =>
                 pairTwo.One.Initiative.CompareTo(pairOne.One.Initiative)));
 
-            _levelActionableActor.ForEach(actorPair =>
+            levelActionableActor.ForEach(actorPair =>
             {
                 DebugUtils.DebugLogMsg(
                     $"Creating actor UI {actorPair.One.gameObject.name} [{actorPair.One.Initiative}]",
@@ -123,15 +131,15 @@ namespace Core
                 AddLevelActorToTurnBar(actorPair.One);
             });
 
-            var firstActor = _levelActionableActor[0].One;
+            var firstActor = levelActionableActor[0].One;
             CursorController.GetSingleton().MoveToIndex(firstActor.GetUnit().Index());
 
-            AddInfoLog($"Level starts with {_levelActionableActor.Count} actors.", "LevelController");
+            AddInfoLog($"Level starts with {levelActionableActor.Count} actors.", "LevelController");
             var gridDimensions = GridManager.GetSingleton().GetDimensions();
             AddInfoLog($"Grid size is {gridDimensions.x} by {gridDimensions.y}.", "LevelController");
 
             //Start level
-            var enumerator = _levelActionableActor.GetEnumerator();
+            var enumerator = levelActionableActor.GetEnumerator();
             var continueLevel = true;
             var victory = false;
             var gameOver = false;
@@ -188,7 +196,7 @@ namespace Core
                 else
                 {
                     //If there are no more enumerators ahead, then start from the beginning.
-                    enumerator = _levelActionableActor.GetEnumerator();
+                    enumerator = levelActionableActor.GetEnumerator();
                 }
             }
 
@@ -220,9 +228,9 @@ namespace Core
                 case NavalActorType.Enemy:
                     if (navalActor is NavalShip navalShip)
                     {
-                        _levelActionableActor ??= new List<LevelActorPair>();
-                        _levelActionableActor.Add(new LevelActorPair(navalShip));
-                        return _levelActionableActor.Count;
+                        levelActionableActor ??= new List<LevelActorPair>();
+                        levelActionableActor.Add(new LevelActorPair(navalShip));
+                        return levelActionableActor.Count;
                     }
 
                     break;
@@ -265,7 +273,7 @@ namespace Core
             }
 
             //Set the pair as false, so its level should be skipped.
-            var actionPair = _levelActionableActor.Find(pair => pair.One.Equals(navalShip));
+            var actionPair = levelActionableActor.Find(pair => pair.One.Equals(navalShip));
             actionPair.Two = false;
 
             //Remove the naval ship from the list of active naval ships.
