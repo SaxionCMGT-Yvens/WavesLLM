@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using FALLA;
 using NaughtyAttributes;
 using UnityEngine;
 using UUtils;
@@ -44,7 +45,19 @@ namespace Actors.AI.LlmAI
         public override string ToString()
         {
             var str = "";
-            factionPairs.ForEach(pair => str += $"{pair}" + "=");
+            factionPairs.ForEach(pair =>
+            {
+                if (pair.Two.modelPair.One != LlmType.Custom)
+                {
+                    str += $"{pair}" + "=";
+                }
+                else
+                {
+                    var customPrefab = pair.AIBaseShipPrefab;
+                    str += $"{customPrefab}" + "=";
+                }
+
+            });
             if (str.Length > 0)
             {
                 str = str[..^1];

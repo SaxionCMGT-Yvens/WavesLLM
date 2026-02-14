@@ -108,7 +108,11 @@ namespace Actors.AI.LlmAI
             {
                 DebugUtils.DebugLogMsg($"Finished level, winner -> {winnerFaction}.", DebugUtils.DebugType.System);
                 var winnerPair = currentSchedule.GetFactionPair(winnerFaction);
-                LevelController.GetSingleton().AddInfoLog($"LLM {winnerPair.Caller} won.", "LevelGoal");    
+                LevelController.GetSingleton()
+                    .AddInfoLog(
+                        winnerPair.Two.modelPair.One == LlmType.Custom
+                            ? $"Utility {winnerPair.One.name} won."
+                            : $"LLM {winnerPair.Caller} won.", "LevelGoal");
             }
             else
             {

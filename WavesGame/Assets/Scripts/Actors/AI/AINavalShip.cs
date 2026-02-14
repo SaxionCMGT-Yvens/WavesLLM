@@ -7,6 +7,7 @@
  */
 
 using System.Collections;
+using Core;
 using UnityEngine;
 using UUtils;
 
@@ -36,26 +37,30 @@ namespace Actors.AI
         {
             yield return new WaitForSeconds(0.05f);
 
+            LevelController.GetSingleton().AddInfoLog($"Start turn", name);
             var canCalculateMove = _brain.CalculateMovement(currentUnit.Index(), stepsAvailable, out var chosenAction);
+            LevelController.GetSingleton().AddInfoLog($"Can calculate move: {canCalculateMove}", name);
             
-            //TODO change this so we can give it a time after the attack before ending the turn.
+            yield return new WaitForSeconds(0.25f);
             if (canCalculateMove)
             {
                 _calculatingAction = true;
                 var attacked = false;
                 DebugUtils.DebugLogMsg($"{name} has selected action {chosenAction}.", DebugUtils.DebugType.System);
+                LevelController.GetSingleton().AddInfoLog($"Chosen action: {chosenAction}", name);
                 MoveTo(chosenAction.GetUnit(), unit =>
                 {
-                    //Use all actions
                     while (TryToAct())
                     {
                         var canCalculateAction = _brain.CalculateAction(unit.Index(), out chosenAction);
+                        LevelController.GetSingleton().AddInfoLog($"Can calculate action: {canCalculateAction}", name);
                         if (!canCalculateAction) continue;
                         var targetUnit = chosenAction.GetUnit();
                         if(targetUnit.ActorsCount() <= 0) continue;
                         DebugUtils.DebugLogMsg($"{name} attacks {chosenAction}!", DebugUtils.DebugType.System);
                         var damage = CalculateDamage();
                         kills = targetUnit.DamageActors(damage);
+                        LevelController.GetSingleton().AddAttackLog(chosenAction.GetUnit().Index(), this, name);
                         attacked = true;
                     }
 
@@ -71,6 +76,7 @@ namespace Actors.AI
             }
             else
             {
+                LevelController.GetSingleton().AddInfoLog($"Cannot calculate - random movement!", name);
                 var moveTo = AIBrain.GenerateRandomMovement(currentUnit.Index(), stepsAvailable);
                 MoveTo(moveTo, _ => { FinishAITurn(); }, true);
             }
@@ -81,6 +87,11 @@ namespace Actors.AI
             var internalIDStr = internalID.ToString();
             var factionName = GetFaction().name;
             name = $"LLMAgent|Utility|{factionName}|{internalIDStr}";
+        }
+
+        public override string ToString()
+        {
+            return $"Utility-{genesData.name}";
         }
 
         public AIGenesSO GetGenesData() => genesData;
