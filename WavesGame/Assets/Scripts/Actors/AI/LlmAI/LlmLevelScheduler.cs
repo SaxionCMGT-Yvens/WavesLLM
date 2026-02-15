@@ -84,8 +84,11 @@ namespace Actors.AI.LlmAI
                 {
                     var newAiBaseShip = Instantiate(customFaction.AIBaseShipPrefab, llmFactionShip.transform.position, llmFactionShip.transform.rotation);
                     //TODO check if this works for the grid
-                    newAiBaseShip.SetUnit(llmFactionShip.GetUnit());
+                    var unit = llmFactionShip.GetUnit();
+                    unit.RemoveActor(llmFactionShip);
+                    unit.AddActor(newAiBaseShip);
                     newAiBaseShip.SetInitiative(llmFactionShip.OverrideInitiative);
+                    
                     Destroy(llmFactionShip.gameObject);
                 }
             }
