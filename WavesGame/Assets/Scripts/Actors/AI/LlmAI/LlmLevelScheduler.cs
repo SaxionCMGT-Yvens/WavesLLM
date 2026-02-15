@@ -88,7 +88,7 @@ namespace Actors.AI.LlmAI
                     unit.RemoveActor(llmFactionShip);
                     unit.AddActor(newAiBaseShip);
                     newAiBaseShip.SetInitiative(llmFactionShip.OverrideInitiative);
-                    
+                    LevelController.GetSingleton().RemoveFactionShip(llmFactionShip);
                     Destroy(llmFactionShip.gameObject);
                 }
             }

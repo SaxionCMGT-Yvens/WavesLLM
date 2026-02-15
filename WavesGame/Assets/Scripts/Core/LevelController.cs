@@ -98,13 +98,12 @@ namespace Core
                     ApplicationHelper.QuitApplication();
                     yield break;
                 }
-                
-                //Wait for one more frame to destroy the unused LLM actors replaced by Utility Agent AIs, if any
-                yield return null;
             }
+            //Wait for one more frame to destroy the unused LLM actors replaced by Utility Agent AIs, if any
+            yield return null;
 
-            levelActors = levelActors.FindAll(actor => actor is not null);
-            levelNavalActors  = levelNavalActors.FindAll(levelNavalActor => levelNavalActor is not null);
+            levelActors = levelActors.FindAll(actor => actor != null);
+            levelNavalActors  = levelNavalActors.FindAll(levelNavalActor => levelNavalActor != null);
             levelActionableActor = levelActionableActor.FindAll(levelActorPair => levelActorPair?.One != null);
             
             //Initialize level goal elements
@@ -336,6 +335,11 @@ namespace Core
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)
         {
             return actorTurnUIs.Find(actorTurnUI => actorTurnUI.NavalShip.Equals(navalShip));
+        }
+
+        public void RemoveFactionShip(AIBaseShip aiBaseShip)
+        {
+            levelGoal.RemoveFactionCount(aiBaseShip);
         }
 
         public void AddInfoLog(string info, string callerName = "")

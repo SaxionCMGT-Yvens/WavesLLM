@@ -106,6 +106,15 @@ namespace Core
             }
         }
 
+        public void RemoveFactionCount(AIBaseShip aiShip)
+        {
+            var faction = aiShip.GetFaction();
+            if (_availableFactions.ContainsKey(faction))
+            {
+                _availableFactions[faction]--;    
+            }
+        }
+
         public bool CheckGoalActor(NavalTarget navalTarget)
         {
             levelTargets.Remove(navalTarget);
