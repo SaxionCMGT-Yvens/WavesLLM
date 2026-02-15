@@ -47,7 +47,7 @@ namespace Actors.AI.LlmAI
                 if (position.Index().Equals(index) || !position.GetFirstActorOfType<GridActor>(out var actor)) return;
                 if (actor is not WaveActor)
                 {
-                    nearbyShipsPositions.Add(actor);    
+                    nearbyShipsPositions.Add(actor);
                 }
             });
             template = ReplaceTagWithText(template, "blocked_movement_positions",
@@ -71,7 +71,7 @@ namespace Actors.AI.LlmAI
                 {
                     if (navalShip.GetFaction() != selfFaction)
                     {
-                        currentAttackableActors.Add(actor);        
+                        currentAttackableActors.Add(actor);
                     }
                 }
                 else
@@ -97,7 +97,7 @@ namespace Actors.AI.LlmAI
             });
             template = ReplaceTagWithText(template, "grid_overview_enemies",
                 ListGridToString(llmAINavalShip, enemiesOnTheGrid, templatePrompt.includeEmptySpaces));
-            
+
             var wavesOnTheGrid = grid.FindAll(gridUnit =>
             {
                 var actor = gridUnit.GetActor();
@@ -139,12 +139,7 @@ namespace Actors.AI.LlmAI
                         {
                             if (!llmAINavalShip.Equals(selfShip))
                             {
-                                
-                                var opposingFaction = !selfShip.GetFaction().Equals(llmAINavalShip.GetFaction());
-                                var factionText = opposingFaction ? $"**Enemy**" : "**Ally**";
-                                var health = llmAINavalShip.GetCurrentHealth();
-                                var ratio = llmAINavalShip.GetHealthRatio();
-                                text += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
+                                text += GetOtherShipSymbolicText(selfShip, llmAINavalShip, text);
                             }
                             else
                             {
@@ -153,6 +148,11 @@ namespace Actors.AI.LlmAI
 
                             break;
                         }
+                        case AIBaseShip aiBaseShip:
+                        {
+                            text += GetOtherShipSymbolicText(selfShip, aiBaseShip, text);
+                        }
+                            break;
                         case WaveActor wave:
                             text +=
                                 $"{GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}\r\n";
@@ -165,6 +165,16 @@ namespace Actors.AI.LlmAI
             }
 
             return text;
+
+            string GetOtherShipSymbolicText(LlmAINavalShip selfLlmShip, AIBaseShip aiNavalShip, string symbolicText)
+            {
+                var opposingFaction = !selfLlmShip.GetFaction().Equals(aiNavalShip.GetFaction());
+                var factionText = opposingFaction ? $"**Enemy**" : "**Ally**";
+                var health = aiNavalShip.GetCurrentHealth();
+                var ratio = aiNavalShip.GetHealthRatio();
+                symbolicText += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
+                return symbolicText;
+            }
         }
 
         private static string ListGridToString(LlmAINavalShip selfShip, List<GridUnit> gridUnits,
@@ -192,22 +202,20 @@ namespace Actors.AI.LlmAI
                     {
                         case LlmAINavalShip llmAINavalShip:
                         {
-                            text += $"{index} = ";
                             if (llmAINavalShip.Equals(selfShip))
                             {
-                                text += "SELF\r\n";
+                                text += $"{index} = SELF\r\n";
                             }
                             else
                             {
-                                var opposingFaction = !selfShip.GetFaction().Equals(llmAINavalShip.GetFaction());
-                                var factionText = opposingFaction ? $"Enemy {llmAINavalShip.GetFaction()}" : "Ally";
-                                var health = llmAINavalShip.GetCurrentHealth();
-                                var ratio = llmAINavalShip.GetHealthRatio();
-                                text += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
+                                text += GetOtherShipGridToString(selfShip, llmAINavalShip, $"{index} = ");
                             }
 
                             break;
                         }
+                        case AIBaseShip aiBaseShip:
+                            text += GetOtherShipGridToString(selfShip, aiBaseShip, $"{index} = ");
+                            break;
                         case WaveActor wave:
                             text +=
                                 $"{index} = {GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}\r\n";
@@ -220,6 +228,16 @@ namespace Actors.AI.LlmAI
             }
 
             return text;
+
+            string GetOtherShipGridToString(LlmAINavalShip selfLlmShip, AIBaseShip aiBaseShip, string symbolicText)
+            {
+                var opposingFaction = !selfLlmShip.GetFaction().Equals(aiBaseShip.GetFaction());
+                var factionText = opposingFaction ? $"Enemy {aiBaseShip.GetFaction()}" : "Ally";
+                var health = aiBaseShip.GetCurrentHealth();
+                var ratio = aiBaseShip.GetHealthRatio();
+                symbolicText += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
+                return symbolicText;
+            }
         }
 
         private static string ListEnemyFactions(List<AIFaction> enemyFactions)
@@ -275,7 +293,8 @@ namespace Actors.AI.LlmAI
             return separator.Equals(",") ? text[..^1] : text + "\r\n";
         }
 
-        private static string ListGridActorsIndicesToString(List<GridActor> gridActors, AIFaction selfFaction, bool fullInfo = false,
+        private static string ListGridActorsIndicesToString(List<GridActor> gridActors, AIFaction selfFaction,
+            bool fullInfo = false,
             string separator = ",")
         {
             if (gridActors == null || gridActors.Count == 0)
@@ -296,13 +315,17 @@ namespace Actors.AI.LlmAI
                         case NavalTarget navalTarget:
                             text += $"{index} = 🎯 health:{navalTarget.GetCurrentHealth()}{separator}";
                             break;
-                        case LlmAINavalShip llmAINavalShip:
-                            var opposingFaction = !selfFaction.Equals(llmAINavalShip.GetFaction());
-                            var factionText = opposingFaction ? $"Enemy {llmAINavalShip.GetFaction()}" : "Ally";
-                            text += $"{index} = 🚢 {factionText} health:{llmAINavalShip.GetCurrentHealth()} ratio: {llmAINavalShip.GetHealthRatio()}{separator}";
+                        case AIBaseShip aiBaseShip:
+                        {
+                            var opposingFaction = !selfFaction.Equals(aiBaseShip.GetFaction());
+                            var factionText = opposingFaction ? $"Enemy {aiBaseShip.GetFaction()}" : "Ally";
+                            text +=
+                                $"{index} = 🚢 {factionText} health:{aiBaseShip.GetCurrentHealth()} ratio: {aiBaseShip.GetHealthRatio()}{separator}";
+                        }
                             break;
                         case WaveActor wave:
-                            text += $"{index} = {GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}{separator}";
+                            text +=
+                                $"{index} = {GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}{separator}";
                             break;
                     }
 

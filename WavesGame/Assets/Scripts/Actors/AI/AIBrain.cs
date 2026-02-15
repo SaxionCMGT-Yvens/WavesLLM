@@ -74,16 +74,7 @@ namespace Actors.AI
             }
 
             chosenAction = null;
-            //TODO transform this into a reusable function
-            if (utilities.Count == 0) return false;
-            utilities.Sort();
-            var possibleActionsCount = Mathf.Min(utilities.Count, genes.possibleActionsCount);
-            var possibleActions = utilities.GetRange(0, possibleActionsCount);
-            //Add the highest utility again on the list to improve its odds
-            possibleActions.Add(possibleActions[0]);
-            chosenAction = RandomHelper<AIGridUnitUtility>.GetRandomFromListWithIndex(possibleActions, out var index);
-            DebugUtilityChoices(chosenAction, index, utilities);
-            return true;
+            return PickBestUtility(ref chosenAction, utilities);
         }
 
         public bool CalculateAction(Vector2Int position, out AIGridUnitUtility chosenAction)
@@ -104,13 +95,25 @@ namespace Actors.AI
                 utilities.Add(gridUnitUtility);
             }
 
+            return PickBestUtility(ref chosenAction, utilities);
+        }
+
+        private bool PickBestUtility(ref AIGridUnitUtility chosenAction, List<AIGridUnitUtility> utilities)
+        {
             //TODO transform this into a reusable function
             if (utilities.Count == 0) return false;
-            utilities.Sort();
-            var possibleActionsCount = Mathf.Min(utilities.Count, _aiNavalShip.GetGenesData().possibleActionsCount);
+            var aiGenesSo = _aiNavalShip.GetGenesData();
+            if (aiGenesSo.sortUtilities)
+            {
+                utilities.Sort();
+            }
+            var possibleActionsCount = Mathf.Min(utilities.Count, aiGenesSo.possibleActionsCount);
             var possibleActions = utilities.GetRange(0, possibleActionsCount);
-            //Add the highest utility again on the list to improve its odds
-            possibleActions.Add(possibleActions[0]);
+            if (aiGenesSo.doubleBestUtilityChance)
+            {
+                //Add the highest utility again on the list to improve its odds
+                possibleActions.Add(possibleActions[0]);    
+            }
             chosenAction = RandomHelper<AIGridUnitUtility>.GetRandomFromListWithIndex(possibleActions, out var index);
             DebugUtilityChoices(chosenAction, index, utilities);
             return true;

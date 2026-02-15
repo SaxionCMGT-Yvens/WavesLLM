@@ -19,11 +19,15 @@ namespace Actors.AI
         public float patience = 1.0f;
         public float friendliness = 1.0f;
         public float selfPreservation = 1.0f;
+        
+        [Header("Stats")]
         public float awareness = 1.0f;
         public float sight = 5.0f;
 
         [Header("Interests")] 
         public float targetInterest = 0.1f;
+        public bool sortUtilities = true;
+        public bool doubleBestUtilityChance = true;
 
         [Header("Data")] 
         public int possibleActionsCount = 4;

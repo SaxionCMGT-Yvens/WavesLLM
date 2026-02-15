@@ -8,6 +8,7 @@
 
 using System;
 using System.Collections.Generic;
+using Actors.AI.LlmAI;
 using Core;
 using Grid;
 using UnityEngine;
@@ -51,6 +52,7 @@ namespace Actors.AI
                     case AIBaseShip ally when ally.GetFaction().Equals(faction):
                         utility += genes.friendliness;
                         break;
+                    case LlmAINavalShip:
                     case AIBaseShip:
                     case NavalShip:
                         //If there is an enemy there, then the AI cannot move there
@@ -93,6 +95,12 @@ namespace Actors.AI
                         break;
                     case AIBaseShip ally when ally.GetFaction().Equals(faction):
                         utility += genes.friendliness;
+                        break;
+                    case LlmAINavalShip ally when ally.GetFaction().Equals(faction):
+                        utility += genes.friendliness;
+                        break;
+                    case LlmAINavalShip enemyAI:
+                        utility += AttackUtility(enemyAI, aiNavalShip, genes);
                         break;
                     case AIBaseShip enemyAI:
                         utility += AttackUtility(enemyAI, aiNavalShip, genes);
