@@ -38,6 +38,7 @@ def parse_per_faction(faction, lines_array):
     # Parse internal data
     # 2026-02-06 21:02:55;[SYSTEM];[LLMAgent|Gemini|gemini-2.5-flash-lite|Green|3];DATA {"internalWrongMovementCount":3,"internalWrongAttackCount":10,"internalTotalRequestCount":31,"internalMovementAttemptCount":31,"internalAttackAttemptCount":11,"internalFaultyMessageCount":0,"averageRequestTime":654.7419,"averageRequestTimeCount":31,"maxRequestTime":1268,"minRequest":345,"averageAttempts":1,"kills":0}
     total_faulty_message, total_internal_attack_attempts, total_internal_wrong_attack, total_internal_wrong_movements, total_internal_movement_attempts = extract_internal_data(faction_lines, model, output_line)
+    total_internal_attack_attempts = total_internal_attack_attempts if total_internal_attack_attempts > 0 else 1
 
     # Parse attacks
     # 2026-02-06 20:56:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|2];ATTK {10, 8}
@@ -154,7 +155,7 @@ def extract_attempts_data(faction_lines: list[Any], model, output_list):
         data = json.loads(json_part)
         number_attempts = data['attempts']
         avg_attempts += float(number_attempts)
-    avg_attempts /= num_attempts
+    avg_attempts /= num_attempts if num_attempts > 0 else 1
     print(f"Average {model} attempts = {avg_attempts} ({num_attempts})")
     output_list.append(f"{avg_attempts:.2f}")
     return avg_attempts, num_attempts
@@ -173,7 +174,7 @@ def extract_request_data(faction_lines: list[Any], model, output_list):
         avg_req += float(request_time)
         max_req = max(max_req, float(request_time))
         min_req = min(min_req, float(request_time))
-    num_req = len(requests)
+    num_req = len(requests) if len(requests) > 0 else 1
     avg_req /= num_req
     print(f"Average {model} request = {avg_req:.2f} ({num_req} requests)")
     print(f"Max {model} request = {max_req:.2f}")
@@ -191,7 +192,7 @@ def extract_prompt_data(process_lines: list[Any], model, output_list):
         prompt_split = prompt.split(";")
         prompt_size = float(prompt_split[(len(prompt_split) - 1)])
         avg_prompt += prompt_size
-    avg_prompt /= len(prompts)
+    avg_prompt /= len(prompts) if len(prompts) > 0 else 1
     print(f"Average {model} prompt = {avg_prompt:.2f}")
     output_list.append(f"{avg_prompt:.2f}")
     return avg_prompt
