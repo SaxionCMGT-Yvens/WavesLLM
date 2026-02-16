@@ -340,7 +340,8 @@ namespace Actors.AI.LlmAI
 
         public string GetLlmInfo()
         {
-            return llmCaller != null && llmCaller.GetLlmType() != LlmType.Custom ? $"{llmCaller.GetLlmType().ToString()}-{basePrompt.name}" : "Utility";
+            return llmCaller != null && llmCaller.GetLlmType() != LlmType.Custom ? 
+                $"{llmCaller.GetLlmType().ToString()}-{llmCaller.GetLlmModel()}-{basePrompt.name}" : "Utility";
         }
 
         public void SetCaller(LlmCallerObject caller)

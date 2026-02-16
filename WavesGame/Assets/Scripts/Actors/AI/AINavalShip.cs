@@ -86,7 +86,7 @@ namespace Actors.AI
         {
             var internalIDStr = internalID.ToString();
             var factionName = GetFaction().name;
-            name = $"AIAgent|Utility|{factionName}|{internalIDStr}";
+            name = $"AIAgent|Utility|{genesData.name}|{factionName}|{internalIDStr}";
         }
 
         public override string ToString()

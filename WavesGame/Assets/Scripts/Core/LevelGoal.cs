@@ -42,7 +42,7 @@ namespace Core
         public LevelGoalType type;
         [SerializeField] private NavalActor destroyTarget;
         [SerializeField] private int surviveForTurns;
-        [SerializeField] private int maxLLMTurns;
+        [SerializeField] private int maxLlmTurns;
         [SerializeField, ReadOnly] private int turnNumber;
         [SerializeField, ReadOnly] private List<NavalTarget> levelTargets;
         [SerializeField, ReadOnly] private List<NavalShip> levelShips;
@@ -180,9 +180,9 @@ namespace Core
                     break;
                 case LevelGoalType.AIWars:
                 {
-                    if (turnNumber >= maxLLMTurns)
+                    if (turnNumber >= maxLlmTurns)
                     {
-                        DebugUtils.DebugLogMsg($"Draw! Max number of turns reached: {turnNumber} == {maxLLMTurns}.", DebugUtils.DebugType.System);
+                        DebugUtils.DebugLogMsg($"Draw! Max number of turns reached: {turnNumber} == {maxLlmTurns}.", DebugUtils.DebugType.System);
                         LevelController.GetSingleton().AddInfoLog($"Draw! No faction won.", "LevelGoal");
                         LevelController.GetSingleton()
                             .AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
@@ -289,9 +289,13 @@ namespace Core
                     {
                         var llmInfo = "";
                         var aiShip = enemyFactionShips.Find(ship => ship.Two.Equals(enumerator.Current.Key));
+                        
                         if (aiShip is { One: LlmAINavalShip llmNavalShip })
                         {
                             llmInfo = $"[{llmNavalShip.GetLlmInfo()}]";
+                        } else if (aiShip is { One: AIBaseShip aiShipNavalShip })
+                        {
+                            llmInfo = $"[{aiShipNavalShip.name}]";
                         }
 
                         message += $"{enumerator.Current.Key}{llmInfo} x ";
