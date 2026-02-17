@@ -1,0 +1,769 @@
+﻿2026-02-17 15:47:44;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-17 15:47:44;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-17 15:47:44;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:47:44;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:47:44;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (10, 6) - U = -3.402823E+38
+2026-02-17 15:47:46;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:47:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:47:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4334
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1939}
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (10,6) with offset 1 and range 2]}
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:47:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:47:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:47:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:47:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:47:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (12, 6) - U = -1.96
+2026-02-17 15:47:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:47:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-17 15:47:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_4;4300
+2026-02-17 15:47:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":2725}
+2026-02-17 15:47:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-17 15:47:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Move closer to line up attack on enemies at y=6; from (11,12) I can potentially attack or position better next turn]}
+2026-02-17 15:47:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;False;False
+2026-02-17 15:47:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {11, 12}
+2026-02-17 15:47:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-17 15:47:56;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:47:56;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:47:56;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (7, 4) - U = -1.96
+2026-02-17 15:47:58;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:47:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:47:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4293
+2026-02-17 15:48:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1750}
+2026-02-17 15:48:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:48:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move up to (7,13) to get closer and potentially line up a wave-extended attack next turn on enemy at (7,4) or those near (10,6),(12,6). No immediate attack possible now.]}
+2026-02-17 15:48:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:48:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {7, 13}
+2026-02-17 15:48:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:48:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:48:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:48:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (10, 9) - U = -3.402823E+38
+2026-02-17 15:48:04;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: True
+2026-02-17 15:48:04;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];ATTK {12, 9}
+2026-02-17 15:48:04;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];TRGT TARGET
+2026-02-17 15:48:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:48:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4366
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1758}
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot to enemy at (10,9)]}
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:48:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:48:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:48:10;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:48:10;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:48:10;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (12, 3) - U = 0
+2026-02-17 15:48:12;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:48:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-17 15:48:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_4;4369
+2026-02-17 15:48:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1564}
+2026-02-17 15:48:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-17 15:48:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Move to (11, 11) to attack wave at (10, 11) for wave-extended attack on enemy at (10, 9)]}
+2026-02-17 15:48:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;True;False
+2026-02-17 15:48:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {11, 11}
+2026-02-17 15:48:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-17 15:48:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-17 15:48:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:48:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:48:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (9, 4) - U = -1.965
+2026-02-17 15:48:17;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:48:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:48:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4292
+2026-02-17 15:48:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1955}
+2026-02-17 15:48:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:48:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move closer to enemy at (10,9) to enable attack next turn; currently no attack possible, no waves can extend attack now.]}
+2026-02-17 15:48:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:48:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {8, 12}
+2026-02-17 15:48:22;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:48:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:48:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:48:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (9, 10) - U = -3.402823E+38
+2026-02-17 15:48:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:48:24;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:48:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4325
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1538}
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (9,10)]}
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:48:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:48:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:48:28;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:48:28;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:48:28;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 2) - U = 0
+2026-02-17 15:48:30;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:48:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-17 15:48:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_4;4284
+2026-02-17 15:48:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1915}
+2026-02-17 15:48:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-17 15:48:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":Move to (10,10) to get (9,10) into direct attack range next turn; no immediate attack available]}
+2026-02-17 15:48:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;False;False
+2026-02-17 15:48:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {10, 10}
+2026-02-17 15:48:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-17 15:48:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:48:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:48:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (10, 3) - U = -1.965
+2026-02-17 15:48:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:48:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:48:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4308
+2026-02-17 15:48:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1869}
+2026-02-17 15:48:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:48:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move closer to enemy at (9, 10) to gain attack range next turn]}
+2026-02-17 15:48:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:48:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {9, 11}
+2026-02-17 15:48:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:48:40;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:48:40;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:48:41;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (8, 11) - U = -1.965
+2026-02-17 15:48:42;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: True
+2026-02-17 15:48:42;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];ATTK {10, 11}
+2026-02-17 15:48:42;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];TRGT WAVE
+2026-02-17 15:48:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:48:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4309
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1852}
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to hit enemy at (8,11) using wave-extended shot; no movement needed.]}
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:48:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:48:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:48:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:48:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:48:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (14, 2) - U = 0
+2026-02-17 15:48:49;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:48:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Start turn;5,5
+2026-02-17 15:48:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];PRPT Prompt_4;4308
+2026-02-17 15:48:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];TIME {"request":1906}
+2026-02-17 15:48:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"attempts":1}
+2026-02-17 15:48:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];RESN {"reasoning":No immediate valid attack on enemy or wave-extended attack possible. Move closer to (10,10) to get in range for next turn's attack on (8,11).]}
+2026-02-17 15:48:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Flags;True;False;False
+2026-02-17 15:48:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];MOVE {10, 10}
+2026-02-17 15:48:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Finish turn
+2026-02-17 15:48:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:48:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:48:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (8, 4) - U = -1.965
+2026-02-17 15:48:56;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:48:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:48:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4308
+2026-02-17 15:48:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1840}
+2026-02-17 15:48:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:48:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":No valid attack this turn; move from (9,11) to (8,11) to get enemy at (8,11) into direct attack range next turn]}
+2026-02-17 15:48:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:48:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {8, 11}
+2026-02-17 15:48:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:48:59;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:48:59;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:48:59;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (8, 11) - U = -3.95
+2026-02-17 15:49:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: True
+2026-02-17 15:49:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];INFO Destroyed
+2026-02-17 15:49:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|4];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":4,"internalMovementAttemptCount":4,"internalAttackAttemptCount":1,"internalFaultyMessageCount":0,"averageRequestTime":2027.5,"averageRequestTimeCount":4,"maxRequestTime":2725,"minRequest":1564,"averageAttempts":1,"kills":0}
+2026-02-17 15:49:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];ATTK {10, 11}
+2026-02-17 15:49:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];TRGT WAVE
+2026-02-17 15:49:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:49:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4335
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1643}
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack the wave tile at (10,11) to extend range and target the enemy at (8,11). No movement needed as attack is possible now.]}
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:49:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:49:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:49:06;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:49:06;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:49:06;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (14, 4) - U = 0
+2026-02-17 15:49:07;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:49:08;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:49:08;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:49:08;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (8, 7) - U = -1.965
+2026-02-17 15:49:10;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:49:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:49:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4274
+2026-02-17 15:49:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1753}
+2026-02-17 15:49:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:49:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (8, 10) to get enemy at (8, 11) in direct 1-distance attack range and attack immediately.]}
+2026-02-17 15:49:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;True;False
+2026-02-17 15:49:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {8, 10}
+2026-02-17 15:49:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-17 15:49:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:49:14;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:49:14;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:49:14;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (9, 10) - U = -3.402823E+38
+2026-02-17 15:49:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:49:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:49:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4344
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1574}
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend attack upward and hit enemy at (9,10) without moving]}
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:49:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:49:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:49:21;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:49:21;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:49:21;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (15, 4) - U = 0
+2026-02-17 15:49:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:49:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:49:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:49:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (11, 7) - U = -3.402823E+38
+2026-02-17 15:49:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:49:24;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:49:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4284
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1584}
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Immediate valid attack on low-health neutral target at (7,9); no need to move.]}
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;False;True;False
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {7, 9}
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT TARGET
+2026-02-17 15:49:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (7, 9). Kill count = 1.
+2026-02-17 15:49:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:49:28;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:49:28;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:49:28;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (11, 10) - U = -3.402823E+38
+2026-02-17 15:49:30;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:49:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:49:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4345
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1862}
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile (10,11) to extended-hit enemy ship at (11,10) now]}
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:49:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:49:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:49:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:49:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:49:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (14, 2) - U = 0
+2026-02-17 15:49:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:49:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:49:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:49:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (8, 7) - U = -1.99
+2026-02-17 15:49:39;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:49:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:49:40;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4285
+2026-02-17 15:49:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":2042}
+2026-02-17 15:49:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:49:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (9,9) to get (8,7) enemy into attack range next turn, setting up for immediate attack]}
+2026-02-17 15:49:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:49:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {9, 9}
+2026-02-17 15:49:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:49:43;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:49:43;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:49:44;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (10, 8) - U = -3.402823E+38
+2026-02-17 15:49:46;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: True
+2026-02-17 15:49:46;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];ATTK {9, 9}
+2026-02-17 15:49:46;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-17 15:49:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:49:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4344
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1935}
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack the wave tile at (10,11) which extends attack to enemy at (10,8); no movement needed as immediate wave-extended attack is available]}
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:49:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:49:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:49:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:49:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:49:52;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (15, 3) - U = 0
+2026-02-17 15:49:53;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:49:53;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:49:53;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:49:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (9, 8) - U = -1.99
+2026-02-17 15:49:55;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:49:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:49:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4348
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1903}
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Attack enemy ship at (10,8) directly within range without moving, as immediate attack is possible and prioritized.]}
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;False;True;False
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {10, 8}
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT LLM {ENEMY}
+2026-02-17 15:49:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (10, 8). Kill count = 0.
+2026-02-17 15:49:59;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:50:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:50:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:50:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (12, 8) - U = -3.98
+2026-02-17 15:50:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:50:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:50:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4351
+2026-02-17 15:50:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1774}
+2026-02-17 15:50:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:50:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave at (10,11) to hit enemy at (12,8) via wave extension; no movement needed since attack possible now.]}
+2026-02-17 15:50:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:50:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:50:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:50:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:50:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:50:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:50:06;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:50:06;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:50:06;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (14, 1) - U = 0
+2026-02-17 15:50:08;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:50:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:50:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:50:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (10, 4) - U = -1.99
+2026-02-17 15:50:11;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:50:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:50:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4326
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1662}
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Attack wave tile (9,7) to extend shot onto enemy at (12,8) with low health]}
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;True;False
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {9, 9}
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {9, 7}
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT WAVE
+2026-02-17 15:50:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (9, 7). Kill count = 0.
+2026-02-17 15:50:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:50:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:50:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:50:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (11, 9) - U = -3.98
+2026-02-17 15:50:17;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: True
+2026-02-17 15:50:17;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];ATTK {9, 9}
+2026-02-17 15:50:17;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-17 15:50:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:50:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4352
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1684}
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and hit enemy at (11,9) with 8 health]}
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:50:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:50:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:50:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:50:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:50:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (14, 4) - U = 0
+2026-02-17 15:50:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:50:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:50:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:50:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (11, 3) - U = 0
+2026-02-17 15:50:27;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:50:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:50:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4362
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1747}
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Attack enemy at (11,9) directly in range without moving, as health is low and immediate damage is critical to win.]}
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;False;True;False
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {11, 9}
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT LLM {ENEMY}
+2026-02-17 15:50:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (11, 9). Kill count = 0.
+2026-02-17 15:50:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:50:31;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:50:31;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:50:32;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (13, 10) - U = -1.99
+2026-02-17 15:50:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:50:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:50:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4354
+2026-02-17 15:50:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1759}
+2026-02-17 15:50:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:50:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to hit low-health enemy at (13,10), no movement needed]}
+2026-02-17 15:50:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:50:36;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:50:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:50:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:50:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:50:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:50:38;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:50:38;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:50:39;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 5) - U = 0
+2026-02-17 15:50:40;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:50:40;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:50:40;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:50:40;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (10, 5) - U = -1.99
+2026-02-17 15:50:42;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:50:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:50:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4328
+2026-02-17 15:50:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1828}
+2026-02-17 15:50:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:50:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Attack the wave tile (9,7) which extends the shot to hit the low-health enemy at (13,10). No movement needed to enable attack.]}
+2026-02-17 15:50:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;True;False
+2026-02-17 15:50:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {9, 9}
+2026-02-17 15:50:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {9, 7}
+2026-02-17 15:50:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT WAVE
+2026-02-17 15:50:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (9, 7). Kill count = 0.
+2026-02-17 15:50:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:50:47;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:50:47;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:50:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (14, 11) - U = 0
+2026-02-17 15:50:49;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:50:49;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:50:50;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4354
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1423}
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile ~^ at (10, 11) to hit low-health enemy at (14, 11) with wave extension]}
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:50:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:50:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:50:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:50:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:50:54;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 6) - U = -1.99
+2026-02-17 15:50:55;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:50:55;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:50:55;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:50:55;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (10, 4) - U = -1.99
+2026-02-17 15:50:56;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:50:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:50:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4328
+2026-02-17 15:51:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":2310}
+2026-02-17 15:51:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:51:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (9,8) to get (14,11) enemy in direct attack range next turn as current attack is impossible and no wave-extended attack possible now]}
+2026-02-17 15:51:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:51:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {9, 8}
+2026-02-17 15:51:01;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:51:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:51:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:51:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (15, 9) - U = 0
+2026-02-17 15:51:03;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:51:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:51:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4353
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1494}
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack the wave tile at (10,11) to extend the attack and hit the low-health enemy at (15,9) from current position.]}
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:51:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:51:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:51:07;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:51:07;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:51:07;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 8) - U = -1.99
+2026-02-17 15:51:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:51:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:51:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:51:09;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (11, 3) - U = 0
+2026-02-17 15:51:11;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:51:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:51:12;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4304
+2026-02-17 15:51:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":2213}
+2026-02-17 15:51:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:51:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (11,8) to get in direct attack range of the low-health enemy at (15,9) next turn, enabling a direct attack; no immediate attack possible now and avoiding wave tile at (9,7).]}
+2026-02-17 15:51:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:51:14;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {11, 8}
+2026-02-17 15:51:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:51:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:51:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:51:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (13, 9) - U = -1.99
+2026-02-17 15:51:17;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:51:17;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:51:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4353
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1466}
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10, 11) to extend and hit the low-health enemy at (13, 9)]}
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:51:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:51:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:51:21;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:51:21;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:51:22;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 5) - U = 0
+2026-02-17 15:51:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:51:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:51:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:51:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (12, 4) - U = 0
+2026-02-17 15:51:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:51:25;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:51:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4306
+2026-02-17 15:51:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1721}
+2026-02-17 15:51:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:51:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (13,8) to get into direct attack range of low-health enemy at (13,9)]}
+2026-02-17 15:51:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;True;False
+2026-02-17 15:51:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {13, 8}
+2026-02-17 15:51:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Cannot reach target at GridTile(Clone) (13, 9).
+2026-02-17 15:51:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:51:30;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Start turn
+2026-02-17 15:51:30;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate move: True
+2026-02-17 15:51:30;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Chosen action: (13, 11) - U = -1.99
+2026-02-17 15:51:31;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|9];INFO Can calculate action: False
+2026-02-17 15:51:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:51:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4354
+2026-02-17 15:51:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1566}
+2026-02-17 15:51:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:51:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack enemy at (13,11) directly now, no movement needed since target is in range]}
+2026-02-17 15:51:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:51:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:51:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (13, 11).
+2026-02-17 15:51:35;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:51:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:51:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:51:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 4) - U = 0
+2026-02-17 15:51:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:51:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:51:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:51:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (14, 5) - U = 0
+2026-02-17 15:51:38;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:51:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:51:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4313
+2026-02-17 15:51:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1778}
+2026-02-17 15:51:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:51:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (13,9) to get into attack range of low-health enemy at (13,11)]}
+2026-02-17 15:51:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;True;False
+2026-02-17 15:51:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {13, 9}
+2026-02-17 15:51:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {13, 11}
+2026-02-17 15:51:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT LLM {ENEMY}
+2026-02-17 15:51:42;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (13, 11). Kill count = 1.
+2026-02-17 15:51:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:51:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:51:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4300
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1719}
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack the wave tile at (10, 11) which extends attack to enemies beyond normal range; no immediate enemy in range, so no movement.]}
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:51:46;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:51:48;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:51:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:51:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:51:48;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 6) - U = -1.99
+2026-02-17 15:51:50;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:51:50;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:51:50;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:51:50;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (14, 7) - U = 0
+2026-02-17 15:51:52;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:51:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:51:53;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4237
+2026-02-17 15:51:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1482}
+2026-02-17 15:51:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:51:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (13,7) to enter attack range of enemies at (13,6) and (14,7) next turn]}
+2026-02-17 15:51:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:51:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {13, 7}
+2026-02-17 15:51:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:51:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:51:57;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4300
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1839}
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend strike range and hit enemy at (14,7) next turn; no immediate enemy in direct range, moving is unnecessary now]}
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:51:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:52:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:52:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:52:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:52:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 6) - U = -1.99
+2026-02-17 15:52:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:52:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:52:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:52:01;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (14, 7) - U = 0
+2026-02-17 15:52:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:52:02;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:52:03;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4140
+2026-02-17 15:52:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":2002}
+2026-02-17 15:52:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:52:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (13,8) to get within attack range of enemy at (13,6) and (14,7) on next turn, no immediate attack possible now]}
+2026-02-17 15:52:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:52:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {13, 8}
+2026-02-17 15:52:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:52:06;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:52:07;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4300
+2026-02-17 15:52:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1722}
+2026-02-17 15:52:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:52:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot and target enemy at (14,7) next turn; no immediate enemy in direct range, so attack wave now to leverage wave extension.]}
+2026-02-17 15:52:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:52:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 13}
+2026-02-17 15:52:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:52:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:52:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:52:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:52:11;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:52:11;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:52:11;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (12, 4) - U = 0
+2026-02-17 15:52:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:52:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:52:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:52:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (14, 10) - U = -1.99
+2026-02-17 15:52:15;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:52:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:52:16;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4260
+2026-02-17 15:52:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1561}
+2026-02-17 15:52:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:52:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (14, 8) to get into attack range of enemy at (14, 10) next turn; no attack possible now]}
+2026-02-17 15:52:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:52:18;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {14, 8}
+2026-02-17 15:52:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:52:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:52:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4301
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1689}
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack wave tile at (10,11) to extend shot upwards and hit enemy at (14,10)]}
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {10, 11}
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT WAVE
+2026-02-17 15:52:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-17 15:52:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:52:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:52:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:52:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 4) - U = 0
+2026-02-17 15:52:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:52:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:52:24;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:52:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (13, 10) - U = -1.99
+2026-02-17 15:52:26;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:52:26;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:52:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4251
+2026-02-17 15:52:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":2162}
+2026-02-17 15:52:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:52:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (14,9) to get enemy at (13,10) in attack range, enabling an immediate attack next turn]}
+2026-02-17 15:52:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:52:29;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {14, 9}
+2026-02-17 15:52:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:52:30;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:52:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4301
+2026-02-17 15:52:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":2242}
+2026-02-17 15:52:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:52:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack the wave tile at (10,11) to extend shot and hit no enemy but prepare for next turn; no valid immediate attack, move closer to (10,12) to get enemy at (13,10) into range next turn]}
+2026-02-17 15:52:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:52:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {10, 12}
+2026-02-17 15:52:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-17 15:52:34;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:52:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:52:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:52:34;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 6) - U = -1.99
+2026-02-17 15:52:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:52:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:52:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:52:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (14, 8) - U = 0
+2026-02-17 15:52:38;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:52:38;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:52:39;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4258
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1861}
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Attack immediate 🎯 target at (16,9) from current position; no need to move]}
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;False;True;False
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];ATTK {16, 9}
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TRGT TARGET
+2026-02-17 15:52:41;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Attacked succeeded at GridTile(Clone) (16, 9). Kill count = 1.
+2026-02-17 15:52:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:52:43;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:52:44;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4277
+2026-02-17 15:52:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1471}
+2026-02-17 15:52:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:52:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Move closer to enemies to get in attack range next turn; no immediate attack possible now.]}
+2026-02-17 15:52:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;False;False
+2026-02-17 15:52:45;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {11, 11}
+2026-02-17 15:52:47;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:52:47;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:52:47;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:52:47;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (13, 3) - U = 0
+2026-02-17 15:52:49;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:52:49;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:52:49;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:52:49;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (13, 9) - U = -1.995
+2026-02-17 15:52:51;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:52:51;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:52:52;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4256
+2026-02-17 15:52:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":1674}
+2026-02-17 15:52:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:52:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (13, 8) to get closer to enemy at (13, 9) for attack next turn; no immediate attack possible now]}
+2026-02-17 15:52:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:52:54;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {13, 8}
+2026-02-17 15:52:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:52:55;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:52:56;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4259
+2026-02-17 15:52:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":2064}
+2026-02-17 15:52:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:52:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Move to (11,9) to get closer to enemy at (13,9), putting it within 2 tiles for next turn attack]}
+2026-02-17 15:52:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;False;False
+2026-02-17 15:52:58;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {11, 9}
+2026-02-17 15:53:00;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:53:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:53:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:53:00;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (15, 4) - U = 0
+2026-02-17 15:53:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:53:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:53:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:53:02;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (13, 9) - U = -1.995
+2026-02-17 15:53:03;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: True
+2026-02-17 15:53:03;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];ATTK {11, 9}
+2026-02-17 15:53:03;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-17 15:53:04;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Start turn;5,5
+2026-02-17 15:53:05;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];PRPT Prompt_4;4231
+2026-02-17 15:53:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];TIME {"request":2572}
+2026-02-17 15:53:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"attempts":1}
+2026-02-17 15:53:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];RESN {"reasoning":Move to (13, 9) to attack enemy; (13, 9) is currently occupied by an enemy ship; moving to (13, 9) is invalid. Instead, move to (13, 7) to get closer to (13, 9) and attack next turn.]}
+2026-02-17 15:53:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Flags;True;False;False
+2026-02-17 15:53:08;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];MOVE {13, 7}
+2026-02-17 15:53:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Finish turn
+2026-02-17 15:53:09;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:53:10;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4281
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1405}
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Attack enemy at (13,9) directly, no movement needed since target is in immediate valid attack range]}
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;False;True;False
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {13, 9}
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT LLM {ENEMY}
+2026-02-17 15:53:11;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (13, 9). Kill count = 0.
+2026-02-17 15:53:13;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:53:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:53:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:53:13;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (14, 6) - U = 0
+2026-02-17 15:53:15;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: True
+2026-02-17 15:53:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];INFO Destroyed
+2026-02-17 15:53:15;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|5];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":2,"internalTotalRequestCount":22,"internalMovementAttemptCount":18,"internalAttackAttemptCount":9,"internalFaultyMessageCount":0,"averageRequestTime":1875.864,"averageRequestTimeCount":22,"maxRequestTime":2572,"minRequest":1482,"averageAttempts":1,"kills":1}
+2026-02-17 15:53:15;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];ATTK {13, 7}
+2026-02-17 15:53:15;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-17 15:53:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:53:16;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:53:17;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (14, 7) - U = 0
+2026-02-17 15:53:19;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:53:19;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:53:20;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4264
+2026-02-17 15:53:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":1798}
+2026-02-17 15:53:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:53:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Move to (13,9) to get within attack range of enemy at (14,7) next turn; no immediate attack possible now]}
+2026-02-17 15:53:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;False;False
+2026-02-17 15:53:21;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {13, 9}
+2026-02-17 15:53:23;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:53:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:53:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:53:23;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (15, 8) - U = 0
+2026-02-17 15:53:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: False
+2026-02-17 15:53:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:53:25;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:53:26;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (13, 8) - U = -1.995
+2026-02-17 15:53:27;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: False
+2026-02-17 15:53:27;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Start turn;5,5
+2026-02-17 15:53:28;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];PRPT Prompt_4;4235
+2026-02-17 15:53:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TIME {"request":2444}
+2026-02-17 15:53:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"attempts":1}
+2026-02-17 15:53:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];RESN {"reasoning":Move to (14,9) to get enemy at (15,8) within direct attack range and then attack it.]}
+2026-02-17 15:53:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Flags;True;True;False
+2026-02-17 15:53:31;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];MOVE {14, 9}
+2026-02-17 15:53:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];ATTK {15, 8}
+2026-02-17 15:53:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];TRGT LLM {ENEMY}
+2026-02-17 15:53:32;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Attacked succeeded at GridTile(Clone) (15, 8). Kill count = 0.
+2026-02-17 15:53:33;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Finish turn
+2026-02-17 15:53:33;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Start turn
+2026-02-17 15:53:33;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate move: True
+2026-02-17 15:53:33;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Chosen action: (15, 10) - U = 0
+2026-02-17 15:53:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];INFO Can calculate action: True
+2026-02-17 15:53:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];ATTK {14, 9}
+2026-02-17 15:53:35;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-17 15:53:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Start turn
+2026-02-17 15:53:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate move: True
+2026-02-17 15:53:36;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Chosen action: (13, 8) - U = -1.995
+2026-02-17 15:53:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];INFO Can calculate action: True
+2026-02-17 15:53:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];INFO Destroyed
+2026-02-17 15:53:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":25,"internalMovementAttemptCount":13,"internalAttackAttemptCount":22,"internalFaultyMessageCount":0,"averageRequestTime":1746.4,"averageRequestTimeCount":25,"maxRequestTime":2444,"minRequest":1405,"averageAttempts":1,"kills":0}
+2026-02-17 15:53:37;[SYSTEM];[LevelGoal];INFO Faction Green won.
+2026-02-17 15:53:37;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-17 15:53:37;[SYSTEM];[LLMAgent|GPT|gpt-4.1-mini|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":25,"internalMovementAttemptCount":13,"internalAttackAttemptCount":22,"internalFaultyMessageCount":0,"averageRequestTime":1746.4,"averageRequestTimeCount":25,"maxRequestTime":2444,"minRequest":1405,"averageAttempts":1,"kills":0}
+2026-02-17 15:53:37;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-17 15:53:37;[SYSTEM];[LevelGoal];INFO Utility Green won.
+2026-02-17 15:53:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];ATTK {14, 9}
+2026-02-17 15:53:37;[SYSTEM];[AIAgent|Utility|RandomGenes|Green|8];TRGT LLM {ENEMY}
