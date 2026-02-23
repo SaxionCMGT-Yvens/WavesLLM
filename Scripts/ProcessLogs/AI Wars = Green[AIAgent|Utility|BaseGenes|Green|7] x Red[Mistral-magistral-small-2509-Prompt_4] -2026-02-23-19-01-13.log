@@ -1,0 +1,274 @@
+﻿2026-02-23 19:01:13;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-23 19:01:13;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-23 19:01:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 19:01:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 19:01:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 7) - U = 7.699996
+2026-02-23 19:01:15;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: False
+2026-02-23 19:01:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Start turn;5,5
+2026-02-23 19:01:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];PRPT Prompt_4;4346
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TIME {"request":22122}
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];DATA {"attempts":1}
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];RESN {"reasoning":Wave-extended attack on enemy at (10,7) using wave at (10,11)]}
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Flags;False;True;False
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];ATTK {10, 11}
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TRGT WAVE
+2026-02-23 19:01:38;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-23 19:01:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Finish turn
+2026-02-23 19:01:40;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:01:40;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:01:40;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 9.699996
+2026-02-23 19:01:40;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 19:01:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:01:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4312
+2026-02-23 19:01:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":16524}
+2026-02-23 19:01:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":1}
+2026-02-23 19:01:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Move down towards closest enemy at (12,6) to reduce distance for future attacks.]}
+2026-02-23 19:01:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;True;False;False
+2026-02-23 19:01:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];MOVE {12, 11}
+2026-02-23 19:01:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:01:58;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:01:58;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:01:58;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 9.699996
+2026-02-23 19:01:59;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:01:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Start turn;5,5
+2026-02-23 19:02:00;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];PRPT Prompt_4;4305
+2026-02-23 19:02:21;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO No response exception!  Success:True.
+2026-02-23 19:02:21;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":20840}
+2026-02-23 19:02:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":17578}
+2026-02-23 19:02:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];DATA {"attempts":2}
+2026-02-23 19:02:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];RESN {"reasoning":Moving to (8, 11) to close distance to enemy at (10, 7)]}
+2026-02-23 19:02:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Flags;True;False;False
+2026-02-23 19:02:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];MOVE {8, 11}
+2026-02-23 19:02:45;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Finish turn
+2026-02-23 19:02:45;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 19:02:45;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 19:02:45;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 7) - U = 11.3
+2026-02-23 19:02:45;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: False
+2026-02-23 19:02:46;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Start turn;5,5
+2026-02-23 19:02:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];PRPT Prompt_4;4346
+2026-02-23 19:03:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TIME {"request":21774}
+2026-02-23 19:03:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];DATA {"attempts":1}
+2026-02-23 19:03:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];RESN {"reasoning":Moving to (10,12) to reduce distance to enemy at (10,7) for future attack]}
+2026-02-23 19:03:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Flags;True;False;False
+2026-02-23 19:03:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];MOVE {10, 12}
+2026-02-23 19:03:09;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Finish turn
+2026-02-23 19:03:09;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:03:09;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:03:10;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 9.699996
+2026-02-23 19:03:10;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 19:03:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:03:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4339
+2026-02-23 19:03:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO No response exception!  Success:True.
+2026-02-23 19:03:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":23699}
+2026-02-23 19:03:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO No response exception!  Success:True.
+2026-02-23 19:03:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":18608}
+2026-02-23 19:04:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO No response exception!  Success:True.
+2026-02-23 19:04:25;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":20238}
+2026-02-23 19:04:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO No response exception!  Success:True.
+2026-02-23 19:04:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":22308}
+2026-02-23 19:05:30;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO No response exception!  Success:True.
+2026-02-23 19:05:30;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":24837}
+2026-02-23 19:06:02;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":20496}
+2026-02-23 19:06:02;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":6}
+2026-02-23 19:06:02;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Moving to (11, 11) to position for future attacks on enemy at (10, 7)]}
+2026-02-23 19:06:02;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;True;False;False
+2026-02-23 19:06:02;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];MOVE {11, 11}
+2026-02-23 19:06:04;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:06:04;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:06:04;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:06:04;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 8) - U = 8.099997
+2026-02-23 19:06:06;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:06:06;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {7, 9}
+2026-02-23 19:06:06;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT TARGET
+2026-02-23 19:06:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Start turn;5,5
+2026-02-23 19:06:09;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];PRPT Prompt_4;4293
+2026-02-23 19:06:27;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO No response exception!  Success:True.
+2026-02-23 19:06:27;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":18562}
+2026-02-23 19:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":15872}
+2026-02-23 19:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];DATA {"attempts":2}
+2026-02-23 19:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];RESN {"reasoning":Move to (7,9) to bring enemy at (6,8) into attack range for next turn]}
+2026-02-23 19:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Flags;True;False;False
+2026-02-23 19:06:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];MOVE {7, 9}
+2026-02-23 19:06:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Finish turn
+2026-02-23 19:06:50;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 19:06:50;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 19:06:50;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 10) - U = 12.64999
+2026-02-23 19:06:52;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: True
+2026-02-23 19:06:52;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];ATTK {10, 12}
+2026-02-23 19:06:52;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-23 19:06:54;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Start turn;5,5
+2026-02-23 19:06:55;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];PRPT Prompt_4;4378
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TIME {"request":18030}
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];DATA {"attempts":1}
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];RESN {"reasoning":Direct attack on closest enemy at (10,10), then reposition to (10,13) to maintain distance and prepare for future attacks]}
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Flags;False;True;False
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];ATTK {10, 10}
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TRGT LLM {ENEMY}
+2026-02-23 19:07:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 19:07:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Finish turn
+2026-02-23 19:07:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:07:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:07:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 8.59833
+2026-02-23 19:07:15;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 19:07:15;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:07:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4392
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":19030}
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":1}
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Attack low-health enemy at (10,10) to eliminate it, then move to (11,10) to maintain position for follow-up attacks.]}
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;False;True;False
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];ATTK {10, 10}
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TRGT LLM {ENEMY}
+2026-02-23 19:07:35;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 19:07:37;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:07:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:07:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:07:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 10) - U = 11.57167
+2026-02-23 19:07:38;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:07:38;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {7, 9}
+2026-02-23 19:07:38;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 19:07:40;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Start turn;5,5
+2026-02-23 19:07:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];PRPT Prompt_4;4315
+2026-02-23 19:08:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":23822}
+2026-02-23 19:08:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];DATA {"attempts":1}
+2026-02-23 19:08:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];RESN {"reasoning":Move to (10,9) to attack and destroy the low-health enemy at (10,10) this turn, eliminating a critical threat immediately.]}
+2026-02-23 19:08:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Flags;True;True;False
+2026-02-23 19:08:05;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];MOVE {10, 9}
+2026-02-23 19:08:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 10).
+2026-02-23 19:08:07;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Finish turn
+2026-02-23 19:08:07;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 19:08:07;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 19:08:07;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 10) - U = 15.17667
+2026-02-23 19:08:07;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: True
+2026-02-23 19:08:07;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];ATTK {10, 12}
+2026-02-23 19:08:07;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-23 19:08:09;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Start turn;5,5
+2026-02-23 19:08:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];PRPT Prompt_4;4395
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TIME {"request":10579}
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];DATA {"attempts":1}
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];RESN {"reasoning":Direct attack on low-health enemy at (10, 10)]}
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Flags;False;True;False
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];ATTK {10, 10}
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];TRGT LLM {ENEMY}
+2026-02-23 19:08:20;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 1.
+2026-02-23 19:08:22;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Finish turn
+2026-02-23 19:08:22;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:08:22;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:08:22;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 8.231663
+2026-02-23 19:08:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 19:08:23;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:08:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4287
+2026-02-23 19:08:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO No response exception!  Success:True.
+2026-02-23 19:08:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":23595}
+2026-02-23 19:09:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":14217}
+2026-02-23 19:09:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":2}
+2026-02-23 19:09:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Closing distance to enemy at (6, 10) for future attack]}
+2026-02-23 19:09:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;True;False;False
+2026-02-23 19:09:06;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];MOVE {10, 10}
+2026-02-23 19:09:08;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:09:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:09:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:09:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (8, 11) - U = 13.87
+2026-02-23 19:09:10;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:09:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];INFO Destroyed
+2026-02-23 19:09:10;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|2];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":0,"internalTotalRequestCount":4,"internalMovementAttemptCount":1,"internalAttackAttemptCount":3,"internalFaultyMessageCount":0,"averageRequestTime":18126.25,"averageRequestTimeCount":4,"maxRequestTime":22122,"minRequest":10579,"averageAttempts":1,"kills":1}
+2026-02-23 19:09:10;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {10, 11}
+2026-02-23 19:09:10;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT WAVE
+2026-02-23 19:09:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Start turn;5,5
+2026-02-23 19:09:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];PRPT Prompt_4;4272
+2026-02-23 19:09:39;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO No response exception!  Success:True.
+2026-02-23 19:09:39;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":26293}
+2026-02-23 19:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO No response exception!  Success:True.
+2026-02-23 19:10:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":27503}
+2026-02-23 19:10:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":23636}
+2026-02-23 19:10:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];DATA {"attempts":3}
+2026-02-23 19:10:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];RESN {"reasoning":Move to (8,10) to bring enemy at (8,11) into range and attack]}
+2026-02-23 19:10:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Flags;True;True;False
+2026-02-23 19:10:41;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];MOVE {8, 10}
+2026-02-23 19:10:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Cannot reach target at GridTile(Clone) (8, 11).
+2026-02-23 19:10:43;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Finish turn
+2026-02-23 19:10:43;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:10:43;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:10:44;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (11, 8) - U = 8.576663
+2026-02-23 19:10:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:10:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {12, 9}
+2026-02-23 19:10:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT TARGET
+2026-02-23 19:10:47;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:10:48;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4287
+2026-02-23 19:11:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":23527}
+2026-02-23 19:11:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":1}
+2026-02-23 19:11:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Move to (10,9) to bring enemy at (11,8) into attack range, then attack. Move after to (10,8) to reposition.]}
+2026-02-23 19:11:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;True;True;False
+2026-02-23 19:11:11;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];MOVE {10, 9}
+2026-02-23 19:11:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];ATTK {11, 8}
+2026-02-23 19:11:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TRGT LLM {ENEMY}
+2026-02-23 19:11:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Attacked succeeded at GridTile(Clone) (11, 8). Kill count = 0.
+2026-02-23 19:11:14;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:11:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:11:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:11:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (8, 12) - U = 10.52666
+2026-02-23 19:11:15;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:11:15;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {8, 10}
+2026-02-23 19:11:15;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 19:11:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Start turn;5,5
+2026-02-23 19:11:17;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];PRPT Prompt_4;4282
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TIME {"request":6599}
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];DATA {"attempts":1}
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];RESN {"reasoning":Immediate attack on enemy at (8, 12) which is within direct attack range]}
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Flags;False;True;False
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];ATTK {8, 12}
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];TRGT LLM {ENEMY}
+2026-02-23 19:11:24;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Attacked succeeded at GridTile(Clone) (8, 12). Kill count = 0.
+2026-02-23 19:11:26;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Finish turn
+2026-02-23 19:11:26;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:11:26;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:11:26;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (11, 8) - U = 12.56666
+2026-02-23 19:11:26;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:11:26;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {10, 9}
+2026-02-23 19:11:26;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 19:11:28;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:11:29;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4345
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":21717}
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":1}
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Direct attack on enemy at (11,8) within optimal range]}
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;False;True;False
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];ATTK {11, 8}
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TRGT LLM {ENEMY}
+2026-02-23 19:11:50;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Attacked succeeded at GridTile(Clone) (11, 8). Kill count = 0.
+2026-02-23 19:11:52;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:11:52;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:11:52;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:11:52;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (9, 11) - U = 11.01333
+2026-02-23 19:11:54;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:11:54;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];INFO Destroyed
+2026-02-23 19:11:54;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|1];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":9,"internalMovementAttemptCount":4,"internalAttackAttemptCount":3,"internalFaultyMessageCount":4,"averageRequestTime":20078.33,"averageRequestTimeCount":9,"maxRequestTime":27503,"minRequest":6599,"averageAttempts":1.8,"kills":0}
+2026-02-23 19:11:54;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {8, 10}
+2026-02-23 19:11:54;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 19:11:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:11:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:11:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (9, 8) - U = 11.38
+2026-02-23 19:11:57;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:11:57;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {10, 9}
+2026-02-23 19:11:57;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 19:11:58;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Start turn;5,5
+2026-02-23 19:11:59;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];PRPT Prompt_4;4346
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TIME {"request":12774}
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"attempts":1}
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];RESN {"reasoning":Attack low-health enemy at (9,8) to eliminate it, then move to (9,10) to set up for next turn's attack on remaining enemy.]}
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Flags;False;True;False
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];ATTK {9, 8}
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];TRGT LLM {ENEMY}
+2026-02-23 19:12:12;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Attacked succeeded at GridTile(Clone) (9, 8). Kill count = 1.
+2026-02-23 19:12:13;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Finish turn
+2026-02-23 19:12:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:12:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:12:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (8, 9) - U = 10.40666
+2026-02-23 19:12:16;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:12:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];INFO Destroyed
+2026-02-23 19:12:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":0,"internalTotalRequestCount":13,"internalMovementAttemptCount":4,"internalAttackAttemptCount":4,"internalFaultyMessageCount":6,"averageRequestTime":20120.77,"averageRequestTimeCount":13,"maxRequestTime":24837,"minRequest":12774,"averageAttempts":1.857143,"kills":1}
+2026-02-23 19:12:16;[SYSTEM];[LevelGoal];INFO Faction Green won.
+2026-02-23 19:12:16;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-23 19:12:16;[SYSTEM];[LLMAgent|Mistral|magistral-small-2509|Red|6];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":0,"internalTotalRequestCount":13,"internalMovementAttemptCount":4,"internalAttackAttemptCount":4,"internalFaultyMessageCount":6,"averageRequestTime":20120.77,"averageRequestTimeCount":13,"maxRequestTime":24837,"minRequest":12774,"averageAttempts":1.857143,"kills":1}
+2026-02-23 19:12:16;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-23 19:12:16;[SYSTEM];[LevelGoal];INFO Utility Green won.
+2026-02-23 19:12:16;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {10, 9}
+2026-02-23 19:12:16;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}

@@ -1,0 +1,288 @@
+﻿2026-02-23 19:34:06;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-23 19:34:06;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-23 19:34:06;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 19:34:06;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 19:34:06;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 7) - U = 7.699996
+2026-02-23 19:34:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: False
+2026-02-23 19:34:08;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:34:09;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4351
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":7989}
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move to (10,10) to bring all three enemies into attack range (offset 1, range 2). From (10,10), enemy at (10,7) will be at distance 3, enemies at (7,6) and (12,6) will be at distance 4+1=5. Actually recalculating: from (10,10) to (10,7) is distance 3 (too far). Need to move closer. Moving to (10,9) puts (10,7) at distance 2, within range. From (10,9): (10,7) is 2 away, (7,6) is 3+1=4 away, (12,6) is 2+1=3 away. Attack (10,7) directly.]}
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {10, 9}
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-23 19:34:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:34:17;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:34:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:34:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 9.699996
+2026-02-23 19:34:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 19:34:18;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Start turn;5,5
+2026-02-23 19:34:19;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];PRPT Prompt_4;4317
+2026-02-23 19:34:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];TIME {"request":6912}
+2026-02-23 19:34:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];DATA {"attempts":1}
+2026-02-23 19:34:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];RESN {"reasoning":Move to (11,11) to bring enemy at (10,7) into direct attack range (distance 5 Manhattan = out of range from current position). From (11,11), enemy at (10,7) is 5 tiles away still. Better: move to (13,11) puts me closer to multiple enemies. Actually, move to (11,10) - this puts enemy at (10,7) at distance 3 (still out of 2 range). Move to (10,12) puts enemy at (10,7) at distance 5. Need to move toward (10,7). Moving to (11,11) then (10,10) next turn. But can attack wave at (10,11) from (11,11) to extend toward enemies. Move (11,11), then attack wave (10,11) which extends upward toward enemy at (10,7).]}
+2026-02-23 19:34:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Flags;True;True;False
+2026-02-23 19:34:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];MOVE {11, 11}
+2026-02-23 19:34:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-23 19:34:28;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Finish turn
+2026-02-23 19:34:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:34:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:34:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 9.699996
+2026-02-23 19:34:29;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:34:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:34:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4310
+2026-02-23 19:34:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":3057}
+2026-02-23 19:34:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:34:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Move to (8,10) to position enemy at (10,7) within attack range (distance 2). This enables immediate attack on closest enemy cluster.]}
+2026-02-23 19:34:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;True;True;False
+2026-02-23 19:34:33;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];MOVE {8, 10}
+2026-02-23 19:34:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 7).
+2026-02-23 19:34:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:34:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 19:34:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 19:34:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 10) - U = 13.5
+2026-02-23 19:34:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: True
+2026-02-23 19:34:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];ATTK {11, 11}
+2026-02-23 19:34:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-23 19:34:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:34:39;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4342
+2026-02-23 19:34:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":3475}
+2026-02-23 19:34:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:34:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move south to (10,10) is blocked by enemy. Move to (10,12) puts enemy at (10,10) in attack range (distance 2). After moving to (10,12), I can attack the enemy at (10,10) which is 2 tiles away and outside my offset of 1.]}
+2026-02-23 19:34:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:34:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {10, 12}
+2026-02-23 19:34:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];ATTK {10, 10}
+2026-02-23 19:34:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TRGT LLM {ENEMY}
+2026-02-23 19:34:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 19:34:45;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:34:45;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:34:45;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:34:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (13, 8) - U = 7.32333
+2026-02-23 19:34:48;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:34:48;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {12, 9}
+2026-02-23 19:34:48;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT TARGET
+2026-02-23 19:34:49;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Start turn;5,5
+2026-02-23 19:34:50;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];PRPT Prompt_4;4398
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];TIME {"request":3744}
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];DATA {"attempts":1}
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];RESN {"reasoning":Direct attack on low-health enemy at (10,10) from current position. No movement needed as target is already in range (distance=2, within offset 1-2). After attack, move to (12,10) to maintain distance from remaining enemies and prepare for next engagement.]}
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Flags;False;True;False
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];ATTK {10, 10}
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];TRGT LLM {ENEMY}
+2026-02-23 19:34:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 19:34:55;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Finish turn
+2026-02-23 19:34:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:34:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:34:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 8.59833
+2026-02-23 19:34:56;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:34:56;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:34:57;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4375
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":3091}
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Attack low-health enemy at (10,10) for guaranteed kill, then move to (9,10) to position for attacking remaining enemies]}
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;False;True;False
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];ATTK {10, 10}
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TRGT LLM {ENEMY}
+2026-02-23 19:35:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 1.
+2026-02-23 19:35:02;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:35:02;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:35:03;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4326
+2026-02-23 19:35:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":4191}
+2026-02-23 19:35:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:35:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move to (10,10) to bring enemy at (13,8) into attack range (distance 2-3). From (10,10), I can attack (10,11) wave tile which extends upward to potentially hit enemies, or directly attack (12,10) area. Priority: close distance to engage Green enemies.]}
+2026-02-23 19:35:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;False;False
+2026-02-23 19:35:07;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {10, 10}
+2026-02-23 19:35:08;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:35:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:35:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:35:09;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (13, 11) - U = 11.03833
+2026-02-23 19:35:11;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:35:11;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {11, 11}
+2026-02-23 19:35:11;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 19:35:12;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Start turn;5,5
+2026-02-23 19:35:13;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];PRPT Prompt_4;4349
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];TIME {"request":3211}
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];DATA {"attempts":1}
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];RESN {"reasoning":Enemy at (13,11) is in direct attack range (2 tiles away). Attack immediately without moving. No movement needed as target is already valid.]}
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Flags;False;True;False
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];ATTK {13, 11}
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];TRGT LLM {ENEMY}
+2026-02-23 19:35:16;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Attacked succeeded at GridTile(Clone) (13, 11). Kill count = 0.
+2026-02-23 19:35:18;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Finish turn
+2026-02-23 19:35:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:35:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:35:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 8.121663
+2026-02-23 19:35:18;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:35:18;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:35:20;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4293
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":3600}
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Attack neutral target at (7,9) immediately - it's in range. Then move to (9,10) to position for attacking Green enemy at (7,6) next turn, bringing it into my 2-tile range.]}
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;False;True;False
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];ATTK {7, 9}
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TRGT TARGET
+2026-02-23 19:35:23;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Attacked succeeded at GridTile(Clone) (7, 9). Kill count = 1.
+2026-02-23 19:35:25;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:35:25;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:35:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4335
+2026-02-23 19:35:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":3473}
+2026-02-23 19:35:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:35:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move to (10,10) to bring Green enemy at (13,11) into attack range (distance 4 Manhattan = 3+1). Then attack (13,11) - the weakened enemy (health:8). This eliminates a damaged target.]}
+2026-02-23 19:35:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:35:29;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {10, 10}
+2026-02-23 19:35:31;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Cannot reach target at GridTile(Clone) (13, 11).
+2026-02-23 19:35:31;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:35:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:35:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:35:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (13, 11) - U = 13.87333
+2026-02-23 19:35:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:35:31;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];INFO Destroyed
+2026-02-23 19:35:31;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":3,"internalMovementAttemptCount":1,"internalAttackAttemptCount":3,"internalFaultyMessageCount":0,"averageRequestTime":4622.333,"averageRequestTimeCount":3,"maxRequestTime":6912,"minRequest":3211,"averageAttempts":1,"kills":0}
+2026-02-23 19:35:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {11, 11}
+2026-02-23 19:35:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 19:35:33;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:35:33;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:35:33;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 6) - U = 6.299997
+2026-02-23 19:35:34;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:35:34;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:35:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4282
+2026-02-23 19:35:39;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":3768}
+2026-02-23 19:35:39;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:35:39;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Move to (9,9) to bring enemy at (6,6) into attack range (distance 2). After moving, attack (6,6) - the full health enemy. Then reposition to (8,9) to maintain tactical flexibility.]}
+2026-02-23 19:35:39;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;True;True;False
+2026-02-23 19:35:39;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];MOVE {9, 9}
+2026-02-23 19:35:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Cannot reach target at GridTile(Clone) (6, 6).
+2026-02-23 19:35:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:35:40;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:35:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4301
+2026-02-23 19:35:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":2718}
+2026-02-23 19:35:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:35:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move to (11,10) to bring enemy at (13,11) into attack range (distance 2). Attack the weakened enemy (health:8) for elimination.]}
+2026-02-23 19:35:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:35:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {11, 10}
+2026-02-23 19:35:46;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Cannot reach target at GridTile(Clone) (13, 11).
+2026-02-23 19:35:46;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:35:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 19:35:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 19:35:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 9) - U = 7.539998
+2026-02-23 19:35:48;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 19:35:48;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {11, 10}
+2026-02-23 19:35:48;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 19:35:50;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:35:50;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:35:50;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 6) - U = 8.673329
+2026-02-23 19:35:51;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:35:51;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:35:52;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4279
+2026-02-23 19:35:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":2605}
+2026-02-23 19:35:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:35:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Move to (10,9) to bring weakened enemy at (12,9) into attack range (distance 2). Attack (12,9) to eliminate low-health target.]}
+2026-02-23 19:35:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;True;True;False
+2026-02-23 19:35:54;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];MOVE {10, 9}
+2026-02-23 19:35:55;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];ATTK {12, 9}
+2026-02-23 19:35:55;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TRGT LLM {ENEMY}
+2026-02-23 19:35:55;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Attacked succeeded at GridTile(Clone) (12, 9). Kill count = 0.
+2026-02-23 19:35:57;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:35:57;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:35:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4386
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":3184}
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Direct attack on low-health enemy at (12,9) - within range 2, outside offset 1. This eliminates a threat immediately without moving.]}
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;False;True;False
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];ATTK {12, 9}
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TRGT LLM {ENEMY}
+2026-02-23 19:36:01;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Attacked succeeded at GridTile(Clone) (12, 9). Kill count = 1.
+2026-02-23 19:36:02;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:36:02;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:36:02;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:36:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 6) - U = 8.173329
+2026-02-23 19:36:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:36:03;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:36:04;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4293
+2026-02-23 19:36:15;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":10313}
+2026-02-23 19:36:15;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:36:15;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Move to (9,8) to bring enemy at (6,6) into attack range (distance=5 currently, need <=2). After moving to (9,8), enemy at (6,6) will be at Manhattan distance 5 still - too far. Instead, move to (8,8) which puts me closer. From (8,8), enemy at (6,6) is distance 4 - still too far. Need to move to (7,7) but that's not in safe list. Move to (8,9) - distance to (6,6) = 5. Move aggressively toward enemy: (9,9) gives distance 6. Best approach: move to (8,8), then next turn continue closing. Actually, let me recalculate: from (10,9) to (6,6) = |10-6|+|9-6| = 4+3 = 7. Need to close gap. Move to (9,9): distance = |9-6|+|9-6| = 3+3 = 6. Move to (8,9): distance = |8-6|+|9-6| = 2+3 = 5. Move to (9,8): distance = |9-6|+|8-6| = 3+2 = 5. Move to (8,8): distance = |8-6|+|8-6| = 2+2 = 4. Move to (7,9): distance = |7-6|+|9-6| = 1+3 = 4. Best moves toward enemy are (8,8) or (7,9). Choose (8,8) to close distance.]}
+2026-02-23 19:36:15;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;True;False;False
+2026-02-23 19:36:15;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];MOVE {8, 8}
+2026-02-23 19:36:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:36:17;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:36:18;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4256
+2026-02-23 19:36:21;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":3335}
+2026-02-23 19:36:21;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:36:21;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move to (10,9) to bring enemy at (6,6) into attack range (distance 5 from current position, but distance 4 from (10,9)). Then attack wave at (9,7) to extend shot toward enemy at (6,6).]}
+2026-02-23 19:36:21;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:36:21;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {10, 9}
+2026-02-23 19:36:22;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Cannot reach target at GridTile(Clone) (9, 7).
+2026-02-23 19:36:22;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:36:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:36:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:36:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 8) - U = 6.799998
+2026-02-23 19:36:24;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:36:24;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {8, 8}
+2026-02-23 19:36:24;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 19:36:26;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:36:27;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4240
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":3132}
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Enemy at (6,8) is in direct attack range (distance 2, within offset 1-2). Attack immediately without moving. No movement needed as target is already valid.]}
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;False;True;False
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];ATTK {6, 8}
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TRGT LLM {ENEMY}
+2026-02-23 19:36:30;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Attacked succeeded at GridTile(Clone) (6, 8). Kill count = 0.
+2026-02-23 19:36:31;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:36:31;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:36:32;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4253
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":2875}
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move west to (6,9) to bring enemy at (6,8) into direct attack range (distance 1). Then attack enemy ship.]}
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {6, 9}
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Cannot reach target at GridTile(Clone) (6, 8).
+2026-02-23 19:36:35;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:36:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:36:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:36:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (6, 8) - U = 9.799997
+2026-02-23 19:36:36;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 19:36:36;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {8, 8}
+2026-02-23 19:36:36;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 19:36:37;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:36:38;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4254
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":3029}
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Enemy at (6,8) is in direct attack range (2 tiles away, outside offset of 1). Attack immediately without moving. No movement needed as target is already valid.]}
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;False;True;False
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];ATTK {6, 8}
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TRGT LLM {ENEMY}
+2026-02-23 19:36:41;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Attacked succeeded at GridTile(Clone) (6, 8). Kill count = 0.
+2026-02-23 19:36:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
+2026-02-23 19:36:43;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Start turn;5,5
+2026-02-23 19:36:44;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];PRPT Prompt_4;4254
+2026-02-23 19:36:47;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];TIME {"request":3241}
+2026-02-23 19:36:47;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"attempts":1}
+2026-02-23 19:36:47;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];RESN {"reasoning":Move to (8,9) to bring enemy at (6,8) into direct attack range (distance 2). Then attack (6,8) to eliminate the low-health enemy.]}
+2026-02-23 19:36:47;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Flags;True;True;False
+2026-02-23 19:36:47;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];MOVE {8, 9}
+2026-02-23 19:36:49;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Cannot reach target at GridTile(Clone) (6, 8).
+2026-02-23 19:36:49;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];INFO Finish turn
+2026-02-23 19:36:49;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 19:36:49;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 19:36:49;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (5, 6) - U = 6.906664
+2026-02-23 19:36:51;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 19:36:51;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Start turn;5,5
+2026-02-23 19:36:52;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];PRPT Prompt_4;4209
+2026-02-23 19:36:56;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TIME {"request":4277}
+2026-02-23 19:36:56;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"attempts":1}
+2026-02-23 19:36:56;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];RESN {"reasoning":Move to (9,6) to get enemy at (5,6) into attack range (distance 4 horizontally = out of range). Actually, enemy is at (5,6), I'm at (8,8). Distance is |8-5|+|8-6|=3+2=5, too far. Move to (7,6) puts me at distance |7-5|+|6-6|=2, perfect attack range. Then attack (5,6) directly.]}
+2026-02-23 19:36:56;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Flags;True;True;False
+2026-02-23 19:36:56;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];MOVE {7, 6}
+2026-02-23 19:36:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];ATTK {5, 6}
+2026-02-23 19:36:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];TRGT LLM {ENEMY}
+2026-02-23 19:36:58;[SYSTEM];[LevelGoal];INFO Faction Red won.
+2026-02-23 19:36:58;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-23 19:36:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":9,"internalMovementAttemptCount":5,"internalAttackAttemptCount":8,"internalFaultyMessageCount":0,"averageRequestTime":4096.889,"averageRequestTimeCount":9,"maxRequestTime":10313,"minRequest":2605,"averageAttempts":1,"kills":0}
+2026-02-23 19:36:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|2];DATA {"internalWrongMovementCount":2,"internalWrongAttackCount":6,"internalTotalRequestCount":9,"internalMovementAttemptCount":8,"internalAttackAttemptCount":8,"internalFaultyMessageCount":0,"averageRequestTime":3831.222,"averageRequestTimeCount":9,"maxRequestTime":7989,"minRequest":2718,"averageAttempts":1,"kills":1}
+2026-02-23 19:36:58;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-23 19:36:58;[SYSTEM];[LevelGoal];INFO LLM Claude|claude-sonnet-4-5-20250929 won.
+2026-02-23 19:36:58;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Attacked succeeded at GridTile(Clone) (5, 6). Kill count = 1.
+2026-02-23 19:37:00;[SYSTEM];[LLMAgent|Claude|claude-sonnet-4-5-20250929|Red|1];INFO Finish turn
