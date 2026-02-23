@@ -1,0 +1,289 @@
+﻿2026-02-23 16:11:56;[SYSTEM];[LevelController];INFO Level starts with 6 actors.
+2026-02-23 16:11:56;[SYSTEM];[LevelController];INFO Grid size is 20 by 19.
+2026-02-23 16:11:56;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 16:11:56;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 16:11:56;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 7) - U = 7.699996
+2026-02-23 16:11:58;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: False
+2026-02-23 16:11:58;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:11:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4350
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1723}
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Attack the wave tile at (10, 11) to extend my shot northward toward enemy at (10, 7). This wave-extension tactic allows me to hit the enemy ship 4 tiles away, which is beyond normal range but achievable through the wave. This is a high-priority target that will damage an enemy while staying in a safe position.]}
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;False;True;False
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];ATTK {10, 11}
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TRGT WAVE
+2026-02-23 16:12:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 11). Kill count = 0.
+2026-02-23 16:12:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:12:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 16:12:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 16:12:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 9.699996
+2026-02-23 16:12:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 16:12:03;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:12:05;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4316
+2026-02-23 16:12:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":2120}
+2026-02-23 16:12:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:12:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":No enemies in direct attack range. Move closer to the enemy cluster (7,6), (12,6), (10,7). Moving to (10,12) positions me to potentially attack (10,7) next turn and gets me closer to the (12,6) enemy. This is a strategic advance toward the primary objective.]}
+2026-02-23 16:12:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;True;False;False
+2026-02-23 16:12:07;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];MOVE {10, 12}
+2026-02-23 16:12:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:12:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:12:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:12:08;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 9.699996
+2026-02-23 16:12:09;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 16:12:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Start turn;5,5
+2026-02-23 16:12:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];PRPT Prompt_4;4299
+2026-02-23 16:12:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];TIME {"request":1485}
+2026-02-23 16:12:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];DATA {"attempts":1}
+2026-02-23 16:12:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];RESN {"reasoning":No immediate attack available. Moving to (9, 12) to close distance on enemy at (10, 7) and position for wave-extended attack next turn via the ~V wave at (9, 7). This move brings me closer to multiple enemies while maintaining safe positioning.]}
+2026-02-23 16:12:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Flags;True;False;False
+2026-02-23 16:12:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];MOVE {9, 12}
+2026-02-23 16:12:13;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Finish turn
+2026-02-23 16:12:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 16:12:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 16:12:13;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 7) - U = 12
+2026-02-23 16:12:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: False
+2026-02-23 16:12:14;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:12:15;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4355
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1751}
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":No valid immediate attack on enemies. Closest enemy is at (10,7), which is 6 tiles away. Move south toward (10,11) wave tile to position for wave-extended attack on the enemy at (10,7) next turn. The wave at (10,11) can extend my attack range downward to hit enemies in column 10.]}
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;True;False;False
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];MOVE {10, 11}
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:12:17;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 16:12:17;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 16:12:17;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 9.699996
+2026-02-23 16:12:17;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 16:12:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:12:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4253
+2026-02-23 16:12:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":3257}
+2026-02-23 16:12:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:12:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Move to (10, 10) to get closer to the enemy cluster. From (10, 10), I can attack the enemy at (10, 7) which is exactly 3 tiles away vertically. Wait - that's outside my range of 2. Let me recalculate: from (10, 10), enemies at (10, 7) is 3 away (too far), (12, 6) is 4 away (too far), (7, 6) is 5 away (too far). Moving to (10, 10) positions me to close distance on the (10, 7) enemy. Next turn from (10, 10), I could move to (10, 8) or (10, 9) to get within attack range of (10, 7).]}
+2026-02-23 16:12:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;True;False;False
+2026-02-23 16:12:22;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];MOVE {10, 10}
+2026-02-23 16:12:23;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:12:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:12:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:12:24;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 9.699996
+2026-02-23 16:12:24;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 16:12:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Start turn;5,5
+2026-02-23 16:12:25;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];PRPT Prompt_4;4334
+2026-02-23 16:12:27;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];TIME {"request":2188}
+2026-02-23 16:12:27;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];DATA {"attempts":1}
+2026-02-23 16:12:27;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];RESN {"reasoning":Enemy ships at (7,6), (12,6), (10,7) are all outside my current attack range. The wave at (10,11) is adjacent to me and within attack range. By attacking the wave at (10,11), I can extend my shot southward along the ~^ (upward wave) trajectory. This positions me to potentially hit the enemy at (10,7) on my next turn or sets up future positioning. Moving to (9,11) would place me closer to multiple enemies and allow better positioning for sustained attacks.]}
+2026-02-23 16:12:27;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Flags;True;True;False
+2026-02-23 16:12:27;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];MOVE {9, 11}
+2026-02-23 16:12:28;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-23 16:12:28;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Finish turn
+2026-02-23 16:12:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 16:12:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 16:12:29;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 10) - U = 14.6
+2026-02-23 16:12:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: True
+2026-02-23 16:12:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];ATTK {9, 11}
+2026-02-23 16:12:31;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-23 16:12:32;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:12:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4325
+2026-02-23 16:12:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":2050}
+2026-02-23 16:12:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:12:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy at (10, 10) is 3 tiles away. Moving to (11, 11) closes distance and positions for attack next turn. Wave at (10, 11) is adjacent to enemy at (10, 10) - if I move to (11, 11), I can attack the wave tile (10, 11) which extends my shot to hit the enemy at (10, 10) this turn.]}
+2026-02-23 16:12:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;True;True;False
+2026-02-23 16:12:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];MOVE {11, 11}
+2026-02-23 16:12:37;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Cannot reach target at GridTile(Clone) (10, 11).
+2026-02-23 16:12:37;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:12:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 16:12:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 16:12:37;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (12, 6) - U = 9.116663
+2026-02-23 16:12:38;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: False
+2026-02-23 16:12:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:12:39;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4412
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":1373}
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Enemy at (10, 10) is within attack range (distance 2, offset 1). This is a valid target and highest priority. Attack immediately without moving to maximize damage output and maintain board control.]}
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;False;True;False
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];ATTK {10, 10}
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TRGT LLM {ENEMY}
+2026-02-23 16:12:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 16:12:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:12:42;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:12:42;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:12:42;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (7, 6) - U = 9.116663
+2026-02-23 16:12:43;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 16:12:43;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Start turn;5,5
+2026-02-23 16:12:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];PRPT Prompt_4;4398
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];TIME {"request":1523}
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];DATA {"attempts":1}
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];RESN {"reasoning":Enemy at (10, 10) is in valid attack range (distance 1 away, within offset 1 and range 2). This is a priority target with low health (8). Attack immediately to damage/eliminate threat. No movement needed as target is already in range.]}
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Flags;False;True;False
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];ATTK {10, 10}
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];TRGT LLM {ENEMY}
+2026-02-23 16:12:45;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 16:12:47;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Finish turn
+2026-02-23 16:12:47;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Start turn
+2026-02-23 16:12:47;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate move: True
+2026-02-23 16:12:47;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Chosen action: (10, 10) - U = 17.52001
+2026-02-23 16:12:47;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];INFO Can calculate action: True
+2026-02-23 16:12:47;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];ATTK {9, 11}
+2026-02-23 16:12:47;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|7];TRGT LLM {ENEMY}
+2026-02-23 16:12:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:12:50;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4403
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1500}
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy at (10, 10) has 1 health and is within attack range (Manhattan distance 1 from my position). This is a high-priority target that can be eliminated immediately. After eliminating this threat, I'll reposition to prepare for the remaining two enemies at (7, 6) and (12, 6).]}
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;False;True;False
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];ATTK {10, 10}
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TRGT LLM {ENEMY}
+2026-02-23 16:12:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 1.
+2026-02-23 16:12:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:12:53;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 16:12:53;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 16:12:53;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (11, 8) - U = 10.72667
+2026-02-23 16:12:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 16:12:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {12, 9}
+2026-02-23 16:12:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT TARGET
+2026-02-23 16:12:56;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:12:57;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4357
+2026-02-23 16:13:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":3515}
+2026-02-23 16:13:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:13:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Enemy at (11, 8) is 2 tiles away (distance check: |11-10|=1, |8-12|=4, Manhattan=5). Moving to (11, 10) closes distance to 2 tiles away, putting enemy within attack range (offset 1, range 2). From (11, 10), enemy at (11, 8) is exactly 2 tiles away vertically - valid attack. This is a direct path to engagement with a priority target.]}
+2026-02-23 16:13:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;True;True;False
+2026-02-23 16:13:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];MOVE {11, 10}
+2026-02-23 16:13:02;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-23 16:13:02;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:13:02;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:13:02;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:13:03;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (9, 7) - U = 7.768335
+2026-02-23 16:13:05;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 16:13:05;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Start turn;5,5
+2026-02-23 16:13:06;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];PRPT Prompt_4;4310
+2026-02-23 16:13:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];TIME {"request":1641}
+2026-02-23 16:13:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];DATA {"attempts":1}
+2026-02-23 16:13:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];RESN {"reasoning":Critical situation: health=1, must eliminate threats. Enemy at (9,6) is closest. Move to (9,9) to get within range, then attack (9,6) directly. This closes distance to priority target while staying safe from immediate counter-attacks.]}
+2026-02-23 16:13:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Flags;True;True;False
+2026-02-23 16:13:08;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];MOVE {9, 9}
+2026-02-23 16:13:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Cannot reach target at GridTile(Clone) (9, 8).
+2026-02-23 16:13:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Finish turn
+2026-02-23 16:13:09;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:13:10;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4291
+2026-02-23 16:13:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1778}
+2026-02-23 16:13:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:13:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy at (11,8) is 3 tiles away vertically. Moving to (11,9) closes distance to 1 tile away, placing enemy within attack range (offset 1, range 2). From (11,9), enemy at (11,8) is exactly 1 tile away - a valid attack. This positions us to engage the nearest threat while maintaining safe distance from the other enemy at (9,6).]}
+2026-02-23 16:13:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;True;True;False
+2026-02-23 16:13:12;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];MOVE {11, 9}
+2026-02-23 16:13:14;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Cannot reach target at GridTile(Clone) (11, 8).
+2026-02-23 16:13:14;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:13:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 16:13:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 16:13:14;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (10, 10) - U = 18.11001
+2026-02-23 16:13:16;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 16:13:16;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];INFO Destroyed
+2026-02-23 16:13:16;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|1];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":2,"internalTotalRequestCount":4,"internalMovementAttemptCount":3,"internalAttackAttemptCount":3,"internalFaultyMessageCount":0,"averageRequestTime":1709.25,"averageRequestTimeCount":4,"maxRequestTime":2188,"minRequest":1485,"averageAttempts":1,"kills":0}
+2026-02-23 16:13:16;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {9, 9}
+2026-02-23 16:13:16;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 16:13:17;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:13:18;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4317
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":1340}
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Enemy Green at (10, 10) is within attack range (distance 2, offset 1). Direct attack is available and should be executed immediately per priority rules. No movement needed before attacking.]}
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;False;True;False
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];ATTK {10, 10}
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TRGT LLM {ENEMY}
+2026-02-23 16:13:20;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 16:13:21;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:13:21;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:13:21;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:13:21;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (9, 8) - U = 8.949997
+2026-02-23 16:13:23;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 16:13:23;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:13:24;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4313
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1963}
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy at (10, 10) with 8 health is in valid attack range (distance 1 from my position at (11, 9)). This is a high-priority target with low health. Attack immediately to eliminate threat and reduce enemy force.]}
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;False;True;False
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];ATTK {10, 10}
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TRGT LLM {ENEMY}
+2026-02-23 16:13:26;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 0.
+2026-02-23 16:13:28;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:13:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Start turn
+2026-02-23 16:13:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate move: True
+2026-02-23 16:13:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Chosen action: (10, 10) - U = 16.09667
+2026-02-23 16:13:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];INFO Can calculate action: True
+2026-02-23 16:13:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];ATTK {11, 9}
+2026-02-23 16:13:28;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|9];TRGT LLM {ENEMY}
+2026-02-23 16:13:30;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:13:31;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4333
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":2092}
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Enemy at (10, 10) has only 1 health remaining. This is a priority kill. I am currently at (10, 12), which is 2 tiles away (Manhattan distance). My attack range is 2 tiles with 1 tile offset, so (10, 10) is a valid target. I will attack immediately to eliminate this weakened enemy. No movement needed before this attack.]}
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;False;True;False
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];ATTK {10, 10}
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TRGT LLM {ENEMY}
+2026-02-23 16:13:33;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Attacked succeeded at GridTile(Clone) (10, 10). Kill count = 1.
+2026-02-23 16:13:34;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:13:34;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:13:34;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:13:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (9, 8) - U = 9.976663
+2026-02-23 16:13:35;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: False
+2026-02-23 16:13:35;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:13:36;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4219
+2026-02-23 16:13:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1806}
+2026-02-23 16:13:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:13:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy Green at (9,8) is 2 tiles away (Manhattan distance). Moving to (10,9) puts me 1 tile away horizontally and 1 tile away vertically from the enemy, which is within my attack range (offset 1, range 2). From (10,9), I can attack the enemy at (9,8). This closes distance and enables an immediate attack next turn.]}
+2026-02-23 16:13:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;True;False;False
+2026-02-23 16:13:38;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];MOVE {10, 9}
+2026-02-23 16:13:39;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:13:39;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:13:40;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4238
+2026-02-23 16:13:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":1836}
+2026-02-23 16:13:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:13:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Enemy Green at (9,8) is 2 tiles away. Moving to (9,10) closes distance and positions for attack next turn. From (9,10), enemy will be within range (1 tile away at offset 1, range 2). This move also keeps me away from the wave at (9,7) and maintains safe positioning.]}
+2026-02-23 16:13:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;True;False;False
+2026-02-23 16:13:42;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];MOVE {9, 10}
+2026-02-23 16:13:44;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:13:44;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:13:44;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:13:44;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (8, 9) - U = 12.73
+2026-02-23 16:13:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 16:13:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {9, 10}
+2026-02-23 16:13:46;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 16:13:47;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:13:48;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4312
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1520}
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy Green ship at (8,9) is within attack range (Manhattan distance 2 from my position at (10,9), outside offset of 1). This is a valid target and my primary objective is to destroy all enemy ships. Direct attack is the highest priority action.]}
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;False;True;False
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];ATTK {8, 9}
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TRGT LLM {ENEMY}
+2026-02-23 16:13:49;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Attacked succeeded at GridTile(Clone) (8, 9). Kill count = 0.
+2026-02-23 16:13:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
+2026-02-23 16:13:51;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Start turn;5,5
+2026-02-23 16:13:52;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];PRPT Prompt_4;4326
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TIME {"request":1139}
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"attempts":1}
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];RESN {"reasoning":Enemy Green at (8,9) is within attack range (Manhattan distance 1 from my position at (9,10)). This is a valid target and should be attacked immediately. No movement needed before attacking.]}
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Flags;False;True;False
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];ATTK {8, 9}
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];TRGT LLM {ENEMY}
+2026-02-23 16:13:53;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Attacked succeeded at GridTile(Clone) (8, 9). Kill count = 0.
+2026-02-23 16:13:55;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];INFO Finish turn
+2026-02-23 16:13:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Start turn
+2026-02-23 16:13:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate move: True
+2026-02-23 16:13:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Chosen action: (8, 9) - U = 12.69666
+2026-02-23 16:13:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];INFO Can calculate action: True
+2026-02-23 16:13:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];ATTK {9, 10}
+2026-02-23 16:13:55;[SYSTEM];[AIAgent|Utility|BaseGenes|Green|8];TRGT LLM {ENEMY}
+2026-02-23 16:13:57;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Start turn;5,5
+2026-02-23 16:13:58;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];PRPT Prompt_4;4329
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TIME {"request":1639}
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"attempts":1}
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];RESN {"reasoning":Enemy Green at (8,9) has 1 health and is within attack range (Manhattan distance 2 from my position at (10,9), outside offset of 1). This is a valid target that I can destroy immediately. Prioritize eliminating the enemy over movement.]}
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Flags;False;True;False
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];ATTK {8, 9}
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];TRGT LLM {ENEMY}
+2026-02-23 16:13:59;[SYSTEM];[LevelGoal];INFO Faction Red won.
+2026-02-23 16:13:59;[SYSTEM];[LevelGoal];INFO Logging remaining ships. Count: 6.
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];DATA {"internalWrongMovementCount":1,"internalWrongAttackCount":2,"internalTotalRequestCount":9,"internalMovementAttemptCount":4,"internalAttackAttemptCount":7,"internalFaultyMessageCount":0,"averageRequestTime":1747.778,"averageRequestTimeCount":9,"maxRequestTime":2050,"minRequest":1500,"averageAttempts":1,"kills":0}
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|6];DATA {"internalWrongMovementCount":0,"internalWrongAttackCount":1,"internalTotalRequestCount":8,"internalMovementAttemptCount":4,"internalAttackAttemptCount":5,"internalFaultyMessageCount":0,"averageRequestTime":2084,"averageRequestTimeCount":8,"maxRequestTime":3515,"minRequest":1139,"averageAttempts":1,"kills":0}
+2026-02-23 16:13:59;[SYSTEM];[LevelController];INFO Level finished.
+2026-02-23 16:13:59;[SYSTEM];[LevelGoal];INFO LLM Claude|claude-haiku-4-5-20251001 won.
+2026-02-23 16:13:59;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Attacked succeeded at GridTile(Clone) (8, 9). Kill count = 1.
+2026-02-23 16:14:01;[SYSTEM];[LLMAgent|Claude|claude-haiku-4-5-20251001|Red|2];INFO Finish turn
