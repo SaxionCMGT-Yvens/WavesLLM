@@ -78,6 +78,7 @@ namespace Actors
             DebugUtils.DebugLogMsg(
                 $"{name} attacked with {damage}. Sturdiness is {shipData.stats.sturdiness.Two}. Damage taken was {damageTaken}.",
                 DebugUtils.DebugType.Verbose);
+            
             return base.TakeDamage(damageTaken);
         }
 
@@ -106,7 +107,7 @@ namespace Actors
                     onFinishMoving?.Invoke(unit);
                     return false;
                 }
-
+                
                 StartCoroutine(MovementStepsCoroutine(steps, onFinishMoving, time));
             }
             else
@@ -131,6 +132,8 @@ namespace Actors
                 var current = stepsEnumerator.Current;
                 if (current == null) continue;
                 nextStep = false;
+                
+                RecordMovement(current);
                 transform.DOMove(current.transform.position, time).OnComplete(() => { nextStep = true; });
                 yield return new WaitUntil(() => nextStep);
                 UpdateGridUnitOnMovement(current);
@@ -157,6 +160,9 @@ namespace Actors
                     nextStep = false;
 
                     //TODO for now, it does not check for the case of multiple waves moving the ship
+                    var waveMovementEntry = MakeNewMovementEntry(moveToUnit);
+                    waveMovementEntry.AppendComment($"Moved by wave effect!");
+                    RecordMovement(waveMovementEntry);
                     transform.DOMove(moveToUnit.transform.position, time).OnComplete(() =>
                     {
                         DebugUtils.DebugLogMsg($"{name} being pushed by the waves to {moveToUnit.Index()}!",

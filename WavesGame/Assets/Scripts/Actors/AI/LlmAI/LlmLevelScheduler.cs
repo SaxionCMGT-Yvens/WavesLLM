@@ -82,7 +82,9 @@ namespace Actors.AI.LlmAI
 
                 foreach (var llmFactionShip in llmFactionShips)
                 {
-                    var newAiBaseShip = Instantiate(customFaction.AIBaseShipPrefab, llmFactionShip.transform.position, llmFactionShip.transform.rotation);
+                    var llmFactionTransform = llmFactionShip.transform;
+                    var newAiBaseShip = Instantiate(customFaction.AIBaseShipPrefab, llmFactionTransform.position, llmFactionTransform.rotation);
+                    
                     //TODO check if this works for the grid
                     var unit = llmFactionShip.GetUnit();
                     unit.RemoveActor(llmFactionShip);
@@ -131,5 +133,14 @@ namespace Actors.AI.LlmAI
         {
             RandomHelper<LlmScheduleSo>.ShuffleList(ref schedules);
         }
+
+        public string GetCurrentScheduleInfo()
+        {
+            if (internalCounter >= schedules.Count) return "no-schedule";
+            var schedule = schedules[internalCounter];
+            var repetition = currentSchedule.InternalRepetitionsCount;
+            
+            return $"{schedule}-{repetition}-{TimestampHelper.GetSimplifiedTimestamp()}";
+        } 
     }
 }

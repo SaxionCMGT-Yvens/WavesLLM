@@ -9,6 +9,7 @@
 using System;
 using System.Collections.Generic;
 using Actors;
+using Core.Recorder;
 using DG.Tweening;
 using Grid;
 using NaughtyAttributes;
@@ -262,7 +263,12 @@ namespace Core
                 if (navalShip.CanAct())
                 {
                     DebugUtils.DebugLogMsg($"Act upon {targetActor.name}!", DebugUtils.DebugType.Verbose);
+                    
                     var damage = navalShip.CalculateDamage();
+                    if (WavesRecorder.TryToGetSingleton(out var wavesRecorder))
+                    {
+                        wavesRecorder.RecordNewEntry(new AttackRecordEntry(_selectedActor.gameObject.name, targetActor.GetUnit().Index(), damage));
+                    }
                     targetActor.TakeDamage(damage);
                     attackHappened = true;
                 }

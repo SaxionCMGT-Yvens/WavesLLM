@@ -64,7 +64,9 @@ namespace Core
             {
                 switch (actor)
                 {
-                    case NavalTarget target: levelTargets.Add(target); break;
+                    case NavalTarget target:
+                        levelTargets.Add(target);
+                        break;
                     case NavalShip navalShip:
                     {
                         levelShips.Add(navalShip);
@@ -111,7 +113,7 @@ namespace Core
             var faction = aiShip.GetFaction();
             if (_availableFactions.ContainsKey(faction))
             {
-                _availableFactions[faction]--;    
+                _availableFactions[faction]--;
             }
         }
 
@@ -182,7 +184,8 @@ namespace Core
                 {
                     if (turnNumber >= maxLlmTurns)
                     {
-                        DebugUtils.DebugLogMsg($"Draw! Max number of turns reached: {turnNumber} == {maxLlmTurns}.", DebugUtils.DebugType.System);
+                        DebugUtils.DebugLogMsg($"Draw! Max number of turns reached: {turnNumber} == {maxLlmTurns}.",
+                            DebugUtils.DebugType.System);
                         LevelController.GetSingleton().AddInfoLog($"Draw! No faction won.", "LevelGoal");
                         LevelController.GetSingleton()
                             .AddInfoLog($"Logging remaining ships. Count: {enemyFactionShips.Count}.", "LevelGoal");
@@ -197,7 +200,7 @@ namespace Core
 
                         return true;
                     }
-                    
+
                     var enumerator = _availableFactions.GetEnumerator();
                     var alive = 0;
                     AIFaction aliveFaction = null;
@@ -267,33 +270,37 @@ namespace Core
 
         public string GetLevelMessage()
         {
-            var message = $"{type}";
+            var message = "";
             switch (type)
             {
-                case LevelGoalType.DestroyAllTargets: message += "Destroy All Targets"; break;
+                case LevelGoalType.DestroyAllTargets:
+                    message = "Destroy All Targets";
+                    break;
                 case LevelGoalType.DestroyAllEnemies:
-                    message += "Destroy All Enemies";
+                    message = "Destroy All Enemies";
                     break;
                 case LevelGoalType.SurviveForTurns:
-                    message += $"Survive For {surviveForTurns} Turns";
+                    message = $"Survive For {surviveForTurns} Turns";
                     break;
                 case LevelGoalType.DestroySpecificEnemy:
-                    message += $"Destroy {destroyTarget.name}";
+                    message = $"Destroy {destroyTarget.name}";
                     break;
                 case LevelGoalType.AIWars:
                     message = "AI Wars = ";
                     var sortedFactions = _availableFactions.ToList();
-                    sortedFactions.Sort((pair, valuePair) => string.Compare(pair.Key.ToString(), valuePair.Key.ToString(), StringComparison.Ordinal));
+                    sortedFactions.Sort((pair, valuePair) =>
+                        string.Compare(pair.Key.ToString(), valuePair.Key.ToString(), StringComparison.Ordinal));
                     var enumerator = sortedFactions.GetEnumerator();
                     while (enumerator.MoveNext())
                     {
                         var llmInfo = "";
                         var aiShip = enemyFactionShips.Find(ship => ship.Two.Equals(enumerator.Current.Key));
-                        
+
                         if (aiShip is { One: LlmAINavalShip llmNavalShip })
                         {
                             llmInfo = $"[{llmNavalShip.GetLlmInfo()}]";
-                        } else if (aiShip is { One: AIBaseShip aiShipNavalShip })
+                        }
+                        else if (aiShip is { One: AIBaseShip aiShipNavalShip })
                         {
                             llmInfo = $"[{aiShipNavalShip.name}]";
                         }
@@ -305,7 +312,7 @@ namespace Core
                     message = message[..^2];
                     break;
                 case LevelGoalType.Custom:
-                    message += $"Custom Goal";
+                    message = $"Custom Goal";
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

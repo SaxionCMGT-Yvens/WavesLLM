@@ -12,11 +12,13 @@ using System.Collections.Generic;
 using Actors;
 using Actors.AI;
 using Actors.AI.LlmAI;
+using Core.Recorder;
 using Grid;
 using NaughtyAttributes;
 using TMPro;
 using UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UUtils;
 using Logger = UUtils.Logger;
 
@@ -41,10 +43,11 @@ namespace Core
     {
         [Header("Data")] [SerializeField] private List<GridActor> levelActors;
         [SerializeField, ReadOnly] private List<NavalActor> levelNavalActors;
-        [SerializeField, ReadOnly]private List<LevelActorPair> levelActionableActor;
+        [SerializeField, ReadOnly] private List<LevelActorPair> levelActionableActor;
         [SerializeField, ReadOnly] private List<ActorTurnUI> actorTurnUIs;
         [SerializeField] private bool initiativeBased = true;
         [SerializeField] private int randomSeed = 6;
+        [SerializeField] private bool logLevel = false;
 
         [Header("Level Specific")] [SerializeField]
         private LevelGoal levelGoal;
@@ -63,22 +66,25 @@ namespace Core
         private Logger _logger;
         private bool _endTurn;
         private bool _finishedLevel;
+        private bool _hasScheduler;
         private LlmLevelScheduler _scheduler;
+        private WavesRecorder _recorder;
 
         private void Start()
         {
             endLevelPanelUI.gameObject.SetActive(false);
             _logger = new Logger();
-            TryToInitializeViaScheduler();
+            _hasScheduler = TryToInitializeViaScheduler();
             _levelCoroutine = StartCoroutine(LevelCoroutine());
         }
 
-        private void TryToInitializeViaScheduler()
+        private bool TryToInitializeViaScheduler()
         {
             _scheduler = LlmLevelScheduler.GetSingleton();
-            if (_scheduler == null) return;
+            if (_scheduler == null) return false;
 
             _scheduler.BeginNewLevel();
+            return true;
         }
 
         private IEnumerator LevelCoroutine()
@@ -87,8 +93,8 @@ namespace Core
             yield return null;
 
             UnityEngine.Random.InitState(randomSeed);
-
-            if (_scheduler != null)
+            var recorderInfo = "";
+            if (_hasScheduler)
             {
                 if (!_scheduler.SetupLevel(levelActors))
                 {
@@ -98,20 +104,37 @@ namespace Core
                     ApplicationHelper.QuitApplication();
                     yield break;
                 }
+
+                recorderInfo = _scheduler.GetCurrentScheduleInfo();
             }
+            else
+            {
+                recorderInfo = GetLevelRecordingName();
+            }
+
+            if (WavesRecorder.TryToGetSingleton(out _recorder))
+            {
+                DebugUtils.DebugLogMsg("Recorder found. Recording level.", DebugUtils.DebugType.System);
+                _recorder.StartRecording(recorderInfo);
+            }
+            
             //Wait for one more frame to destroy the unused LLM actors replaced by Utility Agent AIs, if any
             yield return null;
 
             levelActors = levelActors.FindAll(actor => actor != null);
-            levelNavalActors  = levelNavalActors.FindAll(levelNavalActor => levelNavalActor != null);
+            levelNavalActors = levelNavalActors.FindAll(levelNavalActor => levelNavalActor != null);
             levelActionableActor = levelActionableActor.FindAll(levelActorPair => levelActorPair?.One != null);
-            
+
             //Initialize level goal elements
             levelGoal.Initialize(levelActors);
-            
+
             levelGoalText.text = levelGoal.GetLevelMessage();
-            var logFileName = $"{levelGoal.GetLevelMessage()}-{TimestampHelper.GetSimplifiedTimestamp()}";
-            _logger.StartNewLogFile(logFileName);
+
+            if (logLevel)
+            {
+                var logFileName = $"{levelGoal.GetLevelMessage()}-{TimestampHelper.GetSimplifiedTimestamp()}";
+                _logger.StartNewLogFile(logFileName);    
+            }
 
             //Roll initiatives and order turns
             if (initiativeBased)
@@ -153,7 +176,7 @@ namespace Core
 
                 while (enumerator.MoveNext())
                 {
-                    //If the current is valid, then proceed with its turn.
+                    // If the current is valid, then proceed with its turn.
                     if (!enumerator.Current) continue;
                     _currentActor = enumerator.Current?.One;
                     _endTurn = false;
@@ -162,11 +185,11 @@ namespace Core
                         var turnUI = GetActorTurnUI(navalShip);
                         turnUI.ToggleAvailability(true);
                         navalShip.StartTurn();
-                        //move the cursor to the ship
+                        // Move the cursor to the ship
                         CursorController.GetSingleton().MoveToIndex(navalShip.GetUnit().Index());
 
                         yield return new WaitUntil(() => _endTurn);
-                        //Check if the naval ship was not destroyed during its own turn.
+                        // Check if the naval ship was not destroyed during its own turn.
                         if (navalShip == null) continue;
                         navalShip.EndTurn();
 
@@ -321,15 +344,25 @@ namespace Core
             CursorController.GetSingleton().FinishLevel();
             AddInfoLog("Level finished.", "LevelController");
 
-            if (_scheduler == null)
+            // Delays one frame to finish writing all the necessary information on the logs and recorders.
+            DelayHelper.DelayOneFrame(this, () =>
             {
-                endLevelPanelUI.gameObject.SetActive(true);
-                endLevelPanelUI.OpenEndLevelPanel(win);
-            }
-            else
-            {
-                _scheduler.FinishLevel(levelGoal);
-            }
+                if (_recorder != null)
+                {
+                    DebugUtils.DebugLogMsg("Recording complete.", DebugUtils.DebugType.System);
+                    _recorder.Stop();
+                }
+
+                if (_scheduler == null)
+                {
+                    endLevelPanelUI.gameObject.SetActive(true);
+                    endLevelPanelUI.OpenEndLevelPanel(win);
+                }
+                else
+                {
+                    _scheduler.FinishLevel(levelGoal);
+                }
+            });
         }
 
         private ActorTurnUI GetActorTurnUI(NavalShip navalShip)
@@ -342,28 +375,38 @@ namespace Core
             levelGoal.RemoveFactionCount(aiBaseShip);
         }
 
+        private string GetLevelRecordingName()
+        {
+            return $"{SceneManager.GetActiveScene().name}-{TimestampHelper.GetSimplifiedTimestamp()}-{levelGoal.GetLevelMessage()}";
+        }
+
         public void AddInfoLog(string info, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];INFO {info}");
         }
 
         public void AddPromptLog(string info, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];PRPT {info}");
         }
 
         public void AddDataLog(string data, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];DATA {{{data}}}");
         }
 
         public void AddMovementLog(Vector2Int position, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];MOVE {{{position.x}, {position.y}}}");
         }
 
         public void AddAttackLog(Vector2Int position, AIBaseShip attacker, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];ATTK {{{position.x}, {position.y}}}");
             if (!GridManager.GetSingleton().CheckGridPosition(position, out var unit)) return;
             var actor = unit.GetActor();
@@ -392,11 +435,13 @@ namespace Core
 
         public void AddReasonLog(string data, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];RESN {{\"reasoning\":{data}]}}");
         }
 
         public void AddTimeInfoToLog(string timeInfo, string callerName = "")
         {
+            if (!logLevel) return;
             _logger.AddLine($"[{callerName}];TIME {{{timeInfo}}}");
         }
 
