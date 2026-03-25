@@ -5157,6 +5157,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &690760079
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 711992543574192054, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_Name
+      value: AI SimpleBoat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.42
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
 --- !u!1 &1033141278
 GameObject:
   m_ObjectHideFlags: 0
@@ -5365,19 +5422,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: orthographic size
-      value: 5.9259257
+      value: 5.9444447
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.140625
+      value: 0.22734375
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.71875
+      value: 1.4375
       objectReference: {fileID: 0}
     - target: {fileID: 1003885215729636235, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 1.0031251
       objectReference: {fileID: 0}
     - target: {fileID: 7626277946131834579, guid: 236a62911965b4ca6966aac75829e79a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6043,9 +6100,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: WavesRecordPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3243063308050344420, guid: d7fda7d4002c041a48ada05f04e72ee1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7367854635066870635, guid: d7fda7d4002c041a48ada05f04e72ee1, type: 3}
       propertyPath: recordFile
-      value: RecordScene-2026-03-25-17-48-44-Destroy All Targets.rex
+      value: RecordScene-2026-03-25-20-43-49-Destroy All Targets.rex
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6381,6 +6442,7 @@ SceneRoots:
   - {fileID: 4961694619415364289}
   - {fileID: 590115473}
   - {fileID: 4059300411283383787}
+  - {fileID: 690760079}
   - {fileID: 2689278477905415071}
   - {fileID: 1397302290108224563}
   - {fileID: 7788703986479906163}
