@@ -300,6 +300,8 @@ namespace Core
 
         public void NotifyDestroyedActor(NavalActor navalActor)
         {
+            //Does not finish the level if the level controller is not controlling the game.
+            if (!_levelRunning) return;
             //TODO logic for a generic actor being destroyed
             DebugUtils.DebugLogMsg($"Naval Actor {navalActor.name} notified Level Controller of its destruction.",
                 DebugUtils.DebugType.Verbose);
@@ -307,6 +309,8 @@ namespace Core
 
         public void NotifyDestroyedActor(NavalShip navalShip)
         {
+            //Does not finish the level if the level controller is not controlling the game.
+            if (!_levelRunning) return;
             if (_currentActor.Equals(navalShip))
             {
                 //End current turn is for the actor being destroyed
@@ -341,6 +345,8 @@ namespace Core
 
         public void NotifyDestroyedActor(NavalTarget navalTarget)
         {
+            //Does not finish the level if the level controller is not controlling the game.
+            if (!_levelRunning) return;
             DebugUtils.DebugLogMsg($"Target: {navalTarget.name} destroyed. Checking for level finish...",
                 DebugUtils.DebugType.System);
             levelGoal.CheckGoalActor(navalTarget);
