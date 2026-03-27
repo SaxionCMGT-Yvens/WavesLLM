@@ -172,7 +172,7 @@ namespace Actors
         }
 
         public NavalActorType NavalType => navalType;
-
+        
         public override string ToString()
         {
             return $"{base.ToString()}; navalType=[{navalType}]";

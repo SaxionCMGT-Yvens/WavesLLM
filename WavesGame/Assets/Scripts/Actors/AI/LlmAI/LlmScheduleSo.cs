@@ -32,12 +32,12 @@ namespace Actors.AI.LlmAI
             return InternalRepetitionsCount <= 0;
         }
 
-        public List<AIFaction> GetFactions()
+        public List<Faction> GetFactions()
         {
             return factionPairs.Select(pair => pair.One).ToList();
         }
 
-        public FactionLlmPair GetFactionPair(AIFaction faction)
+        public FactionLlmPair GetFactionPair(Faction faction)
         {
             return factionPairs.Find(pair => pair.One.Equals(faction));
         }

@@ -30,9 +30,9 @@ namespace Core
     }
 
     [Serializable]
-    public class AIShipFactionPair : Pair<NavalShip, AIFaction>
+    public class AIShipFactionPair : Pair<NavalShip, Faction>
     {
-        public AIShipFactionPair(NavalShip one, AIFaction two) : base(one, two)
+        public AIShipFactionPair(NavalShip one, Faction two) : base(one, two)
         {
         }
     }
@@ -49,13 +49,13 @@ namespace Core
         [SerializeField, ReadOnly] private List<NavalShip> playerLevelShips;
         [SerializeField, ReadOnly] private List<NavalShip> enemyLevelShips;
         [SerializeField, ReadOnly] private List<AIShipFactionPair> enemyFactionShips;
-        private Dictionary<AIFaction, int> _availableFactions;
+        private Dictionary<Faction, int> _availableFactions;
         private int _survivedTurns;
-        private AIFaction _winnerFaction;
+        private Faction _winnerFaction;
 
         private void Awake()
         {
-            _availableFactions = new Dictionary<AIFaction, int>();
+            _availableFactions = new Dictionary<Faction, int>();
         }
 
         public void Initialize(List<GridActor> levelActors)
@@ -203,7 +203,7 @@ namespace Core
 
                     var enumerator = _availableFactions.GetEnumerator();
                     var alive = 0;
-                    AIFaction aliveFaction = null;
+                    Faction aliveFaction = null;
                     while (enumerator.MoveNext())
                     {
                         var current = enumerator.Current;
@@ -323,6 +323,6 @@ namespace Core
 
         //TODO for the custom type, create a sort of prefab with script checker.
 
-        public AIFaction GetWinnerFaction() => _winnerFaction;
+        public Faction GetWinnerFaction() => _winnerFaction;
     }
 }

@@ -157,7 +157,6 @@ namespace Grid
                 positions.Remove(currentPosition);
                 attackableHash.AddRange(positions);
             }
-
             return attackableHash.ToList();
         }
 

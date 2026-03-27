@@ -6,7 +6,7 @@ namespace Actors.AI.LlmAI
     public static class LlmAiPromptGenerator
     {
         public static string GeneratePrompt(LlmAINavalShip llmAINavalShip, LlmPromptSo templatePrompt,
-            List<AIFaction> enemyFactions)
+            List<Faction> enemyFactions)
         {
             var template = templatePrompt.prompt;
             var selfFaction = llmAINavalShip.GetFaction();
@@ -67,7 +67,7 @@ namespace Actors.AI.LlmAI
             currentAttackableUnits.ForEach(position =>
             {
                 if (position.Index().Equals(index) || !position.GetFirstActorOfType<GridActor>(out var actor)) return;
-                if (actor is AINavalShip navalShip)
+                if (actor is NavalShip navalShip)
                 {
                     if (navalShip.GetFaction() != selfFaction)
                     {
@@ -91,9 +91,10 @@ namespace Actors.AI.LlmAI
             var enemiesOnTheGrid = grid.FindAll(gridUnit =>
             {
                 var actor = gridUnit.GetActor();
+                var isEnemy = actor is NavalShip navalShip && navalShip.GetFaction() != selfFaction;
                 var isAIEnemy = actor is AINavalShip aiNavalShip && aiNavalShip.GetFaction() != selfFaction;
                 var isLlmAiEnemy = actor is LlmAINavalShip llmAI && llmAI.GetFaction() != selfFaction;
-                return isAIEnemy || isLlmAiEnemy;
+                return isEnemy || isAIEnemy || isLlmAiEnemy;
             });
             template = ReplaceTagWithText(template, "grid_overview_enemies",
                 ListGridToString(llmAINavalShip, enemiesOnTheGrid, templatePrompt.includeEmptySpaces));
@@ -151,8 +152,13 @@ namespace Actors.AI.LlmAI
                         case AIBaseShip aiBaseShip:
                         {
                             text += GetOtherShipSymbolicText(selfShip, aiBaseShip, text);
-                        }
                             break;
+                        }
+                        case NavalShip navalShip:
+                        {
+                            text += GetOtherShipSymbolicText(selfShip, navalShip, text);
+                            break;
+                        }
                         case WaveActor wave:
                             text +=
                                 $"{GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}\r\n";
@@ -166,18 +172,19 @@ namespace Actors.AI.LlmAI
 
             return text;
 
-            string GetOtherShipSymbolicText(LlmAINavalShip selfLlmShip, AIBaseShip aiNavalShip, string symbolicText)
+            string GetOtherShipSymbolicText(LlmAINavalShip selfLlmShip, NavalShip navalShip, string symbolicText)
             {
-                var opposingFaction = !selfLlmShip.GetFaction().Equals(aiNavalShip.GetFaction());
+                var opposingFaction = !selfLlmShip.GetFaction().Equals(navalShip.GetFaction());
                 var factionText = opposingFaction ? $"**Enemy**" : "**Ally**";
-                var health = aiNavalShip.GetCurrentHealth();
-                var ratio = aiNavalShip.GetHealthRatio();
+                var health = navalShip.GetCurrentHealth();
+                var ratio = navalShip.GetHealthRatio();
                 symbolicText += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
                 return symbolicText;
             }
         }
 
-        private static string ListGridToString(LlmAINavalShip selfShip, List<GridUnit> gridUnits,
+        //TODO unify ListGridToString and ListGridActorsIndicesToString
+        private static string ListGridToString(NavalShip selfShip, List<GridUnit> gridUnits,
             bool includeEmpty = true)
         {
             if (gridUnits == null || gridUnits.Count == 0)
@@ -216,6 +223,9 @@ namespace Actors.AI.LlmAI
                         case AIBaseShip aiBaseShip:
                             text += GetOtherShipGridToString(selfShip, aiBaseShip, $"{index} = ");
                             break;
+                        case NavalShip navalShip:
+                            text += GetOtherShipGridToString(selfShip, navalShip, $"{index} = ");
+                            break;
                         case WaveActor wave:
                             text +=
                                 $"{index} = {GridMoveTypeExtensions.GridMovementSymbol(wave.GetWaveDirection)}\r\n";
@@ -229,18 +239,18 @@ namespace Actors.AI.LlmAI
 
             return text;
 
-            string GetOtherShipGridToString(LlmAINavalShip selfLlmShip, AIBaseShip aiBaseShip, string symbolicText)
+            string GetOtherShipGridToString(NavalShip selfNavalShip, NavalShip otherNavalShip, string symbolicText)
             {
-                var opposingFaction = !selfLlmShip.GetFaction().Equals(aiBaseShip.GetFaction());
-                var factionText = opposingFaction ? $"Enemy {aiBaseShip.GetFaction()}" : "Ally";
-                var health = aiBaseShip.GetCurrentHealth();
-                var ratio = aiBaseShip.GetHealthRatio();
+                var opposingFaction = !selfNavalShip.GetFaction().Equals(otherNavalShip.GetFaction());
+                var factionText = opposingFaction ? $"Enemy {otherNavalShip.GetFaction()}" : "Ally";
+                var health = otherNavalShip.GetCurrentHealth();
+                var ratio = otherNavalShip.GetHealthRatio();
                 symbolicText += $"🚢 {factionText} health:{health} ratio: {ratio}\r\n";
                 return symbolicText;
             }
         }
 
-        private static string ListEnemyFactions(List<AIFaction> enemyFactions)
+        private static string ListEnemyFactions(List<Faction> enemyFactions)
         {
             var text = "";
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
@@ -293,7 +303,7 @@ namespace Actors.AI.LlmAI
             return separator.Equals(",") ? text[..^1] : text + "\r\n";
         }
 
-        private static string ListGridActorsIndicesToString(List<GridActor> gridActors, AIFaction selfFaction,
+        private static string ListGridActorsIndicesToString(List<GridActor> gridActors, Faction selfFaction,
             bool fullInfo = false,
             string separator = ",")
         {

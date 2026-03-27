@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using Core;
+using Core.Recorder;
 using FALLA;
 using FALLA.Helper;
 using Grid;
@@ -33,7 +34,7 @@ namespace Actors.AI.LlmAI
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
         [SerializeField] private int overrideInitiative;
-        [SerializeField] private List<AIFaction> enemyFactions;
+        [SerializeField] private List<Faction> enemyFactions;
 
         private int _internalWrongMovementCount;
         private int _internalWrongAttackCount;
@@ -43,7 +44,6 @@ namespace Actors.AI.LlmAI
         private int _internalFaultyMessageCount;
         private List<long> _internalTimers;
         private List<int> _internalAttempts;
-
 
         protected override void Awake()
         {
@@ -286,6 +286,7 @@ namespace Actors.AI.LlmAI
                     LevelController.GetSingleton().AddAttackLog(targetUnit.Index(), this, name);
                     var damage = CalculateDamage();
                     kills = targetUnit.DamageActors(damage);
+                    RecordAttack(targetUnit.GetActor(), damage);
                     LevelController.GetSingleton()
                         .AddInfoLog($"Attacked succeeded at {targetUnit}. Kill count = {kills}.", name);
                     yield return new WaitForSeconds(1.5f);
@@ -300,6 +301,17 @@ namespace Actors.AI.LlmAI
             }
 
             yield return null;
+        }
+        
+        private void RecordAttack(GridActor targetActor, int damage)
+        {
+            if (!WavesRecorder.TryToGetSingleton(out var recorder)) return;
+            var attackRecordEntry = new AttackRecordEntry(name, targetActor.GetUnit().Index(), damage);
+            if (targetActor is WaveActor)
+            {
+                attackRecordEntry.AppendComment($"Attacked a wave");
+            }
+            recorder.RecordNewEntry(attackRecordEntry);
         }
 
         private void PromptInfo(string promptInfo)
@@ -323,8 +335,8 @@ namespace Actors.AI.LlmAI
         public void LogFinalInformation()
         {
             var averageRequest = (float)_internalTimers.Sum(timer => timer) / _internalTimers.Count;
-            var maxRequest = _internalTimers.Max(timer => timer);
-            var minRequest = _internalTimers.Min(timer => timer);
+            var maxRequest = _internalTimers is { Count: > 0 } ? _internalTimers.Max(timer => timer) : -1;
+            var minRequest = _internalTimers is { Count: > 0 } ? _internalTimers.Min(timer => timer) : -1;
             var averageAttempts = (float)_internalAttempts.Sum(attempt => attempt) / _internalAttempts.Count;
             LevelController.GetSingleton().AddDataLog($"\"internalWrongMovementCount\":{_internalWrongMovementCount}" +
                                                       $",\"internalWrongAttackCount\":{_internalWrongAttackCount}" +
