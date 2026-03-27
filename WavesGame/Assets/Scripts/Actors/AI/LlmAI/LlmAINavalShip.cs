@@ -33,7 +33,7 @@ namespace Actors.AI.LlmAI
         [SerializeField] private float requestTimeOutTimer = 1.0f;
         [SerializeField] private LlmPromptSo basePrompt;
         [SerializeField] private int overrideInitiative;
-        [SerializeField] private List<AIFaction> enemyFactions;
+        [SerializeField] private List<Faction> enemyFactions;
 
         private int _internalWrongMovementCount;
         private int _internalWrongAttackCount;

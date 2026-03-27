@@ -6,7 +6,7 @@ namespace Actors.AI.LlmAI
     public static class LlmAiPromptGenerator
     {
         public static string GeneratePrompt(LlmAINavalShip llmAINavalShip, LlmPromptSo templatePrompt,
-            List<AIFaction> enemyFactions)
+            List<Faction> enemyFactions)
         {
             var template = templatePrompt.prompt;
             var selfFaction = llmAINavalShip.GetFaction();
@@ -240,7 +240,7 @@ namespace Actors.AI.LlmAI
             }
         }
 
-        private static string ListEnemyFactions(List<AIFaction> enemyFactions)
+        private static string ListEnemyFactions(List<Faction> enemyFactions)
         {
             var text = "";
             // ReSharper disable once ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator
@@ -293,7 +293,7 @@ namespace Actors.AI.LlmAI
             return separator.Equals(",") ? text[..^1] : text + "\r\n";
         }
 
-        private static string ListGridActorsIndicesToString(List<GridActor> gridActors, AIFaction selfFaction,
+        private static string ListGridActorsIndicesToString(List<GridActor> gridActors, Faction selfFaction,
             bool fullInfo = false,
             string separator = ",")
         {

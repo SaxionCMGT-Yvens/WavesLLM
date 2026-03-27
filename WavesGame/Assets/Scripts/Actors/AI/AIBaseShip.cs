@@ -8,8 +8,6 @@ namespace Actors.AI
 {
     public abstract class AIBaseShip : NavalShip
     {
-        [SerializeField] private AIFaction faction;
-
         [Header("Score")] [SerializeField, ReadOnly]
         protected int kills;
 
@@ -41,17 +39,16 @@ namespace Actors.AI
 
         protected abstract IEnumerator TurnAI();
 
-        public AIFaction GetFaction() => faction;
         public int GetKills() => kills;
 
         public override string ToString()
         {
-            return $"{base.ToString()}; faction={faction}; kills={GetKills()}";
+            return $"{base.ToString()}; faction={GetFaction()}; kills={GetKills()}";
         }
 
         public string ToLlmString()
         {
-            return $"[{name}]; faction={faction}; currentHealth={GetCurrentHealth()}."; 
+            return $"[{name}]; faction={GetFaction()}; currentHealth={GetCurrentHealth()}."; 
         }
     }
 }

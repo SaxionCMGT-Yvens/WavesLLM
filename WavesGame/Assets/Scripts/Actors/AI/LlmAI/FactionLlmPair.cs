@@ -8,7 +8,7 @@ using UUtils;
 namespace Actors.AI.LlmAI
 {
     [Serializable]
-    public class FactionLlmPair : Pair<AIFaction, LlmModelPairSo>
+    public class FactionLlmPair : Pair<Faction, LlmModelPairSo>
     {
         [SerializeField, ReadOnly] private LlmCallerObject caller;
         [SerializeField] private bool matchModel;
@@ -16,7 +16,7 @@ namespace Actors.AI.LlmAI
         [Header("For Custom LLM Type and Regular AIs")]
         [SerializeField] private AIBaseShip aiBaseShipPrefab;
 
-        public FactionLlmPair(AIFaction one, LlmModelPairSo two) : base(one, two)
+        public FactionLlmPair(Faction one, LlmModelPairSo two) : base(one, two)
         {
         }
 

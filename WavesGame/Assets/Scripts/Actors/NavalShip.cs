@@ -24,6 +24,7 @@ namespace Actors
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] protected NavalShipSo shipData;
         [SerializeField] protected BaseCannon navalCannon;
+        [SerializeField] private Faction faction;
 
         protected int stepsAvailable;
 
@@ -197,6 +198,7 @@ namespace Actors
         public int RemainingSteps => stepsAvailable;
         public int Initiative { get; private set; }
         public int ActionsLeft { get; private set; }
+        public Faction GetFaction() => faction;
 
         public SpriteRenderer Renderer() => spriteRenderer;
 
