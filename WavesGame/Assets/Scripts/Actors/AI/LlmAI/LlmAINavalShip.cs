@@ -285,8 +285,8 @@ namespace Actors.AI.LlmAI
                     DebugUtils.DebugLogMsg($"{name} attacks {targetUnit}!", DebugUtils.DebugType.System);
                     LevelController.GetSingleton().AddAttackLog(targetUnit.Index(), this, name);
                     var damage = CalculateDamage();
-                    kills = targetUnit.DamageActors(damage);
                     RecordAttack(targetUnit.GetActor(), damage);
+                    kills = targetUnit.DamageActors(damage);
                     LevelController.GetSingleton()
                         .AddInfoLog($"Attacked succeeded at {targetUnit}. Kill count = {kills}.", name);
                     yield return new WaitForSeconds(1.5f);

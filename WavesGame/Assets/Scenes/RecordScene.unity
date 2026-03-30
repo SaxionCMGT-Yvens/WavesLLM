@@ -4627,7 +4627,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1683268027249446823, guid: df0fc36a30584412c9db2e1d6b8628df, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.44
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 1683268027249446823, guid: df0fc36a30584412c9db2e1d6b8628df, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4671,7 +4671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9116787501436768038, guid: df0fc36a30584412c9db2e1d6b8628df, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5211,17 +5211,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 468383325}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
+      propertyPath: maxHealth
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: basePrompt
       value: 
       objectReference: {fileID: 11400000, guid: 428d9c974792a44219d9d832d0cd196e, type: 2}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: enemyFactions.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: 'enemyFactions.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 028f3a64e77ea4b9ea60ed05ea857e9f, type: 2}
+    - target: {fileID: 991280728885483339, guid: 0bc925396065f4527904c6b17945b667, type: 3}
+      propertyPath: 'enemyFactions.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: efaed8e15acbb4065a9d24eab268d4aa, type: 2}
     - target: {fileID: 3927517475928357642, guid: 0bc925396065f4527904c6b17945b667, type: 3}
       propertyPath: m_Name
       value: LLM AI SimpleBoat Red
@@ -5367,21 +5375,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 386411791612610567, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 686262427, guid: 2953697ddac6e4f01b58ce0ba10831a8, type: 3}
     - target: {fileID: 711992543574192054, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
       propertyPath: m_Name
       value: AI SimpleBoat
       objectReference: {fileID: 0}
     - target: {fileID: 711992543574192054, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2465860514152689212, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: faction
+      value: 
+      objectReference: {fileID: 11400000, guid: efaed8e15acbb4065a9d24eab268d4aa, type: 2}
+    - target: {fileID: 3054627702171928483, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.32156864
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054627702171928483, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.39607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 3054627702171928483, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
+      propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.36
+      value: 0.53
       objectReference: {fileID: 0}
     - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.42
+      value: -4.5
       objectReference: {fileID: 0}
     - target: {fileID: 6112047120701161611, guid: 371f6781dba28446e8dc6aa507513f5f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6434,7 +6462,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7367854635066870635, guid: d7fda7d4002c041a48ada05f04e72ee1, type: 3}
       propertyPath: recordFile
-      value: RecordScene-2026-03-30-14-49-51-Destroy All Targets.rex
+      value: RecordScene-2026-03-30-15-00-41-Destroy All Targets.rex
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6455,7 +6483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1683268027249446823, guid: df0fc36a30584412c9db2e1d6b8628df, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.37
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 1683268027249446823, guid: df0fc36a30584412c9db2e1d6b8628df, type: 3}
       propertyPath: m_LocalPosition.z
